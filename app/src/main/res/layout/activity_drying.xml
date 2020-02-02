@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drying And Dry Cleaning Symbols"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:id="@+id/scroll_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/first_row">
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_do_not"
+                    android:tag="@drawable/dry_cleaning_do_not"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_do_not"
+                    android:contentDescription="Do Not Dry Clean">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_allow"
+                    android:tag="@drawable/dry_cleaning_allow"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_allow"
+                    android:contentDescription="Dry Cleaning Allowed">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_low_heat"
+                    android:tag="@drawable/dry_cleaning_low_heat"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_low_heat"
+                    android:contentDescription="Dry Cleaning Low Heat">
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_no_steam"
+                    android:tag="@drawable/dry_cleaning_no_steam"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_no_steam"
+                    android:contentDescription="Dry Cleaning No Steam">
+                </ImageButton>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/second_row">
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_a"
+                    android:tag="@drawable/dry_cleaning_a"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_a"
+                    android:contentDescription="Dry Cleaning Any Solvent">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_p"
+                    android:tag="@drawable/dry_cleaning_p"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_p"
+                    android:contentDescription="Dry Cleaning Only">
+                </ImageButton>
+
+
+                <ImageButton
+                    android:id="@+id/dry_cleaning_f"
+                    android:tag="@drawable/dry_cleaning_f"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dry_cleaning_f"
+                    android:contentDescription="Dry Cleaning Petroleum Solvent Only">
+                </ImageButton>
+
+
+                <ImageButton
+                    android:id="@+id/tumble_dry_low_heat"
+                    android:tag="@drawable/tumble_dry_low"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/tumble_dry_low"
+                    android:contentDescription="Tumble Dry Low Heat">
+                </ImageButton>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/third_row">
+
+            <ImageButton
+                android:id="@+id/tumble_dry_high_heat"
+                android:tag="@drawable/tumble_dry_high"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/tumble_dry_high"
+                android:contentDescription="Tumble Dry High Heat">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/drip_dry"
+                android:tag="@drawable/natural_drying_hang_to_dry"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/natural_drying_hang_to_dry"
+                android:contentDescription="Drip Dry">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/dry_flat"
+                android:tag="@drawable/natural_drying_one_line"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/natural_drying_one_line"
+                android:contentDescription="Dry Flat">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/hang_to_dry"
+                android:tag="@drawable/natural_drying_hang_to_dry"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/natural_drying_hang_to_dry"
+                android:contentDescription="Hang To Dry">
+            </ImageButton>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/fourth_row">
+
+            <ImageButton
+                android:id="@+id/do_not_tumble_dry"
+                android:tag="@drawable/dryer_do_not_tumble_dry"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/dryer_do_not_tumble_dry"
+                android:contentDescription="Do Not Tumble Dry">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

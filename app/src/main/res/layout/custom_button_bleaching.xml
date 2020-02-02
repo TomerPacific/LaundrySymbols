@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/image_border"
+    android:tag="@string/bleaching">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:src="@drawable/bleach_allow"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/bleaching"
+        android:textSize="16sp" />
+</LinearLayout>

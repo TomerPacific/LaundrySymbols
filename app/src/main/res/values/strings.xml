@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Laundry Symbols</string>
+    <string name="main_screen_title">Laundry Symbols Explained</string>
+    <string name="washing">Washing</string>
+    <string name="bleaching">Bleaching</string>
+    <string name="drying">Drying</string>
+    <string name="ironing">Ironing</string>
+    <string name="symbol_image_description">Laundry Symbol Image</string>
+    <string name="app_version">v.%1$s</string>
+</resources>
