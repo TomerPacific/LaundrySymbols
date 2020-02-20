@@ -23,8 +23,8 @@ class Utilities {
             textView.setTypeface(typeFace)
         }
 
-        fun setTooltipsAndListeners(scrollView: ScrollView) {
-            val buttons: ArrayList<View> = scrollView.touchables
+        fun setTooltipsAndListeners(view: View) {
+            val buttons: ArrayList<View> = view.touchables
             for (button in buttons) {
                 val tooltipText = button.contentDescription
                 if (tooltipText != null) {
@@ -35,12 +35,12 @@ class Utilities {
                     override fun onClick(v: View?) {
 
                         val tag: String? = v?.tag as? String
-                        val intent = Intent(scrollView.context, LaundrySymbolDescription::class.java)
+                        val intent = Intent(view.context, LaundrySymbolDescription::class.java)
                         intent.putExtra(SYMBOL_NAME_KEY, tooltipText)
                         intent.putExtra(SYMBOL_IMAGE_KEY, tag)
                         intent.putExtra(SYMBOL_DESCRIPTION_KEY, tooltipText)
 
-                        scrollView.context.startActivity(intent)
+                        view.context.startActivity(intent)
 
                     }
                 })

@@ -19,121 +19,115 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.061" />
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        android:id="@+id/scroll_view"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:id="@+id/container"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        android:layout_marginTop="20dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.061">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/first_row">
-
-                <ImageButton
-                    android:id="@+id/no_iron"
-                    android:tag="@drawable/iron_do_not"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/iron_do_not"
-                    android:contentDescription="Do Not Iron">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/iron_allowed"
-                    android:tag="@drawable/iron_allowed"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/iron_allowed"
-                    android:contentDescription="Ironing Allowed">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/iron_low"
-                    android:tag="@drawable/iron_low_setting"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/iron_low_setting"
-                    android:contentDescription="Iron Low (Max 110&#xb0; Celsius)">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/iron_medium"
-                    android:tag="@drawable/iron_medium_setting"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/iron_medium_setting"
-                    android:contentDescription="Iron Medium (Max 150&#xb0; Celsius)">
-
-                </ImageButton>
-
-
-
-
-            </LinearLayout>
-
-
-        <LinearLayout
+            android:id="@+id/first_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/second_row">
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/no_iron"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Do Not Iron"
+                android:scaleType="centerInside"
+                android:src="@drawable/iron_do_not"
+                android:tag="@drawable/iron_do_not">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/iron_allowed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Ironing Allowed"
+                android:scaleType="centerInside"
+                android:src="@drawable/iron_allowed"
+                android:tag="@drawable/iron_allowed">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/iron_low"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Iron Low (Max 110&#xb0; Celsius)"
+                android:scaleType="centerInside"
+                android:src="@drawable/iron_low_setting"
+                android:tag="@drawable/iron_low_setting">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/iron_medium"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Iron Medium (Max 150&#xb0; Celsius)"
+                android:scaleType="centerInside"
+                android:src="@drawable/iron_medium_setting"
+                android:tag="@drawable/iron_medium_setting">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/second_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/iron_high"
-                android:tag="@drawable/iron_high_setting"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="100dp"
                 android:adjustViewBounds="true"
+                android:contentDescription="Iron High (Max 200&#xb0; Celsius)"
                 android:scaleType="centerInside"
                 android:src="@drawable/iron_high_setting"
-                android:contentDescription="Iron High (Max 200&#xb0; Celsius)">
+                android:tag="@drawable/iron_high_setting">
+
             </ImageButton>
 
             <ImageButton
                 android:id="@+id/iron_no_steam"
-                android:tag="@drawable/iron_steam_not_allowed"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="100dp"
                 android:adjustViewBounds="true"
+                android:contentDescription="Steaming Not Allowed"
                 android:scaleType="centerInside"
                 android:src="@drawable/iron_steam_not_allowed"
-                android:contentDescription="Steaming Not Allowed">
+                android:tag="@drawable/iron_steam_not_allowed">
 
             </ImageButton>
 
-
         </LinearLayout>
 
+    </LinearLayout>
 
-
-        </LinearLayout>
-
-
-
-
-    </ScrollView>
 
 
 

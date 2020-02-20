@@ -19,135 +19,137 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.061" />
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        android:id="@+id/scroll_view"
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        android:layout_marginTop="20dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.061">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/first_row">
-
-                <ImageButton
-                    android:id="@+id/no_washing"
-                    android:tag="@drawable/wash_do_not"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_do_not"
-                    android:contentDescription="Do Not Wash">
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/washable"
-                    android:tag="@drawable/washable"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/washable"
-                    android:contentDescription="Regular Washing Allowed">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/wash_degree"
-                    android:tag="@drawable/wash_30_degrees"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_30_degrees"
-                    android:contentDescription="Washing Cold">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/wash_40_degrees_warm"
-                    android:tag="@drawable/wash_40_degrees_warm"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_40_degrees_warm"
-                    android:contentDescription="Washing Warm">
-
-                </ImageButton>
-
-            </LinearLayout>
-
-        <LinearLayout
+            android:id="@+id/first_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/second_row">
+            android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/wash_60_degrees_hot"
-                    android:tag="@drawable/wash_60_degrees_hot"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_60_degrees_hot"
-                    android:contentDescription="Washing Hot">
+            <ImageButton
+                android:id="@+id/no_washing"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Do Not Wash"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_do_not"
+                android:tag="@drawable/wash_do_not">
 
-                </ImageButton>
+            </ImageButton>
 
-                <ImageButton
-                    android:id="@+id/wash_synthetic"
-                    android:tag="@drawable/wash_30_degrees_delicate"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_30_degrees_delicate"
-                    android:contentDescription="Synthetic Cycle">
-                </ImageButton>
+            <ImageButton
+                android:id="@+id/washable"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Regular Washing Allowed"
+                android:scaleType="centerInside"
+                android:src="@drawable/washable"
+                android:tag="@drawable/washable">
 
-                <ImageButton
-                    android:id="@+id/wash_wool_gentle"
-                    android:tag="@drawable/wash_30_double_line"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_30_double_line"
-                    android:contentDescription="Wool/Gentle Cycle">
-                </ImageButton>
+            </ImageButton>
 
-                <ImageButton
-                    android:id="@+id/hand_washing"
-                    android:tag="@drawable/wash_by_hand"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wash_by_hand"
-                    android:contentDescription="Hand Wash">
+            <ImageButton
+                android:id="@+id/wash_degree"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Washing Cold"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_30_degrees"
+                android:tag="@drawable/wash_30_degrees">
 
-                </ImageButton>
+            </ImageButton>
 
-            </LinearLayout>
+            <ImageButton
+                android:id="@+id/wash_40_degrees_warm"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Washing Warm"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_40_degrees_warm"
+                android:tag="@drawable/wash_40_degrees_warm">
+
+            </ImageButton>
 
         </LinearLayout>
 
-    </ScrollView>
+        <LinearLayout
+            android:id="@+id/second_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/wash_60_degrees_hot"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Washing Hot"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_60_degrees_hot"
+                android:tag="@drawable/wash_60_degrees_hot">
 
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/wash_synthetic"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Synthetic Cycle"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_30_degrees_delicate"
+                android:tag="@drawable/wash_30_degrees_delicate">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/wash_wool_gentle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Wool/Gentle Cycle"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_30_double_line"
+                android:tag="@drawable/wash_30_double_line">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/hand_washing"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Hand Wash"
+                android:scaleType="centerInside"
+                android:src="@drawable/wash_by_hand"
+                android:tag="@drawable/wash_by_hand">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

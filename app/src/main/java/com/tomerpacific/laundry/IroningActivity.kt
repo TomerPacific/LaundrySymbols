@@ -9,7 +9,7 @@ class IroningActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ironing)
         Utilities.setFont(this, BANGERS_FONT, R.id.textView)
-        Utilities.setTooltipsAndListeners(findViewById(R.id.scroll_view))
+        Utilities.setTooltipsAndListeners(findViewById(R.id.container))
     }
 
 }
