@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Ironing Symbols"
         android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

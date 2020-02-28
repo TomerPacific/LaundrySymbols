@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.LayoutDirection
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.google.android.play.core.appupdate.AppUpdateInfo
@@ -18,13 +20,12 @@ import com.tomerpacific.laundry.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    val TAG : String = MainActivity::class.java.simpleName
-    var appUpdateManager : AppUpdateManager? = null
+    private val TAG : String = MainActivity::class.java.simpleName
+    private var appUpdateManager : AppUpdateManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupDataBinding()
-
         Utilities.setFont(this, BANGERS_FONT, R.id.textView)
         val versionTextView : TextView = findViewById(R.id.app_version)
         versionTextView.text = getString(R.string.app_version, BuildConfig.VERSION_NAME)
