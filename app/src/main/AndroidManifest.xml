@@ -20,7 +20,7 @@
         <activity android:name=".activities.BleachingActivity"></activity>
         <activity android:name=".activities.DryingActivity"></activity>
         <activity android:name=".activities.IroningActivity"></activity>
-        <activity android:name=".activities.LaundrySymbolDescription"></activity>
+        <activity android:name=".activities.LaundrySymbolDescriptionActivity"></activity>
     </application>
 
 </manifest>

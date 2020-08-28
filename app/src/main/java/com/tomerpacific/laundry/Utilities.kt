@@ -7,7 +7,7 @@ import android.graphics.Typeface
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.TooltipCompat
-import com.tomerpacific.laundry.activities.LaundrySymbolDescription
+import com.tomerpacific.laundry.activities.LaundrySymbolDescriptionActivity
 import java.util.*
 
 class Utilities {
@@ -35,7 +35,7 @@ class Utilities {
                     override fun onClick(v: View?) {
 
                         val tag: String? = v?.tag as? String
-                        val intent = Intent(view.context, LaundrySymbolDescription::class.java)
+                        val intent = Intent(view.context, LaundrySymbolDescriptionActivity::class.java)
                         intent.putExtra(SYMBOL_NAME_KEY, tooltipText)
                         intent.putExtra(SYMBOL_IMAGE_KEY, tag)
                         intent.putExtra(SYMBOL_DESCRIPTION_KEY, tooltipText)

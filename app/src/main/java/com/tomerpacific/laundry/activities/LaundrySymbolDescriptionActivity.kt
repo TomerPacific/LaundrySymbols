@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.tomerpacific.laundry.*
 
-class LaundrySymbolDescription  : AppCompatActivity() {
+class LaundrySymbolDescriptionActivity  : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
