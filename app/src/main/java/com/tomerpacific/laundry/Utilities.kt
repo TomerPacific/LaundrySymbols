@@ -5,9 +5,9 @@ import android.content.Intent
 import android.content.res.AssetManager
 import android.graphics.Typeface
 import android.view.View
-import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.widget.TooltipCompat
+import com.tomerpacific.laundry.activities.LaundrySymbolDescription
 import java.util.*
 
 class Utilities {

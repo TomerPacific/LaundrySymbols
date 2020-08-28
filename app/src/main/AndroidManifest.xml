@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WashingActivity"></activity>
-        <activity android:name=".BleachingActivity"></activity>
-        <activity android:name=".DryingActivity"></activity>
-        <activity android:name=".IroningActivity"></activity>
-        <activity android:name=".LaundrySymbolDescription"></activity>
+        <activity android:name=".activities.WashingActivity"></activity>
+        <activity android:name=".activities.BleachingActivity"></activity>
+        <activity android:name=".activities.DryingActivity"></activity>
+        <activity android:name=".activities.IroningActivity"></activity>
+        <activity android:name=".activities.LaundrySymbolDescription"></activity>
     </application>
 
 </manifest>

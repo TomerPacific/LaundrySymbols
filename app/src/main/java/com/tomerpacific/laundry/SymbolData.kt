@@ -6,5 +6,3 @@ data class SymbolData(val symbols: List<Symbol>) {
         return symbols.get(index)
     }
 }
-
-//data class SymbolData(val symbolName: String, val symbolImageSrc : Drawable)

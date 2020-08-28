@@ -1,9 +1,10 @@
-package com.tomerpacific.laundry
+package com.tomerpacific.laundry.activities
 
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.tomerpacific.laundry.*
 
 class LaundrySymbolDescription  : AppCompatActivity() {
 
@@ -26,7 +27,8 @@ class LaundrySymbolDescription  : AppCompatActivity() {
         symbolHeader.text = symbolName
 
         if (symbolImageSrc != null) {
-            val imagePath = Utilities.extractImagePath(symbolImageSrc)
+            val imagePath =
+                Utilities.extractImagePath(symbolImageSrc)
             val imageId = applicationContext.resources.getIdentifier(imagePath,
                 null,
                 applicationContext.packageName)
