@@ -41,16 +41,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        appUpdateManager?.appUpdateInfo?.addOnSuccessListener { result: AppUpdateInfo? ->
-            if (result?.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                appUpdateManager?.startUpdateFlowForResult(result,
-                    AppUpdateType.IMMEDIATE,
-                    this,
-                    UPDATE_REQUEST_CODE
-                )
+        appUpdateManager?.apply {
+            appUpdateInfo.addOnSuccessListener { result: AppUpdateInfo? ->
+                    if (result?.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                       startUpdateFlowForResult(result,
+                        AppUpdateType.IMMEDIATE,
+                        this@MainActivity,
+                        UPDATE_REQUEST_CODE
+                        )
+                    }
             }
         }
-
     }
 
     private fun setupDataBinding() {
