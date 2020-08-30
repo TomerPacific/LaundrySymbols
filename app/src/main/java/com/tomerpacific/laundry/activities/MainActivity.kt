@@ -79,12 +79,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListenersForButtons() {
 
-        val onClickListener = object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                if (v != null) {
-                    openActivity(v)
-                }
-            }
+        val onClickListener = View.OnClickListener {
+                    openActivity(it)
         }
 
         Utilities.setListenerForView(
