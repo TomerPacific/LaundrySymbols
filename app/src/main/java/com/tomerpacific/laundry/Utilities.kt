@@ -28,24 +28,20 @@ class Utilities {
         fun setTooltipsAndListeners(view: View) {
             val buttons: ArrayList<View> = view.touchables
             for (button in buttons) {
-                val tooltipText = button.contentDescription
-                if (tooltipText != null) {
-                    TooltipCompat.setTooltipText(button, tooltipText)
+                
+                val tooltipText = button.contentDescription?.apply {
+                    TooltipCompat.setTooltipText(button, this)
                 }
 
-                button.setOnClickListener(object : View.OnClickListener {
-                    override fun onClick(v: View?) {
+                button.setOnClickListener {
+                            val tag: String? = it.tag as String
+                            val intent = Intent(view.context, LaundrySymbolDescriptionActivity::class.java)
+                            intent.putExtra(SYMBOL_NAME_KEY, tooltipText)
+                            intent.putExtra(SYMBOL_IMAGE_KEY, tag)
+                            intent.putExtra(SYMBOL_DESCRIPTION_KEY, tooltipText)
 
-                        val tag: String? = v?.tag as? String
-                        val intent = Intent(view.context, LaundrySymbolDescriptionActivity::class.java)
-                        intent.putExtra(SYMBOL_NAME_KEY, tooltipText)
-                        intent.putExtra(SYMBOL_IMAGE_KEY, tag)
-                        intent.putExtra(SYMBOL_DESCRIPTION_KEY, tooltipText)
-
-                        view.context.startActivity(intent)
-
+                            view.context.startActivity(intent)
                     }
-                })
 
             }
         }
