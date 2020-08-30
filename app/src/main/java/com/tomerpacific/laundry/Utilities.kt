@@ -14,13 +14,15 @@ class Utilities {
 
     companion object {
         fun setFont(activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
-            val assetManager: AssetManager = activity.assets
-            val typeFace: Typeface = Typeface.createFromAsset(
-                assetManager,
-                String.format(Locale.US, "fonts/%s", fontToSet)
-            )
-            val textView: TextView = activity.findViewById(viewIdToSetFont)
-            textView.setTypeface(typeFace)
+
+            activity.findViewById<TextView>(viewIdToSetFont).apply {
+                val assetManager: AssetManager = activity.assets
+                val typeFace: Typeface = Typeface.createFromAsset(
+                    assetManager,
+                    String.format(Locale.US, "fonts/%s", fontToSet)
+                )
+                this.typeface = typeFace
+            }
         }
 
         fun setTooltipsAndListeners(view: View) {
