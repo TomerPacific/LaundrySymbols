@@ -83,23 +83,14 @@ class MainActivity : AppCompatActivity() {
                     openActivity(it)
         }
 
-        Utilities.setListenerForView(
-            findViewById(R.id.custom_button_washing),
-            onClickListener
-        )
-        Utilities.setListenerForView(
-            findViewById(R.id.custom_button_bleaching),
-            onClickListener
-        )
-        Utilities.setListenerForView(
-            findViewById(R.id.custom_button_drying),
-            onClickListener
-        )
-        Utilities.setListenerForView(
-            findViewById(R.id.custom_button_ironing),
-            onClickListener
-        )
+        val customButtons : List<Int> = listOf(R.id.custom_button_washing,
+            R.id.custom_button_bleaching,
+            R.id.custom_button_drying,
+            R.id.custom_button_ironing)
 
+        customButtons.forEach {
+            Utilities.setListenerForView(findViewById(it), onClickListener)
+        }
     }
 
     private fun openActivity(view: View) {
