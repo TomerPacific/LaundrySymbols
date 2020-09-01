@@ -126,12 +126,14 @@ class MainActivity : AppCompatActivity() {
                     } catch(e : Exception) {
                         e.printStackTrace()
                     }
-                } else if (it.installStatus() == InstallStatus.DOWNLOADED){
-                    //Already downloaded update, do nothing
-                    Log.d(TAG, "checkForUpdate update downloaded")
-                } else  if (it.installStatus() == InstallStatus.FAILED ||
-                    it.installStatus() == InstallStatus.UNKNOWN) {
-                    Log.e(TAG, "checkForUpdate checkForUpdate updateAvailability FAILED")
+                }
+                when(it.installStatus()) {
+                    InstallStatus.INSTALLED -> Log.d(TAG, "checkForUpdate update already installed")
+                    InstallStatus.INSTALLING -> Log.d(TAG, "checkForUpdate update is being installed")
+                    InstallStatus.DOWNLOADED -> Log.d(TAG, "checkForUpdate update downloaded")
+                    InstallStatus.DOWNLOADING -> Log.d(TAG, "checkForUpdate checkForUpdate is still downloading")
+                    InstallStatus.CANCELED -> Log.d(TAG, "checkForUpdate checkForUpdate has been cancelled")
+                    else -> Log.e(TAG, "checkForUpdate checkForUpdate updateAvailability FAILED")
                 }
             }
         }
