@@ -112,28 +112,27 @@ class MainActivity : AppCompatActivity() {
     private fun checkForUpdate() {
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
 
-        val appUpdateInfoTask = appUpdateManager?.appUpdateInfo
-
-        appUpdateInfoTask?.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
-            ) {
-                try {
-                    appUpdateManager?.startUpdateFlowForResult(
-                        appUpdateInfo,
-                        AppUpdateType.IMMEDIATE,
-                        this,
-                        UPDATE_REQUEST_CODE
-                    )
-                } catch(e: Exception) {
-                    e.printStackTrace()
+        appUpdateManager?.apply {
+            appUpdateInfo.addOnSuccessListener {
+                if (it.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
+                        it.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                    try {
+                        startUpdateFlowForResult(
+                            it,
+                            AppUpdateType.IMMEDIATE,
+                            this@MainActivity,
+                            UPDATE_REQUEST_CODE
+                        )
+                    } catch(e : Exception) {
+                        e.printStackTrace()
+                    }
+                } else if (it.installStatus() == InstallStatus.DOWNLOADED){
+                    //Already downloaded update, do nothing
+                    Log.d(TAG, "checkForUpdate update downloaded")
+                } else  if (it.installStatus() == InstallStatus.FAILED ||
+                    it.installStatus() == InstallStatus.UNKNOWN) {
+                    Log.e(TAG, "checkForUpdate checkForUpdate updateAvailability FAILED")
                 }
-            } else if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED){
-                //Already downloaded update, do nothing
-                Log.d(TAG, "checkForUpdate update downloaded")
-            } else  if (appUpdateInfo.installStatus() == InstallStatus.FAILED ||
-                        appUpdateInfo.installStatus() == InstallStatus.UNKNOWN) {
-                Log.e(TAG, "checkForUpdate checkForUpdate updateAvailability FAILED")
             }
         }
     }
