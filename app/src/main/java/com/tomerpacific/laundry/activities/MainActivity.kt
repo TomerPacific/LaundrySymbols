@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
             else -> null
         }
 
-        if (activityToOpen != null) {
+        activityToOpen?.apply {
             startActivity(activityToOpen)
         }
     }
