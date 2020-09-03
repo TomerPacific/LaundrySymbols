@@ -25,16 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupDataBinding()
-        Utilities.setFont(
-            this,
-            BANGERS_FONT,
-            R.id.textView
-        )
-        val versionTextView : TextView = findViewById(R.id.app_version)
-        versionTextView.text = getString(
-            R.string.app_version,
-            BuildConfig.VERSION_NAME
-        )
+        setFontAndVersion()
         setListenersForButtons()
         checkForUpdate()
     }
@@ -75,6 +66,21 @@ class MainActivity : AppCompatActivity() {
 
         val customButtons : List<Symbol> = listOf(washingSymbol, bleachingSymbol,dryingSymbol, ironingSymbol)
         binding.symbols = SymbolData(customButtons)
+    }
+
+    private fun setFontAndVersion() {
+        Utilities.setFont(
+            this,
+            BANGERS_FONT,
+            R.id.textView
+        )
+
+        findViewById<TextView>(R.id.app_version).apply {
+            text = getString(
+                R.string.app_version,
+                BuildConfig.VERSION_NAME
+            )
+        }
     }
 
     private fun setListenersForButtons() {
