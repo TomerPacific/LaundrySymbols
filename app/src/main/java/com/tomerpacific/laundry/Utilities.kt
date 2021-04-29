@@ -51,16 +51,12 @@ class Utilities {
         }
 
         fun extractImagePath(imageName : String) : String {
-            var imageNameWithoutExtension : String
+            val imageName : String = imageName.replace("res/drawable-xxhdpi-v4/", "")
             val indexOfExtension : Int = imageName.indexOf(".")
 
-            imageNameWithoutExtension = imageName.substring(0, indexOfExtension)
-
-            val indexOfPathPrefix : Int = imageNameWithoutExtension.indexOf(DRAWABLE_ASSET_PREFIX_PATH)
-            imageNameWithoutExtension = imageNameWithoutExtension.substring(indexOfPathPrefix + DRAWABLE_ASSET_PREFIX_PATH.length)
-
-            return imageNameWithoutExtension
+            return imageName.substring(0, indexOfExtension)
         }
+
     }
 
 }
