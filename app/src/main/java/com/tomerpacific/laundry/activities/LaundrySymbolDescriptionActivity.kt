@@ -26,11 +26,10 @@ class LaundrySymbolDescriptionActivity  : AppCompatActivity() {
 
         intent.getStringExtra(SYMBOL_IMAGE_KEY)?.also {
             findViewById<ImageView>(R.id.symbol_image).apply {
-                val imagePath =
-                    Utilities.extractImagePath(it)
+                val imageName = Utilities.extractImagePath(it)
                 val imageId = applicationContext.resources.getIdentifier(
-                    imagePath,
-                    null,
+                    imageName,
+                    "drawable",
                     applicationContext.packageName
                 )
 
