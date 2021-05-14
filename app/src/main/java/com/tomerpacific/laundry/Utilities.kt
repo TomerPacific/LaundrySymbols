@@ -13,15 +13,15 @@ import java.util.*
 class Utilities {
 
     companion object {
-        fun setFont(activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
+        fun setFont(view: View?, activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
 
-            activity.findViewById<TextView>(viewIdToSetFont).apply {
+            view?.findViewById<TextView>(viewIdToSetFont).apply {
                 val assetManager: AssetManager = activity.assets
                 val typeFace: Typeface = Typeface.createFromAsset(
                     assetManager,
                     String.format(Locale.US, "fonts/%s", fontToSet)
                 )
-                this.typeface = typeFace
+                this?.typeface = typeFace
             }
         }
 

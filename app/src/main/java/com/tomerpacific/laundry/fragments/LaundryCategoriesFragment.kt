@@ -19,15 +19,12 @@ class LaundryCategoriesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_laundry_categories, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_laundry_categories, container, false)
+        setFontAndVersion(view)
+        return view;
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        setFontAndVersion()
-    }
-
-    private fun setFontAndVersion() {
+    private fun setFontAndVersion(view: View) {
         Utilities.setFont(
             view,
             requireActivity(),
@@ -35,7 +32,7 @@ class LaundryCategoriesFragment : Fragment() {
             R.id.textView
         )
 
-        view?.findViewById<TextView>(R.id.app_version).apply {
+        view.findViewById<TextView>(R.id.app_version).apply {
             this?.text = getString(
                 R.string.app_version,
                 BuildConfig.VERSION_NAME
