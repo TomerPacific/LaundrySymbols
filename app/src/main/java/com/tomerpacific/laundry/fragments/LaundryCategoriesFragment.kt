@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.tomerpacific.laundry.BANGERS_FONT
@@ -21,6 +22,7 @@ class LaundryCategoriesFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_laundry_categories, container, false)
         setFontAndVersion(view)
+        setClickListenersForButtons(view)
         return view;
     }
 
@@ -38,5 +40,33 @@ class LaundryCategoriesFragment : Fragment() {
                 BuildConfig.VERSION_NAME
             )
         }
+    }
+
+    private fun setClickListenersForButtons(view: View) {
+
+        view.findViewById<LinearLayout>(R.id.washing).apply {
+            setOnClickListener{
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, LaundryCategoryFragment())?.commit()
+            }
+        }
+
+        view.findViewById<LinearLayout>(R.id.bleaching).apply {
+            setOnClickListener{
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, LaundryCategoryFragment())?.commit()
+            }
+        }
+
+        view.findViewById<LinearLayout>(R.id.drying).apply {
+            setOnClickListener{
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, LaundryCategoryFragment())?.commit()
+            }
+        }
+
+        view.findViewById<LinearLayout>(R.id.ironing).apply {
+            setOnClickListener{
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, LaundryCategoryFragment())?.commit()
+            }
+        }
+
     }
 }
