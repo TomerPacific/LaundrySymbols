@@ -31,6 +31,78 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
+        <LinearLayout
+            android:id="@+id/top_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/image_border"
+                android:id="@+id/washing">
+
+
+                <ImageView
+                    android:id="@+id/washing_imageview"
+                    android:layout_height="100dp"
+                    android:layout_width="100dp"
+                    android:src="@drawable/washable"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    />
+
+                <TextView
+                    android:id="@+id/washing_textview"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@string/washing"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="8dp" />
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/image_border"
+                android:id="@+id/bleaching">
+
+
+                <ImageView
+                    android:id="@+id/bleaching_imageview"
+                    android:layout_height="100dp"
+                    android:layout_width="100dp"
+                    android:src="@drawable/bleach_allow"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    />
+
+                <TextView
+                    android:id="@+id/bleachin_textview"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@string/bleaching"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:id="@+id/bottom_buttons"
@@ -47,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/image_border"
-                android:id="@+id/drying" >
+                android:id="@+id/drying">
 
 
                 <ImageView
@@ -96,77 +168,6 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:text="@string/ironing"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="8dp"
-            android:layout_height="20dp" />
-
-        <LinearLayout
-            android:id="@+id/top_buttons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/image_border">
-
-
-                <ImageView
-                    android:id="@+id/washing_imageview"
-                    android:layout_height="100dp"
-                    android:layout_width="100dp"
-                    android:src="@drawable/washable"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    />
-
-                <TextView
-                    android:id="@+id/washing_textview"
-                    android:gravity="center_horizontal"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:text="@string/washing"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="20dp"
-                android:layout_height="8dp" />
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/image_border">
-
-
-                <ImageView
-                    android:id="@+id/bleaching_imageview"
-                    android:layout_height="100dp"
-                    android:layout_width="100dp"
-                    android:src="@drawable/bleach_allow"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    />
-
-                <TextView
-                    android:id="@+id/bleachin_textview"
-                    android:gravity="center_horizontal"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:text="@string/bleaching"
                     android:textSize="16sp" />
             </LinearLayout>
 
