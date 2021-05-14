@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.tomerpacific.laundry.BANGERS_FONT
 import com.tomerpacific.laundry.R
+import com.tomerpacific.laundry.Utilities
 
 class LaundryCategoryFragment : Fragment() {
 
@@ -28,6 +30,13 @@ class LaundryCategoryFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_laundry_category, container, false)
         val laundryCategoryTextView : TextView = view.findViewById<TextView>(R.id.laundry_category_textview)
         laundryCategoryTextView.text = this.arguments?.getString("laundry_category")
+
+        Utilities.setFont(
+            view,
+            requireActivity(),
+            BANGERS_FONT,
+            R.id.laundry_category_textview
+        )
         return view;
     }
 
