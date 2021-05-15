@@ -22,7 +22,29 @@ class Utilities {
             "wash_60_degrees_hot" to "Washing Hot",
             "wash_30_degrees_delicate" to "Synthetic Cycle",
             "wash_30_double_line" to "Wool/Gentle Cycle",
-            "wash_by_hand" to "Hand Wash"
+            "wash_by_hand" to "Hand Wash",
+            "bleach_do_not" to "Do Not Bleach",
+            "bleach_allow" to "Bleaching Allowed",
+            "bleach_non_chlorine" to "Bleach Non Chlorine",
+            "dry_cleaning_do_not" to "Do Not Dry Clean",
+            "dry_cleaning_allow" to "Dry Cleaning Allowed",
+            "dry_cleaning_low_heat" to "Dry Cleaning Low Heat",
+            "dry_cleaning_no_steam" to "Dry Cleaning No Steam",
+            "dry_cleaning_a" to "Dry Cleaning Any Solvent",
+            "dry_cleaning_p" to "Dry Cleaning Only",
+            "dry_cleaning_f" to "Dry Cleaning Petroleum Solvent Only",
+            "tumble_dry_low" to "Tumble Dry Low Heat",
+            "tumble_dry_high" to "Tumble Dry High Heat",
+            "natural_drying_hang_to_dry" to "Drip Dry",
+            "natural_drying_one_line" to "Dry Flat",
+            "natural_drying_hang_to_dry" to "Hang To Dry",
+            "dryer_do_not_tumble_dry" to "Do Not Tumble Dry",
+            "iron_do_not" to "Do Not Iron",
+            "iron_allowed" to "Ironing Allowed",
+            "iron_low_setting" to "Iron Low (Max 110&#xb0; Celsius)",
+            "iron_medium_setting" to "Iron Medium (Max 150&#xb0; Celsius)",
+            "iron_high_setting" to "Iron High (Max 200&#xb0; Celsius)",
+            "iron_steam_not_allowed" to "Steaming Not Allowed"
         )
 
 
