@@ -1,28 +1,39 @@
 package com.tomerpacific.laundry
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import com.tomerpacific.laundry.fragments.LaundrySymbolFragment
 
-class GridViewAdapter(var data: List<String>) : BaseAdapter() {
+class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val inflator: LayoutInflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val gridItemView = inflator.inflate(R.layout.grid_view_item, null)
-        val imageView: ImageView = gridItemView.findViewById(R.id.image_button)
+        val inflater: LayoutInflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val gridItemView = inflater.inflate(R.layout.grid_view_item, null)
+        val imageButton: ImageButton = gridItemView.findViewById(R.id.image_button)
         val identifier: Int? = parent.context?.resources?.getIdentifier(
             data[position],
             "drawable",
             parent.context?.packageName)
 
-        imageView.apply {
-            scaleType = ImageView.ScaleType.CENTER_CROP
+        val manager = (gridItemView.context as FragmentActivity).supportFragmentManager
+
+        imageButton.apply {
+            scaleType = ImageView.ScaleType.CENTER_INSIDE
             setImageResource(identifier!!)
             tag = data[position]
+            setOnClickListener {
+                val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(data[position], identifier)
+                manager.beginTransaction()?.
+                replace(R.id.fragment_container_view, fragment)?.
+                addToBackStack(null)?.commit()
+            }
         }
 
         return gridItemView
