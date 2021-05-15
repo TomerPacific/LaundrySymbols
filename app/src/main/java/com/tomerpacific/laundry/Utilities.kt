@@ -13,6 +13,19 @@ import java.util.*
 class Utilities {
 
     companion object {
+
+        private val symbolDescriptionMap = mapOf<String, String>(
+            "wash_do_not" to "Do Not Wash",
+            "washable" to "Regular Washing Allowed",
+            "wash_30_degrees" to "Washing Cold",
+            "wash_40_degrees_warm" to "Washing Warm",
+            "wash_60_degrees_hot" to "Washing Hot",
+            "wash_30_degrees_delicate" to "Synthetic Cycle",
+            "wash_30_double_line" to "Wool/Gentle Cycle",
+            "wash_by_hand" to "Hand Wash"
+        )
+
+
         fun setFont(view: View?, activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
 
             view?.findViewById<TextView>(viewIdToSetFont).apply {
@@ -46,15 +59,15 @@ class Utilities {
             }
         }
 
-        fun setListenerForView(viewToSetListenerTo: View, onClickListener: View.OnClickListener) {
-            viewToSetListenerTo.setOnClickListener(onClickListener)
-        }
-
         fun extractImagePath(imageName : String) : String {
             val imageName : String = imageName.replace("res/drawable-xxhdpi-v4/", "")
             val indexOfExtension : Int = imageName.indexOf(".")
 
             return imageName.substring(0, indexOfExtension)
+        }
+
+        fun getSymbolDescription(symbolName: String): String {
+            return symbolDescriptionMap[symbolName]!!
         }
 
     }

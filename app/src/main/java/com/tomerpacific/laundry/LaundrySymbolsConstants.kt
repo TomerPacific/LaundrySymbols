@@ -12,4 +12,3 @@ const val LAUNDRY_SYMBOL_NAME_KEY = "laundry_symbol_name"
 const val LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY = "laundry_symbol_resource_identifier"
 
 
-
