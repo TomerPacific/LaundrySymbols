@@ -16,10 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.WashingActivity"></activity>
-        <activity android:name=".activities.BleachingActivity"></activity>
-        <activity android:name=".activities.DryingActivity"></activity>
-        <activity android:name=".activities.IroningActivity"></activity>
         <activity android:name=".activities.LaundrySymbolDescriptionActivity"></activity>
     </application>
 
