@@ -2,16 +2,17 @@ package com.tomerpacific.laundry.activities
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
-import com.tomerpacific.laundry.*
+import com.tomerpacific.laundry.R
+import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
 import com.tomerpacific.laundry.fragments.LaundryCategoriesFragment
 
 class MainActivity : AppCompatActivity() {
@@ -40,6 +41,15 @@ class MainActivity : AppCompatActivity() {
                         )
                     }
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        val count = supportFragmentManager.backStackEntryCount
+        if (count == 0) {
+            super.onBackPressed()
+        } else {
+            supportFragmentManager.popBackStack()
         }
     }
 

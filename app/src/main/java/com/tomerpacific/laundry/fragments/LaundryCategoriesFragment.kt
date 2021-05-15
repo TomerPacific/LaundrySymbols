@@ -47,28 +47,36 @@ class LaundryCategoriesFragment : Fragment() {
         view.findViewById<LinearLayout>(R.id.washing).apply {
             val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.washing)!!)
             setOnClickListener{
-                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)?.commit()
+                fragmentManager?.beginTransaction()?.
+                replace(R.id.fragment_container_view, fragment)?.
+                addToBackStack(null)?.commit()
             }
         }
 
         view.findViewById<LinearLayout>(R.id.bleaching).apply {
             val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.bleaching)!!)
             setOnClickListener{
-                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)?.commit()
+                fragmentManager?.beginTransaction()?.
+                replace(R.id.fragment_container_view, fragment)?.
+                addToBackStack(null)?.commit()
             }
         }
 
         view.findViewById<LinearLayout>(R.id.drying).apply {
             val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.drying)!!)
             setOnClickListener{
-                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)?.commit()
+                fragmentManager?.beginTransaction()?.
+                replace(R.id.fragment_container_view, fragment)?.
+                addToBackStack(null)?.commit()
             }
         }
 
         view.findViewById<LinearLayout>(R.id.ironing).apply {
             val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.ironing)!!)
             setOnClickListener{
-                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)?.commit()
+                fragmentManager?.beginTransaction()?.
+                replace(R.id.fragment_container_view, fragment)?.
+                addToBackStack(null)?.commit()
             }
         }
 
