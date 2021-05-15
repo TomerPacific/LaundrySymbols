@@ -41,9 +41,9 @@ class Utilities {
             "dryer_do_not_tumble_dry" to "Do Not Tumble Dry",
             "iron_do_not" to "Do Not Iron",
             "iron_allowed" to "Ironing Allowed",
-            "iron_low_setting" to "Iron Low (Max 110&#xb0; Celsius)",
-            "iron_medium_setting" to "Iron Medium (Max 150&#xb0; Celsius)",
-            "iron_high_setting" to "Iron High (Max 200&#xb0; Celsius)",
+            "iron_low_setting" to "Iron Low (Max 110 degrees Celsius)",
+            "iron_medium_setting" to "Iron Medium (Max 150 degrees Celsius)",
+            "iron_high_setting" to "Iron High (Max 200 degrees Celsius)",
             "iron_steam_not_allowed" to "Steaming Not Allowed"
         )
 
