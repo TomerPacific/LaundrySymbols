@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.fragment.app.FragmentActivity
-import com.tomerpacific.laundry.fragments.LaundrySymbolFragment
+import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
 
 class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
 
