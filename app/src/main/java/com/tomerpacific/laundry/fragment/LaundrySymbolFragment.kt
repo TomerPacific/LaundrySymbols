@@ -1,4 +1,4 @@
-package com.tomerpacific.laundry.fragments
+package com.tomerpacific.laundry.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.tomerpacific.laundry.activities
+package com.tomerpacific.laundry.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -13,7 +13,7 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
-import com.tomerpacific.laundry.fragments.LaundryCategoriesFragment
+import com.tomerpacific.laundry.fragment.LaundryCategoriesFragment
 
 class MainActivity : AppCompatActivity() {
 
