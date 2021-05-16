@@ -1,14 +1,12 @@
 package com.tomerpacific.laundry
 
 import android.app.Activity
-import android.content.Intent
 import android.content.res.AssetManager
 import android.graphics.Typeface
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.TooltipCompat
-import com.tomerpacific.laundry.activities.LaundrySymbolDescriptionActivity
 import java.util.*
 
 class Utilities {
