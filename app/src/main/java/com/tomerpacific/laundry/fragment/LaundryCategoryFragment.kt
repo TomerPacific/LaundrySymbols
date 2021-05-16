@@ -40,13 +40,17 @@ class LaundryCategoryFragment : Fragment() {
         )
 
         val gridLayout: GridView = view.findViewById(R.id.grid_layout)
+
+        if (laundryCategory == LAUNDRY_CATEGORY_BLEACHING) {
+            gridLayout.numColumns = 3
+        }
         setupLayoutForLaundryCategory(laundryCategory, gridLayout)
         return view;
     }
 
     private fun setupLayoutForLaundryCategory(laundryCategory: String?, gridLayout: GridView) {
         val buttonsToGenerate: List<String> = when(laundryCategory) {
-            "Washing" -> listOf(
+            LAUNDRY_CATEGORY_WASHING -> listOf(
                 "wash_do_not",
                 "washable",
                 "wash_30_degrees",
@@ -56,12 +60,12 @@ class LaundryCategoryFragment : Fragment() {
                 "wash_30_double_line",
                 "wash_by_hand"
             )
-            "Bleaching" -> listOf(
+            LAUNDRY_CATEGORY_BLEACHING -> listOf(
                 "bleach_do_not",
                 "bleach_allow",
                 "bleach_non_chlorine"
             )
-            "Drying" -> listOf(
+            LAUNDRY_CATEGORY_DRYING -> listOf(
                 "dry_cleaning_do_not",
                 "dry_cleaning_allow",
                 "dry_cleaning_low_heat",
@@ -75,7 +79,7 @@ class LaundryCategoryFragment : Fragment() {
                 "natural_drying_one_line",
                 "dryer_do_not_tumble_dry"
             )
-            "Ironing" -> listOf(
+            LAUNDRY_CATEGORY_IRONING -> listOf(
                 "iron_do_not",
                 "iron_allowed",
                 "iron_low_setting",
