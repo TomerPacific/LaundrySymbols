@@ -8,7 +8,6 @@ import android.widget.BaseAdapter
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import com.tomerpacific.laundry.fragments.LaundrySymbolFragment
 
 class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
@@ -28,6 +27,7 @@ class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
             scaleType = ImageView.ScaleType.CENTER_INSIDE
             setImageResource(identifier!!)
             tag = data[position]
+            contentDescription = Utilities.getSymbolDescription(data[position])
             setOnClickListener {
                 val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(data[position], identifier)
                 manager.beginTransaction()?.
@@ -36,6 +36,8 @@ class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
             }
         }
 
+        Utilities.setTooltipForSymbol(imageButton)
+
         return gridItemView
     }
 
@@ -43,8 +45,8 @@ class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
         return data[p0]
     }
 
-    override fun getItemId(p0: Int): Long {
-        return data[p0].toLong()
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 
     override fun getCount(): Int {
