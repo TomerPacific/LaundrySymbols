@@ -21,7 +21,7 @@ import org.junit.Rule
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class LaundryCategoriesInstrumentedTest {
 
     @Rule
     @JvmField
