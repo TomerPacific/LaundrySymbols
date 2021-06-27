@@ -39,4 +39,22 @@ class LaundryCategoriesInstrumentedTest {
         onView(withId(R.id.washing_imageview)).perform(click())
         onView(withId(R.id.laundry_category_textview)).check(matches(withText(R.string.washing)))
     }
+
+    @Test
+    fun go_to_bleaching_symbols() {
+        onView(withId(R.id.bleaching_imageview)).perform(click())
+        onView(withId(R.id.laundry_category_textview)).check(matches(withText(R.string.bleaching)))
+    }
+
+    @Test
+    fun go_to_drying_symbols() {
+        onView(withId(R.id.drying_imageview)).perform(click())
+        onView(withId(R.id.laundry_category_textview)).check(matches(withText(R.string.drying)))
+    }
+
+    @Test
+    fun go_to_ironing_symbols() {
+        onView(withId(R.id.ironing_imageview)).perform(click())
+        onView(withId(R.id.laundry_category_textview)).check(matches(withText(R.string.ironing)))
+    }
 }
