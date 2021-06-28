@@ -64,13 +64,6 @@ class Utilities {
             TooltipCompat.setTooltipText(imageButton, symbolDescription)
         }
 
-        fun extractImagePath(imageName : String) : String {
-            val imageName : String = imageName.replace("res/drawable-xxhdpi-v4/", "")
-            val indexOfExtension : Int = imageName.indexOf(".")
-
-            return imageName.substring(0, indexOfExtension)
-        }
-
         fun getSymbolDescription(symbolName: String): String {
             return symbolDescriptionMap[symbolName]!!
         }
