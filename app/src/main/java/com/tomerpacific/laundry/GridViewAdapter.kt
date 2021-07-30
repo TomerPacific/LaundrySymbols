@@ -30,9 +30,10 @@ class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
             contentDescription = Utilities.getSymbolDescription(data[position])
             setOnClickListener {
                 val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(data[position], identifier)
-                manager.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+                manager.beginTransaction()
+                    .replace(R.id.fragment_container_view, fragment)
+                    .addToBackStack(null)
+                    .commit()
             }
         }
 
