@@ -40,7 +40,7 @@ jobs:
       - name: Deploy to Play Store
         uses: r0adkll/upload-google-play@v1
         with:
-          serviceAccountJson: ${{SERVICE_ACCOUNT}}
+          serviceAccountJson: ${{secrets.SERVICE_ACCOUNT}}
           packageName: com.tomerpacific.laundry
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: production
