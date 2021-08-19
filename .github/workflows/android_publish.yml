@@ -1,7 +1,9 @@
 name: Android Publish
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      -'release/**'
 
 jobs:
   build:
