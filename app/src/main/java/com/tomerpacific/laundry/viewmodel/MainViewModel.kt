@@ -7,14 +7,10 @@ import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.model.LaundryCategory
 
 class MainViewModel: ViewModel() {
-    private val laundryCategories : MutableLiveData<List<LaundryCategory>> by lazy {
-        MutableLiveData<List<LaundryCategory>>().also {
-            loadLaundryCategories()
-        }
-    }
+    private val laundryCategories = MutableLiveData<List<LaundryCategory>>()
 
-    fun getLaundryCategories(): LiveData<List<LaundryCategory>> {
-        return laundryCategories
+    init {
+        loadLaundryCategories()
     }
 
     private fun loadLaundryCategories() {
@@ -25,10 +21,13 @@ class MainViewModel: ViewModel() {
         val categoryList : List<LaundryCategory> = listOf(
             washingLaundryCategory, bleachingLaundryCategory, dryingLaundryCategory, ironingLaundryCategory
         )
-        laundryCategories.value = categoryList
+
+        laundryCategories.postValue(categoryList)
     }
 
-
+    fun getLaundryCategories() : LiveData<List<LaundryCategory>> {
+        return laundryCategories
+    }
 
 
 }
