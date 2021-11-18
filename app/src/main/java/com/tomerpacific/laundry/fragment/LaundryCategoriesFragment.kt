@@ -7,22 +7,33 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.tomerpacific.laundry.BANGERS_FONT
 import com.tomerpacific.laundry.BuildConfig
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.Utilities
+import com.tomerpacific.laundry.model.LaundryCategory
+import com.tomerpacific.laundry.viewmodel.MainViewModel
 
-class LaundryCategoriesFragment : Fragment() {
+class LaundryCategoriesFragment: Fragment() {
+
+    private val model: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        model.getLaundryCategories().observe(viewLifecycleOwner, Observer<List<LaundryCategory>> { laundryCategories ->
+
+        })
+
         val view: View = inflater.inflate(R.layout.fragment_laundry_categories, container, false)
+
         setFontAndVersion(view)
         setClickListenersForButtons(view)
-        return view;
+        return view
     }
 
     private fun setFontAndVersion(view: View) {
@@ -44,40 +55,40 @@ class LaundryCategoriesFragment : Fragment() {
     private fun setClickListenersForButtons(view: View) {
 
         view.findViewById<LinearLayout>(R.id.washing).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.washing)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+            val fragment: LaundryCategoryFragment =
+                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.washing)!!)
+            setOnClickListener {
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)
+                    ?.addToBackStack(null)?.commit()
             }
         }
 
         view.findViewById<LinearLayout>(R.id.bleaching).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.bleaching)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+            val fragment: LaundryCategoryFragment =
+                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.bleaching)!!)
+            setOnClickListener {
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)
+                    ?.addToBackStack(null)?.commit()
             }
         }
 
         view.findViewById<LinearLayout>(R.id.drying).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.drying)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+            val fragment: LaundryCategoryFragment =
+                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.drying)!!)
+            setOnClickListener {
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)
+                    ?.addToBackStack(null)?.commit()
             }
         }
 
         view.findViewById<LinearLayout>(R.id.ironing).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.ironing)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+            val fragment: LaundryCategoryFragment =
+                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.ironing)!!)
+            setOnClickListener {
+                fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_view, fragment)
+                    ?.addToBackStack(null)?.commit()
             }
         }
-
     }
+
 }

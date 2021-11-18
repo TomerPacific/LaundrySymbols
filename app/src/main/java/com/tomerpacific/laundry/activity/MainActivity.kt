@@ -13,7 +13,7 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
-import com.tomerpacific.laundry.fragment.LaundryCategoriesFragment2
+import com.tomerpacific.laundry.fragment.LaundryCategoriesFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val laundryCategoriesFragment : LaundryCategoriesFragment2 = LaundryCategoriesFragment2()
+        val laundryCategoriesFragment : LaundryCategoriesFragment = LaundryCategoriesFragment()
         supportFragmentManager.beginTransaction().add(R.id.fragment_container_view, laundryCategoriesFragment)
             .commit()
         checkForUpdate()
