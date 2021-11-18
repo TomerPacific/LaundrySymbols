@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -16,10 +13,7 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
-import com.tomerpacific.laundry.fragment.LaundryCategoriesFragment
 import com.tomerpacific.laundry.fragment.LaundryCategoriesFragment2
-import com.tomerpacific.laundry.model.LaundryCategory
-import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,10 +23,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val model: MainViewModel by viewModels()
-        model.getLaundryCategories().observe(this, Observer<List<LaundryCategory>> { laundryCategories ->
-
-        })
 
         val laundryCategoriesFragment : LaundryCategoriesFragment2 = LaundryCategoriesFragment2()
         supportFragmentManager.beginTransaction().add(R.id.fragment_container_view, laundryCategoriesFragment)
