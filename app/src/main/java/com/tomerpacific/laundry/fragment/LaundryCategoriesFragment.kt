@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -26,7 +27,7 @@ class LaundryCategoriesFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         model.getLaundryCategories().observe(viewLifecycleOwner, Observer<List<LaundryCategory>> { laundryCategories ->
-
+            setupLaundryCategories(laundryCategories)
         })
 
         val view: View = inflater.inflate(R.layout.fragment_laundry_categories, container, false)
@@ -34,6 +35,22 @@ class LaundryCategoriesFragment: Fragment() {
         setFontAndVersion(view)
         setClickListenersForButtons(view)
         return view
+    }
+
+    private fun setupLaundryCategories(laundryCategories: List<LaundryCategory>) {
+        laundryCategories.forEach { laundryCategory ->
+            val imageViewId = when (laundryCategory.name) {
+                "Washing" -> R.id.washing_imageview
+                "Bleaching" -> R.id.bleaching_imageview
+                "Drying" -> R.id.drying_imageview
+                "Ironing" -> R.id.ironing_imageview
+                else -> -1
+            }
+
+            requireActivity().findViewById<ImageView>(imageViewId).apply {
+                setImageResource(laundryCategory.drawableId)
+            }
+        }
     }
 
     private fun setFontAndVersion(view: View) {
