@@ -32,16 +32,15 @@ class LaundrySymbolFragment : Fragment() {
         val symbolDescription: TextView = view.findViewById(R.id.symbol_description)
         val symbolImage: ImageView = view.findViewById(R.id.symbol_image)
 
-        val symbolText : String? = this.arguments?.getString(LAUNDRY_SYMBOL_NAME_KEY)
-        val symbolDescriptionText: String = Utilities.getSymbolDescription(symbolText!!)
-        val symbolResourceIdentifier: Int? = this.arguments?.getInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY)
+        val symbolText : String = this.arguments?.getString(LAUNDRY_SYMBOL_NAME_KEY) ?: return view
+        val symbolDescriptionText: String = Utilities.getSymbolDescription(symbolText)
+        val symbolResourceIdentifier: Int = this.arguments?.getInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY) ?: return view
 
         symbolHeader.text = symbolDescriptionText
         symbolDescription.text =symbolDescriptionText
-        symbolImage.contentDescription = symbolDescriptionText
-
-        if (symbolResourceIdentifier != null) {
-            symbolImage.setImageResource(symbolResourceIdentifier)
+        symbolImage.apply {
+            contentDescription = symbolDescriptionText
+            setImageResource(symbolResourceIdentifier)
         }
 
         return view;
