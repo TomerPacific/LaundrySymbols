@@ -67,34 +67,42 @@ class LaundryCategoriesFragment: Fragment() {
     private fun setClickListenersForButtons() {
 
         requireActivity().findViewById<LinearLayout>(R.id.washing).apply {
-            val fragment: LaundryCategoryFragment =
-                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.washing)!!)
-            setOnClickListener {
-                model.handleClickOnLaundryCategory(requireActivity(), fragment)
+            requireActivity().resources.getString(R.string.washing).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
 
         requireActivity().findViewById<LinearLayout>(R.id.bleaching).apply {
-            val fragment: LaundryCategoryFragment =
-                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.bleaching)!!)
-            setOnClickListener {
-                model.handleClickOnLaundryCategory(requireActivity(), fragment)
+            requireActivity().resources.getString(R.string.bleaching).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
 
         requireActivity().findViewById<LinearLayout>(R.id.drying).apply {
-            val fragment: LaundryCategoryFragment =
-                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.drying)!!)
-            setOnClickListener {
-                model.handleClickOnLaundryCategory(requireActivity(), fragment)
+            requireActivity().resources.getString(R.string.drying).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
 
         requireActivity().findViewById<LinearLayout>(R.id.ironing).apply {
-            val fragment: LaundryCategoryFragment =
-                LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.ironing)!!)
-            setOnClickListener {
-                model.handleClickOnLaundryCategory(requireActivity(), fragment)
+            requireActivity().resources.getString(R.string.ironing).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
     }
