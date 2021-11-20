@@ -26,7 +26,7 @@ class LaundrySymbolFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val view : View = inflater.inflate(R.layout.symbol_description, container, false)
         val symbolHeader: TextView = view.findViewById(R.id.symbol_header)
         val symbolDescription: TextView = view.findViewById(R.id.symbol_description)
@@ -39,8 +39,10 @@ class LaundrySymbolFragment : Fragment() {
         symbolHeader.text = symbolDescriptionText
         symbolDescription.text =symbolDescriptionText
         symbolImage.contentDescription = symbolDescriptionText
-        symbolImage.setImageResource(symbolResourceIdentifier!!)
 
+        if (symbolResourceIdentifier != null) {
+            symbolImage.setImageResource(symbolResourceIdentifier)
+        }
 
         return view;
     }
