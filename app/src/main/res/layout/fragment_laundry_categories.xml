@@ -53,7 +53,6 @@
                     android:id="@+id/washing_imageview"
                     android:layout_height="100dp"
                     android:layout_width="100dp"
-                    android:src="@drawable/washable"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
                     />
@@ -63,7 +62,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/washing"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -84,17 +82,15 @@
                     android:id="@+id/bleaching_imageview"
                     android:layout_height="100dp"
                     android:layout_width="100dp"
-                    android:src="@drawable/bleach_allow"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
                     />
 
                 <TextView
-                    android:id="@+id/bleachin_textview"
+                    android:id="@+id/bleaching_textview"
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/bleaching"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -126,7 +122,6 @@
                     android:id="@+id/drying_imageview"
                     android:layout_height="100dp"
                     android:layout_width="100dp"
-                    android:src="@drawable/dry_cleaning_allow"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
                     />
@@ -136,7 +131,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/drying"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -157,7 +151,6 @@
                     android:id="@+id/ironing_imageview"
                     android:layout_height="100dp"
                     android:layout_width="100dp"
-                    android:src="@drawable/iron_allowed"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
                     />
@@ -167,7 +160,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/ironing"
                     android:textSize="16sp" />
             </LinearLayout>
 

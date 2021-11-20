@@ -9,27 +9,24 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.fragment.app.FragmentActivity
 import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
+import com.tomerpacific.laundry.model.LaundrySymbol
 
-class GridViewAdapter(private var data: List<String>) : BaseAdapter() {
+class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val inflater: LayoutInflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val gridItemView = inflater.inflate(R.layout.grid_view_item, null)
         val imageButton: ImageButton = gridItemView.findViewById(R.id.image_button)
-        val identifier: Int? = parent.context?.resources?.getIdentifier(
-            data[position],
-            "drawable",
-            parent.context?.packageName)
 
         val manager = (gridItemView.context as FragmentActivity).supportFragmentManager
-
+        val laundrySymbol : LaundrySymbol = data[position]
         imageButton.apply {
             scaleType = ImageView.ScaleType.CENTER_INSIDE
-            setImageResource(identifier!!)
+            setImageResource(laundrySymbol.drawableId)
             tag = data[position]
-            contentDescription = Utilities.getSymbolDescription(data[position])
+            contentDescription = laundrySymbol.description
             setOnClickListener {
-                val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(data[position], identifier)
+                val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(laundrySymbol)
                 manager.beginTransaction()
                     .replace(R.id.fragment_container_view, fragment)
                     .addToBackStack(null)

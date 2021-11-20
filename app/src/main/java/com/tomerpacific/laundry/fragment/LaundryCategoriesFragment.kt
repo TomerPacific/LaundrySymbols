@@ -4,36 +4,59 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.tomerpacific.laundry.BANGERS_FONT
 import com.tomerpacific.laundry.BuildConfig
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.Utilities
+import com.tomerpacific.laundry.model.LaundryCategory
+import com.tomerpacific.laundry.viewmodel.MainViewModel
 
-class LaundryCategoriesFragment : Fragment() {
+class LaundryCategoriesFragment: Fragment() {
+
+    private val model: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_laundry_categories, container, false)
-        setFontAndVersion(view)
-        setClickListenersForButtons(view)
-        return view;
+    ): View {
+        model.getLaundryCategories().observe(viewLifecycleOwner, Observer<List<LaundryCategory>> { laundryCategories ->
+            setupLaundryCategories(laundryCategories)
+            setFontAndVersion()
+            setClickListenersForButtons()
+        })
+
+        return inflater.inflate(R.layout.fragment_laundry_categories, container, false)
     }
 
-    private fun setFontAndVersion(view: View) {
+    private fun setupLaundryCategories(laundryCategories: List<LaundryCategory>) {
+        laundryCategories.forEach { laundryCategory ->
+            val imageViewId = Utilities.getLaundryCategoryDrawableId(laundryCategory.name)
+            requireActivity().findViewById<ImageView>(imageViewId).apply {
+                setImageResource(laundryCategory.drawableId)
+            }
+
+            val textViewId: Int = Utilities.getLaundryCategoryTextviewId(laundryCategory.name)
+            requireActivity().findViewById<TextView>(textViewId).apply {
+                text = laundryCategory.name
+            }
+        }
+    }
+
+    private fun setFontAndVersion() {
         Utilities.setFont(
-            view,
             requireActivity(),
             BANGERS_FONT,
             R.id.textView
         )
 
-        view.findViewById<TextView>(R.id.app_version).apply {
+        requireActivity().findViewById<TextView>(R.id.app_version).apply {
             this?.text = getString(
                 R.string.app_version,
                 BuildConfig.VERSION_NAME
@@ -41,43 +64,47 @@ class LaundryCategoriesFragment : Fragment() {
         }
     }
 
-    private fun setClickListenersForButtons(view: View) {
+    private fun setClickListenersForButtons() {
 
-        view.findViewById<LinearLayout>(R.id.washing).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.washing)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+        requireActivity().findViewById<LinearLayout>(R.id.washing).apply {
+            requireActivity().resources.getString(R.string.washing).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
 
-        view.findViewById<LinearLayout>(R.id.bleaching).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.bleaching)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+        requireActivity().findViewById<LinearLayout>(R.id.bleaching).apply {
+            requireActivity().resources.getString(R.string.bleaching).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
 
-        view.findViewById<LinearLayout>(R.id.drying).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.drying)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+        requireActivity().findViewById<LinearLayout>(R.id.drying).apply {
+            requireActivity().resources.getString(R.string.drying).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
 
-        view.findViewById<LinearLayout>(R.id.ironing).apply {
-            val fragment: LaundryCategoryFragment = LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.ironing)!!)
-            setOnClickListener{
-                fragmentManager?.beginTransaction()?.
-                replace(R.id.fragment_container_view, fragment)?.
-                addToBackStack(null)?.commit()
+        requireActivity().findViewById<LinearLayout>(R.id.ironing).apply {
+            requireActivity().resources.getString(R.string.ironing).let { laundryCategoryName ->
+                val fragment: LaundryCategoryFragment =
+                    LaundryCategoryFragment.newInstance(laundryCategoryName)
+                setOnClickListener {
+                    model.handleClickOnLaundryCategory(requireActivity(), fragment)
+                }
             }
         }
-
     }
+
 }
