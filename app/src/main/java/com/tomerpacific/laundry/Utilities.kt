@@ -47,9 +47,9 @@ class Utilities {
         )
 
 
-        fun setFont(view: View?, activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
+        fun setFont(activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
 
-            view?.findViewById<TextView>(viewIdToSetFont).apply {
+            activity.findViewById<TextView>(viewIdToSetFont).apply {
                 val assetManager: AssetManager = activity.assets
                 val typeFace: Typeface = Typeface.createFromAsset(
                     assetManager,
