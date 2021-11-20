@@ -28,13 +28,11 @@ class LaundryCategoriesFragment: Fragment() {
     ): View {
         model.getLaundryCategories().observe(viewLifecycleOwner, Observer<List<LaundryCategory>> { laundryCategories ->
             setupLaundryCategories(laundryCategories)
+            setFontAndVersion()
+            setClickListenersForButtons()
         })
 
-        val view: View = inflater.inflate(R.layout.fragment_laundry_categories, container, false)
-
-        setFontAndVersion(view)
-        setClickListenersForButtons(view)
-        return view
+        return inflater.inflate(R.layout.fragment_laundry_categories, container, false)
     }
 
     private fun setupLaundryCategories(laundryCategories: List<LaundryCategory>) {
@@ -51,15 +49,14 @@ class LaundryCategoriesFragment: Fragment() {
         }
     }
 
-    private fun setFontAndVersion(view: View) {
+    private fun setFontAndVersion() {
         Utilities.setFont(
-            view,
             requireActivity(),
             BANGERS_FONT,
             R.id.textView
         )
 
-        view.findViewById<TextView>(R.id.app_version).apply {
+        requireActivity().findViewById<TextView>(R.id.app_version).apply {
             this?.text = getString(
                 R.string.app_version,
                 BuildConfig.VERSION_NAME
@@ -67,9 +64,9 @@ class LaundryCategoriesFragment: Fragment() {
         }
     }
 
-    private fun setClickListenersForButtons(view: View) {
+    private fun setClickListenersForButtons() {
 
-        view.findViewById<LinearLayout>(R.id.washing).apply {
+        requireActivity().findViewById<LinearLayout>(R.id.washing).apply {
             val fragment: LaundryCategoryFragment =
                 LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.washing)!!)
             setOnClickListener {
@@ -77,7 +74,7 @@ class LaundryCategoriesFragment: Fragment() {
             }
         }
 
-        view.findViewById<LinearLayout>(R.id.bleaching).apply {
+        requireActivity().findViewById<LinearLayout>(R.id.bleaching).apply {
             val fragment: LaundryCategoryFragment =
                 LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.bleaching)!!)
             setOnClickListener {
@@ -85,7 +82,7 @@ class LaundryCategoriesFragment: Fragment() {
             }
         }
 
-        view.findViewById<LinearLayout>(R.id.drying).apply {
+        requireActivity().findViewById<LinearLayout>(R.id.drying).apply {
             val fragment: LaundryCategoryFragment =
                 LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.drying)!!)
             setOnClickListener {
@@ -93,7 +90,7 @@ class LaundryCategoriesFragment: Fragment() {
             }
         }
 
-        view.findViewById<LinearLayout>(R.id.ironing).apply {
+        requireActivity().findViewById<LinearLayout>(R.id.ironing).apply {
             val fragment: LaundryCategoryFragment =
                 LaundryCategoryFragment.newInstance(activity?.resources?.getString(R.string.ironing)!!)
             setOnClickListener {
