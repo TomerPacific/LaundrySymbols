@@ -78,6 +78,16 @@ class Utilities {
             }
         }
 
+        fun getLaundryCategoryTextviewId(laundryCategoryName: String) : Int {
+            return when (laundryCategoryName) {
+                LAUNDRY_CATEGORY_WASHING -> R.id.washing_textview
+                LAUNDRY_CATEGORY_BLEACHING -> R.id.bleaching_textview
+                LAUNDRY_CATEGORY_DRYING -> R.id.drying_textview
+                LAUNDRY_CATEGORY_IRONING -> R.id.ironing_textview
+                else -> -1
+            }
+        }
+
     }
 
 }
