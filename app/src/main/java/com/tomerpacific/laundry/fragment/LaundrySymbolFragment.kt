@@ -8,15 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.tomerpacific.laundry.*
+import com.tomerpacific.laundry.model.LaundrySymbol
 
 class LaundrySymbolFragment : Fragment() {
 
     companion object {
-        fun newInstance(symbolName: String, resourceIdentifier: Int) : LaundrySymbolFragment {
+        fun newInstance(laundrySymbol: LaundrySymbol) : LaundrySymbolFragment {
             val fragment = LaundrySymbolFragment()
             val args = Bundle()
-            args.putString(LAUNDRY_SYMBOL_NAME_KEY, symbolName)
-            args.putInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY, resourceIdentifier)
+            args.putString(LAUNDRY_SYMBOL_NAME_KEY, laundrySymbol.name)
+            args.putInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY, laundrySymbol.drawableId)
             fragment.arguments = args
             return fragment
         }
@@ -32,8 +33,7 @@ class LaundrySymbolFragment : Fragment() {
         val symbolDescription: TextView = view.findViewById(R.id.symbol_description)
         val symbolImage: ImageView = view.findViewById(R.id.symbol_image)
 
-        val symbolText : String = this.arguments?.getString(LAUNDRY_SYMBOL_NAME_KEY) ?: return view
-        val symbolDescriptionText: String = Utilities.getSymbolDescription(symbolText)
+        val symbolDescriptionText: String = this.arguments?.getString(LAUNDRY_SYMBOL_NAME_KEY) ?: return view
         val symbolResourceIdentifier: Int = this.arguments?.getInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY) ?: return view
 
         symbolHeader.text = symbolDescriptionText
