@@ -68,6 +68,16 @@ class Utilities {
             return symbolDescriptionMap[symbolName]!!
         }
 
+        fun getLaundryCategoryDrawableId(laundryCategoryName: String) : Int {
+            return when (laundryCategoryName) {
+                "Washing" -> R.id.washing_imageview
+                "Bleaching" -> R.id.bleaching_imageview
+                "Drying" -> R.id.drying_imageview
+                "Ironing" -> R.id.ironing_imageview
+                else -> -1
+            }
+        }
+
     }
 
 }

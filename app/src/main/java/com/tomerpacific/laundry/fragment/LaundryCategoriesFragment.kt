@@ -39,14 +39,7 @@ class LaundryCategoriesFragment: Fragment() {
 
     private fun setupLaundryCategories(laundryCategories: List<LaundryCategory>) {
         laundryCategories.forEach { laundryCategory ->
-            val imageViewId = when (laundryCategory.name) {
-                "Washing" -> R.id.washing_imageview
-                "Bleaching" -> R.id.bleaching_imageview
-                "Drying" -> R.id.drying_imageview
-                "Ironing" -> R.id.ironing_imageview
-                else -> -1
-            }
-
+            val imageViewId = Utilities.getLaundryCategoryDrawableId(laundryCategory.name)
             requireActivity().findViewById<ImageView>(imageViewId).apply {
                 setImageResource(laundryCategory.drawableId)
             }
