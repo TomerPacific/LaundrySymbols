@@ -62,7 +62,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/washing"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -88,11 +87,10 @@
                     />
 
                 <TextView
-                    android:id="@+id/bleachin_textview"
+                    android:id="@+id/bleaching_textview"
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/bleaching"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -133,7 +131,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/drying"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -163,7 +160,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:text="@string/ironing"
                     android:textSize="16sp" />
             </LinearLayout>
 

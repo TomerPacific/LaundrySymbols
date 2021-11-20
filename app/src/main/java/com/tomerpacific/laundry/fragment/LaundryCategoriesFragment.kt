@@ -43,6 +43,11 @@ class LaundryCategoriesFragment: Fragment() {
             requireActivity().findViewById<ImageView>(imageViewId).apply {
                 setImageResource(laundryCategory.drawableId)
             }
+
+            val textViewId: Int = Utilities.getLaundryCategoryTextviewId(laundryCategory.name)
+            requireActivity().findViewById<TextView>(textViewId).apply {
+                text = laundryCategory.name
+            }
         }
     }
 
