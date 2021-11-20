@@ -33,7 +33,6 @@ class LaundryCategoryFragment : Fragment() {
         laundryCategoryTextView.text = laundryCategory
 
         Utilities.setFont(
-            view,
             requireActivity(),
             BANGERS_FONT,
             R.id.laundry_category_textview
