@@ -70,10 +70,10 @@ class Utilities {
 
         fun getLaundryCategoryDrawableId(laundryCategoryName: String) : Int {
             return when (laundryCategoryName) {
-                "Washing" -> R.id.washing_imageview
-                "Bleaching" -> R.id.bleaching_imageview
-                "Drying" -> R.id.drying_imageview
-                "Ironing" -> R.id.ironing_imageview
+                LAUNDRY_CATEGORY_WASHING -> R.id.washing_imageview
+                LAUNDRY_CATEGORY_BLEACHING -> R.id.bleaching_imageview
+                LAUNDRY_CATEGORY_DRYING -> R.id.drying_imageview
+                LAUNDRY_CATEGORY_IRONING -> R.id.ironing_imageview
                 else -> -1
             }
         }
