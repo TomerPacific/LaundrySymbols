@@ -3,7 +3,7 @@ name: Android Publish
 on:
   push:
     branches:
-      -'release/**'
+      - 'release/**'
 
 jobs:
   build:
