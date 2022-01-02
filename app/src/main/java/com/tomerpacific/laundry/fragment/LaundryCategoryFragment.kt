@@ -49,7 +49,7 @@ class LaundryCategoryFragment : Fragment() {
     }
 
     private fun setupGridView(gridLayout : GridView, laundryCategory: String) {
-        
+
         val laundryCategoryButtons = model.getItemsForLaundryCategory(laundryCategory)
         gridViewAdapter = GridViewAdapter(laundryCategoryButtons)
 
