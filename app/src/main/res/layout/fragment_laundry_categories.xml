@@ -165,7 +165,7 @@
 
         </LinearLayout>
 
-    </LinearLayout>b
+    </LinearLayout>
 
     <TextView
         android:id="@+id/app_version"
