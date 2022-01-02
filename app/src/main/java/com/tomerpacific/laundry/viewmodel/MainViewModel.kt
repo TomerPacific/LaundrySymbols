@@ -38,6 +38,13 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
+    fun getAmountOfColumnsForGridViewPerLaundryCategory(laundryCategory: String): Int {
+        return when(laundryCategory) {
+            LAUNDRY_CATEGORY_BLEACHING -> 3
+            else -> 4
+        }
+    }
+
     fun getItemsForLaundryCategory(laundryCategory: String) : List<LaundrySymbol> {
 
         return when (laundryCategory) {
