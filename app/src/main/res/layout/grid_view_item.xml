@@ -9,7 +9,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:adjustViewBounds="true"
-        android:contentDescription=""
+        android:contentDescription="Laundry Symbol Item"
         android:scaleType="centerInside">
 
     </ImageButton>
