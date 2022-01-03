@@ -31,7 +31,7 @@ class LaundryCategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val view : View = inflater.inflate(R.layout.fragment_laundry_category, container, false)
-        val laundryCategoryTextView : TextView = view.findViewById<TextView>(R.id.laundry_category_textview)
+        val laundryCategoryTextView : TextView = view.findViewById(R.id.laundry_category_textview)
         val laundryCategory : String = this.arguments?.getString(LAUNDRY_CATEGORY_KEY) ?: return view
 
         laundryCategoryTextView.text = laundryCategory

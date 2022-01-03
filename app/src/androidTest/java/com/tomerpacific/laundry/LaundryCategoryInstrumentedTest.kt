@@ -24,9 +24,7 @@ class LaundryCategoryInstrumentedTest {
     fun go_to_hand_washing_symbol() {
         onView(withId(R.id.washing_imageview)).perform(ViewActions.click())
         onView(withId(R.id.laundry_category_textview)).check(
-            ViewAssertions.matches(
-                withText(R.string.washing)
-            )
+            matches(withText(R.string.washing))
         )
         onView(withContentDescription("Hand Wash")).perform(ViewActions.click())
         onView(withId(R.id.symbol_header)).check(matches(withText("Hand Wash")))
@@ -36,9 +34,7 @@ class LaundryCategoryInstrumentedTest {
     fun go_to_bleaching_allowed() {
         onView(withId(R.id.bleaching_imageview)).perform(ViewActions.click())
         onView(withId(R.id.laundry_category_textview)).check(
-            ViewAssertions.matches(
-                withText(R.string.bleaching)
-            )
+            matches(withText(R.string.bleaching))
         )
         onView(withContentDescription("Bleaching Allowed")).perform(ViewActions.click())
         onView(withId(R.id.symbol_header)).check(matches(withText("Bleaching Allowed")))
@@ -48,9 +44,7 @@ class LaundryCategoryInstrumentedTest {
     fun go_to_hang_to_dry() {
         onView(withId(R.id.drying_imageview)).perform(ViewActions.click())
         onView(withId(R.id.laundry_category_textview)).check(
-            ViewAssertions.matches(
-                withText(R.string.drying)
-            )
+            matches(withText(R.string.drying))
         )
         onView(withContentDescription("Hang To Dry")).perform(ViewActions.click())
         onView(withId(R.id.symbol_header)).check(matches(withText("Hang To Dry")))
@@ -60,9 +54,7 @@ class LaundryCategoryInstrumentedTest {
     fun go_to_iron_medium() {
         onView(withId(R.id.ironing_imageview)).perform(ViewActions.click())
         onView(withId(R.id.laundry_category_textview)).check(
-            ViewAssertions.matches(
-                withText(R.string.ironing)
-            )
+            matches(withText(R.string.ironing))
         )
         onView(withContentDescription("Iron Medium (Max 150° Celsius)")).perform(ViewActions.click())
         onView(withId(R.id.symbol_header)).check(matches(withText("Iron Medium (Max 150° Celsius)")))
