@@ -7,4 +7,9 @@
     <string name="ironing">Ironing</string>
     <string name="symbol_image_description">Laundry Symbol Image</string>
     <string name="app_version">v.%1$s</string>
+    <string name="washing_symbol">Washing Symbol</string>
+    <string name="bleaching_symbol">Bleaching Symbol</string>
+    <string name="drying_symbol">Drying Symbol</string>
+    <string name="ironing_symbol">Ironing Symbol</string>
+    <string name="laundry_symbol_item">Laundry Symbol Item</string>
 </resources>

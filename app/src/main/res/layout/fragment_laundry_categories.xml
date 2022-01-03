@@ -55,7 +55,7 @@
                     android:layout_width="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
-                    android:contentDescription="Washing Symbol"
+                    android:contentDescription="@string/washing_symbol"
                     />
 
                 <TextView
@@ -85,7 +85,7 @@
                     android:layout_width="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
-                    android:contentDescription="Bleaching Symbol"
+                    android:contentDescription="@string/bleaching_symbol"
                     />
 
                 <TextView
@@ -126,7 +126,7 @@
                     android:layout_width="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
-                    android:contentDescription="Drying Symbol"
+                    android:contentDescription="@string/drying_symbol"
                     />
 
                 <TextView
@@ -156,7 +156,7 @@
                     android:layout_width="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
-                    android:contentDescription="Ironing Symbol"
+                    android:contentDescription="@string/ironing_symbol"
                     />
 
                 <TextView
