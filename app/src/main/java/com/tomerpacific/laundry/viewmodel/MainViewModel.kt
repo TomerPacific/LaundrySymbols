@@ -17,10 +17,10 @@ class MainViewModel: ViewModel() {
     }
 
     private fun loadLaundryCategories() {
-        val washingLaundryCategory : LaundryCategory = LaundryCategory("Washing", R.drawable.washable)
-        val bleachingLaundryCategory : LaundryCategory = LaundryCategory("Bleaching", R.drawable.bleach_allow)
-        val dryingLaundryCategory : LaundryCategory = LaundryCategory("Drying", R.drawable.dry_cleaning_allow)
-        val ironingLaundryCategory : LaundryCategory = LaundryCategory("Ironing", R.drawable.iron_allowed)
+        val washingLaundryCategory = LaundryCategory("Washing", R.drawable.washable)
+        val bleachingLaundryCategory = LaundryCategory("Bleaching", R.drawable.bleach_allow)
+        val dryingLaundryCategory = LaundryCategory("Drying", R.drawable.dry_cleaning_allow)
+        val ironingLaundryCategory = LaundryCategory("Ironing", R.drawable.iron_allowed)
         val categoryList : List<LaundryCategory> = listOf(
             washingLaundryCategory, bleachingLaundryCategory, dryingLaundryCategory, ironingLaundryCategory
         )
@@ -38,6 +38,13 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
+    fun getAmountOfColumnsForGridViewPerLaundryCategory(laundryCategory: String): Int {
+        return when(laundryCategory) {
+            LAUNDRY_CATEGORY_BLEACHING -> 3
+            else -> 4
+        }
+    }
+
     fun getItemsForLaundryCategory(laundryCategory: String) : List<LaundrySymbol> {
 
         return when (laundryCategory) {
@@ -50,7 +57,7 @@ class MainViewModel: ViewModel() {
     }
 
     private fun createWashingSymbols() : List<LaundrySymbol> {
-        return listOf<LaundrySymbol>(
+        return listOf(
             LaundrySymbol("Do Not Wash", "Do Not Wash", R.drawable.wash_do_not),
             LaundrySymbol("Regular Washing Allowed", "Regular Washing Allowed", R.drawable.washable),
             LaundrySymbol("Washing Cold", "Washing Cold", R.drawable.wash_30_degrees),
@@ -62,7 +69,7 @@ class MainViewModel: ViewModel() {
     }
 
     private fun createBleachingSymbols() : List<LaundrySymbol> {
-        return listOf<LaundrySymbol>(
+        return listOf(
             LaundrySymbol("Do Not Bleach", "Do Not Bleach", R.drawable.bleach_do_not),
             LaundrySymbol("Bleaching Allowed", "Bleaching Allowed", R.drawable.bleach_allow),
             LaundrySymbol("Bleach Non Chlorine", "Bleach Non Chlorine", R.drawable.bleach_non_chlorine)
@@ -70,7 +77,7 @@ class MainViewModel: ViewModel() {
     }
 
     private fun createDryingSymbols(): List<LaundrySymbol> {
-        return listOf<LaundrySymbol>(
+        return listOf(
             LaundrySymbol("Do Not Dry Clean", "Do Not Dry Clean", R.drawable.dry_cleaning_do_not),
             LaundrySymbol("Dry Cleaning Allowed", "Dry Cleaning Allowed", R.drawable.dry_cleaning_allow),
             LaundrySymbol("Dry Cleaning Low Heat", "Dry Cleaning Low Heat", R.drawable.dry_cleaning_low_heat),
@@ -87,7 +94,7 @@ class MainViewModel: ViewModel() {
     }
 
     private fun createIroningSymbols(): List<LaundrySymbol> {
-        return listOf<LaundrySymbol>(
+        return listOf(
             LaundrySymbol("Do Not Iron", "Do Not Iron", R.drawable.iron_do_not),
             LaundrySymbol("Ironing Allowed", "Ironing Allowed", R.drawable.iron_allowed),
             LaundrySymbol("Iron Low (Max 110\u00B0 Celsius)", "Iron Low (Max 110\u00B0 Celsius)", R.drawable.iron_low_setting),

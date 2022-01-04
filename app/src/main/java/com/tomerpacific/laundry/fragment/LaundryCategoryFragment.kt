@@ -31,7 +31,7 @@ class LaundryCategoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val view : View = inflater.inflate(R.layout.fragment_laundry_category, container, false)
-        val laundryCategoryTextView : TextView = view.findViewById<TextView>(R.id.laundry_category_textview)
+        val laundryCategoryTextView : TextView = view.findViewById(R.id.laundry_category_textview)
         val laundryCategory : String = this.arguments?.getString(LAUNDRY_CATEGORY_KEY) ?: return view
 
         laundryCategoryTextView.text = laundryCategory
@@ -43,13 +43,19 @@ class LaundryCategoryFragment : Fragment() {
         )
 
         val gridLayout: GridView = view.findViewById(R.id.grid_layout)
+        setupGridView(gridLayout, laundryCategory)
 
-        if (laundryCategory == LAUNDRY_CATEGORY_BLEACHING) {
-            gridLayout.numColumns = 3
-        }
+        return view
+    }
+
+    private fun setupGridView(gridLayout : GridView, laundryCategory: String) {
+
         val laundryCategoryButtons = model.getItemsForLaundryCategory(laundryCategory)
         gridViewAdapter = GridViewAdapter(laundryCategoryButtons)
-        gridLayout.adapter = gridViewAdapter
-        return view
+
+        gridLayout.apply {
+            numColumns = model.getAmountOfColumnsForGridViewPerLaundryCategory(laundryCategory)
+            adapter = gridViewAdapter
+        }
     }
 }

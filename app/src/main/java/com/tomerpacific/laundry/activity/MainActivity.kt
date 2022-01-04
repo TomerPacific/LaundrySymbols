@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val laundryCategoriesFragment : LaundryCategoriesFragment = LaundryCategoriesFragment()
+        val laundryCategoriesFragment = LaundryCategoriesFragment()
         supportFragmentManager.beginTransaction().add(R.id.fragment_container_view, laundryCategoriesFragment)
             .commit()
         checkForUpdate()

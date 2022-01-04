@@ -43,7 +43,7 @@ class LaundrySymbolFragment : Fragment() {
             setImageResource(symbolResourceIdentifier)
         }
 
-        return view;
+        return view
     }
 
 }
