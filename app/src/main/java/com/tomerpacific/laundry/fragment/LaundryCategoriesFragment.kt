@@ -50,11 +50,12 @@ class LaundryCategoriesFragment: Fragment() {
     }
 
     private fun setFontAndVersion() {
-        Utilities.setFont(
-            requireActivity(),
-            BANGERS_FONT,
-            R.id.textView
-        )
+        activity?.let {
+            Utilities.setFont(
+                it.findViewById(R.id.textView),
+                BANGERS_FONT,
+            )
+        }
 
         requireActivity().findViewById<TextView>(R.id.app_version).apply {
             this?.text = getString(

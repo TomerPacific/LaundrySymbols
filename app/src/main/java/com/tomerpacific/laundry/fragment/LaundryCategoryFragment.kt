@@ -37,9 +37,8 @@ class LaundryCategoryFragment : Fragment() {
         laundryCategoryTextView.text = laundryCategory
 
         Utilities.setFont(
-            requireActivity(),
-            BANGERS_FONT,
-            R.id.laundry_category_textview
+            view.findViewById(R.id.laundry_category_textview),
+            BANGERS_FONT
         )
 
         val gridLayout: GridView = view.findViewById(R.id.grid_layout)
