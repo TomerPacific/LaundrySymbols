@@ -1,27 +1,17 @@
 package com.tomerpacific.laundry
 
-import android.app.Activity
-import android.content.res.AssetManager
 import android.graphics.Typeface
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.TooltipCompat
-import java.util.*
 
 class Utilities {
 
     companion object {
 
-        fun setFont(activity: Activity, fontToSet: String, viewIdToSetFont: Int) {
-
-            activity.findViewById<TextView>(viewIdToSetFont).apply {
-                val assetManager: AssetManager = activity.assets
-                val typeFace: Typeface = Typeface.createFromAsset(
-                    assetManager,
-                    String.format(Locale.US, "fonts/%s", fontToSet)
-                )
-                this?.typeface = typeFace
-            }
+        fun setFont(view: TextView, fontToSet: String) {
+            val typeface = Typeface.createFromAsset(view.context.assets,"fonts/${fontToSet}");
+            view.typeface = typeface
         }
 
         fun setTooltipForSymbol(imageButton: ImageButton) {
