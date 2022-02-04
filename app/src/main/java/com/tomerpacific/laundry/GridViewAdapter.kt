@@ -1,6 +1,5 @@
 package com.tomerpacific.laundry
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,33 +13,21 @@ import com.tomerpacific.laundry.model.LaundrySymbol
 class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val inflater: LayoutInflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val gridItemView = inflater.inflate(R.layout.grid_view_item, null)
-        val imageButton: ImageButton = gridItemView.findViewById(R.id.image_button)
-
-        val manager = (gridItemView.context as FragmentActivity).supportFragmentManager
         val laundrySymbol : LaundrySymbol = data[position]
-        imageButton.apply {
-            scaleType = ImageView.ScaleType.CENTER_INSIDE
-            setImageResource(laundrySymbol.drawableId)
-            tag = data[position]
-            contentDescription = laundrySymbol.description
-            setOnClickListener {
-                val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(laundrySymbol)
-                manager.beginTransaction()
-                    .replace(R.id.fragment_container_view, fragment)
-                    .addToBackStack(null)
-                    .commit()
-            }
+        var convertViewMutable = convertView
+        if (convertViewMutable == null) {
+            val layoutInflater = LayoutInflater.from(parent?.context)
+            convertViewMutable = layoutInflater.inflate(R.layout.grid_view_item, parent, false)
+            val holder = LaundrySymbolHolder(convertViewMutable.findViewById(R.id.image_button), laundrySymbol)
+            convertViewMutable.tag = holder
+            return convertViewMutable
         }
 
-        Utilities.setTooltipForSymbol(imageButton)
-
-        return gridItemView
+        return convertViewMutable
     }
 
-    override fun getItem(p0: Int): Any {
-        return data[p0]
+    override fun getItem(position: Int): Any {
+        return data[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -49,6 +36,29 @@ class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return data.size
+    }
+
+    private class LaundrySymbolHolder(laundryImageButton: ImageButton, laundrySymbol: LaundrySymbol) {
+        var imageButton: ImageButton = laundryImageButton
+
+        init {
+            imageButton.apply {
+                val manager = (this.context as FragmentActivity).supportFragmentManager
+                scaleType = ImageView.ScaleType.CENTER_INSIDE
+                setImageResource(laundrySymbol.drawableId)
+                tag = laundrySymbol
+                contentDescription = laundrySymbol.description
+                setOnClickListener {
+                    val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(laundrySymbol)
+                    manager.beginTransaction()
+                        .replace(R.id.fragment_container_view, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+            }
+
+            Utilities.setTooltipForSymbol(imageButton)
+        }
     }
 
 }
