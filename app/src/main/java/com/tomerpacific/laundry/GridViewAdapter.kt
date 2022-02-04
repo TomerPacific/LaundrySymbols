@@ -18,34 +18,16 @@ class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
         if (convertViewMutable == null) {
             val layoutInflater = LayoutInflater.from(parent?.context)
             convertViewMutable = layoutInflater.inflate(R.layout.grid_view_item, parent, false)
-            val holder = LaundrySymbolHolder(convertViewMutable.findViewById(R.id.image_button))
+            val holder = LaundrySymbolHolder(convertViewMutable.findViewById(R.id.image_button), laundrySymbol)
             convertViewMutable.tag = holder
+            return convertViewMutable
         }
 
-        val holder = convertViewMutable?.tag as LaundrySymbolHolder
-
-        holder.imageButton.apply {
-            val manager = (convertViewMutable.context as FragmentActivity).supportFragmentManager
-            scaleType = ImageView.ScaleType.CENTER_INSIDE
-            setImageResource(laundrySymbol.drawableId)
-            tag = data[position]
-            contentDescription = laundrySymbol.description
-            setOnClickListener {
-                val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(laundrySymbol)
-                manager.beginTransaction()
-                    .replace(R.id.fragment_container_view, fragment)
-                    .addToBackStack(null)
-                    .commit()
-            }
-        }
-
-        Utilities.setTooltipForSymbol(holder.imageButton)
-
-       return convertViewMutable
+        return convertViewMutable
     }
 
-    override fun getItem(p0: Int): Any {
-        return data[p0]
+    override fun getItem(position: Int): Any {
+        return data[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -56,8 +38,27 @@ class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
         return data.size
     }
 
-    private class LaundrySymbolHolder(laundryImageButton: ImageButton) {
+    private class LaundrySymbolHolder(laundryImageButton: ImageButton, laundrySymbol: LaundrySymbol) {
         var imageButton: ImageButton = laundryImageButton
+
+        init {
+            imageButton.apply {
+                val manager = (this.context as FragmentActivity).supportFragmentManager
+                scaleType = ImageView.ScaleType.CENTER_INSIDE
+                setImageResource(laundrySymbol.drawableId)
+                tag = laundrySymbol
+                contentDescription = laundrySymbol.description
+                setOnClickListener {
+                    val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(laundrySymbol)
+                    manager.beginTransaction()
+                        .replace(R.id.fragment_container_view, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+            }
+
+            Utilities.setTooltipForSymbol(imageButton)
+        }
     }
 
 }
