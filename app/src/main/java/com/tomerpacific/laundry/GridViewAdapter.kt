@@ -1,6 +1,5 @@
 package com.tomerpacific.laundry
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +13,19 @@ import com.tomerpacific.laundry.model.LaundrySymbol
 class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val inflater: LayoutInflater = parent?.context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val gridItemView = inflater.inflate(R.layout.grid_view_item, null)
-        val imageButton: ImageButton = gridItemView.findViewById(R.id.image_button)
-
-        val manager = (gridItemView.context as FragmentActivity).supportFragmentManager
         val laundrySymbol : LaundrySymbol = data[position]
-        imageButton.apply {
+        var convertViewMutable = convertView
+        if (convertViewMutable == null) {
+            val layoutInflater = LayoutInflater.from(parent?.context)
+            convertViewMutable = layoutInflater.inflate(R.layout.grid_view_item, parent, false)
+            val holder = LaundrySymbolHolder(convertViewMutable.findViewById(R.id.image_button))
+            convertViewMutable.tag = holder
+        }
+
+        val holder = convertViewMutable?.tag as LaundrySymbolHolder
+
+        holder.imageButton.apply {
+            val manager = (convertViewMutable.context as FragmentActivity).supportFragmentManager
             scaleType = ImageView.ScaleType.CENTER_INSIDE
             setImageResource(laundrySymbol.drawableId)
             tag = data[position]
@@ -34,9 +39,9 @@ class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
             }
         }
 
-        Utilities.setTooltipForSymbol(imageButton)
+        Utilities.setTooltipForSymbol(holder.imageButton)
 
-        return gridItemView
+       return convertViewMutable
     }
 
     override fun getItem(p0: Int): Any {
@@ -49,6 +54,10 @@ class GridViewAdapter(private var data: List<LaundrySymbol>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return data.size
+    }
+
+    private class LaundrySymbolHolder(laundryImageButton: ImageButton) {
+        var imageButton: ImageButton = laundryImageButton
     }
 
 }
