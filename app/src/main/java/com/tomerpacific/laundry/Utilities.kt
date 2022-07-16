@@ -10,7 +10,7 @@ class Utilities {
     companion object {
 
         fun setFont(view: TextView, fontToSet: String) {
-            val typeface = Typeface.createFromAsset(view.context.assets,"fonts/${fontToSet}");
+            val typeface = Typeface.createFromAsset(view.context.assets,"fonts/${fontToSet}")
             view.typeface = typeface
         }
 
