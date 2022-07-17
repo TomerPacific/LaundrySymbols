@@ -49,7 +49,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .height(100.dp)
                                     .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
                                     .clickable(enabled = true, onClick = {
-
+                                        openLaundryCategory(resources.getString(R.string.washing))
                                     }),
                                 alignment = Alignment.Center)
                             Text(text = "Washing",
@@ -66,7 +66,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .height(100.dp)
                                     .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
                                     .clickable(enabled = true, onClick = {
-
+                                        openLaundryCategory(resources.getString(R.string.bleaching))
                                     }),
                                 alignment = Alignment.Center)
                             Text(text = "Bleaching",
@@ -85,7 +85,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .height(100.dp)
                                     .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
                                     .clickable(enabled = true, onClick = {
-
+                                        openLaundryCategory(resources.getString(R.string.drying))
                                     }),
                                 alignment = Alignment.Center)
                             Text(text = "Drying",
@@ -102,7 +102,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .height(100.dp)
                                     .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
                                     .clickable(enabled = true, onClick = {
-
+                                        openLaundryCategory(resources.getString(R.string.ironing))
                                     }),
                                 alignment = Alignment.Center)
                             Text(text = "Ironing",
@@ -113,6 +113,14 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                 }
             }
         }
+    }
+
+    private fun openLaundryCategory(laundryCategory:String) {
+        val fragment: LaundryCategoryFragment =
+            LaundryCategoryFragment.newInstance(laundryCategory)
+        activity?.supportFragmentManager?.beginTransaction()?.
+        replace(R.id.fragment_container_view, fragment)?.
+        addToBackStack(null)?.commit()
     }
 
 }
