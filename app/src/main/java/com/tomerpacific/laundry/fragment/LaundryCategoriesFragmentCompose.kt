@@ -30,7 +30,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                Column(verticalArrangement = Arrangement.spacedBy(200.dp)) {
+                Column(verticalArrangement = Arrangement.spacedBy(100.dp)) {
                     Row (Modifier.align(Alignment.CenterHorizontally)){
                        Text(stringResource(
                            id = R.string.main_screen_title),
@@ -70,6 +70,42 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     }),
                                 alignment = Alignment.Center)
                             Text(text = "Bleaching",
+                                Modifier.padding(2.dp).align(CenterHorizontally),
+                                fontSize = 16.sp)
+                        }
+                    }
+                    Row(Modifier.align(Alignment.CenterHorizontally)) {
+                        Column(
+                            verticalArrangement = Arrangement.Top,
+                        ) {
+                            Image(painterResource(id = R.drawable.dry_cleaning_allow),
+                                "Drying Symbol",
+                                modifier = Modifier
+                                    .width(100.dp)
+                                    .height(100.dp)
+                                    .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
+                                    .clickable(enabled = true, onClick = {
+
+                                    }),
+                                alignment = Alignment.Center)
+                            Text(text = "Drying",
+                                Modifier.padding(2.dp).align(CenterHorizontally),
+                                fontSize = 16.sp)
+                        }
+                        Column(
+                            verticalArrangement = Arrangement.Top,
+                        ) {
+                            Image(painterResource(id = R.drawable.iron_allowed),
+                                "Ironing Symbol",
+                                modifier = Modifier
+                                    .width(100.dp)
+                                    .height(100.dp)
+                                    .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
+                                    .clickable(enabled = true, onClick = {
+
+                                    }),
+                                alignment = Alignment.Center)
+                            Text(text = "Ironing",
                                 Modifier.padding(2.dp).align(CenterHorizontally),
                                 fontSize = 16.sp)
                         }
