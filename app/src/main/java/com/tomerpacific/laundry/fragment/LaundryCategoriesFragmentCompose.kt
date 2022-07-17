@@ -116,8 +116,8 @@ class LaundryCategoriesFragmentCompose : Fragment() {
     }
 
     private fun openLaundryCategory(laundryCategory:String) {
-        val fragment: LaundryCategoryFragment =
-            LaundryCategoryFragment.newInstance(laundryCategory)
+        val fragment: LaundryCategoryFragmentCompose =
+            LaundryCategoryFragmentCompose.newInstance(laundryCategory)
         activity?.supportFragmentManager?.beginTransaction()?.
         replace(R.id.fragment_container_view, fragment)?.
         addToBackStack(null)?.commit()
