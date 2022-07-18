@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
@@ -19,10 +16,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.R
+import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class LaundryCategoriesFragmentCompose : Fragment() {
+
+    private val model: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -116,11 +117,11 @@ class LaundryCategoriesFragmentCompose : Fragment() {
     }
 
     private fun openLaundryCategory(laundryCategory:String) {
+
         val fragment: LaundryCategoryFragmentCompose =
             LaundryCategoryFragmentCompose.newInstance(laundryCategory)
-        activity?.supportFragmentManager?.beginTransaction()?.
-        replace(R.id.fragment_container_view, fragment)?.
-        addToBackStack(null)?.commit()
+
+        model.handleClickOnLaundryCategory(requireActivity(), fragment)
     }
 
 }
