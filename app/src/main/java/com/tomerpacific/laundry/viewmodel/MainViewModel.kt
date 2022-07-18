@@ -1,11 +1,13 @@
 package com.tomerpacific.laundry.viewmodel
 
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragmentCompose
+import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
 import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 
@@ -33,6 +35,12 @@ class MainViewModel: ViewModel() {
     }
 
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragmentCompose) {
+        activity.supportFragmentManager.beginTransaction().
+        replace(R.id.fragment_container_view, fragment).
+        addToBackStack(null).commit()
+    }
+
+    fun handleClickOnLaundrySymbol(activity: FragmentActivity, fragment: LaundrySymbolFragment) {
         activity.supportFragmentManager.beginTransaction().
         replace(R.id.fragment_container_view, fragment).
         addToBackStack(null).commit()
