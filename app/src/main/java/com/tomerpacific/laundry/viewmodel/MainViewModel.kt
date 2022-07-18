@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
-import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragmentCompose
 import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
