@@ -1,6 +1,5 @@
 package com.tomerpacific.laundry.viewmodel
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
