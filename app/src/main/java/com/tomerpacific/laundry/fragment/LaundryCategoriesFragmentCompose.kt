@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.tomerpacific.laundry.Bangers
+import com.tomerpacific.laundry.BuildConfig
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
@@ -110,6 +111,12 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 Modifier.padding(2.dp).align(CenterHorizontally),
                                 fontSize = 16.sp)
                         }
+                    }
+                    Spacer(modifier = Modifier.weight(1f))
+                    Row(Modifier.align(Alignment.End)) {
+                        Text(text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
+                            fontSize = 16.sp
+                        )
                     }
                 }
             }
