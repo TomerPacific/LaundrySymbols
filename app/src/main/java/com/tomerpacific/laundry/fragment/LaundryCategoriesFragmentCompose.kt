@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -26,6 +30,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
 
     private val model: MainViewModel by activityViewModels()
 
+    @OptIn(ExperimentalFoundationApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,88 +38,109 @@ class LaundryCategoriesFragmentCompose : Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 Column(verticalArrangement = Arrangement.spacedBy(100.dp)) {
-                    Row (Modifier.align(Alignment.CenterHorizontally)){
-                       Text(stringResource(
-                           id = R.string.main_screen_title),
-                           fontFamily = Bangers,
-                           fontSize = 30.sp
-                       )
+                    Row(Modifier.align(CenterHorizontally)) {
+                        Text(
+                            stringResource(
+                                id = R.string.main_screen_title
+                            ),
+                            fontFamily = Bangers,
+                            fontSize = 30.sp
+                        )
                     }
-                    Row(Modifier.align(Alignment.CenterHorizontally)) {
+                    Row(Modifier.align(CenterHorizontally),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         Column(
                             verticalArrangement = Arrangement.Top,
                         ) {
-                            Image(painterResource(id = R.drawable.washable),
+                            Image(
+                                painterResource(id = R.drawable.washable),
                                 "Washing Symbol",
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
-                                    .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
+                                    .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.washing))
                                     }),
-                                alignment = Alignment.Center)
-                            Text(text = "Washing",
+                                alignment = Alignment.Center
+                            )
+                            Text(
+                                text = "Washing",
                                 Modifier.padding(2.dp).align(CenterHorizontally),
-                                fontSize = 16.sp)
+                                fontSize = 16.sp
+                            )
                         }
                         Column(
                             verticalArrangement = Arrangement.Top,
                         ) {
-                            Image(painterResource(id = R.drawable.bleach_allow),
+                            Image(
+                                painterResource(id = R.drawable.bleach_allow),
                                 "Bleaching Symbol",
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
-                                    .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
+                                    .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.bleaching))
                                     }),
-                                alignment = Alignment.Center)
-                            Text(text = "Bleaching",
+                                alignment = Alignment.Center
+                            )
+                            Text(
+                                text = "Bleaching",
                                 Modifier.padding(2.dp).align(CenterHorizontally),
-                                fontSize = 16.sp)
+                                fontSize = 16.sp
+                            )
                         }
                     }
-                    Row(Modifier.align(Alignment.CenterHorizontally)) {
+                    Row(Modifier.align(CenterHorizontally),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         Column(
                             verticalArrangement = Arrangement.Top,
                         ) {
-                            Image(painterResource(id = R.drawable.dry_cleaning_allow),
+                            Image(
+                                painterResource(id = R.drawable.dry_cleaning_allow),
                                 "Drying Symbol",
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
-                                    .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
+                                    .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.drying))
                                     }),
-                                alignment = Alignment.Center)
-                            Text(text = "Drying",
+                                alignment = Alignment.Center
+                            )
+                            Text(
+                                text = "Drying",
                                 Modifier.padding(2.dp).align(CenterHorizontally),
-                                fontSize = 16.sp)
+                                fontSize = 16.sp
+                            )
                         }
                         Column(
                             verticalArrangement = Arrangement.Top,
                         ) {
-                            Image(painterResource(id = R.drawable.iron_allowed),
+                            Image(
+                                painterResource(id = R.drawable.iron_allowed),
                                 "Ironing Symbol",
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
-                                    .border(BorderStroke(2.dp, androidx.compose.ui.graphics.Color.Black))
+                                    .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.ironing))
                                     }),
-                                alignment = Alignment.Center)
-                            Text(text = "Ironing",
+                                alignment = Alignment.Center
+                            )
+                            Text(
+                                text = "Ironing",
                                 Modifier.padding(2.dp).align(CenterHorizontally),
-                                fontSize = 16.sp)
+                                fontSize = 16.sp
+                            )
                         }
                     }
                     Spacer(modifier = Modifier.weight(1f))
                     Row(Modifier.align(Alignment.End)) {
-                        Text(text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
+                        Text(
+                            text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
                             fontSize = 16.sp
                         )
                     }
