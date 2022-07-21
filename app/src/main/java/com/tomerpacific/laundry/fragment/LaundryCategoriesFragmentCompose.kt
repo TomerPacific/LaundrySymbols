@@ -54,7 +54,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                         ) {
                             Image(
                                 painterResource(id = R.drawable.washable),
-                                "Washing Symbol",
+                                stringResource(id = R.string.washing_symbol),
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
@@ -65,8 +65,10 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 alignment = Alignment.Center
                             )
                             Text(
-                                text = "Washing",
-                                Modifier.padding(2.dp).align(CenterHorizontally),
+                                text = stringResource(id = R.string.washing),
+                                Modifier
+                                    .padding(2.dp)
+                                    .align(CenterHorizontally),
                                 fontSize = 16.sp
                             )
                         }
@@ -75,7 +77,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                         ) {
                             Image(
                                 painterResource(id = R.drawable.bleach_allow),
-                                "Bleaching Symbol",
+                                stringResource(id = R.string.bleaching_symbol),
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
@@ -86,8 +88,10 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 alignment = Alignment.Center
                             )
                             Text(
-                                text = "Bleaching",
-                                Modifier.padding(2.dp).align(CenterHorizontally),
+                                text = stringResource(id = R.string.bleaching),
+                                Modifier
+                                    .padding(2.dp)
+                                    .align(CenterHorizontally),
                                 fontSize = 16.sp
                             )
                         }
@@ -99,7 +103,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                         ) {
                             Image(
                                 painterResource(id = R.drawable.dry_cleaning_allow),
-                                "Drying Symbol",
+                                stringResource(id = R.string.drying_symbol),
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
@@ -110,8 +114,10 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 alignment = Alignment.Center
                             )
                             Text(
-                                text = "Drying",
-                                Modifier.padding(2.dp).align(CenterHorizontally),
+                                text = stringResource(id = R.string.drying),
+                                Modifier
+                                    .padding(2.dp)
+                                    .align(CenterHorizontally),
                                 fontSize = 16.sp
                             )
                         }
@@ -120,7 +126,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                         ) {
                             Image(
                                 painterResource(id = R.drawable.iron_allowed),
-                                "Ironing Symbol",
+                                stringResource(id = R.string.ironing_symbol),
                                 modifier = Modifier
                                     .width(100.dp)
                                     .height(100.dp)
@@ -131,8 +137,10 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 alignment = Alignment.Center
                             )
                             Text(
-                                text = "Ironing",
-                                Modifier.padding(2.dp).align(CenterHorizontally),
+                                text = stringResource(id = R.string.ironing),
+                                Modifier
+                                    .padding(2.dp)
+                                    .align(CenterHorizontally),
                                 fontSize = 16.sp
                             )
                         }
