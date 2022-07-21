@@ -1,7 +1,6 @@
 package com.tomerpacific.laundry.viewmodel
 
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
@@ -29,10 +28,6 @@ class MainViewModel: ViewModel() {
         laundryCategories.postValue(categoryList)
     }
 
-    fun getLaundryCategories() : LiveData<List<LaundryCategory>> {
-        return laundryCategories
-    }
-
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragmentCompose) {
         activity.supportFragmentManager.beginTransaction().
         replace(R.id.fragment_container_view, fragment).
@@ -43,13 +38,6 @@ class MainViewModel: ViewModel() {
         activity.supportFragmentManager.beginTransaction().
         replace(R.id.fragment_container_view, fragment).
         addToBackStack(null).commit()
-    }
-
-    fun getAmountOfColumnsForGridViewPerLaundryCategory(laundryCategory: String): Int {
-        return when(laundryCategory) {
-            LAUNDRY_CATEGORY_BLEACHING -> 3
-            else -> 4
-        }
     }
 
     fun getItemsForLaundryCategory(laundryCategory: String) : List<LaundrySymbol> {
