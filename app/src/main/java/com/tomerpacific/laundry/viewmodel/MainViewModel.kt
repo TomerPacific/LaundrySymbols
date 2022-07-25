@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragmentCompose
-import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
+import com.tomerpacific.laundry.fragment.LaundrySymbolFragmentCompose
 import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 
@@ -34,7 +34,7 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
-    fun handleClickOnLaundrySymbol(activity: FragmentActivity, fragment: LaundrySymbolFragment) {
+    fun handleClickOnLaundrySymbol(activity: FragmentActivity, fragment: LaundrySymbolFragmentCompose) {
         activity.supportFragmentManager.beginTransaction().
         replace(R.id.fragment_container_view, fragment).
         addToBackStack(null).commit()
