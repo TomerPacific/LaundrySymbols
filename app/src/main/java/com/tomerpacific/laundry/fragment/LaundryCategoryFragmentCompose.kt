@@ -67,7 +67,7 @@ class LaundryCategoryFragmentCompose: Fragment() {
                                 .height(100.dp)
                                 .border(BorderStroke(2.dp, Color.Black))
                                 .clickable(enabled = true, onClick = {
-                                    val fragment : LaundrySymbolFragment = LaundrySymbolFragment.newInstance(laundrySymbol)
+                                    val fragment : LaundrySymbolFragmentCompose = LaundrySymbolFragmentCompose.newInstance(laundrySymbol)
                                     model.handleClickOnLaundrySymbol(requireActivity(), fragment)
                                 })
                             )
