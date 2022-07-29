@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -58,7 +59,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.washing))
-                                    }),
+                                    }).testTag("washing category"),
                                 alignment = Alignment.Center
                             )
                             Text(
