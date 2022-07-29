@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -83,7 +84,7 @@ class LaundryCategoryFragmentCompose: Fragment() {
                                                 model.handleClickOnLaundrySymbol(requireActivity(), fragment)
                                             },
                                             onLongClick = { showTooltip.value = true },
-                                        ),
+                                        ).testTag(laundrySymbol.name),
                                 ) {
                                     Image(painterResource
                                         (laundrySymbol.drawableId),
