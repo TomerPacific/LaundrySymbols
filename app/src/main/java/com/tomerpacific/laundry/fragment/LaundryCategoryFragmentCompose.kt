@@ -62,10 +62,11 @@ class LaundryCategoryFragmentCompose: Fragment() {
                         fontSize = 30.sp
                     )
                     LazyVerticalGrid(
-                        cells = GridCells.Fixed(3), modifier = Modifier.fillMaxSize(),
+                        cells = GridCells.Fixed(3),
+                        modifier = Modifier.fillMaxSize(),
                         contentPadding = PaddingValues(12.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         items(model.getItemsForLaundryCategory(laundryCategoryName)) { laundrySymbol ->
                             Box {
