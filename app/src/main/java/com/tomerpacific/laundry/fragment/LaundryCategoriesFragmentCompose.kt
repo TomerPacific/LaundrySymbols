@@ -35,7 +35,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                Column(verticalArrangement = Arrangement.spacedBy(100.dp)) {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Row(Modifier.align(CenterHorizontally)) {
                         Text(
                             stringResource(
