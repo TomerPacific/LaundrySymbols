@@ -35,7 +35,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Column {
                     Row(Modifier.align(CenterHorizontally)) {
                         Text(
                             stringResource(
@@ -45,11 +45,10 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                             fontSize = 30.sp
                         )
                     }
+                    Spacer(modifier = Modifier.weight(1f))
                     Row(Modifier.align(CenterHorizontally),
                     horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Column(
-                            verticalArrangement = Arrangement.Top,
-                        ) {
+                        Column {
                             Image(
                                 painterResource(id = R.drawable.washable),
                                 stringResource(id = R.string.washing_symbol),
@@ -70,9 +69,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 fontSize = 16.sp
                             )
                         }
-                        Column(
-                            verticalArrangement = Arrangement.Top,
-                        ) {
+                        Column {
                             Image(
                                 painterResource(id = R.drawable.bleach_allow),
                                 stringResource(id = R.string.bleaching_symbol),
@@ -96,9 +93,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                     }
                     Row(Modifier.align(CenterHorizontally),
                         horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Column(
-                            verticalArrangement = Arrangement.Top,
-                        ) {
+                        Column {
                             Image(
                                 painterResource(id = R.drawable.dry_cleaning_allow),
                                 stringResource(id = R.string.drying_symbol),
@@ -119,9 +114,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                 fontSize = 16.sp
                             )
                         }
-                        Column(
-                            verticalArrangement = Arrangement.Top,
-                        ) {
+                        Column {
                             Image(
                                 painterResource(id = R.drawable.iron_allowed),
                                 stringResource(id = R.string.ironing_symbol),
