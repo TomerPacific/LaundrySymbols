@@ -22,4 +22,22 @@ class LaundryCategoriesTest {
         composeTestRule.onNodeWithTag("Do Not Wash").assertIsDisplayed()
     }
 
+    @Test
+    fun goToBleachingCategory() {
+        val bleachingCategoryText = composeTestRule.activity.getString(R.string.bleaching)
+        composeTestRule.onNodeWithText(bleachingCategoryText).assertIsDisplayed()
+        composeTestRule.onNodeWithTag("bleaching category").performClick()
+        composeTestRule.onNodeWithTag("Bleaching Allowed").assertIsDisplayed()
+    }
+
+    @Test
+    fun goToAllowIroningSymbol() {
+        val ironingCategoryText = composeTestRule.activity.getString(R.string.ironing)
+        composeTestRule.onNodeWithText(ironingCategoryText).assertIsDisplayed()
+        composeTestRule.onNodeWithTag("ironing category").performClick()
+        composeTestRule.onNodeWithTag("Ironing Allowed").assertIsDisplayed()
+        composeTestRule.onNodeWithTag("Ironing Allowed").performClick()
+        composeTestRule.onNodeWithTag("Do Not Iron").assertDoesNotExist()
+    }
+
 }
