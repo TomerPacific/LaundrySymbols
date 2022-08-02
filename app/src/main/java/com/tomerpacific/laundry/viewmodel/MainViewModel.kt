@@ -1,11 +1,11 @@
 package com.tomerpacific.laundry.viewmodel
 
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
-import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
+import com.tomerpacific.laundry.fragment.LaundryCategoryFragmentCompose
+import com.tomerpacific.laundry.fragment.LaundrySymbolFragmentCompose
 import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 
@@ -28,21 +28,16 @@ class MainViewModel: ViewModel() {
         laundryCategories.postValue(categoryList)
     }
 
-    fun getLaundryCategories() : LiveData<List<LaundryCategory>> {
-        return laundryCategories
-    }
-
-    fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragment) {
+    fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragmentCompose) {
         activity.supportFragmentManager.beginTransaction().
         replace(R.id.fragment_container_view, fragment).
         addToBackStack(null).commit()
     }
 
-    fun getAmountOfColumnsForGridViewPerLaundryCategory(laundryCategory: String): Int {
-        return when(laundryCategory) {
-            LAUNDRY_CATEGORY_BLEACHING -> 3
-            else -> 4
-        }
+    fun handleClickOnLaundrySymbol(activity: FragmentActivity, fragment: LaundrySymbolFragmentCompose) {
+        activity.supportFragmentManager.beginTransaction().
+        replace(R.id.fragment_container_view, fragment).
+        addToBackStack(null).commit()
     }
 
     fun getItemsForLaundryCategory(laundryCategory: String) : List<LaundrySymbol> {

@@ -4,16 +4,18 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.MaterialTheme
+import androidx.compose.ui.viewinterop.AndroidViewBinding
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
-import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
-import com.tomerpacific.laundry.fragment.LaundryCategoriesFragment
+import com.tomerpacific.laundry.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,12 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val laundryCategoriesFragment = LaundryCategoriesFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragment_container_view, laundryCategoriesFragment)
-            .commit()
-        checkForUpdate()
+        setContent {
+            MaterialTheme {
+                AndroidViewBinding(ActivityMainBinding::inflate) {
+                    checkForUpdate()
+                }
+            }
+        }
     }
 
     override fun onResume() {
