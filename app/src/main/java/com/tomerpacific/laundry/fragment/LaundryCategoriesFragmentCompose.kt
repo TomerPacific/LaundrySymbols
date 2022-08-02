@@ -79,7 +79,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.bleaching))
-                                    }),
+                                    }).testTag("bleaching category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -124,7 +124,7 @@ class LaundryCategoriesFragmentCompose : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.ironing))
-                                    }),
+                                    }).testTag("ironing category"),
                                 alignment = Alignment.Center
                             )
                             Text(
