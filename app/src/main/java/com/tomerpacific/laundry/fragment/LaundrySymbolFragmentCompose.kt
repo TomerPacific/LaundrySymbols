@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
@@ -50,7 +51,8 @@ class LaundrySymbolFragmentCompose: Fragment() {
                     Row(Modifier.align(Alignment.CenterHorizontally)) {
                         Text(
                             symbolDescriptionText,
-                            fontSize = 30.sp
+                            fontSize = 30.sp,
+                            textAlign = TextAlign.Center
                         )
                     }
                     Row(Modifier.align(Alignment.CenterHorizontally)) {
@@ -65,7 +67,8 @@ class LaundrySymbolFragmentCompose: Fragment() {
                     Row(Modifier.align(Alignment.CenterHorizontally)) {
                         Text(
                             symbolDescriptionText,
-                            fontSize = 30.sp
+                            fontSize = 30.sp,
+                            textAlign = TextAlign.Center
                         )
                     }
                 }
