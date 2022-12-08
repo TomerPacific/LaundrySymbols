@@ -10,8 +10,8 @@ android {
         applicationId "com.tomerpacific.laundry"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 18
-        versionName "2.4.1"
+        versionCode 19
+        versionName "2.4.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         dataBinding {
             enabled = true
