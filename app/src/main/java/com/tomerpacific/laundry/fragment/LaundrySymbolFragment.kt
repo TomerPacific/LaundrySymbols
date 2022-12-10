@@ -18,11 +18,11 @@ import androidx.fragment.app.Fragment
 import com.tomerpacific.laundry.*
 import com.tomerpacific.laundry.model.LaundrySymbol
 
-class LaundrySymbolFragmentCompose: Fragment() {
+class LaundrySymbolFragment: Fragment() {
 
     companion object {
-        fun newInstance(laundrySymbol: LaundrySymbol) : LaundrySymbolFragmentCompose {
-            val fragment = LaundrySymbolFragmentCompose()
+        fun newInstance(laundrySymbol: LaundrySymbol) : LaundrySymbolFragment {
+            val fragment = LaundrySymbolFragment()
             val args = Bundle()
             args.putString(LAUNDRY_SYMBOL_NAME_KEY, laundrySymbol.name)
             args.putInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY, laundrySymbol.drawableId)

@@ -30,13 +30,13 @@ import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.LAUNDRY_CATEGORY_KEY
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
-class LaundryCategoryFragmentCompose: Fragment() {
+class LaundryCategoryFragment: Fragment() {
 
     private val model: MainViewModel by activityViewModels()
 
     companion object {
-        fun newInstance(laundryCategory: String) : LaundryCategoryFragmentCompose {
-            val fragment = LaundryCategoryFragmentCompose()
+        fun newInstance(laundryCategory: String) : LaundryCategoryFragment {
+            val fragment = LaundryCategoryFragment()
             val args = Bundle()
             args.putString(LAUNDRY_CATEGORY_KEY, laundryCategory)
             fragment.arguments = args
@@ -80,8 +80,8 @@ class LaundryCategoryFragmentCompose: Fragment() {
                                             onClickLabel = "Laundry Symbol Name",
                                             role = Role.Button,
                                             onClick = {
-                                                val fragment: LaundrySymbolFragmentCompose =
-                                                LaundrySymbolFragmentCompose.newInstance(laundrySymbol)
+                                                val fragment: LaundrySymbolFragment =
+                                                LaundrySymbolFragment.newInstance(laundrySymbol)
                                                 model.handleClickOnLaundrySymbol(requireActivity(), fragment)
                                             },
                                             onLongClick = { showTooltip.value = true },
