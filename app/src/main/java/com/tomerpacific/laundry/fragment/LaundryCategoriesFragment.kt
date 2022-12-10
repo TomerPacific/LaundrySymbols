@@ -24,7 +24,7 @@ import com.tomerpacific.laundry.BuildConfig
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
-class LaundryCategoriesFragmentCompose : Fragment() {
+class LaundryCategoriesFragment : Fragment() {
 
     private val model: MainViewModel by activityViewModels()
 
@@ -150,8 +150,8 @@ class LaundryCategoriesFragmentCompose : Fragment() {
 
     private fun openLaundryCategory(laundryCategory:String) {
 
-        val fragment: LaundryCategoryFragmentCompose =
-            LaundryCategoryFragmentCompose.newInstance(laundryCategory)
+        val fragment: LaundryCategoryFragment =
+            LaundryCategoryFragment.newInstance(laundryCategory)
 
         model.handleClickOnLaundryCategory(requireActivity(), fragment)
     }
