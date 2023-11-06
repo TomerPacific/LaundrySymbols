@@ -28,7 +28,6 @@ class LaundryCategoriesFragment : Fragment() {
 
     private val model: MainViewModel by activityViewModels()
 
-    @OptIn(ExperimentalFoundationApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
