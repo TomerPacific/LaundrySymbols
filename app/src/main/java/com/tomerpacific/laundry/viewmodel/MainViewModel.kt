@@ -1,32 +1,13 @@
 package com.tomerpacific.laundry.viewmodel
 
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
 import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
-import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class MainViewModel: ViewModel() {
-    private val laundryCategories = MutableLiveData<List<LaundryCategory>>()
-
-    init {
-        loadLaundryCategories()
-    }
-
-    private fun loadLaundryCategories() {
-        val washingLaundryCategory = LaundryCategory("Washing", R.drawable.washable)
-        val bleachingLaundryCategory = LaundryCategory("Bleaching", R.drawable.bleach_allow)
-        val dryingLaundryCategory = LaundryCategory("Drying", R.drawable.dry_cleaning_allow)
-        val ironingLaundryCategory = LaundryCategory("Ironing", R.drawable.iron_allowed)
-        val categoryList : List<LaundryCategory> = listOf(
-            washingLaundryCategory, bleachingLaundryCategory, dryingLaundryCategory, ironingLaundryCategory
-        )
-
-        laundryCategories.postValue(categoryList)
-    }
 
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragment) {
         activity.supportFragmentManager.beginTransaction().
