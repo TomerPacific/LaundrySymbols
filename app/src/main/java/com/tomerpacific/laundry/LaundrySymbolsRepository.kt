@@ -1,18 +1,19 @@
 package com.tomerpacific.laundry
 
+import android.content.Context
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class LaundrySymbolsRepository {
 
-    fun createWashingSymbols() : List<LaundrySymbol> {
+    fun createWashingSymbols(context: Context) : List<LaundrySymbol> {
         return listOf(
-            LaundrySymbol("Do Not Wash", "Do Not Wash", R.drawable.wash_do_not),
-            LaundrySymbol("Regular Washing Allowed", "Regular Washing Allowed", R.drawable.washable),
-            LaundrySymbol("Washing Cold", "Washing Cold", R.drawable.wash_30_degrees),
-            LaundrySymbol("Washing Warm", "Washing Warm", R.drawable.wash_40_degrees_warm),
-            LaundrySymbol("Washing Hot", "Washing Hot", R.drawable.wash_60_degrees_hot),
-            LaundrySymbol("Synthetic Cycle", "Synthetic Cycle", R.drawable.wash_30_degrees_delicate),
-            LaundrySymbol("Hand Wash", "Hand Wash", R.drawable.wash_by_hand)
+            LaundrySymbol(context.getString(R.string.do_not_wash_symbol), context.getString(R.string.do_not_wash_symbol), R.drawable.wash_do_not),
+            LaundrySymbol(context.getString(R.string.regular_washing_allowed_symbol), context.getString(R.string.regular_washing_allowed_symbol), R.drawable.washable),
+            LaundrySymbol(context.getString(R.string.washing_cold_symbol), context.getString(R.string.washing_cold_symbol), R.drawable.wash_30_degrees),
+            LaundrySymbol(context.getString(R.string.washing_warm_symbol), context.getString(R.string.washing_warm_symbol), R.drawable.wash_40_degrees_warm),
+            LaundrySymbol(context.getString(R.string.washing_hot_symbol), context.getString(R.string.washing_hot_symbol), R.drawable.wash_60_degrees_hot),
+            LaundrySymbol(context.getString(R.string.synthetic_cycle_symbol), context.getString(R.string.synthetic_cycle_symbol), R.drawable.wash_30_degrees_delicate),
+            LaundrySymbol(context.getString(R.string.hand_wash_symbol), context.getString(R.string.hand_wash_symbol), R.drawable.wash_by_hand)
         )
     }
 
