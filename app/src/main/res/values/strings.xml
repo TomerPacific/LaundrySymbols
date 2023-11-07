@@ -12,4 +12,42 @@
     <string name="drying_symbol">Drying Symbol</string>
     <string name="ironing_symbol">Ironing Symbol</string>
     <string name="laundry_symbol_item">Laundry Symbol Item</string>
+
+    <!-- Washing Symbols -->
+    <string name="do_not_wash_symbol">Do Not Wash</string>
+    <string name="regular_washing_allowed_symbol">Regular Washing Allowed</string>
+    <string name="washing_cold_symbol">Washing Cold</string>
+    <string name="washing_warm_symbol">"Washing Warm</string>
+    <string name="washing_hot_symbol">Washing Hot</string>
+    <string name="synthetic_cycle_symbol">Synthetic Cycle</string>
+    <string name="hand_wash_symbol">"Hand Wash"</string>
+
+    <!-- Bleaching Symbols -->
+    <string name="do_not_bleach_symbol">Do Not Bleach</string>
+    <string name="bleaching_allowed_symbol">Bleaching Allowed</string>
+    <string name="bleaching_non_chlorine_symbol">Bleach Non Chlorine</string>
+
+    <!-- Drying Symbols -->
+    <string name="do_not_dry_clean_symbol">Do Not Dry Clean</string>
+    <string name="dry_cleaning_allowed_symbol">Dry Cleaning Allowed</string>
+    <string name="dry_cleaning_low_heat_symbol">Dry Cleaning Low Heat</string>
+    <string name="dry_cleaning_no_steam_symbol">Dry Cleaning No Steam</string>
+    <string name="dry_cleaning_any_solvent_symbol">Dry Cleaning Any Solvent</string>
+    <string name="dry_cleaning_only_symbol">Dry Cleaning Only</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol">Dry Cleaning Petroleum Solvent Only</string>
+    <string name="tumble_dry_low_heat_symbol">Tumble Dry Low Heat</string>
+    <string name="tumble_dry_high_heat_symbol">Tumble Dry High Heat</string>
+    <string name="dry_flat_symbol">Dry Flat</string>
+    <string name="hang_to_dry_symbol">Hang To Dry</string>
+    <string name="do_not_tumble_dry_symbol">Do Not Tumble Dry</string>
+
+    <!-- Ironing Symbols -->
+    <string name="do_not_iron_symbol">Do Not Iron</string>
+    <string name="ironing_allowed_symbol">Ironing Allowed</string>
+    <string name="iron_low_symbol">Iron Low (Max 110° Celsius)</string>
+    <string name="iron_medium_symbol">Iron Medium (Max 150° Celsius)</string>
+    <string name="iron_high_symbol">Iron High (Max 200° Celsius)</string>
+    <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
+
+
 </resources>

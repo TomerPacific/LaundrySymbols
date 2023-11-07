@@ -68,7 +68,7 @@ class LaundryCategoryFragment: Fragment() {
                         verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
-                        items(model.getItemsForLaundryCategory(laundryCategoryName)) { laundrySymbol ->
+                        items(model.getItemsForLaundryCategory(laundryCategoryName, context)) { laundrySymbol ->
                             Box {
                                 val showTooltip = remember { mutableStateOf(false) }
 

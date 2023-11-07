@@ -1,5 +1,6 @@
 package com.tomerpacific.laundry.viewmodel
 
+import android.content.Context
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
@@ -23,13 +24,13 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
-    fun getItemsForLaundryCategory(laundryCategory: String) : List<LaundrySymbol> {
+    fun getItemsForLaundryCategory(laundryCategory: String, context: Context) : List<LaundrySymbol> {
 
         return when (laundryCategory) {
-            LAUNDRY_CATEGORY_WASHING -> laundrySymbolsRepository.createWashingSymbols()
-            LAUNDRY_CATEGORY_BLEACHING -> laundrySymbolsRepository.createBleachingSymbols()
-            LAUNDRY_CATEGORY_DRYING -> laundrySymbolsRepository.createDryingSymbols()
-            LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols()
+            LAUNDRY_CATEGORY_WASHING -> laundrySymbolsRepository.createWashingSymbols(context)
+            LAUNDRY_CATEGORY_BLEACHING -> laundrySymbolsRepository.createBleachingSymbols(context)
+            LAUNDRY_CATEGORY_DRYING -> laundrySymbolsRepository.createDryingSymbols(context)
+            LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols(context)
             else -> listOf()
         }
     }
