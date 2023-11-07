@@ -40,6 +40,13 @@
     <string name="dry_flat_symbol">Dry Flat</string>
     <string name="hang_to_dry_symbol">Hang To Dry</string>
     <string name="do_not_tumble_dry_symbol">Do Not Tumble Dry</string>
-    
+
+    <!-- Ironing Symbols -->
+    <string name="do_not_iron_symbol">Do Not Iron</string>
+    <string name="ironing_allowed_symbol">Ironing Allowed</string>
+    <string name="iron_low_symbol">Iron Low (Max 110° Celsius)</string>
+    <string name="iron_medium_symbol">Iron Medium (Max 150° Celsius)</string>
+    <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
+
 
 </resources>
