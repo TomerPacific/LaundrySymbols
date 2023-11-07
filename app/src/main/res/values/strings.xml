@@ -16,10 +16,15 @@
     <!-- Washing Symbols -->
     <string name="do_not_wash_symbol">Do Not Wash</string>
     <string name="regular_washing_allowed_symbol">Regular Washing Allowed</string>
-    <string name="washing_cold_symbol">"Washing Cold"</string>
+    <string name="washing_cold_symbol">Washing Cold</string>
     <string name="washing_warm_symbol">"Washing Warm</string>
     <string name="washing_hot_symbol">Washing Hot</string>
-    <string name="synthetic_cycle_symbol">"Synthetic Cycle"</string>
+    <string name="synthetic_cycle_symbol">Synthetic Cycle</string>
     <string name="hand_wash_symbol">"Hand Wash"</string>
+
+    <!-- Bleaching Symbols -->
+    <string name="do_not_bleach">Do Not Bleach</string>
+    <string name="bleaching_allowed_symbol">Bleaching Allowed</string>
+    <string name="bleaching_non_chlorine_symbol">Bleach Non Chlorine</string>
 
 </resources>
