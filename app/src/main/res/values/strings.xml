@@ -46,6 +46,7 @@
     <string name="ironing_allowed_symbol">Ironing Allowed</string>
     <string name="iron_low_symbol">Iron Low (Max 110° Celsius)</string>
     <string name="iron_medium_symbol">Iron Medium (Max 150° Celsius)</string>
+    <string name="iron_high_symbol">Iron High (Max 200° Celsius)</string>
     <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
 
 

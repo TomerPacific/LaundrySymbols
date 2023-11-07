@@ -48,7 +48,7 @@ class LaundrySymbolsRepository {
             LaundrySymbol(context.getString(R.string.ironing_allowed_symbol), context.getString(R.string.ironing_allowed_symbol), R.drawable.iron_allowed),
             LaundrySymbol(context.getString(R.string.iron_low_symbol), context.getString(R.string.iron_low_symbol), R.drawable.iron_low_setting),
             LaundrySymbol(context.getString(R.string.iron_medium_symbol), context.getString(R.string.iron_medium_symbol), R.drawable.iron_medium_setting),
-            LaundrySymbol( context.getString(R.string.tumble_dry_high_heat_symbol),  context.getString(R.string.tumble_dry_high_heat_symbol), R.drawable.iron_high_setting),
+            LaundrySymbol( context.getString(R.string.iron_high_symbol),  context.getString(R.string.iron_high_symbol), R.drawable.iron_high_setting),
             LaundrySymbol( context.getString(R.string.steaming_not_allowed_symbol),  context.getString(R.string.steaming_not_allowed_symbol), R.drawable.iron_steam_not_allowed)
         )
     }
