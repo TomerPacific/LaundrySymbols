@@ -28,9 +28,9 @@ class MainViewModel: ViewModel() {
 
         return when (laundryCategory) {
             LAUNDRY_CATEGORY_WASHING -> laundrySymbolsRepository.createWashingSymbols(context)
-            LAUNDRY_CATEGORY_BLEACHING -> laundrySymbolsRepository.createBleachingSymbols()
-            LAUNDRY_CATEGORY_DRYING -> laundrySymbolsRepository.createDryingSymbols()
-            LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols()
+            LAUNDRY_CATEGORY_BLEACHING -> laundrySymbolsRepository.createBleachingSymbols(context)
+            LAUNDRY_CATEGORY_DRYING -> laundrySymbolsRepository.createDryingSymbols(context)
+            LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols(context)
             else -> listOf()
         }
     }
