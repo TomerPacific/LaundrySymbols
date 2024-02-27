@@ -31,10 +31,6 @@ android {
         kotlinCompilerExtensionVersion '1.5.10'
     }
 
-    kotlinOptions {
-        jvmTarget = "19"
-    }
-
     buildTypes {
         release {
             minifyEnabled false
