@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.mutableStateOf
@@ -62,7 +62,7 @@ class LaundryCategoryFragment: Fragment() {
                         fontSize = 30.sp
                     )
                     LazyVerticalGrid(
-                        cells = GridCells.Fixed(3),
+                        columns = GridCells.Fixed(3),
                         modifier = Modifier.fillMaxSize(),
                         contentPadding = PaddingValues(12.dp),
                         verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
