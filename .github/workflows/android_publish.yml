@@ -16,7 +16,7 @@ jobs:
       - name: Set Up JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 11
+          java-version: 17
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
@@ -47,4 +47,3 @@ jobs:
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: production
           status: completed
-          changesNotSentForReview: true
