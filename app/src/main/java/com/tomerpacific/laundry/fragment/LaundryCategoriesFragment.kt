@@ -26,7 +26,7 @@ import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class LaundryCategoriesFragment : Fragment() {
 
-    private val model: MainViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -152,7 +152,7 @@ class LaundryCategoriesFragment : Fragment() {
         val fragment: LaundryCategoryFragment =
             LaundryCategoryFragment.newInstance(laundryCategory)
 
-        model.handleClickOnLaundryCategory(requireActivity(), fragment)
+        viewModel.handleClickOnLaundryCategory(requireActivity(), fragment)
     }
 
 }
