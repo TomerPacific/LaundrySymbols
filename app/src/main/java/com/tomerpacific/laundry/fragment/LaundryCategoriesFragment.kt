@@ -136,7 +136,12 @@ class LaundryCategoriesFragment : Fragment() {
                         }
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    Row(Modifier.align(Alignment.End)) {
+                    Row(modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween) {
+                        Text(
+                            text = "Learn How To Do Laundry",
+                            fontSize = 16.sp
+                        )
                         Text(
                             text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
                             fontSize = 16.sp
