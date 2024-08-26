@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
@@ -57,7 +58,8 @@ class LaundryCategoriesFragment : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.washing))
-                                    }).testTag("washing category"),
+                                    })
+                                    .testTag("washing category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -78,7 +80,8 @@ class LaundryCategoriesFragment : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.bleaching))
-                                    }).testTag("bleaching category"),
+                                    })
+                                    .testTag("bleaching category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -123,7 +126,8 @@ class LaundryCategoriesFragment : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.ironing))
-                                    }).testTag("ironing category"),
+                                    })
+                                    .testTag("ironing category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -136,12 +140,16 @@ class LaundryCategoriesFragment : Fragment() {
                         }
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    Row(modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween) {
-                        Text(
-                            text = "Learn How To Do Laundry",
-                            fontSize = 16.sp
-                        )
+                    Row(modifier = Modifier.fillMaxWidth().height(intrinsicSize = IntrinsicSize.Max),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically) {
+                        TextButton(modifier = Modifier.fillMaxHeight(),
+                            onClick = {}) {
+                            Text(
+                                text = "Learn How To Do Laundry",
+                                fontSize = 16.sp
+                            )
+                        }
                         Text(
                             text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
                             fontSize = 16.sp
