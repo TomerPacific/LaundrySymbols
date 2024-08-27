@@ -31,7 +31,7 @@ import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class LaundryCategoryFragment : Fragment() {
 
-    private val model: MainViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     companion object {
         fun newInstance(laundryCategory: String): LaundryCategoryFragment {
@@ -71,7 +71,7 @@ class LaundryCategoryFragment : Fragment() {
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         items(
-                            model.getItemsForLaundryCategory(
+                            viewModel.getItemsForLaundryCategory(
                                 laundryCategoryName,
                                 context
                             )
@@ -85,7 +85,7 @@ class LaundryCategoryFragment : Fragment() {
                                             onClick = {
                                                 val fragment: LaundrySymbolFragment =
                                                     LaundrySymbolFragment.newInstance(laundrySymbol)
-                                                model.handleClickOnLaundrySymbol(
+                                                viewModel.handleClickOnLaundrySymbol(
                                                     requireActivity(),
                                                     fragment
                                                 )
