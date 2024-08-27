@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
+import com.tomerpacific.laundry.fragment.HowToDoLaundryFragment
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
 import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
 import com.tomerpacific.laundry.model.LaundrySymbol
@@ -33,6 +34,12 @@ class MainViewModel: ViewModel() {
             LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols(context)
             else -> listOf()
         }
+    }
+
+    fun handleClickOnLearnHowToDoLaundry(activity: FragmentActivity) {
+        activity.supportFragmentManager.beginTransaction().
+        replace(R.id.fragment_container_view, HowToDoLaundryFragment()).
+        addToBackStack(null).commit()
     }
 
 }
