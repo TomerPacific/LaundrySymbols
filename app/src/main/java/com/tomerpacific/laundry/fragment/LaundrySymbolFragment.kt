@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
@@ -36,8 +36,8 @@ class LaundrySymbolFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        var symbolDescriptionText: String = ""
-        var symbolResourceIdentifier: Int = 0
+        var symbolDescriptionText = ""
+        var symbolResourceIdentifier = 0
         arguments?.apply {
             this.getString(LAUNDRY_SYMBOL_NAME_KEY)?.let {
                 symbolDescriptionText = it
