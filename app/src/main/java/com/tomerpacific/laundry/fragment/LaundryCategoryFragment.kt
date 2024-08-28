@@ -103,10 +103,11 @@ class LaundryCategoryFragment : Fragment() {
                                         positionProvider = tooltipPosition,
                                         state = tooltipState,
                                         tooltip = {
-                                            ElevatedCard {
+                                            ElevatedCard() {
                                                 Text(
                                                     text = laundrySymbol.description,
-                                                    modifier = Modifier.padding(5.dp),
+                                                    color = Color.White,
+                                                    modifier = Modifier.padding(5.dp).background(Color.Black),
                                                 )
                                             }
                                         },
