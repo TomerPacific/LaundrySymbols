@@ -91,7 +91,21 @@ class HowToDoLaundryFragment: Fragment() {
                                     label = { Text(text = "Sorting Laundry") },
                                     selected = false,
                                     onClick = {
-                                        viewModel.handleClickOnHowToDoLaundryCategories("Sorting Laundry")
+                                        viewModel.handleClickOnHowToDoLaundryCategories(HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY)
+                                        scope.launch {
+                                            drawerState.close()
+                                        }
+
+                                    }
+                                )
+                                NavigationDrawerItem(
+                                    label = { Text(text = "Treating Stains") },
+                                    selected = false,
+                                    onClick = {
+                                        viewModel.handleClickOnHowToDoLaundryCategories(HowToDoLaundryDrawerItems.TREATING_STAINS)
+                                        scope.launch {
+                                            drawerState.close()
+                                        }
                                     }
                                 )
                             }
@@ -99,6 +113,8 @@ class HowToDoLaundryFragment: Fragment() {
                     ) {
                         if (selectedDrawerItem == HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY) {
                             SeparatingLaundry()
+                        } else if (selectedDrawerItem == HowToDoLaundryDrawerItems.TREATING_STAINS) {
+                            TreatingStains()
                         }
                     }
                 }
@@ -118,6 +134,25 @@ class HowToDoLaundryFragment: Fragment() {
                 Image(
                     painter = painterResource(id = R.drawable.laundry_hamper),
                     contentDescription = "Separating Laundry",
+                    modifier = Modifier
+                        .width(200.dp)
+                        .height(200.dp)
+                )
+            }
+        }
+    }
+
+    @Composable
+    fun TreatingStains() {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Row(modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center) {
+                Text("Treating Stains", textAlign = TextAlign.Center, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+            }
+            Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
+                Image(
+                    painter = painterResource(id = R.drawable.stain_removal),
+                    contentDescription = "Treating Stains",
                     modifier = Modifier
                         .width(200.dp)
                         .height(200.dp)
