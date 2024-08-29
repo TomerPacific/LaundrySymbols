@@ -13,6 +13,7 @@ import com.tomerpacific.laundry.model.LaundrySymbol
 
 enum class HowToDoLaundryDrawerItems {
     SEPARATING_LAUNDRY,
+    TREATING_STAINS,
 }
 class MainViewModel: ViewModel() {
 
@@ -50,10 +51,8 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
-    fun handleClickOnHowToDoLaundryCategories(categoryTitle: String) {
-        when (categoryTitle) {
-            HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY.name -> _selectedDrawerItem.value = HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY
-        }
+    fun handleClickOnHowToDoLaundryCategories(categoryTitle: HowToDoLaundryDrawerItems) {
+        _selectedDrawerItem.value = categoryTitle
     }
 
 }
