@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerValue
@@ -86,8 +88,8 @@ class HowToDoLaundryFragment: Fragment() {
                         modifier = Modifier.padding(innerPadding),
                         drawerContent = {
                             ModalDrawerSheet {
-                                Column {
-                                    viewModel.getHowToDoLaundryCategories().forEach {
+                                LazyColumn {
+                                    items(viewModel.getHowToDoLaundryCategories()) {
                                         NavigationDrawerItem(
                                             label = { Text(text = it.name.toString()) },
                                             selected = selectedDrawerItem == it.name,
