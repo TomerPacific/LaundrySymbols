@@ -39,17 +39,13 @@ import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.tomerpacific.laundry.R
-import com.tomerpacific.laundry.viewmodel.HowToDoLaundryDrawerItems
+import com.tomerpacific.laundry.model.HowToDoLaundryDrawerItems
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
 class HowToDoLaundryFragment: Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
-    private val drawerItems = listOf<HowToDoLaundryDrawerItems>(
-        HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY,
-        HowToDoLaundryDrawerItems.TREATING_STAINS,
-    )
 
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreateView(
@@ -91,13 +87,13 @@ class HowToDoLaundryFragment: Fragment() {
                         modifier = Modifier.padding(innerPadding),
                         drawerContent = {
                             ModalDrawerSheet {
-                                Column() {
-                                    drawerItems.forEach {
+                                Column {
+                                    viewModel.getHowToDoLaundryCategories().forEach {
                                         NavigationDrawerItem(
-                                            label = { Text(text = it.name) },
-                                            selected = selectedDrawerItem == it,
+                                            label = { Text(text = it.name.toString()) },
+                                            selected = selectedDrawerItem == it.name,
                                             onClick = {
-                                                viewModel.handleClickOnHowToDoLaundryCategories(it)
+                                                viewModel.handleClickOnHowToDoLaundryCategories(it.name)
                                                 scope.launch {
                                                     drawerState.close()
                                                 }
