@@ -1,11 +1,12 @@
 package com.tomerpacific.laundry.model
 
-enum class HowToDoLaundryDrawerItems {
+enum class HowToDoLaundryCategories {
     SEPARATING_LAUNDRY,
     TREATING_STAINS,
 }
 data class HowToDoLaundryCategory(
-    val name: HowToDoLaundryDrawerItems,
+    val name: HowToDoLaundryCategories,
     val description: String,
-    val drawable: Int
+    val drawableId: Int,
+    val contentDescription: String,
 )
