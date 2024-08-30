@@ -2,7 +2,7 @@ package com.tomerpacific.laundry
 
 import android.content.Context
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
-import com.tomerpacific.laundry.model.HowToDoLaundryDrawerItems
+import com.tomerpacific.laundry.model.HowToDoLaundryCategories
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class LaundrySymbolsRepository {
@@ -57,8 +57,13 @@ class LaundrySymbolsRepository {
 
     fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
         return listOf(
-            HowToDoLaundryCategory(HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY, "Learn how to separate your laundry", R.drawable.laundry_hamper),
-            HowToDoLaundryCategory(HowToDoLaundryDrawerItems.TREATING_STAINS, "Learn how to treat stains on your clothes", R.drawable.stain_removal)
+            HowToDoLaundryCategory(HowToDoLaundryCategories.SEPARATING_LAUNDRY,
+                "Learn how to separate your laundry",
+                R.drawable.laundry_hamper, "Laundry Hamper"),
+            HowToDoLaundryCategory(HowToDoLaundryCategories.TREATING_STAINS,
+                "Learn how to treat stains on your clothes",
+                R.drawable.stain_removal,
+                "Stain removal")
         )
     }
 }
