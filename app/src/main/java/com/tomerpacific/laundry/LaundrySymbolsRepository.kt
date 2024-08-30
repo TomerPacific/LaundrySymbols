@@ -1,6 +1,8 @@
 package com.tomerpacific.laundry
 
 import android.content.Context
+import com.tomerpacific.laundry.model.HowToDoLaundryCategory
+import com.tomerpacific.laundry.model.HowToDoLaundryDrawerItems
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class LaundrySymbolsRepository {
@@ -50,6 +52,13 @@ class LaundrySymbolsRepository {
             LaundrySymbol(context.getString(R.string.iron_medium_symbol), context.getString(R.string.iron_medium_symbol), R.drawable.iron_medium_setting),
             LaundrySymbol( context.getString(R.string.iron_high_symbol),  context.getString(R.string.iron_high_symbol), R.drawable.iron_high_setting),
             LaundrySymbol( context.getString(R.string.steaming_not_allowed_symbol),  context.getString(R.string.steaming_not_allowed_symbol), R.drawable.iron_steam_not_allowed)
+        )
+    }
+
+    fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
+        return listOf(
+            HowToDoLaundryCategory(HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY, "Learn how to separate your laundry", R.drawable.laundry_hamper),
+            HowToDoLaundryCategory(HowToDoLaundryDrawerItems.TREATING_STAINS, "Learn how to treat stains on your clothes", R.drawable.stain_removal)
         )
     }
 }
