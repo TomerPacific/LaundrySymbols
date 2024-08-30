@@ -1,6 +1,5 @@
 package com.tomerpacific.laundry.model
-
 data class LaundrySymbol(
-    var name: String,
-    var description: String,
-    var drawableId: Int)
+    val name: String,
+    val description: String,
+    val drawableId: Int)
