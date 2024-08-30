@@ -9,14 +9,14 @@ import com.tomerpacific.laundry.fragment.HowToDoLaundryFragment
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
 import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
-import com.tomerpacific.laundry.model.HowToDoLaundryDrawerItems
+import com.tomerpacific.laundry.model.HowToDoLaundryCategories
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class MainViewModel: ViewModel() {
 
     private val laundrySymbolsRepository = LaundrySymbolsRepository()
 
-    private val _selectedDrawerItem = mutableStateOf(HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY)
+    private val _selectedDrawerItem = mutableStateOf(HowToDoLaundryCategories.SEPARATING_LAUNDRY)
     val selectedDrawerItem = _selectedDrawerItem
 
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragment) {
@@ -43,7 +43,7 @@ class MainViewModel: ViewModel() {
     }
 
     fun getHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
-        return laundrySymbolsRepository.createHowToDoLaundryCategories();
+        return laundrySymbolsRepository.createHowToDoLaundryCategories()
     }
 
     fun handleClickOnLearnHowToDoLaundry(activity: FragmentActivity) {
@@ -52,7 +52,7 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
-    fun handleClickOnHowToDoLaundryCategories(categoryTitle: HowToDoLaundryDrawerItems) {
+    fun handleClickOnHowToDoLaundryCategories(categoryTitle: HowToDoLaundryCategories) {
         _selectedDrawerItem.value = categoryTitle
     }
 
