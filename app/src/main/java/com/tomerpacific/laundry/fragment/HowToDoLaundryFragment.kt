@@ -46,6 +46,10 @@ import kotlinx.coroutines.launch
 class HowToDoLaundryFragment: Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
+    private val drawerItems = listOf<HowToDoLaundryDrawerItems>(
+        HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY,
+        HowToDoLaundryDrawerItems.TREATING_STAINS,
+    )
 
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreateView(
@@ -87,34 +91,30 @@ class HowToDoLaundryFragment: Fragment() {
                         modifier = Modifier.padding(innerPadding),
                         drawerContent = {
                             ModalDrawerSheet {
-                                NavigationDrawerItem(
-                                    label = { Text(text = "Sorting Laundry") },
-                                    selected = false,
-                                    onClick = {
-                                        viewModel.handleClickOnHowToDoLaundryCategories(HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY)
-                                        scope.launch {
-                                            drawerState.close()
-                                        }
-
+                                Column() {
+                                    drawerItems.forEach {
+                                        NavigationDrawerItem(
+                                            label = { Text(text = it.name) },
+                                            selected = selectedDrawerItem == it,
+                                            onClick = {
+                                                viewModel.handleClickOnHowToDoLaundryCategories(it)
+                                                scope.launch {
+                                                    drawerState.close()
+                                                }
+                                            }
+                                        )
                                     }
-                                )
-                                NavigationDrawerItem(
-                                    label = { Text(text = "Treating Stains") },
-                                    selected = false,
-                                    onClick = {
-                                        viewModel.handleClickOnHowToDoLaundryCategories(HowToDoLaundryDrawerItems.TREATING_STAINS)
-                                        scope.launch {
-                                            drawerState.close()
-                                        }
-                                    }
-                                )
+                                }
                             }
                         }
                     ) {
-                        if (selectedDrawerItem == HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY) {
-                            SeparatingLaundry()
-                        } else if (selectedDrawerItem == HowToDoLaundryDrawerItems.TREATING_STAINS) {
-                            TreatingStains()
+                        when (selectedDrawerItem) {
+                            HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY -> {
+                                SeparatingLaundry()
+                            }
+                            HowToDoLaundryDrawerItems.TREATING_STAINS -> {
+                                TreatingStains()
+                            }
                         }
                     }
                 }
