@@ -38,8 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.tomerpacific.laundry.R
-import com.tomerpacific.laundry.model.HowToDoLaundryDrawerItems
+import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
@@ -69,7 +68,7 @@ class HowToDoLaundryFragment: Fragment() {
                                 IconButton(onClick = {
                                     scope.launch {
                                         drawerState.apply {
-                                         if (isClosed) open() else close()
+                                            if (isClosed) open() else close()
                                         }
                                     }
                                 }) {
@@ -104,55 +103,40 @@ class HowToDoLaundryFragment: Fragment() {
                             }
                         }
                     ) {
-                        when (selectedDrawerItem) {
-                            HowToDoLaundryDrawerItems.SEPARATING_LAUNDRY -> {
-                                SeparatingLaundry()
-                            }
-                            HowToDoLaundryDrawerItems.TREATING_STAINS -> {
-                                TreatingStains()
-                            }
-                        }
+                        HowToDoLaundryCategory(viewModel.getHowToDoLaundryCategories().find {
+                            it.name == selectedDrawerItem
+                        }!!)
                     }
                 }
             }
         }
     }
 
-
     @Composable
-    fun SeparatingLaundry() {
+    fun HowToDoLaundryCategory(howToDoLaundryCategory: HowToDoLaundryCategory) {
         Column(modifier = Modifier.fillMaxSize()) {
-            Row(modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center) {
-                Text("Separating Laundry", textAlign = TextAlign.Center, fontSize = 25.sp, fontWeight = FontWeight.Bold)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    howToDoLaundryCategory.name.toString(),
+                    textAlign = TextAlign.Center,
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
             Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
                 Image(
-                    painter = painterResource(id = R.drawable.laundry_hamper),
-                    contentDescription = "Separating Laundry",
+                    painter = painterResource(id = howToDoLaundryCategory.drawableId),
+                    contentDescription = howToDoLaundryCategory.contentDescription,
                     modifier = Modifier
                         .width(200.dp)
                         .height(200.dp)
                 )
             }
-        }
-    }
-
-    @Composable
-    fun TreatingStains() {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Row(modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center) {
-                Text("Treating Stains", textAlign = TextAlign.Center, fontSize = 25.sp, fontWeight = FontWeight.Bold)
-            }
             Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
-                Image(
-                    painter = painterResource(id = R.drawable.stain_removal),
-                    contentDescription = "Treating Stains",
-                    modifier = Modifier
-                        .width(200.dp)
-                        .height(200.dp)
-                )
+                Text(howToDoLaundryCategory.description)
             }
         }
     }
