@@ -8,13 +8,10 @@ import com.tomerpacific.laundry.*
 import com.tomerpacific.laundry.fragment.HowToDoLaundryFragment
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
 import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
+import com.tomerpacific.laundry.model.HowToDoLaundryCategory
+import com.tomerpacific.laundry.model.HowToDoLaundryDrawerItems
 import com.tomerpacific.laundry.model.LaundrySymbol
 
-
-enum class HowToDoLaundryDrawerItems {
-    SEPARATING_LAUNDRY,
-    TREATING_STAINS,
-}
 class MainViewModel: ViewModel() {
 
     private val laundrySymbolsRepository = LaundrySymbolsRepository()
@@ -43,6 +40,10 @@ class MainViewModel: ViewModel() {
             LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols(context)
             else -> listOf()
         }
+    }
+
+    fun getHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
+        return laundrySymbolsRepository.createHowToDoLaundryCategories();
     }
 
     fun handleClickOnLearnHowToDoLaundry(activity: FragmentActivity) {
