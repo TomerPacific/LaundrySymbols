@@ -9,17 +9,15 @@ import com.tomerpacific.laundry.fragment.HowToDoLaundryFragment
 import com.tomerpacific.laundry.fragment.LaundryCategoryFragment
 import com.tomerpacific.laundry.fragment.LaundrySymbolFragment
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
-import com.tomerpacific.laundry.model.HowToDoLaundryCategories
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class MainViewModel: ViewModel() {
 
     private val laundrySymbolsRepository = LaundrySymbolsRepository()
 
-    private val _selectedDrawerItem = mutableStateOf(HowToDoLaundryCategory(
-        HowToDoLaundryCategories.SEPARATING_LAUNDRY,
-        "Learn how to separate your laundry",
-        R.drawable.laundry_hamper, "Laundry Hamper"))
+    private val howToDoLaundryCategories = laundrySymbolsRepository.createHowToDoLaundryCategories()
+
+    private val _selectedDrawerItem = mutableStateOf(howToDoLaundryCategories[0])
     val selectedDrawerItem = _selectedDrawerItem
 
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragment) {
@@ -46,7 +44,7 @@ class MainViewModel: ViewModel() {
     }
 
     fun getHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
-        return laundrySymbolsRepository.createHowToDoLaundryCategories()
+        return howToDoLaundryCategories
     }
 
     fun handleClickOnLearnHowToDoLaundry(activity: FragmentActivity) {
