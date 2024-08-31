@@ -50,4 +50,10 @@
     <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
 
 
+    <string name="separating__laundry_description">Separate your laundry into clothes that are of the same fabric.
+                        One pile can be made up of heavy fabrics, the other with lightweight or thin fabrics.
+                        This way, it will be easier for you to choose the correct washing cycle for your clothes.
+                After you separate into the type of fabric, you will need to separate by the color of the fabric.
+                        This will prevent colors from bleeding into each other and ruining your clothes.</string>
+    <string name="treating_stains_description"></string>
 </resources>
