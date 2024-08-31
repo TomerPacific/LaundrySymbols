@@ -135,7 +135,8 @@ class HowToDoLaundryFragment: Fragment() {
                 }
             }
             item {
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                Row(modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center) {
                     Image(
                         painter = painterResource(id = howToDoLaundryCategory.drawableId),
                         contentDescription = howToDoLaundryCategory.contentDescription,
@@ -146,8 +147,9 @@ class HowToDoLaundryFragment: Fragment() {
                 }
             }
             item {
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                    Text(howToDoLaundryCategory.description)
+                Row(modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center) {
+                    Text(getString(howToDoLaundryCategory.descriptionId), textAlign = TextAlign.Center, fontSize = 20.sp)
                 }
             }
         }
