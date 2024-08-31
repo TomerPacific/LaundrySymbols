@@ -6,7 +6,7 @@ enum class HowToDoLaundryCategories {
 }
 data class HowToDoLaundryCategory(
     val name: HowToDoLaundryCategories,
-    val description: String,
+    val descriptionId: Int,
     val drawableId: Int,
     val contentDescription: String,
 )
