@@ -90,12 +90,12 @@ class HowToDoLaundryFragment: Fragment() {
                         drawerContent = {
                             ModalDrawerSheet {
                                 LazyColumn {
-                                    items(howToDoLaundryCategories) {
+                                    items(howToDoLaundryCategories) { howToDoLaundryCategory ->
                                         NavigationDrawerItem(
-                                            label = { Text(text = it.name.toString()) },
-                                            selected = selectedDrawerItem == it.name,
+                                            label = { Text(text = howToDoLaundryCategory.name.toString()) },
+                                            selected = selectedDrawerItem == howToDoLaundryCategory.name,
                                             onClick = {
-                                                viewModel.handleClickOnHowToDoLaundryCategories(it.name)
+                                                viewModel.handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory.name)
                                                 scope.launch {
                                                     drawerState.close()
                                                 }
@@ -106,8 +106,8 @@ class HowToDoLaundryFragment: Fragment() {
                             }
                         }
                     ) {
-                        howToDoLaundryCategories.find {
-                            it.name == selectedDrawerItem
+                        howToDoLaundryCategories.find { howToDoLaundryCategory ->
+                            howToDoLaundryCategory.name == selectedDrawerItem
                         }?.let {
                             HowToDoLaundryCategory(it)
                         }
