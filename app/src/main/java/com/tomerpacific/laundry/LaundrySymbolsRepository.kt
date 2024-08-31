@@ -58,10 +58,10 @@ class LaundrySymbolsRepository {
     fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
         return listOf(
             HowToDoLaundryCategory(HowToDoLaundryCategories.SEPARATING_LAUNDRY,
-                "Learn how to separate your laundry",
+                R.string.separating__laundry_description,
                 R.drawable.laundry_hamper, "Laundry Hamper"),
             HowToDoLaundryCategory(HowToDoLaundryCategories.TREATING_STAINS,
-                "Learn how to treat stains on your clothes",
+                R.string.treating_stains_description,
                 R.drawable.stain_removal,
                 "Stain removal")
         )
