@@ -16,7 +16,10 @@ class MainViewModel: ViewModel() {
 
     private val laundrySymbolsRepository = LaundrySymbolsRepository()
 
-    private val _selectedDrawerItem = mutableStateOf(HowToDoLaundryCategories.SEPARATING_LAUNDRY)
+    private val _selectedDrawerItem = mutableStateOf(HowToDoLaundryCategory(
+        HowToDoLaundryCategories.SEPARATING_LAUNDRY,
+        "Learn how to separate your laundry",
+        R.drawable.laundry_hamper, "Laundry Hamper"))
     val selectedDrawerItem = _selectedDrawerItem
 
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragment) {
@@ -52,8 +55,8 @@ class MainViewModel: ViewModel() {
         addToBackStack(null).commit()
     }
 
-    fun handleClickOnHowToDoLaundryCategories(categoryTitle: HowToDoLaundryCategories) {
-        _selectedDrawerItem.value = categoryTitle
+    fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {
+        _selectedDrawerItem.value = howToDoLaundryCategory
     }
 
 }

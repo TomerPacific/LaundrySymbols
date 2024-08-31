@@ -93,9 +93,9 @@ class HowToDoLaundryFragment: Fragment() {
                                     items(howToDoLaundryCategories) { howToDoLaundryCategory ->
                                         NavigationDrawerItem(
                                             label = { Text(text = howToDoLaundryCategory.name.toString()) },
-                                            selected = selectedDrawerItem == howToDoLaundryCategory.name,
+                                            selected = selectedDrawerItem == howToDoLaundryCategory,
                                             onClick = {
-                                                viewModel.handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory.name)
+                                                viewModel.handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory)
                                                 scope.launch {
                                                     drawerState.close()
                                                 }
@@ -107,7 +107,7 @@ class HowToDoLaundryFragment: Fragment() {
                         }
                     ) {
                         howToDoLaundryCategories.find { howToDoLaundryCategory ->
-                            howToDoLaundryCategory.name == selectedDrawerItem
+                            howToDoLaundryCategory == selectedDrawerItem
                         }?.let {
                             HowToDoLaundryCategory(it)
                         }
