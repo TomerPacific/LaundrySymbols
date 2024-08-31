@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,7 +29,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
@@ -53,6 +51,9 @@ class HowToDoLaundryFragment: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        val howToDoLaundryCategories = viewModel.getHowToDoLaundryCategories()
+
         return ComposeView(requireContext()).apply {
             setContent {
 
@@ -89,7 +90,7 @@ class HowToDoLaundryFragment: Fragment() {
                         drawerContent = {
                             ModalDrawerSheet {
                                 LazyColumn {
-                                    items(viewModel.getHowToDoLaundryCategories()) {
+                                    items(howToDoLaundryCategories) {
                                         NavigationDrawerItem(
                                             label = { Text(text = it.name.toString()) },
                                             selected = selectedDrawerItem == it.name,
@@ -105,9 +106,12 @@ class HowToDoLaundryFragment: Fragment() {
                             }
                         }
                     ) {
-                        HowToDoLaundryCategory(viewModel.getHowToDoLaundryCategories().find {
+                        howToDoLaundryCategories.find {
                             it.name == selectedDrawerItem
-                        }!!)
+                        }?.let {
+                            HowToDoLaundryCategory(it)
+                        }
+
                     }
                 }
             }
@@ -116,29 +120,35 @@ class HowToDoLaundryFragment: Fragment() {
 
     @Composable
     fun HowToDoLaundryCategory(howToDoLaundryCategory: HowToDoLaundryCategory) {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    howToDoLaundryCategory.name.toString(),
-                    textAlign = TextAlign.Center,
-                    fontSize = 25.sp,
-                    fontWeight = FontWeight.Bold
-                )
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            item {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        howToDoLaundryCategory.name.toString(),
+                        textAlign = TextAlign.Center,
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
             }
-            Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
-                Image(
-                    painter = painterResource(id = howToDoLaundryCategory.drawableId),
-                    contentDescription = howToDoLaundryCategory.contentDescription,
-                    modifier = Modifier
-                        .width(200.dp)
-                        .height(200.dp)
-                )
+            item {
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                    Image(
+                        painter = painterResource(id = howToDoLaundryCategory.drawableId),
+                        contentDescription = howToDoLaundryCategory.contentDescription,
+                        modifier = Modifier
+                            .width(200.dp)
+                            .height(200.dp)
+                    )
+                }
             }
-            Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
-                Text(howToDoLaundryCategory.description)
+            item {
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                    Text(howToDoLaundryCategory.description)
+                }
             }
         }
     }
