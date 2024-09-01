@@ -63,7 +63,7 @@ class LaundrySymbolsRepository {
             HowToDoLaundryCategory(HowToDoLaundryCategories.TREATING_STAINS,
                 R.string.treating_stains_description,
                 R.drawable.stain_removal,
-                "Stain removal")
+                "Stain Removal")
         )
     }
 }
