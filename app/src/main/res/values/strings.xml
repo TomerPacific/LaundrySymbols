@@ -69,4 +69,13 @@
         Make sure to choose the correct laundry detergent for your type of washing machine.
         Also, take into account to buy a laundry detergent if you have sensitive skin or are prone to allergies.
     </string>
+    <string name="using_bleach_description">
+        Adding bleach to your laundry helps keep your white clothes bright.
+        Make sure to look for the correct place to add it based on the type of your washing machine.
+    </string>
+    <string name="fabric_softener_description">
+        If you want to give your clothes a soft touch or if your clothes come out of the laundry machine stiff,
+        you need to add fabric softener to your laundry.
+        Make sure to look for the correct place to add it based on the type of your washing machine.
+    </string>
 </resources>

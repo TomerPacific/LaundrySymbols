@@ -67,8 +67,15 @@ class LaundrySymbolsRepository {
             HowToDoLaundryCategory(HowToDoLaundryCategories.LOAD_DETERGENT,
                 R.string.loading_detergent,
                 R.drawable.loading_detergent,
-                "Load Detergent"
-            ),
+                "Load Detergent"),
+            HowToDoLaundryCategory(HowToDoLaundryCategories.USING_BLEACH,
+                R.string.using_bleach_description,
+                R.drawable.bleach,
+                "Using Bleach"),
+            HowToDoLaundryCategory(HowToDoLaundryCategories.ADDING_FABRIC_SOFTENER,
+                R.string.fabric_softener_description,
+                R.drawable.fabric_softener,
+                "Adding Fabric Softener")
         )
     }
 }
