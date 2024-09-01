@@ -57,5 +57,6 @@
                         This will prevent colors from bleeding into each other and ruining your clothes.</string>
     <string name="treating_stains_description">Always treat stains as soon as they occur.
         You can either use a laundry detergent or a stain remover and make sure to gently rub it in.
-        Let it sit for around five minutes before washing it away from the clothing item.</string>
+        Let it sit for around five minutes before washing it away from the clothing item.
+        You can also treat stains by letting them soak for thirty minutes in cold water.</string>
 </resources>
