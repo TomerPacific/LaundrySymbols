@@ -5,16 +5,14 @@ enum class HowToDoLaundryCategories {
     TREATING_STAINS,
     LOAD_DETERGENT,
     USING_BLEACH,
-    ADDING_FABRIC_SOFTENER;
+    ADDING_FABRIC_SOFTENER,
+    WASH_CYCLE_AND_TEMPERATURE;
     companion object {
-        fun convertHowToDoLaundryCategory(category: HowToDoLaundryCategories): String {
-            return when(category) {
-                SEPARATING_LAUNDRY -> "Separating Laundry"
-                TREATING_STAINS -> "Treating Stains"
-                LOAD_DETERGENT -> "Load Detergent"
-                USING_BLEACH -> "Using Bleach"
-                ADDING_FABRIC_SOFTENER -> "Adding Fabric Softener"
-
+        fun convertHowToDoLaundryCategoryToString(category: HowToDoLaundryCategories): String {
+            return category.name.split("_").joinToString(" ") { word ->
+                word.lowercase().replaceFirstChar(
+                    Char::titlecaseChar
+                )
             }
         }
     }
