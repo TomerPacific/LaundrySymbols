@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.tomerpacific.laundry.model.HowToDoLaundryCategories
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
@@ -92,7 +93,7 @@ class HowToDoLaundryFragment: Fragment() {
                                 LazyColumn {
                                     items(howToDoLaundryCategories) { howToDoLaundryCategory ->
                                         NavigationDrawerItem(
-                                            label = { Text(text = howToDoLaundryCategory.name.toString()) },
+                                            label = { Text(text = HowToDoLaundryCategories.convertHowToDoLaundryCategory(howToDoLaundryCategory.name)) },
                                             selected = selectedDrawerItem == howToDoLaundryCategory,
                                             onClick = {
                                                 viewModel.handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory)
@@ -127,7 +128,7 @@ class HowToDoLaundryFragment: Fragment() {
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        howToDoLaundryCategory.name.toString(),
+                        HowToDoLaundryCategories.convertHowToDoLaundryCategory(howToDoLaundryCategory.name),
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         fontWeight = FontWeight.Bold
@@ -135,7 +136,7 @@ class HowToDoLaundryFragment: Fragment() {
                 }
             }
             item {
-                Row(modifier = Modifier.fillMaxWidth(),
+                Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
                     horizontalArrangement = Arrangement.Center) {
                     Image(
                         painter = painterResource(id = howToDoLaundryCategory.drawableId),
