@@ -93,7 +93,7 @@ class HowToDoLaundryFragment: Fragment() {
                                 LazyColumn {
                                     items(howToDoLaundryCategories) { howToDoLaundryCategory ->
                                         NavigationDrawerItem(
-                                            label = { Text(text = HowToDoLaundryCategories.convertHowToDoLaundryCategoryToString(howToDoLaundryCategory.name)) },
+                                            label = { Text(text = HowToDoLaundryCategories.convertToString(howToDoLaundryCategory.name)) },
                                             selected = selectedDrawerItem == howToDoLaundryCategory,
                                             onClick = {
                                                 viewModel.handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory)
@@ -128,7 +128,7 @@ class HowToDoLaundryFragment: Fragment() {
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        HowToDoLaundryCategories.convertHowToDoLaundryCategoryToString(howToDoLaundryCategory.name),
+                        HowToDoLaundryCategories.convertToString(howToDoLaundryCategory.name),
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         fontWeight = FontWeight.Bold

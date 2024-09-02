@@ -8,7 +8,7 @@ enum class HowToDoLaundryCategories {
     ADDING_FABRIC_SOFTENER,
     WASH_CYCLE_AND_TEMPERATURE;
     companion object {
-        fun convertHowToDoLaundryCategoryToString(category: HowToDoLaundryCategories): String {
+        fun convertToString(category: HowToDoLaundryCategories): String {
             return category.name.split("_").joinToString(" ") { word ->
                 word.lowercase().replaceFirstChar(
                     Char::titlecaseChar
