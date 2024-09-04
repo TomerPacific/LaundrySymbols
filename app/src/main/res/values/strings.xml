@@ -87,4 +87,9 @@
         from. Like nylon and rayon. This will cause the washing machine to have a slower cycle at the end of the wash.
         For clothing items that are delicate, like lingerie, use the delicate cycle.
     </string>
+    <string name="wash_temperature_description">
+        For most of your wash cycles, it is advised to use cold water.
+        This is because most detergents work well with cold water and clothes last longer when washed in cold water.
+        Use hot water only when you need to wash very dirty clothes or if you are trying to kill germs.
+    </string>
 </resources>

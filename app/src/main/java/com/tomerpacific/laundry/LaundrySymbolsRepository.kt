@@ -79,7 +79,11 @@ class LaundrySymbolsRepository {
             HowToDoLaundryCategory(HowToDoLaundryCategories.WASH_CYCLE,
                 R.string.wash_cycle_description,
                 R.drawable.wash_cycle,
-                "Wash Cycle")
+                "Wash Cycle"),
+            HowToDoLaundryCategory(HowToDoLaundryCategories.WASH_TEMPERATURE,
+                R.string.wash_temperature_description,
+                R.drawable.wash_temperature,
+                "Wash Temperature")
         )
     }
 }

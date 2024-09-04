@@ -6,7 +6,8 @@ enum class HowToDoLaundryCategories {
     LOAD_DETERGENT,
     USING_BLEACH,
     ADDING_FABRIC_SOFTENER,
-    WASH_CYCLE;
+    WASH_CYCLE,
+    WASH_TEMPERATURE;
     companion object {
         fun convertToString(category: HowToDoLaundryCategories): String {
             return category.name.split("_").joinToString(" ") { word ->
