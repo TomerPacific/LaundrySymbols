@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -28,14 +30,17 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.tomerpacific.laundry.model.HowToDoLaundryCategories
@@ -150,9 +155,28 @@ class HowToDoLaundryFragment: Fragment() {
             item {
                 Row(modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center) {
-                    Text(getString(howToDoLaundryCategory.descriptionId), textAlign = TextAlign.Center, fontSize = 20.sp)
+                    StyledText(textResource(howToDoLaundryCategory.descriptionId))
+             //       Text(getString(howToDoLaundryCategory.descriptionId), textAlign = TextAlign.Center, fontSize = 20.sp)
                 }
             }
         }
+    }
+
+    @Composable
+    @ReadOnlyComposable
+    fun textResource(@StringRes id: Int): CharSequence =
+        LocalContext.current.resources.getText(id)
+
+    @Composable
+    fun StyledText(text: CharSequence, modifier: Modifier = Modifier) {
+        AndroidView(
+            modifier = modifier,
+            factory = { context -> TextView(context) },
+            update = {
+                it.text = text
+                it.textSize = 20f
+                it.gravity = android.view.Gravity.CENTER
+            }
+        )
     }
 }
