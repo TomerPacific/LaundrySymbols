@@ -156,7 +156,6 @@ class HowToDoLaundryFragment: Fragment() {
                 Row(modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center) {
                     StyledText(textResource(howToDoLaundryCategory.descriptionId))
-             //       Text(getString(howToDoLaundryCategory.descriptionId), textAlign = TextAlign.Center, fontSize = 20.sp)
                 }
             }
         }
