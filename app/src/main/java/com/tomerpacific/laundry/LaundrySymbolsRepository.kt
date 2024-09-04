@@ -75,7 +75,11 @@ class LaundrySymbolsRepository {
             HowToDoLaundryCategory(HowToDoLaundryCategories.ADDING_FABRIC_SOFTENER,
                 R.string.fabric_softener_description,
                 R.drawable.fabric_softener,
-                "Adding Fabric Softener")
+                "Adding Fabric Softener"),
+            HowToDoLaundryCategory(HowToDoLaundryCategories.WASH_CYCLE_AND_TEMPERATURE,
+                R.string.choosing_wash_cycle_and_temperature_description,
+                R.drawable.wash_cycle,
+                "Wash Cycle")
         )
     }
 }
