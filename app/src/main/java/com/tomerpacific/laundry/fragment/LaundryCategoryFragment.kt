@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipDefaults
@@ -102,11 +104,21 @@ class LaundryCategoryFragment : Fragment() {
                                         positionProvider = tooltipPosition,
                                         state = tooltipState,
                                         tooltip = {
-                                            Text(
-                                                text = laundrySymbol.description,
-                                                color = Color.White,
-                                                modifier = Modifier.padding(5.dp).background(Color.Black),
-                                            )
+                                            Card(
+                                                colors = CardDefaults.cardColors(
+                                                    containerColor = Color.Black.copy(alpha = 0.75f)
+                                                ),
+                                                elevation = CardDefaults.cardElevation(16.dp),
+                                            ) {
+                                                Text(
+                                                    text = laundrySymbol.description,
+                                                    color = Color.White,
+                                                    modifier = Modifier
+                                                        .padding(5.dp)
+                                                        .background(Color.Black),
+                                                )
+                                            }
+
                                         },
                                         content = {
                                             Image(
