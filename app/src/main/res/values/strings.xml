@@ -50,12 +50,12 @@
     <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
 
 
-    <!-- How To Do Laundry Categories -->
-    <string name="separating__laundry">Separating Laundry</string>
-    <string name="treating_stains">Treating Stains</string>
-    <string name="loading_detergent">Loading Detergent</string>
+    <!-- How To Do Laundry Categories Content Description -->
+    <string name="laundry_hamper">Laundry Hamper</string>
+    <string name="stain_removal">Stain Removal</string>
+    <string name="load_detergent">Load Detergent</string>
     <string name="using_bleach">Using Bleach</string>
-    <string name="fabric_softener">Fabric Softener</string>
+    <string name="adding_fabric_softener">Adding Fabric Softener</string>
     <string name="wash_cycle">Wash Cycle</string>
     <string name="wash_temperature">Wash Temperature</string>
 
