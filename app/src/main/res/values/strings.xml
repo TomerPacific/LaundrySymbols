@@ -50,6 +50,16 @@
     <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
 
 
+    <!-- How To Do Laundry Categories -->
+    <string name="separating__laundry">Separating Laundry</string>
+    <string name="treating_stains">Treating Stains</string>
+    <string name="loading_detergent">Loading Detergent</string>
+    <string name="using_bleach">Using Bleach</string>
+    <string name="fabric_softener">Fabric Softener</string>
+    <string name="wash_cycle">Wash Cycle</string>
+    <string name="wash_temperature">Wash Temperature</string>
+
+    <!-- How To Do Laundry Categories Description -->
     <string name="separating__laundry_description">
         Separate your laundry into clothes that are of the same fabric.
         One pile can be made up of heavy fabrics, the other with lightweight or thin fabrics.
@@ -63,7 +73,7 @@
         Let it sit for around five minutes before washing it away from the clothing item.
         You can also treat stains by letting them soak for thirty minutes in cold water.
     </string>
-    <string name="loading_detergent">
+    <string name="loading_detergent_description">
         Depending on the type of your laundry machine, either put the detergent in the sliding drawer (of a front loading washing machine).
         Or if you have a top loading washing machine, you can put the detergent directly into the drum after filling it with water.
         Make sure to choose the correct laundry detergent for your type of washing machine.
