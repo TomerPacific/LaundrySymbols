@@ -142,7 +142,7 @@ class HowToDoLaundryFragment: Fragment() {
                     horizontalArrangement = Arrangement.Center) {
                     Image(
                         painter = painterResource(id = howToDoLaundryCategory.drawableId),
-                        contentDescription = howToDoLaundryCategory.contentDescription,
+                        contentDescription = getString(howToDoLaundryCategory.contentDescriptionId),
                         modifier = Modifier
                             .width(200.dp)
                             .height(200.dp)
