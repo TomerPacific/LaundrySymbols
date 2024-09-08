@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
@@ -26,7 +27,7 @@ import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class LaundryCategoriesFragment : Fragment() {
 
-    private val model: MainViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +58,8 @@ class LaundryCategoriesFragment : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.washing))
-                                    }).testTag("washing category"),
+                                    })
+                                    .testTag("washing category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -78,7 +80,8 @@ class LaundryCategoriesFragment : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.bleaching))
-                                    }).testTag("bleaching category"),
+                                    })
+                                    .testTag("bleaching category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -123,7 +126,8 @@ class LaundryCategoriesFragment : Fragment() {
                                     .border(BorderStroke(2.dp, Color.Black))
                                     .clickable(enabled = true, onClick = {
                                         openLaundryCategory(resources.getString(R.string.ironing))
-                                    }).testTag("ironing category"),
+                                    })
+                                    .testTag("ironing category"),
                                 alignment = Alignment.Center
                             )
                             Text(
@@ -136,7 +140,18 @@ class LaundryCategoriesFragment : Fragment() {
                         }
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    Row(Modifier.align(Alignment.End)) {
+                    Row(modifier = Modifier.fillMaxWidth().height(intrinsicSize = IntrinsicSize.Max),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically) {
+                        TextButton(modifier = Modifier.fillMaxHeight(),
+                            onClick = {
+                                viewModel.handleClickOnLearnHowToDoLaundry(requireActivity())
+                            }) {
+                            Text(
+                                text = "How To Do Laundry",
+                                fontSize = 16.sp
+                            )
+                        }
                         Text(
                             text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
                             fontSize = 16.sp
@@ -152,7 +167,7 @@ class LaundryCategoriesFragment : Fragment() {
         val fragment: LaundryCategoryFragment =
             LaundryCategoryFragment.newInstance(laundryCategory)
 
-        model.handleClickOnLaundryCategory(requireActivity(), fragment)
+        viewModel.handleClickOnLaundryCategory(requireActivity(), fragment)
     }
 
 }

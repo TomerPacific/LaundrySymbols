@@ -50,4 +50,56 @@
     <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
 
 
+    <!-- How To Do Laundry Categories Content Description -->
+    <string name="laundry_hamper">Laundry Hamper</string>
+    <string name="stain_removal">Stain Removal</string>
+    <string name="load_detergent">Load Detergent</string>
+    <string name="using_bleach">Using Bleach</string>
+    <string name="adding_fabric_softener">Adding Fabric Softener</string>
+    <string name="wash_cycle">Wash Cycle</string>
+    <string name="wash_temperature">Wash Temperature</string>
+
+    <!-- How To Do Laundry Categories Description -->
+    <string name="separating__laundry_description">
+        Separate your laundry into clothes that are of the same fabric.
+        One pile can be made up of heavy fabrics, the other with lightweight or thin fabrics.
+        This way, it will be easier for you to choose the correct washing cycle for your clothes.
+        After you separate into the type of fabric, you will need to separate by the color of the fabric.
+        This will prevent colors from bleeding into each other and ruining your clothes.
+    </string>
+    <string name="treating_stains_description">
+        Always treat stains as soon as they occur.
+        You can either use a laundry detergent or a stain remover and make sure to gently rub it in.
+        Let it sit for around five minutes before washing it away from the clothing item.
+        You can also treat stains by letting them soak for thirty minutes in cold water.
+    </string>
+    <string name="loading_detergent_description">
+        Depending on the type of your laundry machine, either put the detergent in the sliding drawer (of a front loading washing machine).
+        Or if you have a top loading washing machine, you can put the detergent directly into the drum after filling it with water.
+        Make sure to choose the correct laundry detergent for your type of washing machine.
+        Also, take into account to buy a laundry detergent if you have sensitive skin or are prone to allergies.
+    </string>
+    <string name="using_bleach_description">
+        Adding bleach to your laundry helps keep your white clothes bright.
+        Make sure to look for the correct place to add it based on the type of your washing machine.
+    </string>
+    <string name="fabric_softener_description">
+        If you want to give your clothes a soft touch or if your clothes come out of the laundry machine stiff,
+        you need to add fabric softener to your laundry.
+        Make sure to look for the correct place to add it based on the type of your washing machine.
+    </string>
+    <string name="wash_cycle_description">
+        Make sure to read the care tags on your clothing. If you don\'t understand them, use <b>Laundry Symbols</b> to figure out
+        what each one means. For sturdy clothing, use the normal setting on your washing machine. This usually will
+        make the washing machine wash and rinse in fast cycles. If you have very dirty clothing items, then you
+        will need to use the heavy duty setting.
+        The permanent press setting is used for clothes that might wrinkling, which is caused by the fabrics they are made
+        from. Like nylon and rayon. This will cause the washing machine to have a slower cycle at the end of the wash.
+        For clothing items that are delicate, like lingerie, use the delicate cycle.
+    </string>
+    <string name="wash_temperature_description">
+        For most of your wash cycles, it is advised to use cold water.
+        This is because most detergents work well with cold water and clothes last longer when washed in cold water.
+        Use hot water only when you need to wash very dirty clothes or if you are trying to sanitize them.
+    </string>
 </resources>

@@ -1,20 +1,19 @@
 package com.tomerpacific.laundry.fragment
 
-import Tooltip
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.*
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.Text
-import androidx.compose.material.ripple.rememberRipple
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Text
+import androidx.compose.material3.TooltipDefaults
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,12 +29,13 @@ import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.LAUNDRY_CATEGORY_KEY
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
-class LaundryCategoryFragment: Fragment() {
 
-    private val model: MainViewModel by activityViewModels()
+class LaundryCategoryFragment : Fragment() {
+
+    private val viewModel: MainViewModel by activityViewModels()
 
     companion object {
-        fun newInstance(laundryCategory: String) : LaundryCategoryFragment {
+        fun newInstance(laundryCategory: String): LaundryCategoryFragment {
             val fragment = LaundryCategoryFragment()
             val args = Bundle()
             args.putString(LAUNDRY_CATEGORY_KEY, laundryCategory)
@@ -44,7 +44,7 @@ class LaundryCategoryFragment: Fragment() {
         }
     }
 
-    @OptIn(ExperimentalFoundationApi::class)
+    @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -65,40 +65,73 @@ class LaundryCategoryFragment: Fragment() {
                         columns = GridCells.Fixed(3),
                         modifier = Modifier.fillMaxSize(),
                         contentPadding = PaddingValues(12.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
+                        verticalArrangement = Arrangement.spacedBy(
+                            10.dp,
+                            Alignment.CenterVertically
+                        ),
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
-                        items(model.getItemsForLaundryCategory(laundryCategoryName, context)) { laundrySymbol ->
+                        items(
+                            viewModel.getItemsForLaundryCategory(
+                                laundryCategoryName,
+                                context
+                            )
+                        ) { laundrySymbol ->
                             Box {
-                                val showTooltip = remember { mutableStateOf(false) }
-
                                 Box(
                                     modifier = Modifier
                                         .combinedClickable(
-                                            interactionSource = remember { MutableInteractionSource() },
-                                            indication = rememberRipple(),
                                             onClickLabel = "Laundry Symbol Name",
                                             role = Role.Button,
                                             onClick = {
                                                 val fragment: LaundrySymbolFragment =
-                                                LaundrySymbolFragment.newInstance(laundrySymbol)
-                                                model.handleClickOnLaundrySymbol(requireActivity(), fragment)
+                                                    LaundrySymbolFragment.newInstance(laundrySymbol)
+                                                viewModel.handleClickOnLaundrySymbol(
+                                                    requireActivity(),
+                                                    fragment
+                                                )
                                             },
-                                            onLongClick = { showTooltip.value = true },
-                                        ).testTag(laundrySymbol.name),
+                                        )
+                                        .testTag(laundrySymbol.name),
                                 ) {
-                                    Image(painterResource
-                                        (laundrySymbol.drawableId),
-                                        laundrySymbol.description,
-                                        modifier = Modifier
-                                            .width(100.dp)
-                                            .height(100.dp)
-                                            .border(BorderStroke(2.dp, Color.Black))
-                                    )
-                                }
 
-                                Tooltip(showTooltip) {
-                                    Text(laundrySymbol.name)
+                                    val tooltipPosition =
+                                        TooltipDefaults.rememberPlainTooltipPositionProvider()
+                                    val tooltipState =
+                                        rememberBasicTooltipState(isPersistent = false)
+
+                                    BasicTooltipBox(
+                                        positionProvider = tooltipPosition,
+                                        state = tooltipState,
+                                        tooltip = {
+                                            Card(
+                                                colors = CardDefaults.cardColors(
+                                                    containerColor = Color.Black.copy(alpha = 0.75f)
+                                                ),
+                                                elevation = CardDefaults.cardElevation(16.dp),
+                                            ) {
+                                                Text(
+                                                    text = laundrySymbol.description,
+                                                    color = Color.White,
+                                                    modifier = Modifier
+                                                        .padding(5.dp)
+                                                        .background(Color.Black),
+                                                )
+                                            }
+
+                                        },
+                                        content = {
+                                            Image(
+                                                painterResource
+                                                    (laundrySymbol.drawableId),
+                                                laundrySymbol.description,
+                                                modifier = Modifier
+                                                    .width(100.dp)
+                                                    .height(100.dp)
+                                                    .border(BorderStroke(2.dp, Color.Black))
+                                            )
+                                        }
+                                    )
                                 }
                             }
                         }
