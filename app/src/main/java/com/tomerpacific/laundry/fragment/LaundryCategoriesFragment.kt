@@ -160,6 +160,7 @@ class LaundryCategoriesFragment : Fragment() {
                             )
                         }
                         Text(
+                            modifier = Modifier.padding(0.dp, 0.dp, 5.dp, 0.dp),
                             text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
                             fontSize = 16.sp
                         )
