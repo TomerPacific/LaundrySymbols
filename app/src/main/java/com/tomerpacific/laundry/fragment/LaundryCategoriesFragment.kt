@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.ui.Alignment
@@ -140,7 +141,9 @@ class LaundryCategoriesFragment : Fragment() {
                         }
                     }
                     Spacer(modifier = Modifier.weight(1f))
-                    Row(modifier = Modifier.fillMaxWidth().height(intrinsicSize = IntrinsicSize.Max),
+                    Row(modifier = Modifier
+                        .fillMaxWidth()
+                        .height(intrinsicSize = IntrinsicSize.Max),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically) {
                         TextButton(modifier = Modifier.fillMaxHeight(),
@@ -150,6 +153,10 @@ class LaundryCategoriesFragment : Fragment() {
                             Text(
                                 text = "How To Do Laundry",
                                 fontSize = 16.sp
+                            )
+                            Icon(
+                                painter = painterResource(R.drawable.baseline_local_laundry_service_24),
+                                contentDescription = "Laundry Machine",
                             )
                         }
                         Text(
