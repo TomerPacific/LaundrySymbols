@@ -2,7 +2,7 @@ name: Android Publish
 
 on:
   workflow_run:
-    workflows: [Android Build]
+    workflows: ["Android Build"]
     types:
       - completed
     branches:
