@@ -2,11 +2,9 @@ name: Android Publish
 
 on:
   workflow_run:
-    workflows: ["Android Build"]
-    types:
-      - completed
-    branches:
-      - 'release/**'
+    workflows: [Android Build]
+    types: [completed]
+    branches: ['release/**']
 
 jobs:
   on-success:
