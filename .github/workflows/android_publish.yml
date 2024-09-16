@@ -1,15 +1,15 @@
 name: Android Publish
 
 on:
-  push:
-    branches:
-      - 'release/**'
+  workflow_run:
+    workflows: [Android Build]
+    types: [completed]
+    branches: ['release/**']
 
 jobs:
-  build:
-
+  on-success:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v1
 
@@ -47,3 +47,9 @@ jobs:
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: production
           status: completed
+
+    on-failure:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+      steps:
+        - run: echo 'Publish workflow failed due to Build workflow failing'
