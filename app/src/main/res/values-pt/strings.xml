@@ -51,8 +51,17 @@
     <string name="steaming_not_allowed_symbol">Vapor Não Permitido</string>
 
     <!-- How To Do Laundry Categories Content Description -->
-    <string name="laundry_hamper">Cesto de Roupa Suja</string>
-    <string name="stain_removal">Remoção de Manchas</string>
+    <string name="laundry_hamper_cd">Cesto de Roupa Suja</string>
+    <string name="stain_removal_cd">Remoção de Manchas</string>
+    <string name="load_detergent_cd">Carregar Detergente</string>
+    <string name="using_bleach_cd">Usando Alvejante</string>
+    <string name="adding_fabric_softener_cd">Adicionando Amaciante</string>
+    <string name="wash_cycle_cd">Ciclo de Lavagem</string>
+    <string name="wash_temperature_cd">Temperatura de Lavagem</string>
+
+    <!-- How To Do Laundry Categories -->
+    <string name="separating_laundry">Separando Roupas</string>
+    <string name="treating_stains">Tratando Manchas</string>
     <string name="load_detergent">Carregar Detergente</string>
     <string name="using_bleach">Usando Alvejante</string>
     <string name="adding_fabric_softener">Adicionando Amaciante</string>

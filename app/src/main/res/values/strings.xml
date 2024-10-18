@@ -51,8 +51,17 @@
 
 
     <!-- How To Do Laundry Categories Content Description -->
-    <string name="laundry_hamper">Laundry Hamper</string>
-    <string name="stain_removal">Stain Removal</string>
+    <string name="laundry_hamper_cd">Laundry Hamper</string>
+    <string name="stain_removal_cd">Stain Removal</string>
+    <string name="load_detergent_cd">Load Detergent</string>
+    <string name="using_bleach_cd">Using Bleach</string>
+    <string name="adding_fabric_softener_cd">Adding Fabric Softener</string>
+    <string name="wash_cycle_cd">Wash Cycle</string>
+    <string name="wash_temperature_cd">Wash Temperature</string>
+
+    <!-- How To Do Laundry Categories -->
+    <string name="separating_laundry">Separating Laundry</string>
+    <string name="treating_stains">Treating Stains</string>
     <string name="load_detergent">Load Detergent</string>
     <string name="using_bleach">Using Bleach</string>
     <string name="adding_fabric_softener">Adding Fabric Softener</string>
