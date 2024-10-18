@@ -50,6 +50,9 @@
     <string name="iron_high_symbol">Passar a Ferro com Calor Alto (Máx. 200° Celsius)</string>
     <string name="steaming_not_allowed_symbol">Vapor Não Permitido</string>
 
+    <string name="how_to_do_laundry_title">Como Lavar Roupas Passo a Passo</string>
+    <string name="how_to_do_laundry_button_text">Como Lavar Roupa</string>
+
     <!-- How To Do Laundry Categories -->
     <string name="separating_laundry">Separando Roupas</string>
     <string name="treating_stains">Tratando Manchas</string>
@@ -58,7 +61,7 @@
     <string name="adding_fabric_softener">Adicionando Amaciante</string>
     <string name="wash_cycle">Ciclo de Lavagem</string>
     <string name="wash_temperature">Temperatura de Lavagem</string>
-    
+
     <!-- How To Do Laundry Categories Content Description -->
     <string name="laundry_hamper_cd">Cesto de Roupa Suja</string>
     <string name="stain_removal_cd">Remoção de Manchas</string>
