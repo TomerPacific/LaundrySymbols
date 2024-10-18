@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.tomerpacific.laundry.StyledText
-import com.tomerpacific.laundry.model.HowToDoLaundryCategories
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.textResource
 import com.tomerpacific.laundry.viewmodel.MainViewModel
@@ -95,7 +94,7 @@ class HowToDoLaundryFragment: Fragment() {
                                 LazyColumn {
                                     items(howToDoLaundryCategories) { howToDoLaundryCategory ->
                                         NavigationDrawerItem(
-                                            label = { Text(text = HowToDoLaundryCategories.convertToString(howToDoLaundryCategory.name)) },
+                                            label = { Text(text = resources.getString(howToDoLaundryCategory.name)) },
                                             selected = selectedDrawerItem == howToDoLaundryCategory,
                                             onClick = {
                                                 viewModel.handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory)
@@ -130,7 +129,7 @@ class HowToDoLaundryFragment: Fragment() {
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        HowToDoLaundryCategories.convertToString(howToDoLaundryCategory.name),
+                        resources.getString(howToDoLaundryCategory.name),
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         fontWeight = FontWeight.Bold
