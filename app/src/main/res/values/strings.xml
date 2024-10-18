@@ -49,6 +49,14 @@
     <string name="iron_high_symbol">Iron High (Max 200° Celsius)</string>
     <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
 
+    <!-- How To Do Laundry Categories -->
+    <string name="separating_laundry">Separating Laundry</string>
+    <string name="treating_stains">Treating Stains</string>
+    <string name="load_detergent">Load Detergent</string>
+    <string name="using_bleach">Using Bleach</string>
+    <string name="adding_fabric_softener">Adding Fabric Softener</string>
+    <string name="wash_cycle">Wash Cycle</string>
+    <string name="wash_temperature">Wash Temperature</string>
 
     <!-- How To Do Laundry Categories Content Description -->
     <string name="laundry_hamper_cd">Laundry Hamper</string>
@@ -58,15 +66,6 @@
     <string name="adding_fabric_softener_cd">Adding Fabric Softener</string>
     <string name="wash_cycle_cd">Wash Cycle</string>
     <string name="wash_temperature_cd">Wash Temperature</string>
-
-    <!-- How To Do Laundry Categories -->
-    <string name="separating_laundry">Separating Laundry</string>
-    <string name="treating_stains">Treating Stains</string>
-    <string name="load_detergent">Load Detergent</string>
-    <string name="using_bleach">Using Bleach</string>
-    <string name="adding_fabric_softener">Adding Fabric Softener</string>
-    <string name="wash_cycle">Wash Cycle</string>
-    <string name="wash_temperature">Wash Temperature</string>
 
     <!-- How To Do Laundry Categories Description -->
     <string name="separating__laundry_description">
