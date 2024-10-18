@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Símbolos de Lavagem</string>
+    <string name="main_screen_title">Explicação dos Símbolos de Lavagem</string>
+    <string name="washing">Lavagem</string>
+    <string name="bleaching">Alvejamento</string>
+    <string name="drying">Secagem</string>
+    <string name="ironing">Passar a Ferro</string>
+    <string name="symbol_image_description">Imagem do Símbolo de Lavagem</string>
+    <string name="app_version">v.%1$s</string>
+    <string name="washing_symbol">Símbolo de Lavagem</string>
+    <string name="bleaching_symbol">Símbolo de Alvejamento</string>
+    <string name="drying_symbol">Símbolo de Secagem</string>
+    <string name="ironing_symbol">Símbolo de Passar a Ferro</string>
+    <string name="laundry_symbol_item">Item do Símbolo de Lavagem</string>
+
+    <!-- Washing Symbols -->
+    <string name="do_not_wash_symbol">Não Lavar</string>
+    <string name="regular_washing_allowed_symbol">Lavagem Regular Permitida</string>
+    <string name="washing_cold_symbol">Lavar a Frio</string>
+    <string name="washing_warm_symbol">Lavar a Morno</string>
+    <string name="washing_hot_symbol">Lavar a Quente</string>
+    <string name="synthetic_cycle_symbol">Ciclo Sintético</string>
+    <string name="hand_wash_symbol">Lavar à Mão</string>
+
+    <!-- Bleaching Symbols -->
+    <string name="do_not_bleach_symbol">Não Alvejar</string>
+    <string name="bleaching_allowed_symbol">Alvejamento Permitido</string>
+    <string name="bleaching_non_chlorine_symbol">Alvejante Não Clorado</string>
+
+    <!-- Drying Symbols -->
+    <string name="do_not_dry_clean_symbol">Não Lavar a Seco</string>
+    <string name="dry_cleaning_allowed_symbol">Lavagem a Seco Permitida</string>
+    <string name="dry_cleaning_low_heat_symbol">Lavagem a Seco com Baixo Calor</string>
+    <string name="dry_cleaning_no_steam_symbol">Lavagem a Seco sem Vapor</string>
+    <string name="dry_cleaning_any_solvent_symbol">Lavagem a Seco com Qualquer Solvente</string>
+    <string name="dry_cleaning_only_symbol">Somente Lavagem a Seco</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol">Lavagem a Seco Somente com Solvente de Petróleo</string>
+    <string name="tumble_dry_low_heat_symbol">Secar em Tambor com Baixo Calor</string>
+    <string name="tumble_dry_high_heat_symbol">Secar em Tambor com Alto Calor</string>
+    <string name="dry_flat_symbol">Secar na Horizontal</string>
+    <string name="hang_to_dry_symbol">Pendurar para Secar</string>
+    <string name="do_not_tumble_dry_symbol">Não Usar Secadora</string>
+
+    <!-- Ironing Symbols -->
+    <string name="do_not_iron_symbol">Não Passar a Ferro</string>
+    <string name="ironing_allowed_symbol">Passar a Ferro Permitido</string>
+    <string name="iron_low_symbol">Passar a Ferro com Baixo Calor (Máx. 110° Celsius)</string>
+    <string name="iron_medium_symbol">Passar a Ferro com Calor Médio (Máx. 150° Celsius)</string>
+    <string name="iron_high_symbol">Passar a Ferro com Calor Alto (Máx. 200° Celsius)</string>
+    <string name="steaming_not_allowed_symbol">Vapor Não Permitido</string>
+
+    <!-- How To Do Laundry Categories Content Description -->
+    <string name="laundry_hamper">Cesto de Roupa Suja</string>
+    <string name="stain_removal">Remoção de Manchas</string>
+    <string name="load_detergent">Carregar Detergente</string>
+    <string name="using_bleach">Usando Alvejante</string>
+    <string name="adding_fabric_softener">Adicionando Amaciante</string>
+    <string name="wash_cycle">Ciclo de Lavagem</string>
+    <string name="wash_temperature">Temperatura de Lavagem</string>
+
+    <!-- How To Do Laundry Categories Description -->
+    <string name="separating__laundry_description">
+        Separe sua roupa em peças do mesmo tecido.
+        Um monte pode ser composto por tecidos pesados e outro por tecidos leves ou finos.
+        Desta forma, será mais fácil escolher o ciclo de lavagem correto para suas roupas.
+        Depois de separar pelo tipo de tecido, você precisará separar pela cor do tecido.
+        Isso evitará que as cores desbotem umas nas outras e arruínem suas roupas.
+    </string>
+    <string name="treating_stains_description">
+        Trate as manchas assim que elas ocorrerem.
+        Você pode usar um detergente ou um removedor de manchas e certifique-se de esfregar suavemente.
+        Deixe agir por cerca de cinco minutos antes de lavar a peça de roupa.
+        Você também pode tratar as manchas deixando-as de molho por trinta minutos em água fria.
+    </string>
+    <string name="loading_detergent_description">
+        Dependendo do tipo de sua máquina de lavar, coloque o detergente na gaveta deslizante (de uma máquina de lavar com carregamento frontal).
+        Ou se você tiver uma máquina de lavar com carregamento superior, coloque o detergente diretamente no tambor após enchê-lo com água.
+        Certifique-se de escolher o detergente correto para o seu tipo de máquina de lavar.
+        Além disso, leve em consideração comprar um detergente adequado para peles sensíveis ou propensas a alergias.
+    </string>
+    <string name="using_bleach_description">
+        Adicionar alvejante à sua lavagem ajuda a manter suas roupas brancas brilhantes.
+        Certifique-se de procurar o local correto para adicioná-lo com base no tipo de sua máquina de lavar.
+    </string>
+    <string name="fabric_softener_description">
+        Se você quiser dar um toque macio às suas roupas ou se elas saírem da máquina de lavar rígidas,
+        você precisará adicionar amaciante à sua lavagem.
+        Certifique-se de procurar o local correto para adicioná-lo com base no tipo de sua máquina de lavar.
+    </string>
+    <string name="wash_cycle_description">
+        Certifique-se de ler as etiquetas de cuidado nas suas roupas. Se você não as entender, use <b>Símbolos de Lavagem</b> para descobrir
+        o que cada uma significa. Para roupas resistentes, use a configuração normal da máquina de lavar. Isso geralmente fará
+        a máquina de lavar lavar e enxaguar em ciclos rápidos. Se você tiver roupas muito sujas, precisará usar a configuração de serviço pesado.
+        A configuração de prensa permanente é usada para roupas que podem enrugar, causadas pelos tecidos de que são feitas,
+        como nylon e rayon. Isso fará com que a máquina de lavar tenha um ciclo mais lento no final da lavagem.
+        Para roupas delicadas, como lingerie, use o ciclo delicado.
+    </string>
+    <string name="wash_temperature_description">
+        Para a maioria dos seus ciclos de lavagem, é aconselhável usar água fria.
+        Isso porque a maioria dos detergentes funciona bem com água fria e as roupas duram mais quando lavadas em água fria.
+        Use água quente apenas quando precisar lavar roupas muito sujas ou se estiver tentando higienizá-las.
+    </string>
+</resources>
