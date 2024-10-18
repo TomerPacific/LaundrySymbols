@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.StyledText
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.textResource
@@ -67,7 +68,7 @@ class HowToDoLaundryFragment: Fragment() {
                     topBar = {
                         TopAppBar(
                             title = {
-                                Text("How To Do Laundry Steps")
+                                Text(resources.getString(R.string.how_to_do_laundry_title))
                             },
                             navigationIcon = {
                                 IconButton(onClick = {
