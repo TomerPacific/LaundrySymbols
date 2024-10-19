@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wäschesymbole</string>
+    <string name="main_screen_title">Wäschesymbole Erklärt</string>
+    <string name="washing">Waschen</string>
+    <string name="bleaching">Bleichen</string>
+    <string name="drying">Trocknen</string>
+    <string name="ironing">Bügeln</string>
+    <string name="symbol_image_description">Wäschesymbol Bild</string>
+    <string name="app_version">v.%1$s</string>
+    <string name="washing_symbol">Waschsymbole</string>
+    <string name="bleaching_symbol">Bleichsymbole</string>
+    <string name="drying_symbol">Trocknungssymbole</string>
+    <string name="ironing_symbol">Bügelsymbole</string>
+    <string name="laundry_symbol_item">Wäschesymbol</string>
+
+    <!-- Washing Symbols -->
+    <string name="do_not_wash_symbol">Nicht Waschen</string>
+    <string name="regular_washing_allowed_symbol">Reguläres Waschen Erlaubt</string>
+    <string name="washing_cold_symbol">Kalt Waschen</string>
+    <string name="washing_warm_symbol">Warm Waschen</string>
+    <string name="washing_hot_symbol">Heiß Waschen</string>
+    <string name="synthetic_cycle_symbol">Synthetikprogramm</string>
+    <string name="hand_wash_symbol">Handwäsche</string>
+
+    <!-- Bleaching Symbols -->
+    <string name="do_not_bleach_symbol">Nicht Bleichen</string>
+    <string name="bleaching_allowed_symbol">Bleichen Erlaubt</string>
+    <string name="bleaching_non_chlorine_symbol">Nicht-Chlorbleiche</string>
+
+    <!-- Drying Symbols -->
+    <string name="do_not_dry_clean_symbol">Nicht Chemisch Reinigen</string>
+    <string name="dry_cleaning_allowed_symbol">Chemische Reinigung Erlaubt</string>
+    <string name="dry_cleaning_low_heat_symbol">Chemische Reinigung mit Niedriger Hitze</string>
+    <string name="dry_cleaning_no_steam_symbol">Chemische Reinigung ohne Dampf</string>
+    <string name="dry_cleaning_any_solvent_symbol">Chemische Reinigung mit Beliebigem Lösungsmittel</string>
+    <string name="dry_cleaning_only_symbol">Nur Chemische Reinigung</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol">Nur mit Erdölhaltigem Lösungsmittel Reinigen</string>
+    <string name="tumble_dry_low_heat_symbol">Schonend Trocknen bei Niedriger Hitze</string>
+    <string name="tumble_dry_high_heat_symbol">Schonend Trocknen bei Hoher Hitze</string>
+    <string name="dry_flat_symbol">Flach Trocknen</string>
+    <string name="hang_to_dry_symbol">Aufhängen zum Trocknen</string>
+    <string name="do_not_tumble_dry_symbol">Nicht im Trockner Trocknen</string>
+
+    <!-- Ironing Symbols -->
+    <string name="do_not_iron_symbol">Nicht Bügeln</string>
+    <string name="ironing_allowed_symbol">Bügeln Erlaubt</string>
+    <string name="iron_low_symbol">Niedrige Bügeltemperatur (Max 110° Celsius)</string>
+    <string name="iron_medium_symbol">Mittlere Bügeltemperatur (Max 150° Celsius)</string>
+    <string name="iron_high_symbol">Hohe Bügeltemperatur (Max 200° Celsius)</string>
+    <string name="steaming_not_allowed_symbol">Dampfbügeln Nicht Erlaubt</string>
+
+    <string name="how_to_do_laundry_title">Wäsche Waschen Schritte</string>
+    <string name="how_to_do_laundry_button_text">Wie Wäsche Waschen</string>
+
+    <!-- How To Do Laundry Categories -->
+    <string name="separating_laundry">Wäsche Sortieren</string>
+    <string name="treating_stains">Flecken Behandeln</string>
+    <string name="load_detergent">Waschmittel Einfüllen</string>
+    <string name="using_bleach">Bleichmittel Verwenden</string>
+    <string name="adding_fabric_softener">Weichspüler Hinzufügen</string>
+    <string name="wash_cycle">Waschgang</string>
+    <string name="wash_temperature">Waschtemperatur</string>
+
+    <!-- How To Do Laundry Categories Content Description -->
+    <string name="laundry_hamper_cd">Wäschekorb</string>
+    <string name="stain_removal_cd">Fleckenentfernung</string>
+    <string name="load_detergent_cd">Waschmittel Einfüllen</string>
+    <string name="using_bleach_cd">Bleichmittel Verwenden</string>
+    <string name="adding_fabric_softener_cd">Weichspüler Hinzufügen</string>
+    <string name="wash_cycle_cd">Waschgang</string>
+    <string name="wash_temperature_cd">Waschtemperatur</string>
+
+    <!-- How To Do Laundry Categories Description -->
+    <string name="separating__laundry_description">
+        Sortieren Sie Ihre Wäsche nach Stoffart. Ein Stapel kann aus schweren Stoffen bestehen, der andere aus leichten Stoffen.
+        So können Sie den richtigen Waschgang für Ihre Kleidung wählen.
+        Nach dem Sortieren nach Stoffart, sortieren Sie auch nach Farbe, um zu verhindern, dass die Farben ineinander übergehen.
+    </string>
+    <string name="treating_stains_description">
+        Behandeln Sie Flecken immer sofort.
+        Sie können entweder Waschmittel oder Fleckenentferner verwenden und sanft einreiben.
+        Lassen Sie es etwa fünf Minuten einwirken, bevor Sie es auswaschen.
+        Sie können Flecken auch 30 Minuten in kaltem Wasser einweichen.
+    </string>
+    <string name="loading_detergent_description">
+        Je nach Art Ihrer Waschmaschine füllen Sie das Waschmittel in die Schublade (bei einer Frontlader-Waschmaschine).
+        Bei einer Toplader-Waschmaschine geben Sie das Waschmittel direkt in die Trommel, nachdem Sie sie mit Wasser gefüllt haben.
+        Achten Sie darauf, das richtige Waschmittel für Ihren Maschinentyp zu verwenden.
+        Kaufen Sie auch ein Waschmittel für empfindliche Haut oder bei Allergien.
+    </string>
+    <string name="using_bleach_description">
+        Das Hinzufügen von Bleichmittel hilft, weiße Wäsche strahlend zu halten.
+        Achten Sie darauf, den richtigen Ort zum Hinzufügen des Bleichmittels je nach Maschinentyp zu finden.
+    </string>
+    <string name="fabric_softener_description">
+        Wenn Sie möchten, dass Ihre Kleidung weich ist oder wenn sie steif aus der Waschmaschine kommt, fügen Sie Weichspüler hinzu.
+        Achten Sie darauf, den richtigen Ort zum Hinzufügen je nach Maschinentyp zu finden.
+    </string>
+    <string name="wash_cycle_description">
+        Lesen Sie immer die Pflegehinweise auf den Etiketten Ihrer Kleidung. Wenn Sie diese nicht verstehen, verwenden Sie <b>Wäschesymbole</b>,
+        um herauszufinden, was sie bedeuten. Für robuste Kleidung verwenden Sie das normale Waschprogramm.
+        Für stark verschmutzte Kleidung nutzen Sie den Intensivwaschgang.
+        Der Schonwaschgang eignet sich für Kleidungsstücke, die leicht knittern, wie Nylon und Rayon.
+        Für empfindliche Kleidungsstücke, wie Dessous, verwenden Sie den Feinwaschgang.
+    </string>
+    <string name="wash_temperature_description">
+        Für die meisten Waschgänge wird kaltes Wasser empfohlen.
+        Die meisten Waschmittel funktionieren gut mit kaltem Wasser, und Kleidung hält länger, wenn sie in kaltem Wasser gewaschen wird.
+        Verwenden Sie heißes Wasser nur für stark verschmutzte oder zu desinfizierende Kleidung.
+    </string>
+</resources>
