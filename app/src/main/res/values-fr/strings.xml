@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Symboles de Lavage</string>
+    <string name="main_screen_title">Symboles de Lavage Expliqués</string>
+    <string name="washing">Lavage</string>
+    <string name="bleaching">Blanchiment</string>
+    <string name="drying">Séchage</string>
+    <string name="ironing">Repassage</string>
+    <string name="symbol_image_description">Image du Symbole de Lavage</string>
+    <string name="app_version">v.%1$s</string>
+    <string name="washing_symbol">Symbole de Lavage</string>
+    <string name="bleaching_symbol">Symbole de Blanchiment</string>
+    <string name="drying_symbol">Symbole de Séchage</string>
+    <string name="ironing_symbol">Symbole de Repassage</string>
+    <string name="laundry_symbol_item">Élément de Symbole de Lavage</string>
+
+    <!-- Washing Symbols -->
+    <string name="do_not_wash_symbol">Ne Pas Laver</string>
+    <string name="regular_washing_allowed_symbol">Lavage Régulier Autorisé</string>
+    <string name="washing_cold_symbol">Lavage à Froid</string>
+    <string name="washing_warm_symbol">Lavage à Tiède</string>
+    <string name="washing_hot_symbol">Lavage à Chaud</string>
+    <string name="synthetic_cycle_symbol">Cycle Synthétique</string>
+    <string name="hand_wash_symbol">Lavage à la Main</string>
+
+    <!-- Bleaching Symbols -->
+    <string name="do_not_bleach_symbol">Ne Pas Blanchir</string>
+    <string name="bleaching_allowed_symbol">Blanchiment Autorisé</string>
+    <string name="bleaching_non_chlorine_symbol">Blanchiment sans Chlore</string>
+
+    <!-- Drying Symbols -->
+    <string name="do_not_dry_clean_symbol">Ne Pas Nettoyer à Sec</string>
+    <string name="dry_cleaning_allowed_symbol">Nettoyage à Sec Autorisé</string>
+    <string name="dry_cleaning_low_heat_symbol">Nettoyage à Sec Basse Température</string>
+    <string name="dry_cleaning_no_steam_symbol">Nettoyage à Sec sans Vapeur</string>
+    <string name="dry_cleaning_any_solvent_symbol">Nettoyage à Sec Tout Solvant</string>
+    <string name="dry_cleaning_only_symbol">Nettoyage à Sec Uniquement</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol">Nettoyage à Sec Solvant Pétrolier Uniquement</string>
+    <string name="tumble_dry_low_heat_symbol">Séchage en Tambour Basse Température</string>
+    <string name="tumble_dry_high_heat_symbol">Séchage en Tambour Haute Température</string>
+    <string name="dry_flat_symbol">Sécher à Plat</string>
+    <string name="hang_to_dry_symbol">Suspendre pour Sécher</string>
+    <string name="do_not_tumble_dry_symbol">Ne Pas Sécher en Tambour</string>
+
+    <!-- Ironing Symbols -->
+    <string name="do_not_iron_symbol">Ne Pas Repasser</string>
+    <string name="ironing_allowed_symbol">Repassage Autorisé</string>
+    <string name="iron_low_symbol">Fer Bas (Max 110° Celsius)</string>
+    <string name="iron_medium_symbol">Fer Moyen (Max 150° Celsius)</string>
+    <string name="iron_high_symbol">Fer Chaud (Max 200° Celsius)</string>
+    <string name="steaming_not_allowed_symbol">Vapeur Non Autorisée</string>
+
+    <string name="how_to_do_laundry_title">Étapes pour Faire la Lessive</string>
+    <string name="how_to_do_laundry_button_text">Comment Faire la Lessive</string>
+
+    <!-- How To Do Laundry Categories -->
+    <string name="separating_laundry">Séparation du Linge</string>
+    <string name="treating_stains">Traitement des Taches</string>
+    <string name="load_detergent">Charger le Détergent</string>
+    <string name="using_bleach">Utiliser de l\'Eau de Javel</string>
+    <string name="adding_fabric_softener">Ajouter de l\'Adoucissant</string>
+    <string name="wash_cycle">Cycle de Lavage</string>
+    <string name="wash_temperature">Température de Lavage</string>
+
+    <!-- How To Do Laundry Categories Content Description -->
+    <string name="laundry_hamper_cd">Panier à Linge</string>
+    <string name="stain_removal_cd">Élimination des Taches</string>
+    <string name="load_detergent_cd">Charger le Détergent</string>
+    <string name="using_bleach_cd">Utiliser de l\'Eau de Javel</string>
+    <string name="adding_fabric_softener_cd">Ajouter de l\'Adoucissant</string>
+    <string name="wash_cycle_cd">Cycle de Lavage</string>
+    <string name="wash_temperature_cd">Température de Lavage</string>
+
+    <!-- How To Do Laundry Categories Description -->
+    <string name="separating__laundry_description">
+        Séparez votre linge en fonction du tissu. Un tas peut être constitué de tissus lourds, et un autre de tissus légers.
+        Cela vous aidera à choisir le bon cycle de lavage pour vos vêtements.
+        Après avoir séparé par type de tissu, il faudra aussi séparer par couleur pour éviter que les couleurs ne déteignent.
+    </string>
+    <string name="treating_stains_description">
+        Traitez toujours les taches dès qu\'elles apparaissent.
+        Utilisez un détergent ou un détachant et frottez délicatement.
+        Laissez agir pendant cinq minutes avant de laver.
+        Vous pouvez aussi laisser tremper les vêtements dans l\'eau froide pendant trente minutes.
+    </string>
+    <string name="loading_detergent_description">
+        En fonction du type de machine à laver, mettez le détergent dans le tiroir (pour une machine à chargement frontal).
+        Pour une machine à chargement par le haut, mettez le détergent directement dans le tambour après l\'avoir rempli d\'eau.
+        Assurez-vous d\'utiliser le bon détergent pour votre type de machine.
+        Si vous avez la peau sensible ou des allergies, optez pour un détergent adapté.
+    </string>
+    <string name="using_bleach_description">
+        L\'ajout d\'eau de javel permet de garder les vêtements blancs éclatants.
+        Assurez-vous de connaître l\'endroit où l\'ajouter en fonction de votre machine.
+    </string>
+    <string name="fabric_softener_description">
+        Pour rendre vos vêtements doux ou s\'ils sont rigides après lavage, ajoutez de l\'adoucissant.
+        Assurez-vous de l\'ajouter au bon endroit selon le type de machine.
+    </string>
+    <string name="wash_cycle_description">
+        Lisez toujours les étiquettes de soin. Si vous ne les comprenez pas, utilisez <b>Symboles de Lavage</b> pour comprendre
+        leur signification. Pour des vêtements robustes, utilisez le réglage normal de votre machine.
+        Utilisez un cycle intensif pour les vêtements très sales.
+        Le mode pressage permanent est pour les tissus sujets aux plis, comme le nylon et le rayonne. Il ralentit le cycle à la fin.
+        Pour les vêtements délicats comme la lingerie, utilisez le cycle délicat.
+    </string>
+    <string name="wash_temperature_description">
+        Pour la plupart des lavages, il est recommandé d\'utiliser de l\'eau froide.
+        La plupart des détergents fonctionnent bien à l\'eau froide et cela prolonge la durée de vie des vêtements.
+        Utilisez de l\'eau chaude uniquement pour les vêtements très sales ou pour les désinfecter.
+    </string>
+</resources>
