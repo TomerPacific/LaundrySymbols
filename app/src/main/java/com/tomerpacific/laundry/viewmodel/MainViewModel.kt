@@ -35,10 +35,10 @@ class MainViewModel: ViewModel() {
     fun getItemsForLaundryCategory(laundryCategory: String, context: Context) : List<LaundrySymbol> {
 
         return when (laundryCategory) {
-            LAUNDRY_CATEGORY_WASHING -> laundrySymbolsRepository.createWashingSymbols(context)
-            LAUNDRY_CATEGORY_BLEACHING -> laundrySymbolsRepository.createBleachingSymbols(context)
-            LAUNDRY_CATEGORY_DRYING -> laundrySymbolsRepository.createDryingSymbols(context)
-            LAUNDRY_CATEGORY_IRONING -> laundrySymbolsRepository.createIroningSymbols(context)
+            context.resources.getString(R.string.washing) -> laundrySymbolsRepository.createWashingSymbols(context)
+            context.resources.getString(R.string.bleaching) -> laundrySymbolsRepository.createBleachingSymbols(context)
+            context.resources.getString(R.string.drying) -> laundrySymbolsRepository.createDryingSymbols(context)
+            context.resources.getString(R.string.ironing) -> laundrySymbolsRepository.createIroningSymbols(context)
             else -> listOf()
         }
     }

@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
@@ -43,7 +44,8 @@ class LaundryCategoriesFragment : Fragment() {
                                 id = R.string.main_screen_title
                             ),
                             fontFamily = Bangers,
-                            fontSize = 30.sp
+                            fontSize = 30.sp,
+                            textAlign = TextAlign.Center,
                         )
                     }
                     Spacer(modifier = Modifier.weight(1f))
@@ -151,7 +153,7 @@ class LaundryCategoriesFragment : Fragment() {
                                 viewModel.handleClickOnLearnHowToDoLaundry(requireActivity())
                             }) {
                             Text(
-                                text = "How To Do Laundry",
+                                text = resources.getString(R.string.how_to_do_laundry_button_text),
                                 fontSize = 16.sp
                             )
                             Icon(

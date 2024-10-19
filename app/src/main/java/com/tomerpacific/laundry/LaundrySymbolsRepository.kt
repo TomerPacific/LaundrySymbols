@@ -2,7 +2,6 @@ package com.tomerpacific.laundry
 
 import android.content.Context
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
-import com.tomerpacific.laundry.model.HowToDoLaundryCategories
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class LaundrySymbolsRepository {
@@ -57,34 +56,34 @@ class LaundrySymbolsRepository {
 
     fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
         return listOf(
-            HowToDoLaundryCategory(HowToDoLaundryCategories.SEPARATING_LAUNDRY,
+            HowToDoLaundryCategory(R.string.separating_laundry,
                 R.string.separating__laundry_description,
                 R.drawable.laundry_hamper,
-                R.string.laundry_hamper),
-            HowToDoLaundryCategory(HowToDoLaundryCategories.TREATING_STAINS,
+                R.string.laundry_hamper_cd),
+            HowToDoLaundryCategory(R.string.treating_stains,
                 R.string.treating_stains_description,
                 R.drawable.stain_removal,
-                R.string.stain_removal),
-            HowToDoLaundryCategory(HowToDoLaundryCategories.LOAD_DETERGENT,
+                R.string.stain_removal_cd),
+            HowToDoLaundryCategory(R.string.load_detergent,
                 R.string.loading_detergent_description,
                 R.drawable.loading_detergent,
-                R.string.load_detergent),
-            HowToDoLaundryCategory(HowToDoLaundryCategories.USING_BLEACH,
+                R.string.load_detergent_cd),
+            HowToDoLaundryCategory(R.string.using_bleach,
                 R.string.using_bleach_description,
                 R.drawable.bleach,
-                R.string.using_bleach),
-            HowToDoLaundryCategory(HowToDoLaundryCategories.ADDING_FABRIC_SOFTENER,
+                R.string.using_bleach_cd),
+            HowToDoLaundryCategory(R.string.adding_fabric_softener,
                 R.string.fabric_softener_description,
                 R.drawable.fabric_softener,
-                R.string.adding_fabric_softener),
-            HowToDoLaundryCategory(HowToDoLaundryCategories.WASH_CYCLE,
+                R.string.adding_fabric_softener_cd),
+            HowToDoLaundryCategory(R.string.wash_cycle,
                 R.string.wash_cycle_description,
                 R.drawable.wash_cycle,
-                R.string.wash_cycle),
-            HowToDoLaundryCategory(HowToDoLaundryCategories.WASH_TEMPERATURE,
+                R.string.wash_cycle_cd),
+            HowToDoLaundryCategory(R.string.wash_temperature,
                 R.string.wash_temperature_description,
                 R.drawable.wash_temperature,
-                R.string.wash_temperature)
+                R.string.wash_temperature_cd)
         )
     }
 }
