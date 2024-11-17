@@ -21,6 +21,13 @@ class MainViewModel: ViewModel() {
     private val _selectedDrawerItem = mutableStateOf(howToDoLaundryCategories[0])
     val selectedDrawerItem = _selectedDrawerItem
 
+    private val urls = listOf(
+        "https://tomerpacific.github.io/Portfolio/",
+        "https://github.com/TomerPacific",
+        "https://medium.com/@tomerpacific",
+        "https://play.google.com/store/apps/developer?id=tomerpacific"
+    )
+
     fun handleClickOnLaundryCategory(activity: FragmentActivity, fragment: LaundryCategoryFragment) {
         activity.supportFragmentManager.beginTransaction().
         replace(R.id.fragment_container_view, fragment).
@@ -60,6 +67,6 @@ class MainViewModel: ViewModel() {
 
 
     fun handleClickOnVersion(uriHandler: UriHandler) {
-        uriHandler.openUri("https://tomerpacific.github.io/Portfolio/")
+        uriHandler.openUri(urls.random())
     }
 }
