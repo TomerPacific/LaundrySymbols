@@ -2,6 +2,7 @@ package com.tomerpacific.laundry.viewmodel
 
 import android.content.Context
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.platform.UriHandler
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import com.tomerpacific.laundry.*
@@ -57,4 +58,8 @@ class MainViewModel: ViewModel() {
         _selectedDrawerItem.value = howToDoLaundryCategory
     }
 
+
+    fun handleClickOnVersion(uriHandler: UriHandler) {
+        uriHandler.openUri("https://tomerpacific.github.io/Portfolio/")
+    }
 }
