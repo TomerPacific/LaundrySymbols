@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -37,6 +38,9 @@ class LaundryCategoriesFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
+
+                val uiHandler = LocalUriHandler.current
+
                 Column {
                     Row(Modifier.align(CenterHorizontally)) {
                         Text(
@@ -161,11 +165,16 @@ class LaundryCategoriesFragment : Fragment() {
                                 contentDescription = "Laundry Machine",
                             )
                         }
-                        Text(
-                            modifier = Modifier.padding(0.dp, 0.dp, 5.dp, 0.dp),
-                            text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
-                            fontSize = 16.sp
-                        )
+                        TextButton(onClick = {
+                            viewModel.handleClickOnVersion(uiHandler)
+                        }) {
+                            Text(
+                                modifier = Modifier.padding(0.dp, 0.dp, 5.dp, 0.dp),
+                                text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
+                                fontSize = 16.sp
+                            )
+                        }
+
                     }
                 }
             }
