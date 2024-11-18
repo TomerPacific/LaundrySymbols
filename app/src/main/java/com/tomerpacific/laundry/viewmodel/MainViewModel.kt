@@ -21,7 +21,7 @@ class MainViewModel: ViewModel() {
     private val _selectedDrawerItem = mutableStateOf(howToDoLaundryCategories[0])
     val selectedDrawerItem = _selectedDrawerItem
 
-    private val urls = listOf(
+    private val websiteUrls = listOf(
         "https://tomerpacific.github.io/Portfolio/",
         "https://github.com/TomerPacific",
         "https://medium.com/@tomerpacific",
@@ -67,6 +67,6 @@ class MainViewModel: ViewModel() {
 
 
     fun handleClickOnVersion(uriHandler: UriHandler) {
-        uriHandler.openUri(urls.random())
+        uriHandler.openUri(websiteUrls.random())
     }
 }
