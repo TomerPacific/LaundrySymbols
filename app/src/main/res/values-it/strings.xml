@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simboli di Lavaggio</string>
+    <string name="main_screen_title">Spiegazione dei Simboli di Lavaggio</string>
+    <string name="washing">Lavaggio</string>
+    <string name="bleaching">Candeggio</string>
+    <string name="drying">Asciugatura</string>
+    <string name="ironing">Stiratura</string>
+    <string name="symbol_image_description">Immagine del Simbolo di Lavaggio</string>
+    <string name="app_version">v.%1$s</string>
+    <string name="washing_symbol">Simbolo di Lavaggio</string>
+    <string name="bleaching_symbol">Simbolo di Candeggio</string>
+    <string name="drying_symbol">Simbolo di Asciugatura</string>
+    <string name="ironing_symbol">Simbolo di Stiratura</string>
+    <string name="laundry_symbol_item">Elemento Simbolo di Lavaggio</string>
+
+    <!-- Washing Symbols -->
+    <string name="do_not_wash_symbol">Non Lavare</string>
+    <string name="regular_washing_allowed_symbol">Lavaggio Regolare Consentito</string>
+    <string name="washing_cold_symbol">Lavare a Freddo</string>
+    <string name="washing_warm_symbol">Lavare a Tiepido</string>
+    <string name="washing_hot_symbol">Lavare a Caldo</string>
+    <string name="synthetic_cycle_symbol">Ciclo Sintetico</string>
+    <string name="hand_wash_symbol">Lavaggio a Mano</string>
+
+    <!-- Bleaching Symbols -->
+    <string name="do_not_bleach_symbol">Non Candeggiare</string>
+    <string name="bleaching_allowed_symbol">Candeggio Consentito</string>
+    <string name="bleaching_non_chlorine_symbol">Candeggiare senza Cloro</string>
+
+    <!-- Drying Symbols -->
+    <string name="do_not_dry_clean_symbol">Non Lavare a Secco</string>
+    <string name="dry_cleaning_allowed_symbol">Lavaggio a Secco Consentito</string>
+    <string name="dry_cleaning_low_heat_symbol">Lavaggio a Secco a Bassa Temperatura</string>
+    <string name="dry_cleaning_no_steam_symbol">Lavaggio a Secco Senza Vapore</string>
+    <string name="dry_cleaning_any_solvent_symbol">Lavaggio a Secco con Qualsiasi Solvente</string>
+    <string name="dry_cleaning_only_symbol">Solo Lavaggio a Secco</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol">Lavaggio a Secco con Solventi a Base di Petrolio</string>
+    <string name="tumble_dry_low_heat_symbol">Asciugare in Asciugatrice a Bassa Temperatura</string>
+    <string name="tumble_dry_high_heat_symbol">Asciugare in Asciugatrice ad Alta Temperatura</string>
+    <string name="dry_flat_symbol">Asciugare in Piano</string>
+    <string name="hang_to_dry_symbol">Stendere per Asciugare</string>
+    <string name="do_not_tumble_dry_symbol">Non Asciugare in Asciugatrice</string>
+
+    <!-- Ironing Symbols -->
+    <string name="do_not_iron_symbol">Non Stirare</string>
+    <string name="ironing_allowed_symbol">Stiratura Consentita</string>
+    <string name="iron_low_symbol">Stirare a Bassa Temperatura (Max 110° Celsius)</string>
+    <string name="iron_medium_symbol">Stirare a Media Temperatura (Max 150° Celsius)</string>
+    <string name="iron_high_symbol">Stirare ad Alta Temperatura (Max 200° Celsius)</string>
+    <string name="steaming_not_allowed_symbol">Vapore Non Consentito</string>
+
+    <string name="how_to_do_laundry_title">Come Fare il Bucato</string>
+    <string name="how_to_do_laundry_button_text">Come Fare il Bucato</string>
+
+    <!-- How To Do Laundry Categories -->
+    <string name="separating_laundry">Separare il Bucato</string>
+    <string name="treating_stains">Trattare le Macchie</string>
+    <string name="load_detergent">Caricare il Detersivo</string>
+    <string name="using_bleach">Usare la Candeggina</string>
+    <string name="adding_fabric_softener">Aggiungere l\'Ammorbidente</string>
+    <string name="wash_cycle">Ciclo di Lavaggio</string>
+    <string name="wash_temperature">Temperatura di Lavaggio</string>
+
+    <!-- How To Do Laundry Categories Content Description -->
+    <string name="laundry_hamper_cd">Cesto del Bucato</string>
+    <string name="stain_removal_cd">Rimozione delle Macchie</string>
+    <string name="load_detergent_cd">Caricare il Detersivo</string>
+    <string name="using_bleach_cd">Usare la Candeggina</string>
+    <string name="adding_fabric_softener_cd">Aggiungere l\'Ammorbidente</string>
+    <string name="wash_cycle_cd">Ciclo di Lavaggio</string>
+    <string name="wash_temperature_cd">Temperatura di Lavaggio</string>
+
+    <!-- How To Do Laundry Categories Description -->
+    <string name="separating__laundry_description">
+        Separa il bucato in base al tipo di tessuto. Un mucchio può essere composto da tessuti pesanti,
+        un altro da tessuti leggeri o sottili. In questo modo, sarà più facile scegliere il ciclo di lavaggio corretto.
+        Dopo aver separato per tipo di tessuto, separa anche per colore per evitare che i colori si mescolino e rovinino i capi.
+    </string>
+    <string name="treating_stains_description">
+        Tratta sempre le macchie appena si formano. Usa un detersivo per bucato o un rimuovi macchie e strofinalo delicatamente.
+        Lascialo agire per circa cinque minuti prima di lavarlo via. Puoi anche lasciare il capo in ammollo in acqua fredda per trenta minuti.
+    </string>
+    <string name="loading_detergent_description">
+        A seconda del tipo di lavatrice, metti il detersivo nel cassetto (se hai una lavatrice a carica frontale)
+        o direttamente nel cestello dopo averlo riempito d\'acqua (se hai una lavatrice a carica dall\'alto).
+        Assicurati di scegliere il detersivo giusto per il tuo tipo di lavatrice e considera di utilizzare un detersivo
+        adatto per pelli sensibili o per chi soffre di allergie.
+    </string>
+    <string name="using_bleach_description">
+        Aggiungere la candeggina aiuta a mantenere i capi bianchi brillanti. Assicurati di trovare il posto giusto per aggiungerla
+        in base al tipo di lavatrice.
+    </string>
+    <string name="fabric_softener_description">
+        Se vuoi che i tuoi vestiti siano più morbidi o se escono dalla lavatrice rigidi, aggiungi l\'ammorbidente.
+        Assicurati di sapere dove aggiungerlo in base al tipo di lavatrice.
+    </string>
+    <string name="wash_cycle_description">
+        Leggi sempre le etichette dei capi. Se non le capisci, usa <b>Simboli di Lavaggio</b> per scoprire il significato.
+        Per i capi resistenti, usa l\'impostazione normale. Per i capi molto sporchi, usa la modalità intensa.
+        Per capi delicati, come la lingerie, utilizza il ciclo delicato.
+    </string>
+    <string name="wash_temperature_description">
+        Per la maggior parte dei cicli di lavaggio è consigliabile usare acqua fredda. I detersivi funzionano bene
+        con acqua fredda e i capi durano di più. Usa acqua calda solo per capi molto sporchi o da igienizzare.
+    </string>
+</resources>
