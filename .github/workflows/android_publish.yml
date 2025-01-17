@@ -48,8 +48,8 @@ jobs:
           track: production
           status: completed
 
-    on-failure:
-      runs-on: ubuntu-latest
-      if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-      steps:
-        - run: echo 'Publish workflow failed due to Build workflow failing'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'Publish workflow failed due to Build workflow failing'
