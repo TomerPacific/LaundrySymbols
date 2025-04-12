@@ -2,9 +2,11 @@
 fragment-ktx = "1.4.0"
 appcompat = "1.4.0"
 activity-compose = "1.8.2"
+ui-viewbinding = "1.6.2"
 
 [libraries]
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+androidx-compose-ui-viewbinding = { group = "androidx.compose.ui", name = "ui-viewbinding", version.ref = "ui-viewbinding" }
 [plugins]

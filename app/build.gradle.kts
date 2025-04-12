@@ -61,7 +61,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
-    implementation("androidx.compose.ui:ui-viewbinding:1.6.2")
+    implementation(libs.androidx.compose.ui.viewbinding)
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.2")
     implementation("com.google.android.play:app-update:2.1.0")
