@@ -62,7 +62,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui.viewbinding)
-    implementation("com.google.android.material:material:1.8.0")
+    implementation(libs.android.material)
     implementation("androidx.constraintlayout:constraintlayout:2.1.2")
     implementation("com.google.android.play:app-update:2.1.0")
     implementation("com.google.android.play:app-update-ktx:2.1.0")
