@@ -14,16 +14,14 @@ android {
         versionCode = 25
         versionName = "2.4.8"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildFeatures {
-            dataBinding = true
-        }
-    }
+           }
 
     kotlinOptions {
         jvmTarget = "17"
     }
 
     buildFeatures {
+        dataBinding = true
         compose = true
         viewBinding = true
     }
