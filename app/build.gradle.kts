@@ -65,8 +65,7 @@ dependencies {
     implementation(libs.android.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.android.play.app.update)
-    implementation("com.google.android.play:app-update-ktx:2.1.0")
-
+    implementation(libs.android.play.app.update.ktx)
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
     implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0-rc01")
