@@ -74,6 +74,5 @@ dependencies {
     androidTestImplementation(libs.androidx.test)
     androidTestImplementation(libs.androidx.test.espresso)
     androidTestImplementation(libs.androidx.compose.ui)
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.2")
-
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
