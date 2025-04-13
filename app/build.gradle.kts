@@ -72,8 +72,7 @@ dependencies {
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test)
-
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation(libs.androidx.test.espresso)
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.2")
 
