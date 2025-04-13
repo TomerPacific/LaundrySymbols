@@ -7,6 +7,7 @@ material = "1.8.0"
 constraintlayout = "2.1.2"
 app-update = "2.1.0"
 app-update-ktx = "2.1.0"
+material3 = "1.2.1"
 
 [libraries]
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx" }
@@ -17,4 +18,6 @@ android-material = { group = "com.google.android.material", name = "material", v
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 android-play-app-update = { group = "com.google.android.play", name = "app-update", version.ref = "app-update" }
 android-play-app-update-ktx = { group = "com.google.android.play", name = "app-update-ktx", version.ref = "app-update-ktx" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+
 [plugins]
