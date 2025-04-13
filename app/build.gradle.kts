@@ -71,7 +71,7 @@ dependencies {
     implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0-rc01")
 
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test)
+    androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)
     androidTestImplementation(libs.androidx.compose.ui.test.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
