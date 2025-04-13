@@ -67,8 +67,8 @@ dependencies {
     implementation(libs.android.play.app.update)
     implementation(libs.android.play.app.update.ktx)
     implementation(libs.androidx.compose.material3)
-    implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
-    implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0-rc01")
+    implementation(libs.material3.window.size)
+    implementation(libs.material3.adaptive.navigation.suite)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
