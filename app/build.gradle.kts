@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -14,7 +15,7 @@ android {
         versionCode = 25
         versionName = "2.4.8"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-           }
+    }
 
     kotlinOptions {
         jvmTarget = "17"
@@ -24,10 +25,6 @@ android {
         dataBinding = true
         compose = true
         viewBinding = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10"
     }
 
     buildTypes {
