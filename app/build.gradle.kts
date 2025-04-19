@@ -68,7 +68,6 @@ dependencies {
     implementation(libs.material3.adaptive.navigation.suite)
 
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)
     androidTestImplementation(libs.androidx.compose.ui.test.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
