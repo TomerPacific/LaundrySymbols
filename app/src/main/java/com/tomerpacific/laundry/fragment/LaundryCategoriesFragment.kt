@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.ui.Alignment
@@ -40,141 +41,142 @@ class LaundryCategoriesFragment : Fragment() {
             setContent {
 
                 val uiHandler = LocalUriHandler.current
-
-                Column {
-                    Row(Modifier.align(CenterHorizontally)) {
-                        Text(
-                            stringResource(
-                                id = R.string.main_screen_title
-                            ),
-                            fontFamily = Bangers,
-                            fontSize = 30.sp,
-                            textAlign = TextAlign.Center,
-                        )
-                    }
-                    Spacer(modifier = Modifier.weight(1f))
-                    Row(Modifier.align(CenterHorizontally),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Column {
-                            Image(
-                                painterResource(id = R.drawable.washable),
-                                stringResource(id = R.string.washing_symbol),
-                                modifier = Modifier
-                                    .width(100.dp)
-                                    .height(100.dp)
-                                    .border(BorderStroke(2.dp, Color.Black))
-                                    .clickable(enabled = true, onClick = {
-                                        openLaundryCategory(resources.getString(R.string.washing))
-                                    })
-                                    .testTag("washing category"),
-                                alignment = Alignment.Center
-                            )
+                Scaffold { innerPadding ->
+                    Column(modifier = Modifier.padding(innerPadding)) {
+                        Row(Modifier.align(CenterHorizontally).padding(top = 50.dp)) {
                             Text(
-                                text = stringResource(id = R.string.washing),
-                                Modifier
-                                    .padding(2.dp)
-                                    .align(CenterHorizontally),
-                                fontSize = 16.sp
+                                stringResource(
+                                    id = R.string.main_screen_title
+                                ),
+                                fontFamily = Bangers,
+                                fontSize = 30.sp,
+                                textAlign = TextAlign.Center,
                             )
                         }
-                        Column {
-                            Image(
-                                painterResource(id = R.drawable.bleach_allow),
-                                stringResource(id = R.string.bleaching_symbol),
-                                modifier = Modifier
-                                    .width(100.dp)
-                                    .height(100.dp)
-                                    .border(BorderStroke(2.dp, Color.Black))
-                                    .clickable(enabled = true, onClick = {
-                                        openLaundryCategory(resources.getString(R.string.bleaching))
-                                    })
-                                    .testTag("bleaching category"),
-                                alignment = Alignment.Center
-                            )
-                            Text(
-                                text = stringResource(id = R.string.bleaching),
-                                Modifier
-                                    .padding(2.dp)
-                                    .align(CenterHorizontally),
-                                fontSize = 16.sp
-                            )
+                        Spacer(modifier = Modifier.weight(1f))
+                        Row(Modifier.align(CenterHorizontally),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                            Column {
+                                Image(
+                                    painterResource(id = R.drawable.washable),
+                                    stringResource(id = R.string.washing_symbol),
+                                    modifier = Modifier
+                                        .width(100.dp)
+                                        .height(100.dp)
+                                        .border(BorderStroke(2.dp, Color.Black))
+                                        .clickable(enabled = true, onClick = {
+                                            openLaundryCategory(resources.getString(R.string.washing))
+                                        })
+                                        .testTag("washing category"),
+                                    alignment = Alignment.Center
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.washing),
+                                    Modifier
+                                        .padding(2.dp)
+                                        .align(CenterHorizontally),
+                                    fontSize = 16.sp
+                                )
+                            }
+                            Column {
+                                Image(
+                                    painterResource(id = R.drawable.bleach_allow),
+                                    stringResource(id = R.string.bleaching_symbol),
+                                    modifier = Modifier
+                                        .width(100.dp)
+                                        .height(100.dp)
+                                        .border(BorderStroke(2.dp, Color.Black))
+                                        .clickable(enabled = true, onClick = {
+                                            openLaundryCategory(resources.getString(R.string.bleaching))
+                                        })
+                                        .testTag("bleaching category"),
+                                    alignment = Alignment.Center
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.bleaching),
+                                    Modifier
+                                        .padding(2.dp)
+                                        .align(CenterHorizontally),
+                                    fontSize = 16.sp
+                                )
+                            }
                         }
-                    }
-                    Row(Modifier.align(CenterHorizontally),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Column {
-                            Image(
-                                painterResource(id = R.drawable.dry_cleaning_allow),
-                                stringResource(id = R.string.drying_symbol),
-                                modifier = Modifier
-                                    .width(100.dp)
-                                    .height(100.dp)
-                                    .border(BorderStroke(2.dp, Color.Black))
-                                    .clickable(enabled = true, onClick = {
-                                        openLaundryCategory(resources.getString(R.string.drying))
-                                    }),
-                                alignment = Alignment.Center
-                            )
-                            Text(
-                                text = stringResource(id = R.string.drying),
-                                Modifier
-                                    .padding(2.dp)
-                                    .align(CenterHorizontally),
-                                fontSize = 16.sp
-                            )
+                        Row(Modifier.align(CenterHorizontally),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                            Column {
+                                Image(
+                                    painterResource(id = R.drawable.dry_cleaning_allow),
+                                    stringResource(id = R.string.drying_symbol),
+                                    modifier = Modifier
+                                        .width(100.dp)
+                                        .height(100.dp)
+                                        .border(BorderStroke(2.dp, Color.Black))
+                                        .clickable(enabled = true, onClick = {
+                                            openLaundryCategory(resources.getString(R.string.drying))
+                                        }),
+                                    alignment = Alignment.Center
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.drying),
+                                    Modifier
+                                        .padding(2.dp)
+                                        .align(CenterHorizontally),
+                                    fontSize = 16.sp
+                                )
+                            }
+                            Column {
+                                Image(
+                                    painterResource(id = R.drawable.iron_allowed),
+                                    stringResource(id = R.string.ironing_symbol),
+                                    modifier = Modifier
+                                        .width(100.dp)
+                                        .height(100.dp)
+                                        .border(BorderStroke(2.dp, Color.Black))
+                                        .clickable(enabled = true, onClick = {
+                                            openLaundryCategory(resources.getString(R.string.ironing))
+                                        })
+                                        .testTag("ironing category"),
+                                    alignment = Alignment.Center
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.ironing),
+                                    Modifier
+                                        .padding(2.dp)
+                                        .align(CenterHorizontally),
+                                    fontSize = 16.sp
+                                )
+                            }
                         }
-                        Column {
-                            Image(
-                                painterResource(id = R.drawable.iron_allowed),
-                                stringResource(id = R.string.ironing_symbol),
-                                modifier = Modifier
-                                    .width(100.dp)
-                                    .height(100.dp)
-                                    .border(BorderStroke(2.dp, Color.Black))
-                                    .clickable(enabled = true, onClick = {
-                                        openLaundryCategory(resources.getString(R.string.ironing))
-                                    })
-                                    .testTag("ironing category"),
-                                alignment = Alignment.Center
-                            )
-                            Text(
-                                text = stringResource(id = R.string.ironing),
-                                Modifier
-                                    .padding(2.dp)
-                                    .align(CenterHorizontally),
-                                fontSize = 16.sp
-                            )
-                        }
-                    }
-                    Spacer(modifier = Modifier.weight(1f))
-                    Row(modifier = Modifier
-                        .fillMaxWidth()
-                        .height(intrinsicSize = IntrinsicSize.Max),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically) {
-                        TextButton(modifier = Modifier.fillMaxHeight(),
-                            onClick = {
-                                viewModel.handleClickOnLearnHowToDoLaundry(requireActivity())
+                        Spacer(modifier = Modifier.weight(1f))
+                        Row(modifier = Modifier
+                            .fillMaxWidth()
+                            .height(intrinsicSize = IntrinsicSize.Max),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically) {
+                            TextButton(modifier = Modifier.fillMaxHeight(),
+                                onClick = {
+                                    viewModel.handleClickOnLearnHowToDoLaundry(requireActivity())
+                                }) {
+                                Text(
+                                    text = resources.getString(R.string.how_to_do_laundry_button_text),
+                                    fontSize = 16.sp
+                                )
+                                Icon(
+                                    painter = painterResource(R.drawable.baseline_local_laundry_service_24),
+                                    contentDescription = "Laundry Machine",
+                                )
+                            }
+                            TextButton(onClick = {
+                                viewModel.handleClickOnVersion(uiHandler)
                             }) {
-                            Text(
-                                text = resources.getString(R.string.how_to_do_laundry_button_text),
-                                fontSize = 16.sp
-                            )
-                            Icon(
-                                painter = painterResource(R.drawable.baseline_local_laundry_service_24),
-                                contentDescription = "Laundry Machine",
-                            )
-                        }
-                        TextButton(onClick = {
-                            viewModel.handleClickOnVersion(uiHandler)
-                        }) {
-                            Text(
-                                modifier = Modifier.padding(0.dp, 0.dp, 5.dp, 0.dp),
-                                text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
-                                fontSize = 16.sp
-                            )
-                        }
+                                Text(
+                                    modifier = Modifier.padding(0.dp, 0.dp, 5.dp, 0.dp),
+                                    text = getString(R.string.app_version, BuildConfig.VERSION_NAME),
+                                    fontSize = 16.sp
+                                )
+                            }
 
+                        }
                     }
                 }
             }

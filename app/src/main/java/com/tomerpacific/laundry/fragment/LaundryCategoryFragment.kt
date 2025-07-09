@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipDefaults
 import androidx.compose.ui.Alignment
@@ -54,89 +55,90 @@ class LaundryCategoryFragment : Fragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                Column {
-                    Text(
-                        laundryCategoryName,
-                        Modifier.align(Alignment.CenterHorizontally),
-                        fontFamily = Bangers,
-                        fontSize = 30.sp
-                    )
-                    LazyVerticalGrid(
-                        columns = GridCells.Fixed(3),
-                        modifier = Modifier.fillMaxSize(),
-                        contentPadding = PaddingValues(12.dp),
-                        verticalArrangement = Arrangement.spacedBy(
-                            10.dp,
-                            Alignment.CenterVertically
-                        ),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp),
-                    ) {
-                        items(
-                            viewModel.getItemsForLaundryCategory(
-                                laundryCategoryName,
-                                context
-                            )
-                        ) { laundrySymbol ->
-                            Box {
-                                Box(
-                                    modifier = Modifier
-                                        .combinedClickable(
-                                            onClickLabel = "Laundry Symbol Name",
-                                            role = Role.Button,
-                                            onClick = {
-                                                val fragment: LaundrySymbolFragment =
-                                                    LaundrySymbolFragment.newInstance(laundrySymbol)
-                                                viewModel.handleClickOnLaundrySymbol(
-                                                    requireActivity(),
-                                                    fragment
-                                                )
+                Scaffold { innerPadding ->
+                    Column(modifier = Modifier.padding(innerPadding)) {
+                        Text(
+                            laundryCategoryName,
+                            Modifier.align(Alignment.CenterHorizontally).padding(top = 30.dp),
+                            fontFamily = Bangers,
+                            fontSize = 30.sp
+                        )
+                        LazyVerticalGrid(
+                            columns = GridCells.Fixed(3),
+                            modifier = Modifier.fillMaxSize(),
+                            contentPadding = PaddingValues(12.dp),
+                            verticalArrangement = Arrangement.spacedBy(
+                                10.dp,
+                                Alignment.CenterVertically
+                            ),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        ) {
+                            items(
+                                viewModel.getItemsForLaundryCategory(
+                                    laundryCategoryName,
+                                    context
+                                )
+                            ) { laundrySymbol ->
+                                Box {
+                                    Box(
+                                        modifier = Modifier
+                                            .combinedClickable(
+                                                onClickLabel = "Laundry Symbol Name",
+                                                role = Role.Button,
+                                                onClick = {
+                                                    val fragment: LaundrySymbolFragment =
+                                                        LaundrySymbolFragment.newInstance(laundrySymbol)
+                                                    viewModel.handleClickOnLaundrySymbol(
+                                                        requireActivity(),
+                                                        fragment
+                                                    )
+                                                },
+                                            )
+                                            .testTag(laundrySymbol.name),
+                                    ) {
+
+                                        val tooltipPosition =
+                                            TooltipDefaults.rememberPlainTooltipPositionProvider()
+                                        val tooltipState =
+                                            rememberBasicTooltipState(isPersistent = false)
+
+                                        BasicTooltipBox(
+                                            positionProvider = tooltipPosition,
+                                            state = tooltipState,
+                                            tooltip = {
+                                                Card(
+                                                    colors = CardDefaults.cardColors(
+                                                        containerColor = Color.Black.copy(alpha = 0.75f)
+                                                    ),
+                                                    elevation = CardDefaults.cardElevation(16.dp),
+                                                ) {
+                                                    Text(
+                                                        text = laundrySymbol.description,
+                                                        color = Color.White,
+                                                        modifier = Modifier
+                                                            .padding(5.dp)
+                                                            .background(Color.Black),
+                                                    )
+                                                }
+
                                             },
-                                        )
-                                        .testTag(laundrySymbol.name),
-                                ) {
-
-                                    val tooltipPosition =
-                                        TooltipDefaults.rememberPlainTooltipPositionProvider()
-                                    val tooltipState =
-                                        rememberBasicTooltipState(isPersistent = false)
-
-                                    BasicTooltipBox(
-                                        positionProvider = tooltipPosition,
-                                        state = tooltipState,
-                                        tooltip = {
-                                            Card(
-                                                colors = CardDefaults.cardColors(
-                                                    containerColor = Color.Black.copy(alpha = 0.75f)
-                                                ),
-                                                elevation = CardDefaults.cardElevation(16.dp),
-                                            ) {
-                                                Text(
-                                                    text = laundrySymbol.description,
-                                                    color = Color.White,
+                                            content = {
+                                                Image(
+                                                    painterResource
+                                                        (laundrySymbol.drawableId),
+                                                    laundrySymbol.description,
                                                     modifier = Modifier
-                                                        .padding(5.dp)
-                                                        .background(Color.Black),
+                                                        .width(100.dp)
+                                                        .height(100.dp)
+                                                        .border(BorderStroke(2.dp, Color.Black))
                                                 )
                                             }
-
-                                        },
-                                        content = {
-                                            Image(
-                                                painterResource
-                                                    (laundrySymbol.drawableId),
-                                                laundrySymbol.description,
-                                                modifier = Modifier
-                                                    .width(100.dp)
-                                                    .height(100.dp)
-                                                    .border(BorderStroke(2.dp, Color.Black))
-                                            )
-                                        }
-                                    )
+                                        )
+                                    }
                                 }
                             }
                         }
                     }
-
                 }
             }
         }
