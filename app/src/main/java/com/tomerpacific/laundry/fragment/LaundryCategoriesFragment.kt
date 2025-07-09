@@ -41,7 +41,9 @@ class LaundryCategoriesFragment : Fragment() {
             setContent {
 
                 val uiHandler = LocalUriHandler.current
-                Scaffold { innerPadding ->
+                Scaffold(
+                    contentWindowInsets = WindowInsets.safeContent
+                ) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
                         Row(Modifier.align(CenterHorizontally).padding(top = 50.dp)) {
                             Text(

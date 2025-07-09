@@ -55,7 +55,9 @@ class LaundryCategoryFragment : Fragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                Scaffold { innerPadding ->
+                Scaffold(
+                    contentWindowInsets = WindowInsets.safeContent
+                ) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
                         Text(
                             laundryCategoryName,
