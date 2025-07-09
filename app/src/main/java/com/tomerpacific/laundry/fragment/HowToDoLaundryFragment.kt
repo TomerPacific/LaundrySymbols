@@ -89,10 +89,13 @@ class HowToDoLaundryFragment: Fragment() {
                 ) { innerPadding ->
                     ModalNavigationDrawer(
                         drawerState = drawerState,
-                        modifier = Modifier.padding(innerPadding),
+                        modifier = Modifier
+                            .padding(innerPadding),
                         drawerContent = {
                             ModalDrawerSheet {
-                                LazyColumn {
+                                LazyColumn(
+                                    contentPadding = innerPadding
+                                ) {
                                     items(howToDoLaundryCategories) { howToDoLaundryCategory ->
                                         NavigationDrawerItem(
                                             label = { Text(text = resources.getString(howToDoLaundryCategory.name)) },
