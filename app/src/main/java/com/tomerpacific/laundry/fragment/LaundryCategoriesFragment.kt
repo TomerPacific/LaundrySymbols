@@ -39,13 +39,15 @@ class LaundryCategoriesFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-
+                val scrollState = rememberScrollState()
                 val uiHandler = LocalUriHandler.current
                 Scaffold(
                     contentWindowInsets = WindowInsets.safeContent
                 ) { innerPadding ->
-                    Column(modifier = Modifier.padding(innerPadding)) {
-                        Row(Modifier.align(CenterHorizontally).padding(top = 50.dp)) {
+                    Column(modifier = Modifier.padding(innerPadding)
+                        .fillMaxSize()
+                        .verticalScroll(scrollState)) {
+                        Row(Modifier.align(CenterHorizontally).padding(top = 20.dp)) {
                             Text(
                                 stringResource(
                                     id = R.string.main_screen_title
