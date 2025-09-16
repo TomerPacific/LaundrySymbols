@@ -16,7 +16,7 @@ espresso-core = "3.4.0"
 ui-test-junit4 = "1.1.0"
 ui-test-manifest = "1.6.2"
 
-androidGradlePlugin = "8.5.0"
+androidGradlePlugin = "8.9.1"
 kotlin = "2.0.0"
 
 [libraries]
