@@ -12,8 +12,8 @@ android {
         applicationId = "com.tomerpacific.laundry"
         minSdk = 21
         targetSdk = 35
-        versionCode = 27
-        versionName = "2.6.0"
+        versionCode = 28
+        versionName = "2.6.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
