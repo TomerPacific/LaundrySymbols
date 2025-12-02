@@ -1,10 +1,12 @@
 name: Android Build
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - 'release/**'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +25,11 @@ jobs:
       - name: Run Tests
         run: ./gradlew test
 
-      - name: Build Project
-        run: ./gradlew assemble
+      - name: Build Release AAB
+        run: ./gradlew bundleRelease
+
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-aab
+          path: app/build/outputs/bundle/release/app-release.aab

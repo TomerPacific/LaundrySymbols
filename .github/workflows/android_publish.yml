@@ -10,29 +10,19 @@ jobs:
   on-success:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
-      - name: Checkout commit that triggered the Build workflow
+      - name: Checkout commit that triggered Build workflow
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_commit.id }}
           fetch-depth: 0
 
-      - name: Set Up JDK
-        uses: actions/setup-java@v1
+      - name: Download built AAB
+        uses: actions/download-artifact@v4
         with:
-          java-version: 17
-
-      - name: Change wrapper permissions
-        run: chmod +x ./gradlew
-
-      - name: Run Tests
-        run: ./gradlew test
-
-      - name: Build Project
-        run: ./gradlew build
-
-      - name: Build Release AAB
-        run: ./gradlew bundleRelease
+          name: app-release-aab
+          path: app/build/outputs/bundle/release
 
       - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
@@ -46,7 +36,7 @@ jobs:
       - name: Deploy to Play Store
         uses: r0adkll/upload-google-play@v1
         with:
-          serviceAccountJsonPlainText: ${{secrets.SERVICE_ACCOUNT}}
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT }}
           packageName: com.tomerpacific.laundry
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: production
@@ -55,5 +45,6 @@ jobs:
   on-failure:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+
     steps:
-      - run: echo 'Publish workflow failed due to Build workflow failing'
+      - run: echo 'Publish workflow skipped because Build workflow failed'
