@@ -23,6 +23,7 @@ jobs:
         with:
           name: app-release-aab
           path: app/build/outputs/bundle/release
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
