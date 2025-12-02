@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout commit that triggered the Build workflow
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.workflow_run.head_commit.id }}
+          fetch-depth: 0
 
       - name: Set Up JDK
         uses: actions/setup-java@v1
