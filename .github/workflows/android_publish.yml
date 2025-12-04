@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Set Up JDK
         uses: actions/setup-java@v1
@@ -22,12 +22,6 @@ jobs:
 
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
-
-      - name: Run Tests
-        run: ./gradlew test
-
-      - name: Build Project
-        run: ./gradlew build
 
       - name: Build Release AAB
         run: ./gradlew bundleRelease
