@@ -25,6 +25,7 @@ android {
         dataBinding = true
         compose = true
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
