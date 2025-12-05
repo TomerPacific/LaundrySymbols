@@ -48,14 +48,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        when(supportFragmentManager.backStackEntryCount) {
-            0 -> super.onBackPressed()
-            else -> supportFragmentManager.popBackStack()
-        }
-    }
-
-
     private fun checkForUpdate() {
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
 
