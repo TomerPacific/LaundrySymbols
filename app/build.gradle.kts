@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace = "com.tomerpacific.laundry"
-    compileSdk = 35
+    compileSdk = 36
     defaultConfig {
         applicationId = "com.tomerpacific.laundry"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 28
         versionName = "2.6.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -25,6 +25,7 @@ android {
         dataBinding = true
         compose = true
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {

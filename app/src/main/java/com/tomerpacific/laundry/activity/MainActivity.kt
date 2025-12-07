@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material3.MaterialTheme
@@ -24,6 +25,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (supportFragmentManager.backStackEntryCount > 0) {
+                    supportFragmentManager.popBackStack()
+                } else {
+                    finish()
+                }
+            }
+        })
+
         setContent {
             MaterialTheme {
                 AndroidViewBinding(ActivityMainBinding::inflate) {
@@ -47,14 +59,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    override fun onBackPressed() {
-        when(supportFragmentManager.backStackEntryCount) {
-            0 -> super.onBackPressed()
-            else -> supportFragmentManager.popBackStack()
-        }
-    }
-
 
     private fun checkForUpdate() {
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
