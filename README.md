@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/TomerPacific/LaundrySymbols/feature/update-gif-after-version-2.6.3/washing_machine.png" alt="washing_machine.png" width="30" height="30"> LaundrySymbols
+# <img src="https://raw.githubusercontent.com/TomerPacific/LaundrySymbols/feature/update-gif-after-version-2.6.3/washing_machine.png" alt="washing_machine.png" width="30" height="30" style="vertical-align: middle;"> LaundrySymbols
 
 An application written in Kotlin (**now using Jetpack Compose!**) showing the different laundry symbols with an explanation.
 
