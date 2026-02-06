@@ -131,7 +131,8 @@ fun LaundryCategoriesScreen(
                             .border(BorderStroke(2.dp, Color.Black))
                             .clickable(enabled = true, onClick = {
                                 onCategoryClick(context.resources.getString(R.string.drying))
-                            }),
+                            })
+                            .testTag("drying category"),
                         alignment = Alignment.Center
                     )
                     Text(
