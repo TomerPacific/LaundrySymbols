@@ -75,7 +75,7 @@ fun LaundryCategoryScreen(
                                 border = BorderStroke(1.dp, Color.Black)
                             ) {
                                 Text(
-                                    text = laundrySymbol.name,
+                                    text = laundrySymbol.description,
                                     modifier = Modifier.padding(4.dp),
                                     color = Color.White
                                 )
