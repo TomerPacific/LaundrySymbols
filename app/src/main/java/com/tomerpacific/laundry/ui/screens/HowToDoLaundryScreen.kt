@@ -12,9 +12,6 @@ import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -68,7 +65,7 @@ fun HowToDoLaundryScreen(
                         }
                     }) {
                         Icon(
-                            imageVector = Icons.Filled.Menu,
+                            painter = painterResource(R.drawable.ic_menu),
                             contentDescription = "Menu"
                         )
                     }
@@ -76,7 +73,7 @@ fun HowToDoLaundryScreen(
                 actions = {
                     IconButton(onClick = onHomeClick) {
                         Icon(
-                            imageVector = Icons.Filled.Home,
+                            painter = painterResource(R.drawable.ic_home),
                             contentDescription = "Home"
                         )
                     }
