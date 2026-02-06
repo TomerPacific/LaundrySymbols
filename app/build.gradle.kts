@@ -68,7 +68,6 @@ dependencies {
     implementation(libs.material3.window.size)
     implementation(libs.material3.adaptive.navigation.suite)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.material.icons.extended)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso)
