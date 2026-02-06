@@ -4,45 +4,104 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.ui.viewinterop.AndroidViewBinding
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
+import com.tomerpacific.laundry.LAUNDRY_CATEGORY_KEY
+import com.tomerpacific.laundry.LAUNDRY_SYMBOL_NAME_KEY
+import com.tomerpacific.laundry.LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
-import com.tomerpacific.laundry.databinding.ActivityMainBinding
+import com.tomerpacific.laundry.ui.screens.HowToDoLaundryScreen
+import com.tomerpacific.laundry.ui.screens.LaundryCategoriesScreen
+import com.tomerpacific.laundry.ui.screens.LaundryCategoryScreen
+import com.tomerpacific.laundry.ui.screens.LaundrySymbolScreen
+import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private val TAG : String = MainActivity::class.java.simpleName
     private var appUpdateManager : AppUpdateManager? = null
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (supportFragmentManager.backStackEntryCount > 0) {
-                    supportFragmentManager.popBackStack()
-                } else {
-                    finish()
-                }
-            }
-        })
-
         setContent {
+            val navController = rememberNavController()
+            val uriHandler = LocalUriHandler.current
+
             MaterialTheme {
-                AndroidViewBinding(ActivityMainBinding::inflate) {
-                    checkForUpdate()
+                NavHost(navController = navController, startDestination = "laundryCategories") {
+                    composable("laundryCategories") {
+                        LaundryCategoriesScreen(
+                            onCategoryClick = {
+                                navController.navigate("laundryCategory/$it")
+                            },
+                            onLearnMoreClick = {
+                                navController.navigate("howToDoLaundry")
+                            },
+                            onVersionClick = {
+                                viewModel.handleClickOnVersion(uriHandler)
+                            }
+                        )
+                    }
+                    composable(
+                        "laundryCategory/{$LAUNDRY_CATEGORY_KEY}",
+                        arguments = listOf(navArgument(LAUNDRY_CATEGORY_KEY) { type = NavType.StringType })
+                    ) {
+                        val laundryCategory = it.arguments?.getString(LAUNDRY_CATEGORY_KEY) ?: ""
+                        LaundryCategoryScreen(
+                            laundryCategory = laundryCategory,
+                            laundrySymbols = viewModel.getItemsForLaundryCategory(laundryCategory, applicationContext),
+                            onSymbolClick = {
+                                navController.navigate("laundrySymbol/${it.name}/${it.drawableId}")
+                            }
+                        )
+                    }
+                    composable(
+                        "laundrySymbol/{$LAUNDRY_SYMBOL_NAME_KEY}/{$LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY}",
+                        arguments = listOf(
+                            navArgument(LAUNDRY_SYMBOL_NAME_KEY) { type = NavType.StringType },
+                            navArgument(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY) { type = NavType.IntType }
+                        )
+                    ) {
+                        val laundrySymbolName = it.arguments?.getString(LAUNDRY_SYMBOL_NAME_KEY) ?: ""
+                        val laundrySymbolDrawableId = it.arguments?.getInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY) ?: 0
+                        LaundrySymbolScreen(
+                            symbolName = laundrySymbolName,
+                            symbolDrawableId = laundrySymbolDrawableId
+                        )
+                    }
+
+                    composable("howToDoLaundry") {
+                        HowToDoLaundryScreen(
+                            categories = viewModel.getHowToDoLaundryCategories(),
+                            selectedCategory = viewModel.selectedDrawerItem.value,
+                            onCategoryClick = {
+                                viewModel.handleClickOnHowToDoLaundryCategories(it)
+                            },
+                            onHomeClick = {
+                                navController.popBackStack()
+                            }
+                        )
+                    }
                 }
             }
         }
+        checkForUpdate()
     }
 
     override fun onResume() {
@@ -101,4 +160,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
