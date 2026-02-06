@@ -66,8 +66,8 @@ fun LaundryCategoryScreen(
             ) {
                 items(laundrySymbols) { laundrySymbol ->
                     TooltipBox(
-                        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-                        tooltip = { 
+                        positionProvider = TooltipDefaults.rememberTooltipPositionProvider(),
+                        tooltip = {
                             Surface(
                                 modifier = Modifier.padding(4.dp),
                                 shape = RoundedCornerShape(4.dp),
