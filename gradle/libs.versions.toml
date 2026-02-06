@@ -1,7 +1,6 @@
 [versions]
 appcompat = "1.4.0"
 activity-compose = "1.8.2"
-constraintlayout = "2.1.2"
 app-update = "2.1.0"
 app-update-ktx = "2.1.0"
 material3 = "1.4.0"
@@ -20,7 +19,6 @@ kotlin = "2.0.0"
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 android-play-app-update = { group = "com.google.android.play", name = "app-update", version.ref = "app-update" }
 android-play-app-update-ktx = { group = "com.google.android.play", name = "app-update-ktx", version.ref = "app-update-ktx" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
