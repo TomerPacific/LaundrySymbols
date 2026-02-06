@@ -56,11 +56,8 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.ui.viewbinding)
-    implementation(libs.android.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.android.play.app.update)
     implementation(libs.android.play.app.update.ktx)
