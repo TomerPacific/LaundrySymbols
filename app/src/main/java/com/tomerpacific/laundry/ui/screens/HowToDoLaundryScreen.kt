@@ -66,7 +66,7 @@ fun HowToDoLaundryScreen(
                     }) {
                         Icon(
                             painter = painterResource(R.drawable.ic_menu),
-                            contentDescription = "Menu"
+                            contentDescription = stringResource(R.string.menu_content_description)
                         )
                     }
                 },
@@ -74,7 +74,7 @@ fun HowToDoLaundryScreen(
                     IconButton(onClick = onHomeClick) {
                         Icon(
                             painter = painterResource(R.drawable.ic_home),
-                            contentDescription = "Home"
+                            contentDescription = stringResource(R.string.home_content_description)
                         )
                     }
                 }

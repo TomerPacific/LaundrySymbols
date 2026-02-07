@@ -109,4 +109,6 @@
         Die meisten Waschmittel funktionieren gut mit kaltem Wasser, und Kleidung hält länger, wenn sie in kaltem Wasser gewaschen wird.
         Verwenden Sie heißes Wasser nur für stark verschmutzte oder zu desinfizierende Kleidung.
     </string>
+    <string name="menu_content_description">Menü</string>
+    <string name="home_content_description">Startseite</string>
 </resources>

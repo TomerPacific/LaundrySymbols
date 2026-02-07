@@ -113,4 +113,6 @@
         Isso porque a maioria dos detergentes funciona bem com água fria e as roupas duram mais quando lavadas em água fria.
         Use água quente apenas quando precisar lavar roupas muito sujas ou se estiver tentando higienizá-las.
     </string>
+    <string name="menu_content_description">Menu</string>
+    <string name="home_content_description">Início</string>
 </resources>

@@ -113,4 +113,6 @@
         This is because most detergents work well with cold water and clothes last longer when washed in cold water.
         Use hot water only when you need to wash very dirty clothes or if you are trying to sanitize them.
     </string>
+    <string name="menu_content_description">Menu</string>
+    <string name="home_content_description">Home"</string>
 </resources>

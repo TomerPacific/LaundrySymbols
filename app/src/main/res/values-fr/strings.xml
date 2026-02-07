@@ -109,4 +109,6 @@
         La plupart des détergents fonctionnent bien à l\'eau froide et cela prolonge la durée de vie des vêtements.
         Utilisez de l\'eau chaude uniquement pour les vêtements très sales ou pour les désinfecter.
     </string>
+    <string name="menu_content_description">Menu</string>
+    <string name="home_content_description">Accueil</string>
 </resources>
