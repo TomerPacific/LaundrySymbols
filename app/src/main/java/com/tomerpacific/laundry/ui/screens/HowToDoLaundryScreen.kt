@@ -87,9 +87,7 @@ fun HowToDoLaundryScreen(
                 .padding(innerPadding),
             drawerContent = {
                 ModalDrawerSheet {
-                    LazyColumn(
-                        contentPadding = innerPadding
-                    ) {
+                    LazyColumn {
                         items(categories) { category ->
                             NavigationDrawerItem(
                                 label = { Text(text = stringResource(id = category.name)) },
