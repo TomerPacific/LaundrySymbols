@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.model.LaundrySymbol
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LaundryCategoryScreen(
     laundryCategory: String,
