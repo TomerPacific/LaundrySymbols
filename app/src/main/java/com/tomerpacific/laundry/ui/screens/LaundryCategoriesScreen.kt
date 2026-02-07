@@ -67,7 +67,7 @@ fun LaundryCategoriesScreen(
                     textAlign = TextAlign.Center,
                 )
             }
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.weight(1f))
             Row(
                 Modifier.align(Alignment.CenterHorizontally),
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
@@ -166,7 +166,7 @@ fun LaundryCategoriesScreen(
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.weight(1f))
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
