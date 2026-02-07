@@ -86,4 +86,13 @@ class LaundrySymbolsRepository {
                 R.string.wash_temperature_cd)
         )
     }
+
+    fun createLaundryCategoryItems(context: Context): HashMap<String, List<LaundrySymbol>> {
+        return hashMapOf(
+            context.getString(R.string.washing) to createWashingSymbols(context),
+            context.getString(R.string.bleaching) to createBleachingSymbols(context),
+            context.getString(R.string.drying) to createDryingSymbols(context),
+            context.getString(R.string.ironing) to createIroningSymbols(context)
+        )
+    }
 }

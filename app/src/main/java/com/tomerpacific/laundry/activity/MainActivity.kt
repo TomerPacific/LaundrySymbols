@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                         val laundryCategory = it.arguments?.getString(LAUNDRY_CATEGORY_KEY) ?: ""
                         LaundryCategoryScreen(
                             laundryCategory = laundryCategory,
-                            laundrySymbols = viewModel.getItemsForLaundryCategory(laundryCategory, applicationContext),
+                            laundrySymbols = viewModel.getItemsForLaundryCategory(laundryCategory),
                             onSymbolClick = {
                                 navController.navigate("laundrySymbol/${it.name}/${it.drawableId}")
                             }
