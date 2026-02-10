@@ -185,7 +185,7 @@ fun LaundryCategoriesScreen(
                     )
                     Icon(
                         painter = painterResource(R.drawable.baseline_local_laundry_service_24),
-                        contentDescription = "Laundry Machine",
+                        contentDescription = stringResource(R.string.laundry_machine_content_description),
                     )
                 }
                 TextButton(onClick = {

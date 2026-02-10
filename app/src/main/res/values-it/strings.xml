@@ -106,4 +106,5 @@
     </string>
     <string name="menu_content_description">Menu</string>
     <string name="home_content_description">Pagina iniziale</string>
+    <string name="laundry_machine_content_description">Lavatrice</string>
 </resources>
