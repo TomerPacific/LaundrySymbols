@@ -87,12 +87,12 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createLaundryCategoryItems(context: Context): HashMap<String, List<LaundrySymbol>> {
+    fun createLaundryCategoryItems(context: Context): HashMap<Int, List<LaundrySymbol>> {
         return hashMapOf(
-            context.getString(R.string.washing) to createWashingSymbols(context),
-            context.getString(R.string.bleaching) to createBleachingSymbols(context),
-            context.getString(R.string.drying) to createDryingSymbols(context),
-            context.getString(R.string.ironing) to createIroningSymbols(context)
+            R.string.washing to createWashingSymbols(context),
+            R.string.bleaching to createBleachingSymbols(context),
+            R.string.drying to createDryingSymbols(context),
+            R.string.ironing to createIroningSymbols(context)
         )
     }
 }
