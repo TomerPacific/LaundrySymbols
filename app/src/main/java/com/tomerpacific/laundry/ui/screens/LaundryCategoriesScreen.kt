@@ -27,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -40,13 +39,11 @@ import com.tomerpacific.laundry.R
 
 @Composable
 fun LaundryCategoriesScreen(
-    onCategoryClick: (String) -> Unit,
+    onCategoryClick: (Int) -> Unit,
     onLearnMoreClick: () -> Unit,
     onVersionClick: () -> Unit
 ) {
     val scrollState = rememberScrollState()
-
-    val context = LocalContext.current
 
     Scaffold(
         contentWindowInsets = WindowInsets.safeContent
@@ -81,7 +78,7 @@ fun LaundryCategoriesScreen(
                             .height(100.dp)
                             .border(BorderStroke(2.dp, Color.Black))
                             .clickable(enabled = true, onClick = {
-                                onCategoryClick(context.resources.getString(R.string.washing))
+                                onCategoryClick(R.string.washing)
                             })
                             .testTag("washing category"),
                         alignment = Alignment.Center
@@ -103,7 +100,7 @@ fun LaundryCategoriesScreen(
                             .height(100.dp)
                             .border(BorderStroke(2.dp, Color.Black))
                             .clickable(enabled = true, onClick = {
-                                onCategoryClick(context.resources.getString(R.string.bleaching))
+                                onCategoryClick(R.string.bleaching)
                             })
                             .testTag("bleaching category"),
                         alignment = Alignment.Center
@@ -130,7 +127,7 @@ fun LaundryCategoriesScreen(
                             .height(100.dp)
                             .border(BorderStroke(2.dp, Color.Black))
                             .clickable(enabled = true, onClick = {
-                                onCategoryClick(context.resources.getString(R.string.drying))
+                                onCategoryClick(R.string.drying)
                             })
                             .testTag("drying category"),
                         alignment = Alignment.Center
@@ -152,7 +149,7 @@ fun LaundryCategoriesScreen(
                             .height(100.dp)
                             .border(BorderStroke(2.dp, Color.Black))
                             .clickable(enabled = true, onClick = {
-                                onCategoryClick(context.resources.getString(R.string.ironing))
+                                onCategoryClick(R.string.ironing)
                             })
                             .testTag("ironing category"),
                         alignment = Alignment.Center

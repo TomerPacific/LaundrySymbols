@@ -1,5 +1,6 @@
 package com.tomerpacific.laundry.ui.screens
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -25,30 +26,38 @@ import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.model.LaundrySymbol
+import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LaundryCategoryScreen(
-    laundryCategory: String,
-    laundrySymbols: List<LaundrySymbol>,
+    @StringRes laundryCategory: Int,
+    viewModel: MainViewModel,
     onSymbolClick: (LaundrySymbol) -> Unit
 ) {
+
+    val laundrySymbols = remember {
+        viewModel.getItemsForLaundryCategory(laundryCategory)
+    }
+
     Scaffold(
         contentWindowInsets = WindowInsets.safeContent
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
             Text(
-                laundryCategory,
+                stringResource(id = laundryCategory),
                 Modifier.align(Alignment.CenterHorizontally).padding(top = 30.dp),
                 fontFamily = Bangers,
                 fontSize = 30.sp

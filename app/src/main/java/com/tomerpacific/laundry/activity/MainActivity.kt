@@ -20,7 +20,6 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
-import com.tomerpacific.laundry.LAUNDRY_CATEGORY_KEY
 import com.tomerpacific.laundry.LAUNDRY_SYMBOL_NAME_KEY
 import com.tomerpacific.laundry.LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
@@ -59,13 +58,13 @@ class MainActivity : AppCompatActivity() {
                         )
                     }
                     composable(
-                        "laundryCategory/{$LAUNDRY_CATEGORY_KEY}",
-                        arguments = listOf(navArgument(LAUNDRY_CATEGORY_KEY) { type = NavType.StringType })
+                        "laundryCategory/{laundry_category}",
+                        arguments = listOf(navArgument("laundry_category") { type = NavType.IntType })
                     ) {
-                        val laundryCategory = it.arguments?.getString(LAUNDRY_CATEGORY_KEY) ?: ""
+                        val laundryCategory = it.arguments?.getInt("laundry_category") ?: 0
                         LaundryCategoryScreen(
                             laundryCategory = laundryCategory,
-                            laundrySymbols = viewModel.getItemsForLaundryCategory(laundryCategory),
+                            viewModel,
                             onSymbolClick = {
                                 navController.navigate("laundrySymbol/${it.name}/${it.drawableId}")
                             }

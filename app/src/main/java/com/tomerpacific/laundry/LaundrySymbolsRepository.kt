@@ -87,7 +87,7 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createLaundryCategoryItems(context: Context): HashMap<Int, List<LaundrySymbol>> {
+   fun createLaundryCategoryItems(context: Context): HashMap<Int, List<LaundrySymbol>> {
         return hashMapOf(
             R.string.washing to createWashingSymbols(context),
             R.string.bleaching to createBleachingSymbols(context),

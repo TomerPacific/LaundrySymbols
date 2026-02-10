@@ -27,7 +27,7 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
         "https://play.google.com/store/apps/developer?id=tomerpacific"
     )
 
-    fun getItemsForLaundryCategory(laundryCategory: String) : List<LaundrySymbol> {
+    fun getItemsForLaundryCategory(laundryCategory: Int) : List<LaundrySymbol> {
         return laundryCategoryItems.getOrElse(laundryCategory) { emptyList() }
     }
 
