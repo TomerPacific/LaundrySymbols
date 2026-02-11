@@ -1,0 +1,147 @@
+package com.tomerpacific.laundry.ui.screens
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeContent
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.ModalDrawerSheet
+import androidx.compose.material3.ModalNavigationDrawer
+import androidx.compose.material3.NavigationDrawerItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.rememberDrawerState
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.tomerpacific.laundry.R
+import com.tomerpacific.laundry.StyledText
+import com.tomerpacific.laundry.model.HowToDoLaundryCategory
+import com.tomerpacific.laundry.textResource
+import kotlinx.coroutines.launch
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HowToDoLaundryScreen(
+    categories: List<HowToDoLaundryCategory>,
+    selectedCategory: HowToDoLaundryCategory,
+    onCategoryClick: (HowToDoLaundryCategory) -> Unit,
+    onHomeClick: () -> Unit
+) {
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+
+    Scaffold(
+        contentWindowInsets = WindowInsets.safeContent,
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(stringResource(id = R.string.how_to_do_laundry_title))
+                },
+                navigationIcon = {
+                    IconButton(onClick = {
+                        scope.launch {
+                            drawerState.apply {
+                                if (isClosed) open() else close()
+                            }
+                        }
+                    }) {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_menu),
+                            contentDescription = stringResource(R.string.menu_content_description)
+                        )
+                    }
+                },
+                actions = {
+                    IconButton(onClick = onHomeClick) {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_home),
+                            contentDescription = stringResource(R.string.home_content_description)
+                        )
+                    }
+                }
+            )
+        },
+    ) { innerPadding ->
+        ModalNavigationDrawer(
+            drawerState = drawerState,
+            modifier = Modifier
+                .padding(innerPadding),
+            drawerContent = {
+                ModalDrawerSheet {
+                    LazyColumn {
+                        items(categories) { category ->
+                            NavigationDrawerItem(
+                                label = { Text(text = stringResource(id = category.name)) },
+                                selected = selectedCategory == category,
+                                onClick = {
+                                    onCategoryClick(category)
+                                    scope.launch {
+                                        drawerState.close()
+                                    }
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+        ) {
+            HowToDoLaundryCategoryLayout(selectedCategory)
+        }
+    }
+}
+
+@Composable
+fun HowToDoLaundryCategoryLayout(howToDoLaundryCategory: HowToDoLaundryCategory) {
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    stringResource(id = howToDoLaundryCategory.name),
+                    textAlign = TextAlign.Center,
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+        item {
+            Row(modifier = Modifier.fillMaxWidth().padding(10.dp),
+                horizontalArrangement = Arrangement.Center) {
+                Image(
+                    painter = painterResource(id = howToDoLaundryCategory.drawableId),
+                    contentDescription = stringResource(id = howToDoLaundryCategory.contentDescriptionId),
+                    modifier = Modifier
+                        .width(200.dp)
+                        .height(200.dp)
+                )
+            }
+        }
+        item {
+            Row(modifier = Modifier.fillMaxWidth().padding(5.dp),
+                horizontalArrangement = Arrangement.Center) {
+                StyledText(textResource(howToDoLaundryCategory.descriptionId))
+            }
+        }
+    }
+}

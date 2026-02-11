@@ -22,9 +22,7 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
         compose = true
-        viewBinding = true
         buildConfig = true
     }
 
@@ -56,17 +54,14 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.ui.viewbinding)
-    implementation(libs.android.material)
-    implementation(libs.androidx.constraintlayout)
     implementation(libs.android.play.app.update)
     implementation(libs.android.play.app.update.ktx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.material3.window.size)
     implementation(libs.material3.adaptive.navigation.suite)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso)

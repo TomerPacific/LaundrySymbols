@@ -104,4 +104,7 @@
         Per la maggior parte dei cicli di lavaggio è consigliabile usare acqua fredda. I detersivi funzionano bene
         con acqua fredda e i capi durano di più. Usa acqua calda solo per capi molto sporchi o da igienizzare.
     </string>
+    <string name="menu_content_description">Menu</string>
+    <string name="home_content_description">Pagina iniziale</string>
+    <string name="laundry_machine_content_description">Lavatrice</string>
 </resources>

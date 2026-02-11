@@ -86,4 +86,13 @@ class LaundrySymbolsRepository {
                 R.string.wash_temperature_cd)
         )
     }
+
+    fun createLaundryCategoryItems(context: Context): Map<Int, List<LaundrySymbol>> {
+        return mapOf(
+            R.string.washing to createWashingSymbols(context),
+            R.string.bleaching to createBleachingSymbols(context),
+            R.string.drying to createDryingSymbols(context),
+            R.string.ironing to createIroningSymbols(context)
+        )
+    }
 }
