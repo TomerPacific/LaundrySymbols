@@ -61,7 +61,9 @@ class MainActivity : AppCompatActivity() {
                         "laundryCategory/{laundry_category}",
                         arguments = listOf(navArgument("laundry_category") { type = NavType.IntType })
                     ) {
-                        val laundryCategory = it.arguments?.getInt("laundry_category") ?: 0
+                        val laundryCategory =
+                            it.arguments?.getInt("laundry_category") ?: return@composable
+
                         LaundryCategoryScreen(
                             laundryCategory = laundryCategory,
                             viewModel,
