@@ -15,40 +15,75 @@
     <string name="laundry_symbol_item">Elemento Simbolo di Lavaggio</string>
 
     <!-- Washing Symbols -->
-    <string name="do_not_wash_symbol">Non Lavare</string>
-    <string name="regular_washing_allowed_symbol">Lavaggio Regolare Consentito</string>
-    <string name="washing_cold_symbol">Lavare a Freddo</string>
-    <string name="washing_warm_symbol">Lavare a Tiepido</string>
-    <string name="washing_hot_symbol">Lavare a Caldo</string>
-    <string name="synthetic_cycle_symbol">Ciclo Sintetico</string>
-    <string name="hand_wash_symbol">Lavaggio a Mano</string>
+    <string name="do_not_wash_symbol_title">Non Lavare</string>
+    <string name="do_not_wash_symbol_description">Non Lavare</string>
+    <string name="regular_washing_allowed_symbol_title">Lavaggio Regolare Consentito</string>
+    <string name="regular_washing_allowed_symbol_description">Lavaggio Regolare Consentito</string>
+    <string name="washing_cold_symbol_title">Lavare a Freddo</string>
+    <string name="washing_cold_symbol_description">Lavare a Freddo (30°C)</string>
+    <string name="washing_cold_symbol_description_fahrenheit">Lavare a Freddo (86°F)</string>
+    <string name="washing_warm_symbol_title">Lavare a Tiepido</string>
+    <string name="washing_warm_symbol_description">Lavare a Tiepido (40°C)</string>
+    <string name="washing_warm_symbol_description_fahrenheit">Lavare a Tiepido (104°F)</string>
+    <string name="washing_hot_symbol_title">Lavare a Caldo</string>
+    <string name="washing_hot_symbol_description">Lavare a Caldo (60°C)</string>
+    <string name="washing_hot_symbol_description_fahrenheit">Lavare a Caldo (140°F)</string>
+    <string name="synthetic_cycle_symbol_title">Ciclo Sintetico</string>
+    <string name="synthetic_cycle_symbol_description">Ciclo Sintetico (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Ciclo Sintetico (86°F)</string>
+    <string name="hand_wash_symbol_title">Lavaggio a Mano</string>
+    <string name="hand_wash_symbol_description">Lavaggio a Mano</string>
 
     <!-- Bleaching Symbols -->
-    <string name="do_not_bleach_symbol">Non Candeggiare</string>
-    <string name="bleaching_allowed_symbol">Candeggio Consentito</string>
-    <string name="bleaching_non_chlorine_symbol">Candeggiare senza Cloro</string>
+    <string name="do_not_bleach_symbol_title">Non Candeggiare</string>
+    <string name="do_not_bleach_symbol_description">Non Candeggiare</string>
+    <string name="bleaching_allowed_symbol_title">Candeggio Consentito</string>
+    <string name="bleaching_allowed_symbol_description">Candeggio Consentito</string>
+    <string name="bleaching_non_chlorine_symbol_title">Candeggiare senza Cloro</string>
+    <string name="bleaching_non_chlorine_symbol_description">Candeggiare senza Cloro</string>
 
     <!-- Drying Symbols -->
-    <string name="do_not_dry_clean_symbol">Non Lavare a Secco</string>
-    <string name="dry_cleaning_allowed_symbol">Lavaggio a Secco Consentito</string>
-    <string name="dry_cleaning_low_heat_symbol">Lavaggio a Secco a Bassa Temperatura</string>
-    <string name="dry_cleaning_no_steam_symbol">Lavaggio a Secco Senza Vapore</string>
-    <string name="dry_cleaning_any_solvent_symbol">Lavaggio a Secco con Qualsiasi Solvente</string>
-    <string name="dry_cleaning_only_symbol">Solo Lavaggio a Secco</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol">Lavaggio a Secco con Solventi a Base di Petrolio</string>
-    <string name="tumble_dry_low_heat_symbol">Asciugare in Asciugatrice a Bassa Temperatura</string>
-    <string name="tumble_dry_high_heat_symbol">Asciugare in Asciugatrice ad Alta Temperatura</string>
-    <string name="dry_flat_symbol">Asciugare in Piano</string>
-    <string name="hang_to_dry_symbol">Stendere per Asciugare</string>
-    <string name="do_not_tumble_dry_symbol">Non Asciugare in Asciugatrice</string>
+    <string name="do_not_dry_clean_symbol_title">Non Lavare a Secco</string>
+    <string name="do_not_dry_clean_symbol_description">Non Lavare a Secco</string>
+    <string name="dry_cleaning_allowed_symbol_title">Lavaggio a Secco Consentito</string>
+    <string name="dry_cleaning_allowed_symbol_description">Lavaggio a Secco Consentito</string>
+    <string name="dry_cleaning_low_heat_symbol_title">Lavaggio a Secco a Bassa Temperatura</string>
+    <string name="dry_cleaning_low_heat_symbol_description">Lavaggio a Secco a Bassa Temperatura</string>
+    <string name="dry_cleaning_no_steam_symbol_title">Lavaggio a Secco Senza Vapore</string>
+    <string name="dry_cleaning_no_steam_symbol_description">Lavaggio a Secco Senza Vapore</string>
+    <string name="dry_cleaning_any_solvent_symbol_title">Lavaggio a Secco con Qualsiasi Solvente</string>
+    <string name="dry_cleaning_any_solvent_symbol_description">Lavaggio a Secco con Qualsiasi Solvente</string>
+    <string name="dry_cleaning_only_symbol_title">Solo Lavaggio a Secco</string>
+    <string name="dry_cleaning_only_symbol_description">Solo Lavaggio a Secco</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Lavaggio a Secco con Solventi a Base di Petrolio</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Lavaggio a Secco con Solventi a Base di Petrolio</string>
+    <string name="tumble_dry_low_heat_symbol_title">Asciugare in Asciugatrice a Bassa Temperatura</string>
+    <string name="tumble_dry_low_heat_symbol_description">Asciugare in Asciugatrice a Bassa Temperatura</string>
+    <string name="tumble_dry_high_heat_symbol_title">Asciugare in Asciugatrice ad Alta Temperatura</string>
+    <string name="tumble_dry_high_heat_symbol_description">Asciugare in Asciugatrice ad Alta Temperatura</string>
+    <string name="dry_flat_symbol_title">Asciugare in Piano</string>
+    <string name="dry_flat_symbol_description">Asciugare in Piano</string>
+    <string name="hang_to_dry_symbol_title">Stendere per Asciugare</string>
+    <string name="hang_to_dry_symbol_description">Stendere per Asciugare</string>
+    <string name="do_not_tumble_dry_symbol_title">Non Asciugare in Asciugatrice</string>
+    <string name="do_not_tumble_dry_symbol_description">Non Asciugare in Asciugatrice</string>
 
     <!-- Ironing Symbols -->
-    <string name="do_not_iron_symbol">Non Stirare</string>
-    <string name="ironing_allowed_symbol">Stiratura Consentita</string>
-    <string name="iron_low_symbol">Stirare a Bassa Temperatura (Max 110° Celsius)</string>
-    <string name="iron_medium_symbol">Stirare a Media Temperatura (Max 150° Celsius)</string>
-    <string name="iron_high_symbol">Stirare ad Alta Temperatura (Max 200° Celsius)</string>
-    <string name="steaming_not_allowed_symbol">Vapore Non Consentito</string>
+    <string name="do_not_iron_symbol_title">Non Stirare</string>
+    <string name="do_not_iron_symbol_description">Non Stirare</string>
+    <string name="ironing_allowed_symbol_title">Stiratura Consentita</string>
+    <string name="ironing_allowed_symbol_description">Stiratura Consentita</string>
+    <string name="iron_low_symbol_title">Stirare a Bassa Temperatura</string>
+    <string name="iron_low_symbol_description">Stirare a Bassa Temperatura (Max 110° Celsius)</string>
+    <string name="iron_low_symbol_description_fahrenheit">Stirare a Bassa Temperatura (Max 230° Fahrenheit)</string>
+    <string name="iron_medium_symbol_title">Stirare a Media Temperatura</string>
+    <string name="iron_medium_symbol_description">Stirare a Media Temperatura (Max 150° Celsius)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Stirare a Media Temperatura (Max 300° Fahrenheit)</string>
+    <string name="iron_high_symbol_title">Stirare ad Alta Temperatura</string>
+    <string name="iron_high_symbol_description">Stirare ad Alta Temperatura (Max 200° Celsius)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Stirare ad Alta Temperatura (Max 390° Fahrenheit)</string>
+    <string name="steaming_not_allowed_symbol_title">Vapore Non Consentito</string>
+    <string name="steaming_not_allowed_symbol_description">Vapore Non Consentito</string>
 
     <string name="how_to_do_laundry_title">Come Fare il Bucato</string>
     <string name="how_to_do_laundry_button_text">Come Fare il Bucato</string>

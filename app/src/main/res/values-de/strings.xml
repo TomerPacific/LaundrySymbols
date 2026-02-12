@@ -15,40 +15,75 @@
     <string name="laundry_symbol_item">Wäschesymbol</string>
 
     <!-- Washing Symbols -->
-    <string name="do_not_wash_symbol">Nicht Waschen</string>
-    <string name="regular_washing_allowed_symbol">Reguläres Waschen Erlaubt</string>
-    <string name="washing_cold_symbol">Kalt Waschen</string>
-    <string name="washing_warm_symbol">Warm Waschen</string>
-    <string name="washing_hot_symbol">Heiß Waschen</string>
-    <string name="synthetic_cycle_symbol">Synthetikprogramm</string>
-    <string name="hand_wash_symbol">Handwäsche</string>
+    <string name="do_not_wash_symbol_title">Nicht Waschen</string>
+    <string name="do_not_wash_symbol_description">Nicht Waschen</string>
+    <string name="regular_washing_allowed_symbol_title">Reguläres Waschen Erlaubt</string>
+    <string name="regular_washing_allowed_symbol_description">Reguläres Waschen Erlaubt</string>
+    <string name="washing_cold_symbol_title">Kalt Waschen</string>
+    <string name="washing_cold_symbol_description">Kalt Waschen (30°C)</string>
+    <string name="washing_cold_symbol_description_fahrenheit">Kalt Waschen (86°F)</string>
+    <string name="washing_warm_symbol_title">Warm Waschen</string>
+    <string name="washing_warm_symbol_description">Warm Waschen (40°C)</string>
+    <string name="washing_warm_symbol_description_fahrenheit">Warm Waschen (104°F)</string>
+    <string name="washing_hot_symbol_title">Heiß Waschen</string>
+    <string name="washing_hot_symbol_description">Heiß Waschen (60°C)</string>
+    <string name="washing_hot_symbol_description_fahrenheit">Heiß Waschen (140°F)</string>
+    <string name="synthetic_cycle_symbol_title">Synthetikprogramm</string>
+    <string name="synthetic_cycle_symbol_description">Synthetikprogramm (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Synthetikprogramm (86°F)</string>
+    <string name="hand_wash_symbol_title">Handwäsche</string>
+    <string name="hand_wash_symbol_description">Handwäsche</string>
 
     <!-- Bleaching Symbols -->
-    <string name="do_not_bleach_symbol">Nicht Bleichen</string>
-    <string name="bleaching_allowed_symbol">Bleichen Erlaubt</string>
-    <string name="bleaching_non_chlorine_symbol">Nicht-Chlorbleiche</string>
+    <string name="do_not_bleach_symbol_title">Nicht Bleichen</string>
+    <string name="do_not_bleach_symbol_description">Nicht Bleichen</string>
+    <string name="bleaching_allowed_symbol_title">Bleichen Erlaubt</string>
+    <string name="bleaching_allowed_symbol_description">Bleichen Erlaubt</string>
+    <string name="bleaching_non_chlorine_symbol_title">Nicht-Chlorbleiche</string>
+    <string name="bleaching_non_chlorine_symbol_description">Nicht-Chlorbleiche</string>
 
     <!-- Drying Symbols -->
-    <string name="do_not_dry_clean_symbol">Nicht Chemisch Reinigen</string>
-    <string name="dry_cleaning_allowed_symbol">Chemische Reinigung Erlaubt</string>
-    <string name="dry_cleaning_low_heat_symbol">Chemische Reinigung mit Niedriger Hitze</string>
-    <string name="dry_cleaning_no_steam_symbol">Chemische Reinigung ohne Dampf</string>
-    <string name="dry_cleaning_any_solvent_symbol">Chemische Reinigung mit Beliebigem Lösungsmittel</string>
-    <string name="dry_cleaning_only_symbol">Nur Chemische Reinigung</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol">Nur mit Erdölhaltigem Lösungsmittel Reinigen</string>
-    <string name="tumble_dry_low_heat_symbol">Schonend Trocknen bei Niedriger Hitze</string>
-    <string name="tumble_dry_high_heat_symbol">Schonend Trocknen bei Hoher Hitze</string>
-    <string name="dry_flat_symbol">Flach Trocknen</string>
-    <string name="hang_to_dry_symbol">Aufhängen zum Trocknen</string>
-    <string name="do_not_tumble_dry_symbol">Nicht im Trockner Trocknen</string>
+    <string name="do_not_dry_clean_symbol_title">Nicht Chemisch Reinigen</string>
+    <string name="do_not_dry_clean_symbol_description">Nicht Chemisch Reinigen</string>
+    <string name="dry_cleaning_allowed_symbol_title">Chemische Reinigung Erlaubt</string>
+    <string name="dry_cleaning_allowed_symbol_description">Chemische Reinigung Erlaubt</string>
+    <string name="dry_cleaning_low_heat_symbol_title">Chemische Reinigung mit Niedriger Hitze</string>
+    <string name="dry_cleaning_low_heat_symbol_description">Chemische Reinigung mit Niedriger Hitze</string>
+    <string name="dry_cleaning_no_steam_symbol_title">Chemische Reinigung ohne Dampf</string>
+    <string name="dry_cleaning_no_steam_symbol_description">Chemische Reinigung ohne Dampf</string>
+    <string name="dry_cleaning_any_solvent_symbol_title">Chemische Reinigung mit Beliebigem Lösungsmittel</string>
+    <string name="dry_cleaning_any_solvent_symbol_description">Chemische Reinigung mit Beliebigem Lösungsmittel</string>
+    <string name="dry_cleaning_only_symbol_title">Nur Chemische Reinigung</string>
+    <string name="dry_cleaning_only_symbol_description">Nur Chemische Reinigung</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Nur mit Erdölhaltigem Lösungsmittel Reinigen</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Nur mit Erdölhaltigem Lösungsmittel Reinigen</string>
+    <string name="tumble_dry_low_heat_symbol_title">Schonend Trocknen bei Niedriger Hitze</string>
+    <string name="tumble_dry_low_heat_symbol_description">Schonend Trocknen bei Niedriger Hitze</string>
+    <string name="tumble_dry_high_heat_symbol_title">Schonend Trocknen bei Hoher Hitze</string>
+    <string name="tumble_dry_high_heat_symbol_description">Schonend Trocknen bei Hoher Hitze</string>
+    <string name="dry_flat_symbol_title">Flach Trocknen</string>
+    <string name="dry_flat_symbol_description">Flach Trocknen</string>
+    <string name="hang_to_dry_symbol_title">Aufhängen zum Trocknen</string>
+    <string name="hang_to_dry_symbol_description">Aufhängen zum Trocknen</string>
+    <string name="do_not_tumble_dry_symbol_title">Nicht im Trockner Trocknen</string>
+    <string name="do_not_tumble_dry_symbol_description">Nicht im Trockner Trocknen</string>
 
     <!-- Ironing Symbols -->
-    <string name="do_not_iron_symbol">Nicht Bügeln</string>
-    <string name="ironing_allowed_symbol">Bügeln Erlaubt</string>
-    <string name="iron_low_symbol">Niedrige Bügeltemperatur (Max 110° Celsius)</string>
-    <string name="iron_medium_symbol">Mittlere Bügeltemperatur (Max 150° Celsius)</string>
-    <string name="iron_high_symbol">Hohe Bügeltemperatur (Max 200° Celsius)</string>
-    <string name="steaming_not_allowed_symbol">Dampfbügeln Nicht Erlaubt</string>
+    <string name="do_not_iron_symbol_title">Nicht Bügeln</string>
+    <string name="do_not_iron_symbol_description">Nicht Bügeln</string>
+    <string name="ironing_allowed_symbol_title">Bügeln Erlaubt</string>
+    <string name="ironing_allowed_symbol_description">Bügeln Erlaubt</string>
+    <string name="iron_low_symbol_title">Niedrige Bügeltemperatur</string>
+    <string name="iron_low_symbol_description">Niedrige Bügeltemperatur (Max 110° Celsius)</string>
+    <string name="iron_low_symbol_description_fahrenheit">Niedrige Bügeltemperatur (Max 230° Fahrenheit)</string>
+    <string name="iron_medium_symbol_title">Mittlere Bügeltemperatur</string>
+    <string name="iron_medium_symbol_description">Mittlere Bügeltemperatur (Max 150° Celsius)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Mittlere Bügeltemperatur (Max 300° Fahrenheit)</string>
+    <string name="iron_high_symbol_title">Hohe Bügeltemperatur</string>
+    <string name="iron_high_symbol_description">Hohe Bügeltemperatur (Max 200° Celsius)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Hohe Bügeltemperatur (Max 390° Fahrenheit)</string>
+    <string name="steaming_not_allowed_symbol_title">Dampfbügeln Nicht Erlaubt</string>
+    <string name="steaming_not_allowed_symbol_description">Dampfbügeln Nicht Erlaubt</string>
 
     <string name="how_to_do_laundry_title">Wäsche Waschen Schritte</string>
     <string name="how_to_do_laundry_button_text">Wie Wäsche Waschen</string>

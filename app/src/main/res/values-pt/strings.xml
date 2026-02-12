@@ -15,40 +15,75 @@
     <string name="laundry_symbol_item">Item do Símbolo de Lavagem</string>
 
     <!-- Washing Symbols -->
-    <string name="do_not_wash_symbol">Não Lavar</string>
-    <string name="regular_washing_allowed_symbol">Lavagem Regular Permitida</string>
-    <string name="washing_cold_symbol">Lavar a Frio</string>
-    <string name="washing_warm_symbol">Lavar a Morno</string>
-    <string name="washing_hot_symbol">Lavar a Quente</string>
-    <string name="synthetic_cycle_symbol">Ciclo Sintético</string>
-    <string name="hand_wash_symbol">Lavar à Mão</string>
+    <string name="do_not_wash_symbol_title">Não Lavar</string>
+    <string name="do_not_wash_symbol_description">Não Lavar</string>
+    <string name="regular_washing_allowed_symbol_title">Lavagem Regular Permitida</string>
+    <string name="regular_washing_allowed_symbol_description">Lavagem Regular Permitida</string>
+    <string name="washing_cold_symbol_title">Lavar a Frio</string>
+    <string name="washing_cold_symbol_description">Lavar a Frio (30°C)</string>
+    <string name="washing_cold_symbol_description_fahrenheit">Lavar a Frio (86°F)</string>
+    <string name="washing_warm_symbol_title">Lavar a Morno</string>
+    <string name="washing_warm_symbol_description">Lavar a Morno (40°C)</string>
+    <string name="washing_warm_symbol_description_fahrenheit">Lavar a Morno (104°F)</string>
+    <string name="washing_hot_symbol_title">Lavar a Quente</string>
+    <string name="washing_hot_symbol_description">Lavar a Quente (60°C)</string>
+    <string name="washing_hot_symbol_description_fahrenheit">Lavar a Quente (140°F)</string>
+    <string name="synthetic_cycle_symbol_title">Ciclo Sintético</string>
+    <string name="synthetic_cycle_symbol_description">Ciclo Sintético (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Ciclo Sintético (86°F)</string>
+    <string name="hand_wash_symbol_title">Lavar à Mão</string>
+    <string name="hand_wash_symbol_description">Lavar à Mão</string>
 
     <!-- Bleaching Symbols -->
-    <string name="do_not_bleach_symbol">Não Alvejar</string>
-    <string name="bleaching_allowed_symbol">Alvejamento Permitido</string>
-    <string name="bleaching_non_chlorine_symbol">Alvejante Não Clorado</string>
+    <string name="do_not_bleach_symbol_title">Não Alvejar</string>
+    <string name="do_not_bleach_symbol_description">Não Alvejar</string>
+    <string name="bleaching_allowed_symbol_title">Alvejamento Permitido</string>
+    <string name="bleaching_allowed_symbol_description">Alvejamento Permitido</string>
+    <string name="bleaching_non_chlorine_symbol_title">Alvejante Não Clorado</string>
+    <string name="bleaching_non_chlorine_symbol_description">Alvejante Não Clorado</string>
 
     <!-- Drying Symbols -->
-    <string name="do_not_dry_clean_symbol">Não Lavar a Seco</string>
-    <string name="dry_cleaning_allowed_symbol">Lavagem a Seco Permitida</string>
-    <string name="dry_cleaning_low_heat_symbol">Lavagem a Seco com Baixo Calor</string>
-    <string name="dry_cleaning_no_steam_symbol">Lavagem a Seco sem Vapor</string>
-    <string name="dry_cleaning_any_solvent_symbol">Lavagem a Seco com Qualquer Solvente</string>
-    <string name="dry_cleaning_only_symbol">Somente Lavagem a Seco</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol">Lavagem a Seco Somente com Solvente de Petróleo</string>
-    <string name="tumble_dry_low_heat_symbol">Secar em Tambor com Baixo Calor</string>
-    <string name="tumble_dry_high_heat_symbol">Secar em Tambor com Alto Calor</string>
-    <string name="dry_flat_symbol">Secar na Horizontal</string>
-    <string name="hang_to_dry_symbol">Pendurar para Secar</string>
-    <string name="do_not_tumble_dry_symbol">Não Usar Secadora</string>
+    <string name="do_not_dry_clean_symbol_title">Não Lavar a Seco</string>
+    <string name="do_not_dry_clean_symbol_description">Não Lavar a Seco</string>
+    <string name="dry_cleaning_allowed_symbol_title">Lavagem a Seco Permitida</string>
+    <string name="dry_cleaning_allowed_symbol_description">Lavagem a Seco Permitida</string>
+    <string name="dry_cleaning_low_heat_symbol_title">Lavagem a Seco com Baixo Calor</string>
+    <string name="dry_cleaning_low_heat_symbol_description">Lavagem a Seco com Baixo Calor</string>
+    <string name="dry_cleaning_no_steam_symbol_title">Lavagem a Seco sem Vapor</string>
+    <string name="dry_cleaning_no_steam_symbol_description">Lavagem a Seco sem Vapor</string>
+    <string name="dry_cleaning_any_solvent_symbol_title">Lavagem a Seco com Qualquer Solvente</string>
+    <string name="dry_cleaning_any_solvent_symbol_description">Lavagem a Seco com Qualquer Solvente</string>
+    <string name="dry_cleaning_only_symbol_title">Somente Lavagem a Seco</string>
+    <string name="dry_cleaning_only_symbol_description">Somente Lavagem a Seco</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Lavagem a Seco Somente com Solvente de Petróleo</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Lavagem a Seco Somente com Solvente de Petróleo</string>
+    <string name="tumble_dry_low_heat_symbol_title">Secar em Tambor com Baixo Calor</string>
+    <string name="tumble_dry_low_heat_symbol_description">Secar em Tambor com Baixo Calor</string>
+    <string name="tumble_dry_high_heat_symbol_title">Secar em Tambor com Alto Calor</string>
+    <string name="tumble_dry_high_heat_symbol_description">Secar em Tambor com Alto Calor</string>
+    <string name="dry_flat_symbol_title">Secar na Horizontal</string>
+    <string name="dry_flat_symbol_description">Secar na Horizontal</string>
+    <string name="hang_to_dry_symbol_title">Pendurar para Secar</string>
+    <string name="hang_to_dry_symbol_description">Pendurar para Secar</string>
+    <string name="do_not_tumble_dry_symbol_title">Não Usar Secadora</string>
+    <string name="do_not_tumble_dry_symbol_description">Não Usar Secadora</string>
 
     <!-- Ironing Symbols -->
-    <string name="do_not_iron_symbol">Não Passar a Ferro</string>
-    <string name="ironing_allowed_symbol">Passar a Ferro Permitido</string>
-    <string name="iron_low_symbol">Passar a Ferro com Baixo Calor (Máx. 110° Celsius)</string>
-    <string name="iron_medium_symbol">Passar a Ferro com Calor Médio (Máx. 150° Celsius)</string>
-    <string name="iron_high_symbol">Passar a Ferro com Calor Alto (Máx. 200° Celsius)</string>
-    <string name="steaming_not_allowed_symbol">Vapor Não Permitido</string>
+    <string name="do_not_iron_symbol_title">Não Passar a Ferro</string>
+    <string name="do_not_iron_symbol_description">Não Passar a Ferro</string>
+    <string name="ironing_allowed_symbol_title">Passar a Ferro Permitido</string>
+    <string name="ironing_allowed_symbol_description">Passar a Ferro Permitido</string>
+    <string name="iron_low_symbol_title">Passar a Ferro com Baixo Calor</string>
+    <string name="iron_low_symbol_description">Passar a Ferro com Baixo Calor (Máx. 110° Celsius)</string>
+    <string name="iron_low_symbol_description_fahrenheit">Passar a Ferro com Baixo Calor (Máx. 230° Fahrenheit)</string>
+    <string name="iron_medium_symbol_title">Passar a Ferro com Calor Médio</string>
+    <string name="iron_medium_symbol_description">Passar a Ferro com Calor Médio (Máx. 150° Celsius)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Passar a Ferro com Calor Médio (Máx. 300° Fahrenheit)</string>
+    <string name="iron_high_symbol_title">Passar a Ferro com Calor Alto</string>
+    <string name="iron_high_symbol_description">Passar a Ferro com Calor Alto (Máx. 200° Celsius)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Passar a Ferro com Calor Alto (Máx. 390° Fahrenheit)</string>
+    <string name="steaming_not_allowed_symbol_title">Vapor Não Permitido</string>
+    <string name="steaming_not_allowed_symbol_description">Vapor Não Permitido</string>
 
     <string name="how_to_do_laundry_title">Como Lavar Roupas Passo a Passo</string>
     <string name="how_to_do_laundry_button_text">Como Lavar Roupa</string>

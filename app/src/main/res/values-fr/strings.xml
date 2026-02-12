@@ -15,40 +15,75 @@
     <string name="laundry_symbol_item">Élément de Symbole de Lavage</string>
 
     <!-- Washing Symbols -->
-    <string name="do_not_wash_symbol">Ne Pas Laver</string>
-    <string name="regular_washing_allowed_symbol">Lavage Régulier Autorisé</string>
-    <string name="washing_cold_symbol">Lavage à Froid</string>
-    <string name="washing_warm_symbol">Lavage à Tiède</string>
-    <string name="washing_hot_symbol">Lavage à Chaud</string>
-    <string name="synthetic_cycle_symbol">Cycle Synthétique</string>
-    <string name="hand_wash_symbol">Lavage à la Main</string>
+    <string name="do_not_wash_symbol_title">Ne Pas Laver</string>
+    <string name="do_not_wash_symbol_description">Ne Pas Laver</string>
+    <string name="regular_washing_allowed_symbol_title">Lavage Régulier Autorisé</string>
+    <string name="regular_washing_allowed_symbol_description">Lavage Régulier Autorisé</string>
+    <string name="washing_cold_symbol_title">Lavage à Froid</string>
+    <string name="washing_cold_symbol_description">Lavage à Froid (30°C)</string>
+    <string name="washing_cold_symbol_description_fahrenheit">Lavage à Froid (86°F)</string>
+    <string name="washing_warm_symbol_title">Lavage à Tiède</string>
+    <string name="washing_warm_symbol_description">Lavage à Tiède (40°C)</string>
+    <string name="washing_warm_symbol_description_fahrenheit">Lavage à Tiède (104°F)</string>
+    <string name="washing_hot_symbol_title">Lavage à Chaud</string>
+    <string name="washing_hot_symbol_description">Lavage à Chaud (60°C)</string>
+    <string name="washing_hot_symbol_description_fahrenheit">Lavage à Chaud (140°F)</string>
+    <string name="synthetic_cycle_symbol_title">Cycle Synthétique</string>
+    <string name="synthetic_cycle_symbol_description">Cycle Synthétique (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Cycle Synthétique (86°F)</string>
+    <string name="hand_wash_symbol_title">Lavage à la Main</string>
+    <string name="hand_wash_symbol_description">Lavage à la Main</string>
 
     <!-- Bleaching Symbols -->
-    <string name="do_not_bleach_symbol">Ne Pas Blanchir</string>
-    <string name="bleaching_allowed_symbol">Blanchiment Autorisé</string>
-    <string name="bleaching_non_chlorine_symbol">Blanchiment sans Chlore</string>
+    <string name="do_not_bleach_symbol_title">Ne Pas Blanchir</string>
+    <string name="do_not_bleach_symbol_description">Ne Pas Blanchir</string>
+    <string name="bleaching_allowed_symbol_title">Blanchiment Autorisé</string>
+    <string name="bleaching_allowed_symbol_description">Blanchiment Autorisé</string>
+    <string name="bleaching_non_chlorine_symbol_title">Blanchiment sans Chlore</string>
+    <string name="bleaching_non_chlorine_symbol_description">Blanchiment sans Chlore</string>
 
     <!-- Drying Symbols -->
-    <string name="do_not_dry_clean_symbol">Ne Pas Nettoyer à Sec</string>
-    <string name="dry_cleaning_allowed_symbol">Nettoyage à Sec Autorisé</string>
-    <string name="dry_cleaning_low_heat_symbol">Nettoyage à Sec Basse Température</string>
-    <string name="dry_cleaning_no_steam_symbol">Nettoyage à Sec sans Vapeur</string>
-    <string name="dry_cleaning_any_solvent_symbol">Nettoyage à Sec Tout Solvant</string>
-    <string name="dry_cleaning_only_symbol">Nettoyage à Sec Uniquement</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol">Nettoyage à Sec Solvant Pétrolier Uniquement</string>
-    <string name="tumble_dry_low_heat_symbol">Séchage en Tambour Basse Température</string>
-    <string name="tumble_dry_high_heat_symbol">Séchage en Tambour Haute Température</string>
-    <string name="dry_flat_symbol">Sécher à Plat</string>
-    <string name="hang_to_dry_symbol">Suspendre pour Sécher</string>
-    <string name="do_not_tumble_dry_symbol">Ne Pas Sécher en Tambour</string>
+    <string name="do_not_dry_clean_symbol_title">Ne Pas Nettoyer à Sec</string>
+    <string name="do_not_dry_clean_symbol_description">Ne Pas Nettoyer à Sec</string>
+    <string name="dry_cleaning_allowed_symbol_title">Nettoyage à Sec Autorisé</string>
+    <string name="dry_cleaning_allowed_symbol_description">Nettoyage à Sec Autorisé</string>
+    <string name="dry_cleaning_low_heat_symbol_title">Nettoyage à Sec Basse Température</string>
+    <string name="dry_cleaning_low_heat_symbol_description">Nettoyage à Sec Basse Température</string>
+    <string name="dry_cleaning_no_steam_symbol_title">Nettoyage à Sec sans Vapeur</string>
+    <string name="dry_cleaning_no_steam_symbol_description">Nettoyage à Sec sans Vapeur</string>
+    <string name="dry_cleaning_any_solvent_symbol_title">Nettoyage à Sec Tout Solvant</string>
+    <string name="dry_cleaning_any_solvent_symbol_description">Nettoyage à Sec Tout Solvant</string>
+    <string name="dry_cleaning_only_symbol_title">Nettoyage à Sec Uniquement</string>
+    <string name="dry_cleaning_only_symbol_description">Nettoyage à Sec Uniquement</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Nettoyage à Sec Solvant Pétrolier Uniquement</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Nettoyage à Sec Solvant Pétrolier Uniquement</string>
+    <string name="tumble_dry_low_heat_symbol_title">Séchage en Tambour Basse Température</string>
+    <string name="tumble_dry_low_heat_symbol_description">Séchage en Tambour Basse Température</string>
+    <string name="tumble_dry_high_heat_symbol_title">Séchage en Tambour Haute Température</string>
+    <string name="tumble_dry_high_heat_symbol_description">Séchage en Tambour Haute Température</string>
+    <string name="dry_flat_symbol_title">Sécher à Plat</string>
+    <string name="dry_flat_symbol_description">Sécher à Plat</string>
+    <string name="hang_to_dry_symbol_title">Suspendre pour Sécher</string>
+    <string name="hang_to_dry_symbol_description">Suspendre pour Sécher</string>
+    <string name="do_not_tumble_dry_symbol_title">Ne Pas Sécher en Tambour</string>
+    <string name="do_not_tumble_dry_symbol_description">Ne Pas Sécher en Tambour</string>
 
     <!-- Ironing Symbols -->
-    <string name="do_not_iron_symbol">Ne Pas Repasser</string>
-    <string name="ironing_allowed_symbol">Repassage Autorisé</string>
-    <string name="iron_low_symbol">Fer Bas (Max 110° Celsius)</string>
-    <string name="iron_medium_symbol">Fer Moyen (Max 150° Celsius)</string>
-    <string name="iron_high_symbol">Fer Chaud (Max 200° Celsius)</string>
-    <string name="steaming_not_allowed_symbol">Vapeur Non Autorisée</string>
+    <string name="do_not_iron_symbol_title">Ne Pas Repasser</string>
+    <string name="do_not_iron_symbol_description">Ne Pas Repasser</string>
+    <string name="ironing_allowed_symbol_title">Repassage Autorisé</string>
+    <string name="ironing_allowed_symbol_description">Repassage Autorisé</string>
+    <string name="iron_low_symbol_title">Fer Bas</string>
+    <string name="iron_low_symbol_description">Fer Bas (Max 110° Celsius)</string>
+    <string name="iron_low_symbol_description_fahrenheit">Fer Bas (Max 230° Fahrenheit)</string>
+    <string name="iron_medium_symbol_title">Fer Moyen</string>
+    <string name="iron_medium_symbol_description">Fer Moyen (Max 150° Celsius)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Fer Moyen (Max 300° Fahrenheit)</string>
+    <string name="iron_high_symbol_title">Fer Chaud</string>
+    <string name="iron_high_symbol_description">Fer Chaud (Max 200° Celsius)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Fer Chaud (Max 390° Fahrenheit)</string>
+    <string name="steaming_not_allowed_symbol_title">Vapeur Non Autorisée</string>
+    <string name="steaming_not_allowed_symbol_description">Vapeur Non Autorisée</string>
 
     <string name="how_to_do_laundry_title">Étapes pour Faire la Lessive</string>
     <string name="how_to_do_laundry_button_text">Comment Faire la Lessive</string>
