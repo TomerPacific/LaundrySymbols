@@ -40,6 +40,11 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
             TemperatureUnit.FAHRENHEIT -> laundrySymbol.descriptionFahrenheit ?: laundrySymbol.description
         }
 
+        val drawableId = when (temperatureUnit) {
+            TemperatureUnit.CELSIUS -> laundrySymbol.drawableId
+            TemperatureUnit.FAHRENHEIT -> laundrySymbol.drawableIdFahrenheit ?: laundrySymbol.drawableId
+        }
+
         Scaffold(
             contentWindowInsets = WindowInsets.safeContent
         ) { innerPadding ->
@@ -54,7 +59,7 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
                     textAlign = TextAlign.Center
                 )
                 Image(
-                    painter = painterResource(id = laundrySymbol.drawableId),
+                    painter = painterResource(id = drawableId),
                     contentDescription = name,
                     modifier = Modifier
                         .width(200.dp)

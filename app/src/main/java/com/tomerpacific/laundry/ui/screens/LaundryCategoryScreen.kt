@@ -108,6 +108,10 @@ fun LaundryCategoryScreen(
                         TemperatureUnit.CELSIUS -> laundrySymbol.name
                         TemperatureUnit.FAHRENHEIT -> laundrySymbol.nameFahrenheit ?: laundrySymbol.name
                     }
+                    val drawableId = when (temperatureUnit) {
+                        TemperatureUnit.CELSIUS -> laundrySymbol.drawableId
+                        TemperatureUnit.FAHRENHEIT -> laundrySymbol.drawableIdFahrenheit ?: laundrySymbol.drawableId
+                    }
 
                     TooltipBox(
                         positionProvider = TooltipDefaults.rememberTooltipPositionProvider(),
@@ -128,7 +132,7 @@ fun LaundryCategoryScreen(
                         state = rememberTooltipState()
                     ) {
                         Image(
-                            painter = painterResource(laundrySymbol.drawableId),
+                            painter = painterResource(drawableId),
                             contentDescription = description,
                             modifier = Modifier
                                 .width(100.dp)
