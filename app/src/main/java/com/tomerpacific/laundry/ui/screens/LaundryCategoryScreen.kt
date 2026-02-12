@@ -62,23 +62,33 @@ fun LaundryCategoryScreen(
         Column(modifier = Modifier.padding(innerPadding)) {
             Text(
                 stringResource(id = laundryCategory),
-                Modifier.align(Alignment.CenterHorizontally).padding(top = 30.dp),
+                Modifier.fillMaxWidth().padding(top = 30.dp),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
                 fontFamily = Bangers,
                 fontSize = 30.sp
             )
             if (containsSymbolWithTemperature) {
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier.fillMaxWidth().padding(end = 30.dp),
+                    horizontalArrangement = Arrangement.End,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "Toggle unit to Fahrenheit")
-                    Switch(checked = temperatureUnit == TemperatureUnit.FAHRENHEIT,
+                    Text(text = "🌡️")
+                    Switch(
+                        modifier = Modifier.padding(horizontal = 4.dp),
+                        checked = temperatureUnit == TemperatureUnit.FAHRENHEIT,
                         onCheckedChange = {
                             viewModel.toggleTemperatureUnit()
-                        })
+                        }
+                    )
+                    val toggleText = when (temperatureUnit) {
+                        TemperatureUnit.CELSIUS -> "°C"
+                        TemperatureUnit.FAHRENHEIT -> "°F"
+                    }
+                    Text(text = toggleText)
                 }
             }
+
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
                 modifier = Modifier.fillMaxSize(),
@@ -88,7 +98,7 @@ fun LaundryCategoryScreen(
                     Alignment.CenterVertically
                 ),
                 horizontalArrangement = Arrangement.spacedBy(10.dp),
-            ) {           
+            ) {
                 items(laundrySymbols) { laundrySymbol ->
                     val description = when (temperatureUnit) {
                         TemperatureUnit.CELSIUS -> laundrySymbol.description
@@ -98,7 +108,7 @@ fun LaundryCategoryScreen(
                         TemperatureUnit.CELSIUS -> laundrySymbol.name
                         TemperatureUnit.FAHRENHEIT -> laundrySymbol.nameFahrenheit ?: laundrySymbol.name
                     }
-                    
+
                     TooltipBox(
                         positionProvider = TooltipDefaults.rememberTooltipPositionProvider(),
                         tooltip = {
