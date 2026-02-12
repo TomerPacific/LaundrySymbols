@@ -78,10 +78,10 @@
     <string name="iron_low_symbol_description_fahrenheit">Stirare a Bassa Temperatura (Max 230° Fahrenheit)</string>
     <string name="iron_medium_symbol_title">Stirare a Media Temperatura</string>
     <string name="iron_medium_symbol_description">Stirare a Media Temperatura (Max 150° Celsius)</string>
-    <string name="iron_medium_symbol_description_fahrenheit">Stirare a Media Temperatura (Max 300° Fahrenheit)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Stirare a Media Temperatura (Max 302° Fahrenheit)</string>
     <string name="iron_high_symbol_title">Stirare ad Alta Temperatura</string>
     <string name="iron_high_symbol_description">Stirare ad Alta Temperatura (Max 200° Celsius)</string>
-    <string name="iron_high_symbol_description_fahrenheit">Stirare ad Alta Temperatura (Max 390° Fahrenheit)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Stirare ad Alta Temperatura (Max 392° Fahrenheit)</string>
     <string name="steaming_not_allowed_symbol_title">Vapore Non Consentito</string>
     <string name="steaming_not_allowed_symbol_description">Vapore Non Consentito</string>
 
