@@ -77,10 +77,10 @@
     <string name="iron_low_symbol_description_fahrenheit">Iron Low (Max 230° Fahrenheit)</string>
     <string name="iron_medium_symbol_title">Iron Medium</string>
     <string name="iron_medium_symbol_description">Iron Medium (Max 150° Celsius)</string>
-    <string name="iron_medium_symbol_description_fahrenheit">Iron Medium (Max 300° Fahrenheit)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Iron Medium (Max 302° Fahrenheit)</string>
     <string name="iron_high_symbol_title">Iron High</string>
     <string name="iron_high_symbol_description">Iron High (Max 200° Celsius)</string>
-    <string name="iron_high_symbol_description_fahrenheit">Iron High (Max 390° Fahrenheit)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Iron High (Max 392° Fahrenheit)</string>
     <string name="steaming_not_allowed_symbol_title">Steaming Not Allowed</string>
     <string name="steaming_not_allowed_symbol_description">Steaming Not Allowed</string>
 
