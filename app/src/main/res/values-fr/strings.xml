@@ -78,10 +78,10 @@
     <string name="iron_low_symbol_description_fahrenheit">Fer Bas (Max 230° Fahrenheit)</string>
     <string name="iron_medium_symbol_title">Fer Moyen</string>
     <string name="iron_medium_symbol_description">Fer Moyen (Max 150° Celsius)</string>
-    <string name="iron_medium_symbol_description_fahrenheit">Fer Moyen (Max 300° Fahrenheit)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Fer Moyen (Max 302° Fahrenheit)</string>
     <string name="iron_high_symbol_title">Fer Chaud</string>
     <string name="iron_high_symbol_description">Fer Chaud (Max 200° Celsius)</string>
-    <string name="iron_high_symbol_description_fahrenheit">Fer Chaud (Max 390° Fahrenheit)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Fer Chaud (Max 392° Fahrenheit)</string>
     <string name="steaming_not_allowed_symbol_title">Vapeur Non Autorisée</string>
     <string name="steaming_not_allowed_symbol_description">Vapeur Non Autorisée</string>
 
