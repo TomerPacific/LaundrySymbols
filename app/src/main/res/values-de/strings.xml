@@ -78,10 +78,10 @@
     <string name="iron_low_symbol_description_fahrenheit">Niedrige Bügeltemperatur (Max 230° Fahrenheit)</string>
     <string name="iron_medium_symbol_title">Mittlere Bügeltemperatur</string>
     <string name="iron_medium_symbol_description">Mittlere Bügeltemperatur (Max 150° Celsius)</string>
-    <string name="iron_medium_symbol_description_fahrenheit">Mittlere Bügeltemperatur (Max 300° Fahrenheit)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Mittlere Bügeltemperatur (Max 302° Fahrenheit)</string>
     <string name="iron_high_symbol_title">Hohe Bügeltemperatur</string>
     <string name="iron_high_symbol_description">Hohe Bügeltemperatur (Max 200° Celsius)</string>
-    <string name="iron_high_symbol_description_fahrenheit">Hohe Bügeltemperatur (Max 390° Fahrenheit)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Hohe Bügeltemperatur (Max 392° Fahrenheit)</string>
     <string name="steaming_not_allowed_symbol_title">Dampfbügeln Nicht Erlaubt</string>
     <string name="steaming_not_allowed_symbol_description">Dampfbügeln Nicht Erlaubt</string>
 
