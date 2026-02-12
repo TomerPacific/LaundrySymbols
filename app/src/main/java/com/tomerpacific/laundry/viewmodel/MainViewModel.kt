@@ -8,10 +8,14 @@ import androidx.lifecycle.AndroidViewModel
 import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
+import com.tomerpacific.laundry.model.TemperatureUnit
 
 class MainViewModel(application: Application): AndroidViewModel(application ) {
 
     private val laundrySymbolsRepository = LaundrySymbolsRepository()
+
+    private val _temperatureUnit = mutableStateOf(TemperatureUnit.CELSIUS)
+    val temperatureUnit = _temperatureUnit
 
     private val howToDoLaundryCategories = laundrySymbolsRepository.createHowToDoLaundryCategories()
 
@@ -35,10 +39,20 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
         return howToDoLaundryCategories
     }
 
+    fun findSymbolByName(name: String): LaundrySymbol? {
+        return laundryCategoryItems.values.flatten().find { it.name == name || it.nameFahrenheit == name }
+    }
+
     fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {
         _selectedDrawerItem.value = howToDoLaundryCategory
     }
 
+    fun toggleTemperatureUnit() {
+        _temperatureUnit.value = when (_temperatureUnit.value) {
+            TemperatureUnit.CELSIUS -> TemperatureUnit.FAHRENHEIT
+            TemperatureUnit.FAHRENHEIT -> TemperatureUnit.CELSIUS
+        }
+    }
 
     fun handleClickOnVersion(uriHandler: UriHandler) {
         uriHandler.openUri(websiteUrls.random())
