@@ -73,5 +73,7 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
                 )
             }
         }
+    } ?: run {
+        Text("Symbol not found")
     }
 }
