@@ -23,7 +23,7 @@ class LaundrySymbolsRepository {
                 description = context.getString(R.string.washing_cold_symbol_description),
                 drawableId = R.drawable.wash_30_degrees,
                 temperature = 30,
-                nameFahrenheit = context.getString(R.string.washing_cold_symbol_description_fahrenheit),
+                descriptionFahrenheit = context.getString(R.string.washing_cold_symbol_description_fahrenheit),
                 drawableIdFahrenheit = R.drawable.wash_86_degrees
             ),
             LaundrySymbol(
@@ -31,7 +31,7 @@ class LaundrySymbolsRepository {
                 description = context.getString(R.string.washing_warm_symbol_description),
                 drawableId = R.drawable.wash_40_degrees_warm,
                 temperature = 40,
-                nameFahrenheit = context.getString(R.string.washing_warm_symbol_description_fahrenheit),
+                descriptionFahrenheit = context.getString(R.string.washing_warm_symbol_description_fahrenheit),
                 drawableIdFahrenheit = R.drawable.wash_104_degrees
             ),
             LaundrySymbol(
@@ -39,7 +39,7 @@ class LaundrySymbolsRepository {
                 description = context.getString(R.string.washing_hot_symbol_description),
                 drawableId = R.drawable.wash_60_degrees_hot,
                 temperature = 60,
-                nameFahrenheit = context.getString(R.string.washing_hot_symbol_description_fahrenheit),
+                descriptionFahrenheit = context.getString(R.string.washing_hot_symbol_description_fahrenheit),
                 drawableIdFahrenheit = R.drawable.wash_140_degrees
             ),
             LaundrySymbol(
@@ -47,7 +47,7 @@ class LaundrySymbolsRepository {
                 description = context.getString(R.string.synthetic_cycle_symbol_description),
                 drawableId = R.drawable.wash_30_degrees_delicate,
                 temperature = 30,
-                nameFahrenheit = context.getString(R.string.synthetic_cycle_symbol_description_fahrenheit)
+                descriptionFahrenheit = context.getString(R.string.synthetic_cycle_symbol_description_fahrenheit)
             ),
             LaundrySymbol(
                 name = context.getString(R.string.hand_wash_symbol_title),
@@ -159,21 +159,21 @@ class LaundrySymbolsRepository {
                 description = context.getString(R.string.iron_low_symbol_description),
                 drawableId = R.drawable.iron_low_setting,
                 temperature = 110,
-                nameFahrenheit = context.getString(R.string.iron_low_symbol_description_fahrenheit)
+                descriptionFahrenheit = context.getString(R.string.iron_low_symbol_description_fahrenheit)
             ),
             LaundrySymbol(
                 name = context.getString(R.string.iron_medium_symbol_title),
                 description = context.getString(R.string.iron_medium_symbol_description),
                 drawableId = R.drawable.iron_medium_setting,
                 temperature = 150,
-                nameFahrenheit = context.getString(R.string.iron_medium_symbol_description_fahrenheit)
+                descriptionFahrenheit = context.getString(R.string.iron_medium_symbol_description_fahrenheit)
             ),
             LaundrySymbol(
                 name = context.getString(R.string.iron_high_symbol_title),
                 description = context.getString(R.string.iron_high_symbol_description),
                 drawableId = R.drawable.iron_high_setting,
                 temperature = 200,
-                nameFahrenheit = context.getString(R.string.iron_high_symbol_description_fahrenheit)
+                descriptionFahrenheit = context.getString(R.string.iron_high_symbol_description_fahrenheit)
             ),
             LaundrySymbol(
                 name = context.getString(R.string.steaming_not_allowed_symbol_title),

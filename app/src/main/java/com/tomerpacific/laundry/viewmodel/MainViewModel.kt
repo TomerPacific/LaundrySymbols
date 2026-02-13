@@ -41,7 +41,7 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
     }
 
     fun findSymbolByName(name: String): LaundrySymbol? {
-        return laundryCategoryItems.values.flatten().find { it.name == name || it.nameFahrenheit == name }
+        return laundryCategoryItems.values.flatten().find { it.name == name || it.descriptionFahrenheit == name }
     }
 
     fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {

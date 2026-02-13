@@ -5,6 +5,6 @@ data class LaundrySymbol(
     val description: String,
     val drawableId: Int,
     val temperature: Int? = null,
-    val nameFahrenheit: String? = null,
+    val descriptionFahrenheit: String? = null,
     val drawableIdFahrenheit: Int? = null
 )
