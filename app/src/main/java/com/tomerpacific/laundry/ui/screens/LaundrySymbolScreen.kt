@@ -26,9 +26,9 @@ import com.tomerpacific.laundry.model.TemperatureUnit
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 @Composable
-fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
+fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?) {
 
-    val laundrySymbol = viewModel.findSymbolByName(symbolName.orEmpty())
+    val laundrySymbol = viewModel.findSymbolById(symbolId.orEmpty())
 
     laundrySymbol?.let {
         val temperatureUnit by viewModel.temperatureUnit

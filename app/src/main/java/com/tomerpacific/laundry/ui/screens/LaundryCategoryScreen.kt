@@ -147,7 +147,7 @@ fun LaundryCategoryScreen(
                                     onClick = { onSymbolClick(laundrySymbol) },
                                     role = Role.Button
                                 )
-                                .testTag(laundrySymbol.name)
+                                .testTag(laundrySymbol.id)
                         )
                     }
                 }

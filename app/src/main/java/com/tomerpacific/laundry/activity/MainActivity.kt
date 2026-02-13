@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                             laundryCategory = laundryCategory,
                             viewModel,
                             onSymbolClick = {
-                                navController.navigate("laundrySymbol/${it.name}")
+                                navController.navigate("laundrySymbol/${it.id}")
                             }
                         )
                     }
@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
                         "laundrySymbol/{$LAUNDRY_SYMBOL_KEY}",
                         arguments = listOf(navArgument(LAUNDRY_SYMBOL_KEY) { type = NavType.StringType })
                     ) {
-                        val laundrySymbolName = it.arguments?.getString(LAUNDRY_SYMBOL_KEY)
+                        val laundrySymbolId = it.arguments?.getString(LAUNDRY_SYMBOL_KEY)
                         LaundrySymbolScreen(
                             viewModel = viewModel,
-                            symbolName = laundrySymbolName
+                            symbolId = laundrySymbolId
                         )
                     }
 
