@@ -151,4 +151,5 @@
     <string name="menu_content_description">Menu</string>
     <string name="home_content_description">Início</string>
     <string name="laundry_machine_content_description">Máquina de lavar</string>
+    <string name="temperature_unit_toggle">Alternar unidade de temperatura, mostrando atualmente %1$s</string>
 </resources>

@@ -151,4 +151,5 @@
     <string name="menu_content_description">Menu</string>
     <string name="home_content_description">Home</string>
     <string name="laundry_machine_content_description">Laundry Machine</string>
+    <string name="temperature_unit_toggle">Temperature unit toggle, currently showing %1$s</string>
 </resources>
