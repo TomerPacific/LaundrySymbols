@@ -82,7 +82,8 @@ fun LaundryCategoryScreen(
                     Switch(
                         modifier = Modifier
                             .padding(horizontal = 4.dp)
-                            .semantics { this.contentDescription = contentDescription },
+                            .semantics { this.contentDescription = contentDescription }
+                            .testTag("temperature_unit_toggle"),
                         checked = temperatureUnit == TemperatureUnit.FAHRENHEIT,
                         onCheckedChange = {
                             viewModel.toggleTemperatureUnit()
@@ -110,10 +111,6 @@ fun LaundryCategoryScreen(
                     val description = when (temperatureUnit) {
                         TemperatureUnit.CELSIUS -> laundrySymbol.description
                         TemperatureUnit.FAHRENHEIT -> laundrySymbol.descriptionFahrenheit ?: laundrySymbol.description
-                    }
-                    val name = when (temperatureUnit) {
-                        TemperatureUnit.CELSIUS -> laundrySymbol.name
-                        TemperatureUnit.FAHRENHEIT -> laundrySymbol.descriptionFahrenheit ?: laundrySymbol.name
                     }
                     val drawableId = when (temperatureUnit) {
                         TemperatureUnit.CELSIUS -> laundrySymbol.drawableId
@@ -150,7 +147,7 @@ fun LaundryCategoryScreen(
                                     onClick = { onSymbolClick(laundrySymbol) },
                                     role = Role.Button
                                 )
-                                .testTag(name)
+                                .testTag(laundrySymbol.name)
                         )
                     }
                 }

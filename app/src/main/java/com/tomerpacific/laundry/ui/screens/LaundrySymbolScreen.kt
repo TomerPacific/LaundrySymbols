@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -32,10 +33,7 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
     laundrySymbol?.let {
         val temperatureUnit by viewModel.temperatureUnit
 
-        val name = when (temperatureUnit) {
-            TemperatureUnit.CELSIUS -> laundrySymbol.name
-            TemperatureUnit.FAHRENHEIT -> laundrySymbol.descriptionFahrenheit ?: laundrySymbol.name
-        }
+        val name = laundrySymbol.name
 
         val description = when (temperatureUnit) {
             TemperatureUnit.CELSIUS -> laundrySymbol.description
@@ -71,7 +69,7 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
                     description,
                     fontSize = 20.sp,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(horizontal = 20.dp)
+                    modifier = Modifier.padding(horizontal = 20.dp).testTag("symbol_description_text")
                 )
             }
         }
