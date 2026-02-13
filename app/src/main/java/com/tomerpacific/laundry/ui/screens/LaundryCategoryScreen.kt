@@ -37,9 +37,12 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.Bangers
+import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
 import com.tomerpacific.laundry.viewmodel.MainViewModel
@@ -74,8 +77,12 @@ fun LaundryCategoryScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(text = "🌡️")
+                    val currentUnit = if (temperatureUnit == TemperatureUnit.FAHRENHEIT) "Fahrenheit" else "Celsius"
+                    val contentDescription = stringResource(id = R.string.temperature_unit_toggle, currentUnit)
                     Switch(
-                        modifier = Modifier.padding(horizontal = 4.dp),
+                        modifier = Modifier
+                            .padding(horizontal = 4.dp)
+                            .semantics { this.contentDescription = contentDescription },
                         checked = temperatureUnit == TemperatureUnit.FAHRENHEIT,
                         onCheckedChange = {
                             viewModel.toggleTemperatureUnit()
