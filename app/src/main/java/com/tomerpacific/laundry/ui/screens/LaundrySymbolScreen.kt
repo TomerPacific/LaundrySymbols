@@ -37,7 +37,7 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolName: String?) {
 
         val description = when (temperatureUnit) {
             TemperatureUnit.CELSIUS -> laundrySymbol.description
-            TemperatureUnit.FAHRENHEIT -> laundrySymbol.descriptionFahrenheit ?: laundrySymbol.description
+            TemperatureUnit.FAHRENHEIT -> laundrySymbol.nameFahrenheit ?: laundrySymbol.description
         }
 
         val drawableId = when (temperatureUnit) {
