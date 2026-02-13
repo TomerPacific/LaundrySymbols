@@ -1,10 +1,13 @@
 package com.tomerpacific.laundry.model
 
+import androidx.annotation.DrawableRes
+
 data class LaundrySymbol(
+    val id: String,
     val name: String,
     val description: String,
-    val drawableId: Int,
+    @DrawableRes val drawableId: Int,
     val temperature: Int? = null,
     val descriptionFahrenheit: String? = null,
-    val drawableIdFahrenheit: Int? = null
+    @DrawableRes val drawableIdFahrenheit: Int? = null
 )
