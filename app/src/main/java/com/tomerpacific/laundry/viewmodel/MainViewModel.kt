@@ -40,8 +40,8 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
         return howToDoLaundryCategories
     }
 
-    fun findSymbolByName(name: String): LaundrySymbol? {
-        return laundryCategoryItems.values.flatten().find { it.name == name }
+    fun findSymbolById(id: String): LaundrySymbol? {
+        return laundryCategoryItems.values.flatten().find { it.id == id }
     }
 
     fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {
