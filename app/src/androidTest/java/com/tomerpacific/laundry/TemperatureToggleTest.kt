@@ -50,7 +50,7 @@ class TemperatureToggleTest {
         val application = ApplicationProvider.getApplicationContext<Application>()
         val viewModel = MainViewModel(application)
         val laundryCategory = R.string.washing
-        val washingSymbol = application.getString(R.string.washing_cold_symbol_title)
+        val washingSymbol = viewModel.getItemsForLaundryCategory(laundryCategory).first { it.temperature != null }
 
         composeTestRule.setContent {
             LaundryCategoryScreen(laundryCategory = laundryCategory, viewModel = viewModel, onSymbolClick = {})
@@ -58,7 +58,7 @@ class TemperatureToggleTest {
 
         composeTestRule.onNodeWithTag("temperature_unit_toggle").performClick()
 
-        composeTestRule.onNodeWithTag(washingSymbol)
+        composeTestRule.onNodeWithTag(washingSymbol.id)
             .assertContentDescriptionContains("86", substring = true)
 
     }
@@ -71,7 +71,7 @@ class TemperatureToggleTest {
         val symbol = viewModel.getItemsForLaundryCategory(laundryCategory).first { it.temperature != null }
 
         composeTestRule.setContent {
-            LaundrySymbolScreen(viewModel = viewModel, symbolName = symbol.name)
+            LaundrySymbolScreen(viewModel = viewModel, symbolId = symbol.id)
         }
 
         viewModel.toggleTemperatureUnit()
