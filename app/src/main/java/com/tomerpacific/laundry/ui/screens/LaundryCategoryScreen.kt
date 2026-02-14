@@ -86,7 +86,7 @@ fun LaundryCategoryScreen(
                             .testTag("temperature_unit_toggle"),
                         checked = temperatureUnit == TemperatureUnit.FAHRENHEIT,
                         onCheckedChange = {
-                            viewModel.toggleTemperatureUnit()
+                            viewModel.onTemperatureUnitChanged(it)
                         }
                     )
                     val toggleText = when (temperatureUnit) {

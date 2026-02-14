@@ -48,10 +48,11 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
         _selectedDrawerItem.value = howToDoLaundryCategory
     }
 
-    fun toggleTemperatureUnit() {
-        _temperatureUnit.value = when (_temperatureUnit.value) {
-            TemperatureUnit.CELSIUS -> TemperatureUnit.FAHRENHEIT
-            TemperatureUnit.FAHRENHEIT -> TemperatureUnit.CELSIUS
+    fun onTemperatureUnitChanged(isFahrenheit: Boolean) {
+        _temperatureUnit.value = if (isFahrenheit) {
+            TemperatureUnit.FAHRENHEIT
+        } else {
+            TemperatureUnit.CELSIUS
         }
     }
 

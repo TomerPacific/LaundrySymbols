@@ -74,7 +74,7 @@ class TemperatureToggleTest {
             LaundrySymbolScreen(viewModel = viewModel, symbolId = symbol.id)
         }
 
-        viewModel.toggleTemperatureUnit()
+        viewModel.onTemperatureUnitChanged(true)
 
         composeTestRule.onNodeWithTag("symbol_description_text").assertTextContains("86", substring = true)
 
