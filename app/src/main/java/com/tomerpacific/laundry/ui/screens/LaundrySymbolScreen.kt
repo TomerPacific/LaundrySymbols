@@ -74,6 +74,18 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?) {
             }
         }
     } ?: run {
-        Text(stringResource(id = R.string.symbol_not_found))
+        Scaffold(
+            contentWindowInsets = WindowInsets.safeContent
+        ) { innerPadding ->
+            Column(
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(stringResource(id = R.string.symbol_not_found))
+            }
+        }
     }
 }
