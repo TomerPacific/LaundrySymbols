@@ -14,40 +14,75 @@
     <string name="laundry_symbol_item">Laundry Symbol Item</string>
 
     <!-- Washing Symbols -->
-    <string name="do_not_wash_symbol">Do Not Wash</string>
-    <string name="regular_washing_allowed_symbol">Regular Washing Allowed</string>
-    <string name="washing_cold_symbol">Washing Cold</string>
-    <string name="washing_warm_symbol">"Washing Warm</string>
-    <string name="washing_hot_symbol">Washing Hot</string>
-    <string name="synthetic_cycle_symbol">Synthetic Cycle</string>
-    <string name="hand_wash_symbol">"Hand Wash"</string>
+    <string name="do_not_wash_symbol_title">Do Not Wash</string>
+    <string name="do_not_wash_symbol_description">Do Not Wash</string>
+    <string name="regular_washing_allowed_symbol_title">Regular Washing Allowed</string>
+    <string name="regular_washing_allowed_symbol_description">Regular Washing Allowed</string>
+    <string name="washing_cold_symbol_title">Washing Cold</string>
+    <string name="washing_cold_symbol_description">Washing Cold (30°C)</string>
+    <string name="washing_cold_symbol_description_fahrenheit">Washing Cold (86°F)</string>
+    <string name="washing_warm_symbol_title">Washing Warm</string>
+    <string name="washing_warm_symbol_description">Washing Warm (40°C)</string>
+    <string name="washing_warm_symbol_description_fahrenheit">Washing Warm (104°F)</string>
+    <string name="washing_hot_symbol_title">Washing Hot</string>
+    <string name="washing_hot_symbol_description">Washing Hot (60°C)</string>
+    <string name="washing_hot_symbol_description_fahrenheit">Washing Hot (140°F)</string>
+    <string name="synthetic_cycle_symbol_title">Synthetic Cycle</string>
+    <string name="synthetic_cycle_symbol_description">Synthetic Cycle (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Synthetic Cycle (86°F)</string>
+    <string name="hand_wash_symbol_title">Hand Wash</string>
+    <string name="hand_wash_symbol_description">Hand Wash</string>
 
     <!-- Bleaching Symbols -->
-    <string name="do_not_bleach_symbol">Do Not Bleach</string>
-    <string name="bleaching_allowed_symbol">Bleaching Allowed</string>
-    <string name="bleaching_non_chlorine_symbol">Bleach Non Chlorine</string>
+    <string name="do_not_bleach_symbol_title">Do Not Bleach</string>
+    <string name="do_not_bleach_symbol_description">Do Not Bleach</string>
+    <string name="bleaching_allowed_symbol_title">Bleaching Allowed</string>
+    <string name="bleaching_allowed_symbol_description">Bleaching Allowed</string>
+    <string name="bleaching_non_chlorine_symbol_title">Bleach Non Chlorine</string>
+    <string name="bleaching_non_chlorine_symbol_description">Bleach Non Chlorine</string>
 
     <!-- Drying Symbols -->
-    <string name="do_not_dry_clean_symbol">Do Not Dry Clean</string>
-    <string name="dry_cleaning_allowed_symbol">Dry Cleaning Allowed</string>
-    <string name="dry_cleaning_low_heat_symbol">Dry Cleaning Low Heat</string>
-    <string name="dry_cleaning_no_steam_symbol">Dry Cleaning No Steam</string>
-    <string name="dry_cleaning_any_solvent_symbol">Dry Cleaning Any Solvent</string>
-    <string name="dry_cleaning_only_symbol">Dry Cleaning Only</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol">Dry Cleaning Petroleum Solvent Only</string>
-    <string name="tumble_dry_low_heat_symbol">Tumble Dry Low Heat</string>
-    <string name="tumble_dry_high_heat_symbol">Tumble Dry High Heat</string>
-    <string name="dry_flat_symbol">Dry Flat</string>
-    <string name="hang_to_dry_symbol">Hang To Dry</string>
-    <string name="do_not_tumble_dry_symbol">Do Not Tumble Dry</string>
+    <string name="do_not_dry_clean_symbol_title">Do Not Dry Clean</string>
+    <string name="do_not_dry_clean_symbol_description">Do Not Dry Clean</string>
+    <string name="dry_cleaning_allowed_symbol_title">Dry Cleaning Allowed</string>
+    <string name="dry_cleaning_allowed_symbol_description">Dry Cleaning Allowed</string>
+    <string name="dry_cleaning_low_heat_symbol_title">Dry Cleaning Low Heat</string>
+    <string name="dry_cleaning_low_heat_symbol_description">Dry Cleaning Low Heat</string>
+    <string name="dry_cleaning_no_steam_symbol_title">Dry Cleaning No Steam</string>
+    <string name="dry_cleaning_no_steam_symbol_description">Dry Cleaning No Steam</string>
+    <string name="dry_cleaning_any_solvent_symbol_title">Dry Cleaning Any Solvent</string>
+    <string name="dry_cleaning_any_solvent_symbol_description">Dry Cleaning Any Solvent</string>
+    <string name="dry_cleaning_only_symbol_title">Dry Cleaning Only</string>
+    <string name="dry_cleaning_only_symbol_description">Dry Cleaning Only</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Dry Cleaning Petroleum Solvent Only</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Dry Cleaning Petroleum Solvent Only</string>
+    <string name="tumble_dry_low_heat_symbol_title">Tumble Dry Low Heat</string>
+    <string name="tumble_dry_low_heat_symbol_description">Tumble Dry Low Heat</string>
+    <string name="tumble_dry_high_heat_symbol_title">Tumble Dry High Heat</string>
+    <string name="tumble_dry_high_heat_symbol_description">Tumble Dry High Heat</string>
+    <string name="dry_flat_symbol_title">Dry Flat</string>
+    <string name="dry_flat_symbol_description">Dry Flat</string>
+    <string name="hang_to_dry_symbol_title">Hang To Dry</string>
+    <string name="hang_to_dry_symbol_description">Hang To Dry</string>
+    <string name="do_not_tumble_dry_symbol_title">Do Not Tumble Dry</string>
+    <string name="do_not_tumble_dry_symbol_description">Do Not Tumble Dry</string>
 
     <!-- Ironing Symbols -->
-    <string name="do_not_iron_symbol">Do Not Iron</string>
-    <string name="ironing_allowed_symbol">Ironing Allowed</string>
-    <string name="iron_low_symbol">Iron Low (Max 110° Celsius)</string>
-    <string name="iron_medium_symbol">Iron Medium (Max 150° Celsius)</string>
-    <string name="iron_high_symbol">Iron High (Max 200° Celsius)</string>
-    <string name="steaming_not_allowed_symbol">Steaming Not Allowed</string>
+    <string name="do_not_iron_symbol_title">Do Not Iron</string>
+    <string name="do_not_iron_symbol_description">Do Not Iron</string>
+    <string name="ironing_allowed_symbol_title">Ironing Allowed</string>
+    <string name="ironing_allowed_symbol_description">Ironing Allowed</string>
+    <string name="iron_low_symbol_title">Iron Low</string>
+    <string name="iron_low_symbol_description">Iron Low (Max 110° Celsius)</string>
+    <string name="iron_low_symbol_description_fahrenheit">Iron Low (Max 230° Fahrenheit)</string>
+    <string name="iron_medium_symbol_title">Iron Medium</string>
+    <string name="iron_medium_symbol_description">Iron Medium (Max 150° Celsius)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Iron Medium (Max 302° Fahrenheit)</string>
+    <string name="iron_high_symbol_title">Iron High</string>
+    <string name="iron_high_symbol_description">Iron High (Max 200° Celsius)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Iron High (Max 392° Fahrenheit)</string>
+    <string name="steaming_not_allowed_symbol_title">Steaming Not Allowed</string>
+    <string name="steaming_not_allowed_symbol_description">Steaming Not Allowed</string>
 
     <string name="how_to_do_laundry_title">How To Do Laundry Steps</string>
     <string name="how_to_do_laundry_button_text">How To Do Laundry</string>
@@ -116,4 +151,6 @@
     <string name="menu_content_description">Menu</string>
     <string name="home_content_description">Home</string>
     <string name="laundry_machine_content_description">Laundry Machine</string>
+    <string name="temperature_unit_toggle">Temperature unit toggle, currently showing %1$s</string>
+    <string name="symbol_not_found">Symbol not found</string>
 </resources>

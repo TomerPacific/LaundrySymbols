@@ -24,12 +24,12 @@ class MainActivityTest {
     @Test
     fun testBackNavigation_popsFragment() {
         composeTestRule.onNodeWithTag("washing category").performClick()
-        composeTestRule.onNodeWithTag("Do Not Wash").assertIsDisplayed()
+        composeTestRule.onNodeWithTag("do-not-wash").assertIsDisplayed()
 
         Espresso.pressBack()
 
         composeTestRule.onNodeWithTag("washing category").assertIsDisplayed()
-        composeTestRule.onNodeWithTag("Do Not Wash").assertDoesNotExist()
+        composeTestRule.onNodeWithTag("do-not-wash").assertDoesNotExist()
     }
 
     @Test

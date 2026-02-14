@@ -20,8 +20,7 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
-import com.tomerpacific.laundry.LAUNDRY_SYMBOL_NAME_KEY
-import com.tomerpacific.laundry.LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY
+import com.tomerpacific.laundry.LAUNDRY_SYMBOL_KEY
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
 import com.tomerpacific.laundry.ui.screens.HowToDoLaundryScreen
 import com.tomerpacific.laundry.ui.screens.LaundryCategoriesScreen
@@ -68,22 +67,18 @@ class MainActivity : AppCompatActivity() {
                             laundryCategory = laundryCategory,
                             viewModel,
                             onSymbolClick = {
-                                navController.navigate("laundrySymbol/${it.name}/${it.drawableId}")
+                                navController.navigate("laundrySymbol/${it.id}")
                             }
                         )
                     }
                     composable(
-                        "laundrySymbol/{$LAUNDRY_SYMBOL_NAME_KEY}/{$LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY}",
-                        arguments = listOf(
-                            navArgument(LAUNDRY_SYMBOL_NAME_KEY) { type = NavType.StringType },
-                            navArgument(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY) { type = NavType.IntType }
-                        )
+                        "laundrySymbol/{$LAUNDRY_SYMBOL_KEY}",
+                        arguments = listOf(navArgument(LAUNDRY_SYMBOL_KEY) { type = NavType.StringType })
                     ) {
-                        val laundrySymbolName = it.arguments?.getString(LAUNDRY_SYMBOL_NAME_KEY) ?: ""
-                        val laundrySymbolDrawableId = it.arguments?.getInt(LAUNDRY_SYMBOL_RESOURCE_IDENTIFIER_KEY) ?: 0
+                        val laundrySymbolId = it.arguments?.getString(LAUNDRY_SYMBOL_KEY)
                         LaundrySymbolScreen(
-                            symbolName = laundrySymbolName,
-                            symbolDrawableId = laundrySymbolDrawableId
+                            viewModel = viewModel,
+                            symbolId = laundrySymbolId
                         )
                     }
 

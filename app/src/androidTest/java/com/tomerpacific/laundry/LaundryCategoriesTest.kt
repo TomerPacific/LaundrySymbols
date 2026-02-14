@@ -19,7 +19,7 @@ class LaundryCategoriesTest {
         val washingCategoryText = composeTestRule.activity.getString(R.string.washing)
         composeTestRule.onNodeWithText(washingCategoryText).assertIsDisplayed()
         composeTestRule.onNodeWithTag("washing category").performClick()
-        composeTestRule.onNodeWithTag("Do Not Wash").assertIsDisplayed()
+        composeTestRule.onNodeWithTag("do-not-wash").assertIsDisplayed()
     }
 
     @Test
@@ -27,7 +27,7 @@ class LaundryCategoriesTest {
         val bleachingCategoryText = composeTestRule.activity.getString(R.string.bleaching)
         composeTestRule.onNodeWithText(bleachingCategoryText).assertIsDisplayed()
         composeTestRule.onNodeWithTag("bleaching category").performClick()
-        composeTestRule.onNodeWithTag("Bleaching Allowed").assertIsDisplayed()
+        composeTestRule.onNodeWithTag("bleaching-allowed").assertIsDisplayed()
     }
 
     @Test
@@ -35,9 +35,9 @@ class LaundryCategoriesTest {
         val ironingCategoryText = composeTestRule.activity.getString(R.string.ironing)
         composeTestRule.onNodeWithText(ironingCategoryText).assertIsDisplayed()
         composeTestRule.onNodeWithTag("ironing category").performClick()
-        composeTestRule.onNodeWithTag("Ironing Allowed").assertIsDisplayed()
-        composeTestRule.onNodeWithTag("Ironing Allowed").performClick()
-        composeTestRule.onNodeWithTag("Do Not Iron").assertDoesNotExist()
+        composeTestRule.onNodeWithTag("ironing-allowed").assertIsDisplayed()
+        composeTestRule.onNodeWithTag("ironing-allowed").performClick()
+        composeTestRule.onNodeWithTag("do-not-iron").assertDoesNotExist()
     }
 
 }
