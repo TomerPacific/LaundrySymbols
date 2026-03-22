@@ -17,15 +17,15 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
     private val _temperatureUnit = mutableStateOf(TemperatureUnit.CELSIUS)
     val temperatureUnit: State<TemperatureUnit> = _temperatureUnit
 
-    val howToDoLaundryCategories by lazy(LazyThreadSafetyMode.NONE) {
+    val howToDoLaundryCategories by lazy {
         LaundrySymbolsRepository.createHowToDoLaundryCategories()
     }
 
-    private val laundryCategoryItems by lazy(LazyThreadSafetyMode.NONE) {
+    private val laundryCategoryItems by lazy {
         LaundrySymbolsRepository.createLaundryCategoryItems(getApplication())
     }
 
-    private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy(LazyThreadSafetyMode.NONE) {
+    private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy {
         mutableStateOf(howToDoLaundryCategories[0])
     }
     val selectedDrawerItem: State<HowToDoLaundryCategory> get() = _selectedDrawerItem
