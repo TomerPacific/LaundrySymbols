@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
                     composable("howToDoLaundry") {
                         HowToDoLaundryScreen(
-                            categories = viewModel.getHowToDoLaundryCategories(),
+                            categories = viewModel.howToDoLaundryCategories,
                             selectedCategory = viewModel.selectedDrawerItem.value,
                             onCategoryClick = {
                                 viewModel.handleClickOnHowToDoLaundryCategories(it)
