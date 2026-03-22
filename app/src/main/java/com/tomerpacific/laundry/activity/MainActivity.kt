@@ -16,7 +16,7 @@ import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.tomerpacific.laundry.UPDATE_REQUEST_CODE
-import com.tomerpacific.laundry.ui.navigation.NavGraph
+import com.tomerpacific.laundry.ui.navigation.LaundryNavGraph
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val navController = rememberNavController()
 
             MaterialTheme {
-                NavGraph(navController = navController, viewModel = viewModel)
+                LaundryNavGraph(navController = navController, viewModel = viewModel)
             }
         }
         checkForUpdate()
