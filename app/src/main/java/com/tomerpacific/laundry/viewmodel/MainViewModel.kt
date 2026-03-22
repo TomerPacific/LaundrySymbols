@@ -14,15 +14,17 @@ import com.tomerpacific.laundry.model.TemperatureUnit
 
 class MainViewModel(application: Application): AndroidViewModel(application ) {
 
+    private val laundrySymbolsRepository = LaundrySymbolsRepository()
+
     private val _temperatureUnit = mutableStateOf(TemperatureUnit.CELSIUS)
     val temperatureUnit: State<TemperatureUnit> = _temperatureUnit
 
     val howToDoLaundryCategories by lazy {
-        LaundrySymbolsRepository.createHowToDoLaundryCategories()
+        laundrySymbolsRepository.createHowToDoLaundryCategories()
     }
 
     private val laundryCategoryItems by lazy {
-        LaundrySymbolsRepository.createLaundryCategoryItems(getApplication())
+        laundrySymbolsRepository.createLaundryCategoryItems(getApplication())
     }
 
     private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy {
