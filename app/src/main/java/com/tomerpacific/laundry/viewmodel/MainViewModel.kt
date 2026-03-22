@@ -13,16 +13,18 @@ import com.tomerpacific.laundry.model.TemperatureUnit
 
 class MainViewModel(application: Application): AndroidViewModel(application ) {
 
-    private val laundrySymbolsRepository = LaundrySymbolsRepository()
-
     private val _temperatureUnit = mutableStateOf(TemperatureUnit.CELSIUS)
     val temperatureUnit: State<TemperatureUnit> = _temperatureUnit
 
-    private val howToDoLaundryCategories = laundrySymbolsRepository.createHowToDoLaundryCategories()
+    private val _howToDoLaundryCategories by lazy {
+        LaundrySymbolsRepository.createHowToDoLaundryCategories()
+    }
 
-    private val laundryCategoryItems = laundrySymbolsRepository.createLaundryCategoryItems(application)
+    private val _laundryCategoryItems by lazy {
+        LaundrySymbolsRepository.createLaundryCategoryItems(getApplication())
+    }
 
-    private val _selectedDrawerItem = mutableStateOf(howToDoLaundryCategories[0])
+    private val _selectedDrawerItem = mutableStateOf(_howToDoLaundryCategories[0])
     val selectedDrawerItem: State<HowToDoLaundryCategory> = _selectedDrawerItem
 
     private val websiteUrls = listOf(
@@ -33,15 +35,15 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
     )
 
     fun getItemsForLaundryCategory(laundryCategory: Int) : List<LaundrySymbol> {
-        return laundryCategoryItems.getOrElse(laundryCategory) { emptyList() }
+        return _laundryCategoryItems.getOrElse(laundryCategory) { emptyList() }
     }
 
     fun getHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
-        return howToDoLaundryCategories
+        return _howToDoLaundryCategories
     }
 
     fun findSymbolById(id: String): LaundrySymbol? {
-        return laundryCategoryItems.values.flatten().find { it.id == id }
+        return _laundryCategoryItems.values.flatten().find { it.id == id }
     }
 
     fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {
