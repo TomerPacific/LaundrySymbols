@@ -2,6 +2,7 @@ package com.tomerpacific.laundry.viewmodel
 
 
 import android.app.Application
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.UriHandler
@@ -24,8 +25,10 @@ class MainViewModel(application: Application): AndroidViewModel(application ) {
         LaundrySymbolsRepository.createLaundryCategoryItems(getApplication())
     }
 
-    private val _selectedDrawerItem = mutableStateOf(howToDoLaundryCategories[0])
-    val selectedDrawerItem: State<HowToDoLaundryCategory> = _selectedDrawerItem
+    private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy {
+        mutableStateOf(howToDoLaundryCategories[0])
+    }
+    val selectedDrawerItem: State<HowToDoLaundryCategory> get() = _selectedDrawerItem
 
     private val websiteUrls = listOf(
         "https://tomerpacific.github.io/Portfolio/",
