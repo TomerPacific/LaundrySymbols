@@ -41,7 +41,7 @@ fun NavGraph(navController: NavHostController, viewModel: MainViewModel) {
 
             LaundryCategoryScreen(
                 laundryCategory = laundryCategory,
-                viewModel,
+                viewModel = viewModel,
                 onSymbolClick = {
                     navController.navigate("laundrySymbol/${it.id}")
                 }
