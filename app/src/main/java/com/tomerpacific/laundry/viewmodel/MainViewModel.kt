@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.UriHandler
 import androidx.lifecycle.AndroidViewModel
 import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
+import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
 
@@ -22,6 +23,10 @@ class MainViewModel @JvmOverloads constructor(
 
     val howToDoLaundryCategories by lazy {
         laundrySymbolsRepository.createHowToDoLaundryCategories()
+    }
+
+    val laundryCategories by lazy {
+        laundrySymbolsRepository.createLaundryCategories()
     }
 
     private val laundryCategoryItems by lazy {

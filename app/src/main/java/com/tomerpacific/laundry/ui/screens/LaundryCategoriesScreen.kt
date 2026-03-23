@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,9 +15,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContent
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -30,21 +30,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.BuildConfig
 import com.tomerpacific.laundry.R
+import com.tomerpacific.laundry.model.LaundryCategory
 
 @Composable
 fun LaundryCategoriesScreen(
+    categories: List<LaundryCategory>,
     onCategoryClick: (Int) -> Unit,
     onLearnMoreClick: () -> Unit,
     onVersionClick: () -> Unit
 ) {
-    val scrollState = rememberScrollState()
-
     Scaffold(
         contentWindowInsets = WindowInsets.safeContent
     ) { innerPadding ->
@@ -52,7 +55,6 @@ fun LaundryCategoriesScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
-                .verticalScroll(scrollState)
         ) {
             Row(Modifier.align(Alignment.CenterHorizontally).padding(top = 20.dp)) {
                 Text(
@@ -64,106 +66,21 @@ fun LaundryCategoriesScreen(
                     textAlign = TextAlign.Center,
                 )
             }
-            Spacer(modifier = Modifier.weight(1f))
-            Row(
-                Modifier.align(Alignment.CenterHorizontally),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            
+            LazyVerticalGrid(
+                columns = GridCells.Adaptive(minSize = 120.dp),
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Column {
-                    Image(
-                        painterResource(id = R.drawable.washable),
-                        stringResource(id = R.string.washing_symbol),
-                        modifier = Modifier
-                            .width(100.dp)
-                            .height(100.dp)
-                            .border(BorderStroke(2.dp, Color.Black))
-                            .clickable(enabled = true, onClick = {
-                                onCategoryClick(R.string.washing)
-                            })
-                            .testTag("washing category"),
-                        alignment = Alignment.Center
-                    )
-                    Text(
-                        text = stringResource(id = R.string.washing),
-                        Modifier
-                            .padding(2.dp)
-                            .align(Alignment.CenterHorizontally),
-                        fontSize = 16.sp
-                    )
-                }
-                Column {
-                    Image(
-                        painterResource(id = R.drawable.bleach_allow),
-                        stringResource(id = R.string.bleaching_symbol),
-                        modifier = Modifier
-                            .width(100.dp)
-                            .height(100.dp)
-                            .border(BorderStroke(2.dp, Color.Black))
-                            .clickable(enabled = true, onClick = {
-                                onCategoryClick(R.string.bleaching)
-                            })
-                            .testTag("bleaching category"),
-                        alignment = Alignment.Center
-                    )
-                    Text(
-                        text = stringResource(id = R.string.bleaching),
-                        Modifier
-                            .padding(2.dp)
-                            .align(Alignment.CenterHorizontally),
-                        fontSize = 16.sp
-                    )
+                items(categories) { category ->
+                    CategoryTile(category, onCategoryClick)
                 }
             }
-            Row(
-                Modifier.align(Alignment.CenterHorizontally),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Column {
-                    Image(
-                        painterResource(id = R.drawable.dry_cleaning_allow),
-                        stringResource(id = R.string.drying_symbol),
-                        modifier = Modifier
-                            .width(100.dp)
-                            .height(100.dp)
-                            .border(BorderStroke(2.dp, Color.Black))
-                            .clickable(enabled = true, onClick = {
-                                onCategoryClick(R.string.drying)
-                            })
-                            .testTag("drying category"),
-                        alignment = Alignment.Center
-                    )
-                    Text(
-                        text = stringResource(id = R.string.drying),
-                        Modifier
-                            .padding(2.dp)
-                            .align(Alignment.CenterHorizontally),
-                        fontSize = 16.sp
-                    )
-                }
-                Column {
-                    Image(
-                        painterResource(id = R.drawable.iron_allowed),
-                        stringResource(id = R.string.ironing_symbol),
-                        modifier = Modifier
-                            .width(100.dp)
-                            .height(100.dp)
-                            .border(BorderStroke(2.dp, Color.Black))
-                            .clickable(enabled = true, onClick = {
-                                onCategoryClick(R.string.ironing)
-                            })
-                            .testTag("ironing category"),
-                        alignment = Alignment.Center
-                    )
-                    Text(
-                        text = stringResource(id = R.string.ironing),
-                        Modifier
-                            .padding(2.dp)
-                            .align(Alignment.CenterHorizontally),
-                        fontSize = 16.sp
-                    )
-                }
-            }
-            Spacer(modifier = Modifier.weight(1f))
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -197,5 +114,32 @@ fun LaundryCategoriesScreen(
 
             }
         }
+    }
+}
+
+@Composable
+fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painterResource(id = category.drawableId),
+            stringResource(id = category.contentDescriptionResId),
+            modifier = Modifier
+                .size(100.dp)
+                .border(BorderStroke(2.dp, Color.Black))
+                .semantics { role = Role.Button }
+                .clickable(enabled = true, onClick = {
+                    onCategoryClick(category.labelResId)
+                })
+                .testTag(category.testTag),
+            alignment = Alignment.Center
+        )
+        Text(
+            text = stringResource(id = category.labelResId),
+            Modifier.padding(2.dp),
+            fontSize = 16.sp,
+            textAlign = TextAlign.Center
+        )
     }
 }
