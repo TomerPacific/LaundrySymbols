@@ -1,17 +1,8 @@
 package com.tomerpacific.laundry.ui.navigation
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
-import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -24,6 +15,13 @@ import com.tomerpacific.laundry.ui.screens.LaundryCategoriesScreen
 import com.tomerpacific.laundry.ui.screens.LaundryCategoryScreen
 import com.tomerpacific.laundry.ui.screens.LaundrySymbolScreen
 import com.tomerpacific.laundry.viewmodel.MainViewModel
+
+private val VALID_CATEGORY_IDS = setOf(
+    R.string.washing,
+    R.string.bleaching,
+    R.string.drying,
+    R.string.ironing
+)
 
 @Composable
 fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) {
@@ -48,9 +46,8 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
             arguments = listOf(navArgument("laundry_category") { type = NavType.IntType })
         ) { entry ->
             val laundryCategory = entry.arguments?.getInt("laundry_category") ?: 0
-            val validCategories = listOf(R.string.washing, R.string.bleaching, R.string.drying, R.string.ironing)
 
-            if (laundryCategory in validCategories) {
+            if (laundryCategory in VALID_CATEGORY_IDS) {
                 LaundryCategoryScreen(
                     laundryCategory = laundryCategory,
                     viewModel = viewModel,
@@ -59,17 +56,6 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
                     }
                 )
             } else {
-                Scaffold { innerPadding ->
-                    Column(
-                        modifier = Modifier
-                            .padding(innerPadding)
-                            .fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(stringResource(id = R.string.category_not_found))
-                    }
-                }
                 LaunchedEffect(Unit) {
                     navController.popBackStack()
                 }
