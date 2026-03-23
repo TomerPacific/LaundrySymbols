@@ -4,8 +4,8 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 data class LaundryCategory(
-    @StringRes val name: Int,
+    @StringRes val labelResId: Int,
     @DrawableRes val drawableId: Int,
-    @StringRes val contentDescriptionId: Int,
+    @StringRes val contentDescriptionResId: Int,
     val testTag: String
 )
