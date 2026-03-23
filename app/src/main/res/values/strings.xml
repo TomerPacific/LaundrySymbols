@@ -153,5 +153,4 @@
     <string name="laundry_machine_content_description">Laundry Machine</string>
     <string name="temperature_unit_toggle">Temperature unit toggle, currently showing %1$s</string>
     <string name="symbol_not_found">Symbol not found</string>
-    <string name="category_not_found">Category not found</string>
 </resources>

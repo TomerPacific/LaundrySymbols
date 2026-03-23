@@ -149,5 +149,4 @@
     <string name="laundry_machine_content_description">Waschmaschine</string>
     <string name="temperature_unit_toggle">Schalter für die Temperatureinheit, zeigt derzeit %1$s an</string>
     <string name="symbol_not_found">Symbol nicht gefunden</string>
-    <string name="category_not_found">Kategorie nicht gefunden</string>
 </resources>
