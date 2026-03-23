@@ -7,10 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,7 +15,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -71,11 +69,10 @@ fun LaundryCategoriesScreen(
                 columns = GridCells.Fixed(2),
                 modifier = Modifier
                     .weight(1f)
-                    .fillMaxWidth(0.9f)
+                    .widthIn(max = 240.dp)
                     .align(Alignment.CenterHorizontally),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 items(categories) { category ->
                     CategoryTile(category, onCategoryClick)
@@ -137,7 +134,7 @@ fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
         )
         Text(
             text = stringResource(id = category.name),
-            Modifier.padding(top = 4.dp),
+            Modifier.padding(2.dp),
             fontSize = 16.sp,
             textAlign = TextAlign.Center
         )
