@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,8 +16,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -31,6 +30,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -66,13 +68,13 @@ fun LaundryCategoriesScreen(
             }
             
             LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
+                columns = GridCells.Adaptive(minSize = 120.dp),
                 modifier = Modifier
                     .weight(1f)
-                    .widthIn(max = 240.dp)
-                    .align(Alignment.CenterHorizontally),
-                verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(categories) { category ->
                     CategoryTile(category, onCategoryClick)
@@ -122,18 +124,19 @@ fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
     ) {
         Image(
             painterResource(id = category.drawableId),
-            stringResource(id = category.contentDescriptionId),
+            stringResource(id = category.contentDescriptionResId),
             modifier = Modifier
                 .size(100.dp)
                 .border(BorderStroke(2.dp, Color.Black))
+                .semantics { role = Role.Button }
                 .clickable(enabled = true, onClick = {
-                    onCategoryClick(category.name)
+                    onCategoryClick(category.labelResId)
                 })
                 .testTag(category.testTag),
             alignment = Alignment.Center
         )
         Text(
-            text = stringResource(id = category.name),
+            text = stringResource(id = category.labelResId),
             Modifier.padding(2.dp),
             fontSize = 16.sp,
             textAlign = TextAlign.Center
