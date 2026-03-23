@@ -30,6 +30,7 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
     NavHost(navController = navController, startDestination = "laundryCategories") {
         composable("laundryCategories") {
             LaundryCategoriesScreen(
+                categories = viewModel.laundryCategories,
                 onCategoryClick = {
                     navController.navigate("laundryCategory/$it")
                 },
