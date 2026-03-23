@@ -48,8 +48,9 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
             arguments = listOf(navArgument("laundry_category") { type = NavType.IntType })
         ) { entry ->
             val laundryCategory = entry.arguments?.getInt("laundry_category") ?: 0
+            val validCategories = listOf(R.string.washing, R.string.bleaching, R.string.drying, R.string.ironing)
 
-            if (laundryCategory != 0) {
+            if (laundryCategory in validCategories) {
                 LaundryCategoryScreen(
                     laundryCategory = laundryCategory,
                     viewModel = viewModel,
