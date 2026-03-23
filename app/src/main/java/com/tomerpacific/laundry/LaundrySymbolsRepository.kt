@@ -2,6 +2,7 @@ package com.tomerpacific.laundry
 
 import android.content.Context
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
+import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 
 class LaundrySymbolsRepository {
@@ -242,6 +243,15 @@ class LaundrySymbolsRepository {
                 R.string.wash_temperature_description,
                 R.drawable.wash_temperature,
                 R.string.wash_temperature_cd)
+        )
+    }
+
+    fun createLaundryCategories(): List<LaundryCategory> {
+        return listOf(
+            LaundryCategory(R.string.washing, R.drawable.washable, R.string.washing_symbol, "washing category"),
+            LaundryCategory(R.string.bleaching, R.drawable.bleach_allow, R.string.bleaching_symbol, "bleaching category"),
+            LaundryCategory(R.string.drying, R.drawable.dry_cleaning_allow, R.string.drying_symbol, "drying category"),
+            LaundryCategory(R.string.ironing, R.drawable.iron_allowed, R.string.ironing_symbol, "ironing category")
         )
     }
 
