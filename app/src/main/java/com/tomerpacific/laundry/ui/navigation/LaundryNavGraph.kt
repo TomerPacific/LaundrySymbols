@@ -66,7 +66,7 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Text(stringResource(id = R.string.symbol_not_found))
+                        Text(stringResource(id = R.string.category_not_found))
                     }
                 }
                 LaunchedEffect(Unit) {

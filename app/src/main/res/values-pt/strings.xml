@@ -139,9 +139,9 @@
         Certifique-se de ler as etiquetas de cuidado nas suas roupas. Se você não as entender, use <b>Símbolos de Lavagem</b> para descobrir
         o que cada uma significa. Para roupas resistentes, use a configuração normal da máquina de lavar. Isso geralmente fará
         a máquina de lavar lavar e enxaguar em ciclos rápidos. Se você tiver roupas muito sujas, precisará usar a configuração de serviço pesado.
-        A configuração de prensa permanente é usada para roupas que podem enrugar, causadas pelos tecidos de que são feitas,
+        A configuração de prensa permanente é used para roupas que podem enrugar, causadas pelos tecidos de que são feitas,
         como nylon e rayon. Isso fará com que a máquina de lavar tenha um ciclo mais lento no final da lavagem.
-        Para roupas delicadas, como lingerie, use o ciclo delicado.
+        Para roupas delicadas, como lingerie, use the ciclo delicado.
     </string>
     <string name="wash_temperature_description">
         Para a maioria dos seus ciclos de lavagem, é aconselhável usar água fria.
@@ -153,4 +153,5 @@
     <string name="laundry_machine_content_description">Máquina de lavar</string>
     <string name="temperature_unit_toggle">Alternar unidade de temperatura, mostrando atualmente %1$s</string>
     <string name="symbol_not_found">Símbolo não encontrado</string>
+    <string name="category_not_found">Categoria não encontrada</string>
 </resources>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simboli di Lavaggio</string>
-    <string name="main_screen_title">Spiegazione dei Simboli di Lavaggio</string>
+    <string name="app_name">Simboli Lavaggio</string>
+    <string name="main_screen_title">Simboli di Lavaggio Spiegati</string>
     <string name="washing">Lavaggio</string>
     <string name="bleaching">Candeggio</string>
     <string name="drying">Asciugatura</string>
     <string name="ironing">Stiratura</string>
-    <string name="symbol_image_description">Immagine del Simbolo di Lavaggio</string>
+    <string name="symbol_image_description">Immagine Simbolo di Lavaggio</string>
     <string name="app_version">v.%1$s</string>
     <string name="washing_symbol">Simbolo di Lavaggio</string>
     <string name="bleaching_symbol">Simbolo di Candeggio</string>
@@ -19,18 +19,18 @@
     <string name="do_not_wash_symbol_description">Non Lavare</string>
     <string name="regular_washing_allowed_symbol_title">Lavaggio Regolare Consentito</string>
     <string name="regular_washing_allowed_symbol_description">Lavaggio Regolare Consentito</string>
-    <string name="washing_cold_symbol_title">Lavare a Freddo</string>
-    <string name="washing_cold_symbol_description">Lavare a Freddo (30°C)</string>
-    <string name="washing_cold_symbol_description_fahrenheit">Lavare a Freddo (86°F)</string>
-    <string name="washing_warm_symbol_title">Lavare a Tiepido</string>
-    <string name="washing_warm_symbol_description">Lavare a Tiepido (40°C)</string>
-    <string name="washing_warm_symbol_description_fahrenheit">Lavare a Tiepido (104°F)</string>
-    <string name="washing_hot_symbol_title">Lavare a Caldo</string>
-    <string name="washing_hot_symbol_description">Lavare a Caldo (60°C)</string>
-    <string name="washing_hot_symbol_description_fahrenheit">Lavare a Caldo (140°F)</string>
-    <string name="synthetic_cycle_symbol_title">Ciclo Sintetico</string>
-    <string name="synthetic_cycle_symbol_description">Ciclo Sintetico (30°C)</string>
-    <string name="synthetic_cycle_symbol_description_fahrenheit">Ciclo Sintetico (86°F)</string>
+    <string name="washing_cold_symbol_title">Lavaggio a Freddo</string>
+    <string name="washing_cold_symbol_description">Lavaggio a Freddo (30°C)</string>
+    <string name="washing_cold_symbol_description_fahrenheit">Lavaggio a Freddo (86°F)</string>
+    <string name="washing_warm_symbol_title">Lavaggio Tiepido</string>
+    <string name="washing_warm_symbol_description">Lavaggio Tiepido (40°C)</string>
+    <string name="washing_warm_symbol_description_fahrenheit">Lavaggio Tiepido (104°F)</string>
+    <string name="washing_hot_symbol_title">Lavaggio a Caldo</string>
+    <string name="washing_hot_symbol_description">Lavaggio a Caldo (60°C)</string>
+    <string name="washing_hot_symbol_description_fahrenheit">Lavaggio a Caldo (140°F)</string>
+    <string name="synthetic_cycle_symbol_title">Ciclo Sintetici</string>
+    <string name="synthetic_cycle_symbol_description">Ciclo Sintetici (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Ciclo Sintetici (86°F)</string>
     <string name="hand_wash_symbol_title">Lavaggio a Mano</string>
     <string name="hand_wash_symbol_description">Lavaggio a Mano</string>
 
@@ -49,22 +49,22 @@
     <string name="dry_cleaning_allowed_symbol_description">Lavaggio a Secco Consentito</string>
     <string name="dry_cleaning_low_heat_symbol_title">Lavaggio a Secco a Bassa Temperatura</string>
     <string name="dry_cleaning_low_heat_symbol_description">Lavaggio a Secco a Bassa Temperatura</string>
-    <string name="dry_cleaning_no_steam_symbol_title">Lavaggio a Secco Senza Vapore</string>
-    <string name="dry_cleaning_no_steam_symbol_description">Lavaggio a Secco Senza Vapore</string>
+    <string name="dry_cleaning_no_steam_symbol_title">Lavaggio a Secco senza Vapore</string>
+    <string name="dry_cleaning_no_steam_symbol_description">Lavaggio a Secco senza Vapore</string>
     <string name="dry_cleaning_any_solvent_symbol_title">Lavaggio a Secco con Qualsiasi Solvente</string>
     <string name="dry_cleaning_any_solvent_symbol_description">Lavaggio a Secco con Qualsiasi Solvente</string>
     <string name="dry_cleaning_only_symbol_title">Solo Lavaggio a Secco</string>
     <string name="dry_cleaning_only_symbol_description">Solo Lavaggio a Secco</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Lavaggio a Secco con Solventi a Base di Petrolio</string>
-    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Lavaggio a Secco con Solventi a Base di Petrolio</string>
-    <string name="tumble_dry_low_heat_symbol_title">Asciugare in Asciugatrice a Bassa Temperatura</string>
-    <string name="tumble_dry_low_heat_symbol_description">Asciugare in Asciugatrice a Bassa Temperatura</string>
-    <string name="tumble_dry_high_heat_symbol_title">Asciugare in Asciugatrice ad Alta Temperatura</string>
-    <string name="tumble_dry_high_heat_symbol_description">Asciugare in Asciugatrice ad Alta Temperatura</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_title">Solo Lavaggio a Secco con Solvente al Petrolio</string>
+    <string name="dry_cleaning_petroleum_solvent_only_symbol_description">Solo Lavaggio a Secco con Solvente al Petrolio</string>
+    <string name="tumble_dry_low_heat_symbol_title">Asciugatrice a Bassa Temperatura</string>
+    <string name="tumble_dry_low_heat_symbol_description">Asciugatrice a Bassa Temperatura</string>
+    <string name="tumble_dry_high_heat_symbol_title">Asciugatrice ad Alta Temperatura</string>
+    <string name="tumble_dry_high_heat_symbol_description">Asciugatrice ad Alta Temperatura</string>
     <string name="dry_flat_symbol_title">Asciugare in Piano</string>
     <string name="dry_flat_symbol_description">Asciugare in Piano</string>
-    <string name="hang_to_dry_symbol_title">Stendere per Asciugare</string>
-    <string name="hang_to_dry_symbol_description">Stendere per Asciugare</string>
+    <string name="hang_to_dry_symbol_title">Appendere per Asciugare</string>
+    <string name="hang_to_dry_symbol_description">Appendere per Asciugare</string>
     <string name="do_not_tumble_dry_symbol_title">Non Asciugare in Asciugatrice</string>
     <string name="do_not_tumble_dry_symbol_description">Non Asciugare in Asciugatrice</string>
 
@@ -73,19 +73,19 @@
     <string name="do_not_iron_symbol_description">Non Stirare</string>
     <string name="ironing_allowed_symbol_title">Stiratura Consentita</string>
     <string name="ironing_allowed_symbol_description">Stiratura Consentita</string>
-    <string name="iron_low_symbol_title">Stirare a Bassa Temperatura</string>
-    <string name="iron_low_symbol_description">Stirare a Bassa Temperatura (Max 110° Celsius)</string>
-    <string name="iron_low_symbol_description_fahrenheit">Stirare a Bassa Temperatura (Max 230° Fahrenheit)</string>
-    <string name="iron_medium_symbol_title">Stirare a Media Temperatura</string>
-    <string name="iron_medium_symbol_description">Stirare a Media Temperatura (Max 150° Celsius)</string>
-    <string name="iron_medium_symbol_description_fahrenheit">Stirare a Media Temperatura (Max 302° Fahrenheit)</string>
-    <string name="iron_high_symbol_title">Stirare ad Alta Temperatura</string>
-    <string name="iron_high_symbol_description">Stirare ad Alta Temperatura (Max 200° Celsius)</string>
-    <string name="iron_high_symbol_description_fahrenheit">Stirare ad Alta Temperatura (Max 392° Fahrenheit)</string>
+    <string name="iron_low_symbol_title">Stiro a Bassa Temperatura</string>
+    <string name="iron_low_symbol_description">Stiro a Bassa Temperatura (Max 110° Celsius)</string>
+    <string name="iron_low_symbol_description_fahrenheit">Stiro a Bassa Temperatura (Max 230° Fahrenheit)</string>
+    <string name="iron_medium_symbol_title">Stiro a Media Temperatura</string>
+    <string name="iron_medium_symbol_description">Stiro a Media Temperatura (Max 150° Celsius)</string>
+    <string name="iron_medium_symbol_description_fahrenheit">Stiro a Media Temperatura (Max 302° Fahrenheit)</string>
+    <string name="iron_high_symbol_title">Stiro ad Alta Temperatura</string>
+    <string name="iron_high_symbol_description">Stiro ad Alta Temperatura (Max 200° Celsius)</string>
+    <string name="iron_high_symbol_description_fahrenheit">Stiro ad Alta Temperatura (Max 392° Fahrenheit)</string>
     <string name="steaming_not_allowed_symbol_title">Vapore Non Consentito</string>
     <string name="steaming_not_allowed_symbol_description">Vapore Non Consentito</string>
 
-    <string name="how_to_do_laundry_title">Come Fare il Bucato</string>
+    <string name="how_to_do_laundry_title">Passaggi per Fare il Bucato</string>
     <string name="how_to_do_laundry_button_text">Come Fare il Bucato</string>
 
     <!-- How To Do Laundry Categories -->
@@ -98,8 +98,8 @@
     <string name="wash_temperature">Temperatura di Lavaggio</string>
 
     <!-- How To Do Laundry Categories Content Description -->
-    <string name="laundry_hamper_cd">Cesto del Bucato</string>
-    <string name="stain_removal_cd">Rimozione delle Macchie</string>
+    <string name="laundry_hamper_cd">Cesto della Biancheria</string>
+    <string name="stain_removal_cd">Rimozione Macchie</string>
     <string name="load_detergent_cd">Caricare il Detersivo</string>
     <string name="using_bleach_cd">Usare la Candeggina</string>
     <string name="adding_fabric_softener_cd">Aggiungere l\'Ammorbidente</string>
@@ -108,40 +108,48 @@
 
     <!-- How To Do Laundry Categories Description -->
     <string name="separating__laundry_description">
-        Separa il bucato in base al tipo di tessuto. Un mucchio può essere composto da tessuti pesanti,
-        un altro da tessuti leggeri o sottili. In questo modo, sarà più facile scegliere il ciclo di lavaggio corretto.
-        Dopo aver separato per tipo di tessuto, separa anche per colore per evitare che i colori si mescolino e rovinino i capi.
+        Separa il bucato in base al tessuto. Un mucchio può essere composto da tessuti pesanti, l\'altro da tessuti leggeri o sottili.
+        In questo modo sarà più facile scegliere il ciclo di lavaggio corretto per i tuoi vestiti.
+        Dopo aver separato per tipo di tessuto, dovrai separare per colore per evitare che i colori sbiadiscano l\'uno nell\'altro.
     </string>
     <string name="treating_stains_description">
-        Tratta sempre le macchie appena si formano. Usa un detersivo per bucato o un rimuovi macchie e strofinalo delicatamente.
-        Lascialo agire per circa cinque minuti prima di lavarlo via. Puoi anche lasciare il capo in ammollo in acqua fredda per trenta minuti.
+        Tratta sempre le macchie non appena si presentano.
+        Puoi usare un detersivo per il bucato o uno smacchiatore e assicurati di strofinare delicatamente.
+        Lascia agire per circa cinque minuti prima di lavare via dal capo d\'abbigliamento.
+        Puoi anche trattare le macchie lasciandole in ammollo per trenta minuti in acqua fredda.
     </string>
     <string name="loading_detergent_description">
-        A seconda del tipo di lavatrice, metti il detersivo nel cassetto (se hai una lavatrice a carica frontale)
-        o direttamente nel cestello dopo averlo riempito d\'acqua (se hai una lavatrice a carica dall\'alto).
-        Assicurati di scegliere il detersivo giusto per il tuo tipo di lavatrice e considera di utilizzare un detersivo
-        adatto per pelli sensibili o per chi soffre di allergie.
+        A seconda del tipo di lavatrice, metti il detersivo nel cassetto scorrevole (di una lavatrice a carica frontale)
+        o, se hai una lavatrice a carica dall\'alto, puoi mettere il detersivo direttamente nel cestello dopo averlo riempito d\'acqua.
+        Assicurati di scegliere il detersivo corretto per il tuo tipo di lavatrice.
+        Inoltre, tieni presente di acquistare un detersivo per il bucato specifico se hai la pelle sensibile o sei soggetto ad allergie.
     </string>
     <string name="using_bleach_description">
-        Aggiungere la candeggina aiuta a mantenere i capi bianchi brillanti. Assicurati di trovare il posto giusto per aggiungerla
-        in base al tipo di lavatrice.
+        L\'aggiunta di candeggina al bucato aiuta a mantenere brillanti i vestiti bianchi.
+        Assicurati di cercare il posto corretto dove aggiungerla in base al tipo di lavatrice.
     </string>
     <string name="fabric_softener_description">
-        Se vuoi che i tuoi vestiti siano più morbidi o se escono dalla lavatrice rigidi, aggiungi l\'ammorbidente.
-        Assicurati di sapere dove aggiungerlo in base al tipo di lavatrice.
+        Se vuoi dare ai tuoi vestiti un tocco morbido o se i tuoi vestiti escono rigidi dalla lavatrice,
+        devi aggiungere l\'ammorbidente al bucato.
+        Assicurati di cercare il posto corretto dove aggiungerlo in base al tipo di lavatrice.
     </string>
     <string name="wash_cycle_description">
-        Leggi sempre le etichette dei capi. Se non le capisci, usa <b>Simboli di Lavaggio</b> per scoprire il significato.
-        Per i capi resistenti, usa l\'impostazione normale. Per i capi molto sporchi, usa la modalità intensa.
-        Per capi delicati, come la lingerie, utilizza il ciclo delicato.
+        Assicurati di leggere le etichette sui capi. Se non le capisci, usa <b>Simboli di Lavaggio</b> per capire
+        cosa significa ognuna. Per i capi resistenti, usa l\'impostazione normale della lavatrice. In genere la
+        lavatrice laverà e risciacquerà con cicli veloci. Se hai capi molto sporchi, dovrai usare l\'impostazione heavy duty.
+        L\'impostazione permanent press è usata per i vestiti che potrebbero stropicciarsi, a causa dei tessuti di cui sono fatti,
+        come nylon e rayon. Questo farà sì che la lavatrice abbia un ciclo più lento alla fine del lavaggio.
+        Per i capi delicati, come la biancheria intima, usa il ciclo delicato.
     </string>
     <string name="wash_temperature_description">
-        Per la maggior parte dei cicli di lavaggio è consigliabile usare acqua fredda. I detersivi funzionano bene
-        con acqua fredda e i capi durano di più. Usa acqua calda solo per capi molto sporchi o da igienizzare.
+        Per la maggior parte dei cicli di lavaggio, si consiglia di usare acqua fredda.
+        Questo perché la maggior parte dei detersivi funziona bene con l\'acqua fredda e i vestiti durano più a lungo se lavati in acqua fredda.
+        Usa l\'acqua calda solo quando devi lavare vestiti molto sporchi o se stai cercando di sanificarli.
     </string>
     <string name="menu_content_description">Menu</string>
-    <string name="home_content_description">Pagina iniziale</string>
+    <string name="home_content_description">Home</string>
     <string name="laundry_machine_content_description">Lavatrice</string>
-    <string name="temperature_unit_toggle">Selettore dell\'unità di temperatura, attualmente impostato su %1$s</string>
+    <string name="temperature_unit_toggle">Commutatore unità di temperatura, attualmente mostra %1$s</string>
     <string name="symbol_not_found">Simbolo non trovato</string>
+    <string name="category_not_found">Categoria non trovata</string>
 </resources>
