@@ -76,8 +76,17 @@ fun LaundryCategoryScreen(
                     horizontalArrangement = Arrangement.End,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "🌡️")
-                    val currentUnit = if (temperatureUnit == TemperatureUnit.FAHRENHEIT) "Fahrenheit" else "Celsius"
+                    val thermometerIconDescription = stringResource(R.string.thermometer_icon_description)
+                    Text(
+                        text = "🌡️",
+                        modifier = Modifier.semantics {
+                            this.contentDescription = thermometerIconDescription
+                        }
+                    )
+                    val currentUnit = stringResource(
+                        if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_fahrenheit
+                        else R.string.unit_celsius
+                    )
                     val contentDescription = stringResource(id = R.string.temperature_unit_toggle, currentUnit)
                     Switch(
                         modifier = Modifier
@@ -89,10 +98,10 @@ fun LaundryCategoryScreen(
                             viewModel.onTemperatureUnitChanged(it)
                         }
                     )
-                    val toggleText = when (temperatureUnit) {
-                        TemperatureUnit.CELSIUS -> "°C"
-                        TemperatureUnit.FAHRENHEIT -> "°F"
-                    }
+                    val toggleText = stringResource(
+                        if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_symbol_f
+                        else R.string.unit_symbol_c
+                    )
                     Text(text = toggleText)
                 }
             }
