@@ -4,7 +4,7 @@ import android.content.Context
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 
-object LaundrySymbolsRepository {
+class LaundrySymbolsRepository {
 
     fun createWashingSymbols(context: Context) : List<LaundrySymbol> {
         return listOf(

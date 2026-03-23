@@ -12,17 +12,20 @@ import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
 
-class MainViewModel(application: Application): AndroidViewModel(application ) {
+class MainViewModel @JvmOverloads constructor(
+    application: Application,
+    private val laundrySymbolsRepository: LaundrySymbolsRepository = LaundrySymbolsRepository()
+): AndroidViewModel(application ) {
 
     private val _temperatureUnit = mutableStateOf(TemperatureUnit.CELSIUS)
     val temperatureUnit: State<TemperatureUnit> = _temperatureUnit
 
     val howToDoLaundryCategories by lazy {
-        LaundrySymbolsRepository.createHowToDoLaundryCategories()
+        laundrySymbolsRepository.createHowToDoLaundryCategories()
     }
 
     private val laundryCategoryItems by lazy {
-        LaundrySymbolsRepository.createLaundryCategoryItems(getApplication())
+        laundrySymbolsRepository.createLaundryCategoryItems(getApplication())
     }
 
     private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy {
