@@ -215,43 +215,77 @@ class LaundrySymbolsRepository {
 
     fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
         return listOf(
-            HowToDoLaundryCategory(R.string.separating_laundry,
-                R.string.separating__laundry_description,
-                R.drawable.laundry_hamper,
-                R.string.laundry_hamper_cd),
-            HowToDoLaundryCategory(R.string.treating_stains,
-                R.string.treating_stains_description,
-                R.drawable.stain_removal,
-                R.string.stain_removal_cd),
-            HowToDoLaundryCategory(R.string.load_detergent,
-                R.string.loading_detergent_description,
-                R.drawable.loading_detergent,
-                R.string.load_detergent_cd),
-            HowToDoLaundryCategory(R.string.using_bleach,
-                R.string.using_bleach_description,
-                R.drawable.bleach,
-                R.string.using_bleach_cd),
-            HowToDoLaundryCategory(R.string.adding_fabric_softener,
-                R.string.fabric_softener_description,
-                R.drawable.fabric_softener,
-                R.string.adding_fabric_softener_cd),
-            HowToDoLaundryCategory(R.string.wash_cycle,
-                R.string.wash_cycle_description,
-                R.drawable.wash_cycle,
-                R.string.wash_cycle_cd),
-            HowToDoLaundryCategory(R.string.wash_temperature,
-                R.string.wash_temperature_description,
-                R.drawable.wash_temperature,
-                R.string.wash_temperature_cd)
+            HowToDoLaundryCategory(
+                labelResId = R.string.separating_laundry,
+                descriptionResId = R.string.separating__laundry_description,
+                drawableId = R.drawable.laundry_hamper,
+                contentDescriptionResId = R.string.laundry_hamper_cd
+            ),
+            HowToDoLaundryCategory(
+                labelResId = R.string.treating_stains,
+                descriptionResId = R.string.treating_stains_description,
+                drawableId = R.drawable.stain_removal,
+                contentDescriptionResId = R.string.stain_removal_cd
+            ),
+            HowToDoLaundryCategory(
+                labelResId = R.string.load_detergent,
+                descriptionResId = R.string.loading_detergent_description,
+                drawableId = R.drawable.loading_detergent,
+                contentDescriptionResId = R.string.load_detergent_cd
+            ),
+            HowToDoLaundryCategory(
+                labelResId = R.string.using_bleach,
+                descriptionResId = R.string.using_bleach_description,
+                drawableId = R.drawable.bleach,
+                contentDescriptionResId = R.string.using_bleach_cd
+            ),
+            HowToDoLaundryCategory(
+                labelResId = R.string.adding_fabric_softener,
+                descriptionResId = R.string.fabric_softener_description,
+                drawableId = R.drawable.fabric_softener,
+                contentDescriptionResId = R.string.adding_fabric_softener_cd
+            ),
+            HowToDoLaundryCategory(
+                labelResId = R.string.wash_cycle,
+                descriptionResId = R.string.wash_cycle_description,
+                drawableId = R.drawable.wash_cycle,
+                contentDescriptionResId = R.string.wash_cycle_cd
+            ),
+            HowToDoLaundryCategory(
+                labelResId = R.string.wash_temperature,
+                descriptionResId = R.string.wash_temperature_description,
+                drawableId = R.drawable.wash_temperature,
+                contentDescriptionResId = R.string.wash_temperature_cd
+            )
         )
     }
 
     fun createLaundryCategories(): List<LaundryCategory> {
         return listOf(
-            LaundryCategory(R.string.washing, R.drawable.washable, R.string.washing_symbol, "washing category"),
-            LaundryCategory(R.string.bleaching, R.drawable.bleach_allow, R.string.bleaching_symbol, "bleaching category"),
-            LaundryCategory(R.string.drying, R.drawable.dry_cleaning_allow, R.string.drying_symbol, "drying category"),
-            LaundryCategory(R.string.ironing, R.drawable.iron_allowed, R.string.ironing_symbol, "ironing category")
+            LaundryCategory(
+                labelResId = R.string.washing,
+                drawableId = R.drawable.washable,
+                contentDescriptionResId = R.string.washing_symbol,
+                testTag = "washing category"
+            ),
+            LaundryCategory(
+                labelResId = R.string.bleaching,
+                drawableId = R.drawable.bleach_allow,
+                contentDescriptionResId = R.string.bleaching_symbol,
+                testTag = "bleaching category"
+            ),
+            LaundryCategory(
+                labelResId = R.string.drying,
+                drawableId = R.drawable.dry_cleaning_allow,
+                contentDescriptionResId = R.string.drying_symbol,
+                testTag = "drying category"
+            ),
+            LaundryCategory(
+                labelResId = R.string.ironing,
+                drawableId = R.drawable.iron_allowed,
+                contentDescriptionResId = R.string.ironing_symbol,
+                testTag = "ironing category"
+            )
         )
     }
 
