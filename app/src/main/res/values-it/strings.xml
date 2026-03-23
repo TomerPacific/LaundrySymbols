@@ -28,9 +28,9 @@
     <string name="washing_hot_symbol_title">Lavaggio a Caldo</string>
     <string name="washing_hot_symbol_description">Lavaggio a Caldo (60°C)</string>
     <string name="washing_hot_symbol_description_fahrenheit">Lavaggio a Caldo (140°F)</string>
-    <string name="synthetic_cycle_symbol_title">Ciclo Sintetici</string>
-    <string name="synthetic_cycle_symbol_description">Ciclo Sintetici (30°C)</string>
-    <string name="synthetic_cycle_symbol_description_fahrenheit">Ciclo Sintetici (86°F)</string>
+    <string name="synthetic_cycle_symbol_title">Ciclo Sintetico</string>
+    <string name="synthetic_cycle_symbol_description">Ciclo Sintetico (30°C)</string>
+    <string name="synthetic_cycle_symbol_description_fahrenheit">Ciclo Sintetico (86°F)</string>
     <string name="hand_wash_symbol_title">Lavaggio a Mano</string>
     <string name="hand_wash_symbol_description">Lavaggio a Mano</string>
 
