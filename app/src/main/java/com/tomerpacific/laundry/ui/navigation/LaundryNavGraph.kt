@@ -20,7 +20,7 @@ import com.tomerpacific.laundry.viewmodel.MainViewModel
 fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) {
     val uriHandler = LocalUriHandler.current
     val validCategoryIds = remember(viewModel.laundryCategories) {
-        viewModel.laundryCategories.map { it.name }.toSet()
+        viewModel.laundryCategories.map { it.labelResId }.toSet()
     }
 
     NavHost(navController = navController, startDestination = "laundryCategories") {

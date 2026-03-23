@@ -90,7 +90,7 @@ fun HowToDoLaundryScreen(
                     LazyColumn {
                         items(categories) { category ->
                             NavigationDrawerItem(
-                                label = { Text(text = stringResource(id = category.name)) },
+                                label = { Text(text = stringResource(id = category.labelResId)) },
                                 selected = selectedCategory == category,
                                 onClick = {
                                     onCategoryClick(category)
@@ -118,7 +118,7 @@ fun HowToDoLaundryCategoryLayout(howToDoLaundryCategory: HowToDoLaundryCategory)
                 horizontalArrangement = Arrangement.Center
             ) {
                 Text(
-                    stringResource(id = howToDoLaundryCategory.name),
+                    stringResource(id = howToDoLaundryCategory.labelResId),
                     textAlign = TextAlign.Center,
                     fontSize = 25.sp,
                     fontWeight = FontWeight.Bold
@@ -130,7 +130,7 @@ fun HowToDoLaundryCategoryLayout(howToDoLaundryCategory: HowToDoLaundryCategory)
                 horizontalArrangement = Arrangement.Center) {
                 Image(
                     painter = painterResource(id = howToDoLaundryCategory.drawableId),
-                    contentDescription = stringResource(id = howToDoLaundryCategory.contentDescriptionId),
+                    contentDescription = stringResource(id = howToDoLaundryCategory.contentDescriptionResId),
                     modifier = Modifier
                         .width(200.dp)
                         .height(200.dp)
@@ -140,7 +140,7 @@ fun HowToDoLaundryCategoryLayout(howToDoLaundryCategory: HowToDoLaundryCategory)
         item {
             Row(modifier = Modifier.fillMaxWidth().padding(5.dp),
                 horizontalArrangement = Arrangement.Center) {
-                StyledText(textResource(howToDoLaundryCategory.descriptionId))
+                StyledText(textResource(howToDoLaundryCategory.descriptionResId))
             }
         }
     }
