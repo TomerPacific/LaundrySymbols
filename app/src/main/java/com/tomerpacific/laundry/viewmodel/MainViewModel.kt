@@ -12,7 +12,7 @@ import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
 
-class MainViewModel(
+class MainViewModel @JvmOverloads constructor(
     application: Application,
     private val laundrySymbolsRepository: LaundrySymbolsRepository = LaundrySymbolsRepository()
 ): AndroidViewModel(application ) {
