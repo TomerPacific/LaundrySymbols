@@ -37,6 +37,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -76,12 +77,9 @@ fun LaundryCategoryScreen(
                     horizontalArrangement = Arrangement.End,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    val thermometerIconDescription = stringResource(R.string.thermometer_icon_description)
                     Text(
                         text = "🌡️",
-                        modifier = Modifier.semantics {
-                            this.contentDescription = thermometerIconDescription
-                        }
+                        modifier = Modifier.clearAndSetSemantics { }
                     )
                     val currentUnit = stringResource(
                         if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_fahrenheit
@@ -102,7 +100,10 @@ fun LaundryCategoryScreen(
                         if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_symbol_f
                         else R.string.unit_symbol_c
                     )
-                    Text(text = toggleText)
+                    Text(
+                        text = toggleText,
+                        modifier = Modifier.clearAndSetSemantics { }
+                    )
                 }
             }
 
