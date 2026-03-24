@@ -149,4 +149,8 @@
     <string name="laundry_machine_content_description">Machine à laver</string>
     <string name="temperature_unit_toggle">Bascule de l\'unité de température, affichant actuellement %1$s</string>
     <string name="symbol_not_found">Symbole non trouvé</string>
+    <string name="unit_celsius">Celsius</string>
+    <string name="unit_fahrenheit">Fahrenheit</string>
+    <string name="unit_symbol_c">°C</string>
+    <string name="unit_symbol_f">°F</string>
 </resources>

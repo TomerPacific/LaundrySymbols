@@ -37,6 +37,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -76,8 +77,14 @@ fun LaundryCategoryScreen(
                     horizontalArrangement = Arrangement.End,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "🌡️")
-                    val currentUnit = if (temperatureUnit == TemperatureUnit.FAHRENHEIT) "Fahrenheit" else "Celsius"
+                    Text(
+                        text = "🌡️",
+                        modifier = Modifier.clearAndSetSemantics { }
+                    )
+                    val currentUnit = stringResource(
+                        if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_fahrenheit
+                        else R.string.unit_celsius
+                    )
                     val contentDescription = stringResource(id = R.string.temperature_unit_toggle, currentUnit)
                     Switch(
                         modifier = Modifier
@@ -89,11 +96,14 @@ fun LaundryCategoryScreen(
                             viewModel.onTemperatureUnitChanged(it)
                         }
                     )
-                    val toggleText = when (temperatureUnit) {
-                        TemperatureUnit.CELSIUS -> "°C"
-                        TemperatureUnit.FAHRENHEIT -> "°F"
-                    }
-                    Text(text = toggleText)
+                    val toggleText = stringResource(
+                        if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_symbol_f
+                        else R.string.unit_symbol_c
+                    )
+                    Text(
+                        text = toggleText,
+                        modifier = Modifier.clearAndSetSemantics { }
+                    )
                 }
             }
 

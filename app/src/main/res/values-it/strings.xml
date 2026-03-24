@@ -151,4 +151,8 @@
     <string name="laundry_machine_content_description">Lavatrice</string>
     <string name="temperature_unit_toggle">Commutatore unità di temperatura, attualmente mostra %1$s</string>
     <string name="symbol_not_found">Simbolo non trovato</string>
+    <string name="unit_celsius">Celsius</string>
+    <string name="unit_fahrenheit">Fahrenheit</string>
+    <string name="unit_symbol_c">°C</string>
+    <string name="unit_symbol_f">°F</string>
 </resources>
