@@ -49,7 +49,7 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
                     laundryCategory = laundryCategory,
                     viewModel = viewModel,
                     onSymbolClick = {
-                        navController.navigate("laundrySymbol/${it.id}")
+                        navController.navigate("laundrySymbol/${it.id.value}")
                     }
                 )
             } else {

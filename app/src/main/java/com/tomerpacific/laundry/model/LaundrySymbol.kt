@@ -3,7 +3,7 @@ package com.tomerpacific.laundry.model
 import androidx.annotation.DrawableRes
 
 data class LaundrySymbol(
-    val id: String,
+    val id: SymbolId,
     val name: String,
     val description: String,
     @DrawableRes val drawableId: Int,
