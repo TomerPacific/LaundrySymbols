@@ -11,6 +11,7 @@ import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
+import com.tomerpacific.laundry.model.SymbolId
 import com.tomerpacific.laundry.model.TemperatureUnit
 
 class MainViewModel @JvmOverloads constructor(
@@ -33,6 +34,10 @@ class MainViewModel @JvmOverloads constructor(
         laundrySymbolsRepository.createLaundryCategoryItems(getApplication())
     }
 
+    private val symbolIndex: Map<SymbolId, LaundrySymbol> by lazy {
+        laundryCategoryItems.values.flatten().associateBy { it.id }
+    }
+
     private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy {
         mutableStateOf(howToDoLaundryCategories[0])
     }
@@ -49,9 +54,7 @@ class MainViewModel @JvmOverloads constructor(
         return laundryCategoryItems.getOrElse(laundryCategory) { emptyList() }
     }
 
-    fun findSymbolById(id: String): LaundrySymbol? {
-        return laundryCategoryItems.values.flatten().find { it.id == id }
-    }
+    fun findSymbolById(id: String): LaundrySymbol? = symbolIndex[SymbolId(id)]
 
     fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {
         _selectedDrawerItem.value = howToDoLaundryCategory
