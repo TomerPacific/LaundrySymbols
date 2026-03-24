@@ -34,8 +34,8 @@ class MainViewModel @JvmOverloads constructor(
         laundrySymbolsRepository.createLaundryCategoryItems(getApplication())
     }
 
-    private val symbolIndex: Map<SymbolId, LaundrySymbol> by lazy {
-        laundryCategoryItems.values.flatten().associateBy { it.id }
+    private val symbolIndex: Map<String, LaundrySymbol> by lazy {
+        laundryCategoryItems.values.flatten().associateBy { it.id.value }
     }
 
     private val _selectedDrawerItem: MutableState<HowToDoLaundryCategory> by lazy {
@@ -54,7 +54,7 @@ class MainViewModel @JvmOverloads constructor(
         return laundryCategoryItems.getOrElse(laundryCategory) { emptyList() }
     }
 
-    fun findSymbolById(id: String): LaundrySymbol? = symbolIndex[SymbolId(id)]
+    fun findSymbolById(id: String): LaundrySymbol? = symbolIndex[id]
 
     fun handleClickOnHowToDoLaundryCategories(howToDoLaundryCategory: HowToDoLaundryCategory) {
         _selectedDrawerItem.value = howToDoLaundryCategory
