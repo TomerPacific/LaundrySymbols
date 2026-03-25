@@ -22,7 +22,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.R
-import com.tomerpacific.laundry.model.TemperatureUnit
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 @Composable
