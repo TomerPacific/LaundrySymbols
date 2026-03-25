@@ -12,19 +12,17 @@ data class LaundrySymbol(
     @DrawableRes val drawableIdFahrenheit: Int? = null
 ) {
     fun descriptionFor(unit: TemperatureUnit): String {
-        return if (unit == TemperatureUnit.FAHRENHEIT) {
-            descriptionFahrenheit ?: description
-        } else {
-            description
+        return when (unit) {
+            TemperatureUnit.CELSIUS -> description
+            TemperatureUnit.FAHRENHEIT -> descriptionFahrenheit ?: description
         }
     }
 
     @DrawableRes
     fun drawableIdFor(unit: TemperatureUnit): Int {
-        return if (unit == TemperatureUnit.FAHRENHEIT) {
-            drawableIdFahrenheit ?: drawableId
-        } else {
-            drawableId
+        return when (unit) {
+            TemperatureUnit.CELSIUS -> drawableId
+            TemperatureUnit.FAHRENHEIT -> drawableIdFahrenheit ?: drawableId
         }
     }
 }
