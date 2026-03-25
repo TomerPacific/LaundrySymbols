@@ -29,13 +29,19 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels()
 
     private val installStateUpdatedListener = InstallStateUpdatedListener { state ->
-        when (state.installStatus()) {
-            InstallStatus.DOWNLOADED -> Log.d(TAG, "installStateUpdatedListener: update downloaded")
-            InstallStatus.INSTALLED -> Log.d(TAG, "installStateUpdatedListener: update installed")
-            InstallStatus.INSTALLING -> Log.d(TAG, "installStateUpdatedListener: update installing")
-            InstallStatus.DOWNLOADING -> Log.d(TAG, "installStateUpdatedListener: update downloading")
-            InstallStatus.CANCELED -> Log.d(TAG, "installStateUpdatedListener: update cancelled")
+        val status = state.installStatus()
+        val statusMessage = when (status) {
+            InstallStatus.DOWNLOADED -> "update downloaded"
+            InstallStatus.INSTALLED -> "update installed"
+            InstallStatus.INSTALLING -> "update installing"
+            InstallStatus.DOWNLOADING -> "update downloading"
+            InstallStatus.CANCELED -> "update cancelled"
+            InstallStatus.PENDING -> "update pending"
+            InstallStatus.FAILED -> "update failed"
+            InstallStatus.UNKNOWN -> "update unknown status"
+            else -> "unknown status $status"
         }
+        Log.d(TAG, "installStateUpdatedListener: $statusMessage")
     }
 
     private val updateResultLauncher: ActivityResultLauncher<IntentSenderRequest> =
@@ -60,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        appUpdateManager?.appUpdateInfo?.addOnSuccessListener { result: AppUpdateInfo? ->
+        appUpdateManager?.appUpdateInfo?.addOnSuccessListener(this) { result: AppUpdateInfo? ->
             if (result?.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
                 try {
                     appUpdateManager?.startUpdateFlowForResult(
@@ -80,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         appUpdateManager = manager
         manager.registerListener(installStateUpdatedListener)
 
-        manager.appUpdateInfo.addOnSuccessListener { info ->
+        manager.appUpdateInfo.addOnSuccessListener(this) { info ->
             if (info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
                 info.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
                 try {
@@ -95,14 +101,18 @@ class MainActivity : AppCompatActivity() {
             }
             
             val status = info.installStatus()
-            when (status) {
-                InstallStatus.INSTALLED -> Log.d(TAG, "checkForUpdate: update already installed")
-                InstallStatus.INSTALLING -> Log.d(TAG, "checkForUpdate: update is being installed")
-                InstallStatus.DOWNLOADED -> Log.d(TAG, "checkForUpdate: update downloaded")
-                InstallStatus.DOWNLOADING -> Log.d(TAG, "checkForUpdate: update is still downloading")
-                InstallStatus.CANCELED -> Log.d(TAG, "checkForUpdate: update has been cancelled")
-                else -> Log.d(TAG, "checkForUpdate: install status $status")
+            val statusMessage = when (status) {
+                InstallStatus.INSTALLED -> "update already installed"
+                InstallStatus.INSTALLING -> "update is being installed"
+                InstallStatus.DOWNLOADED -> "update downloaded"
+                InstallStatus.DOWNLOADING -> "update is still downloading"
+                InstallStatus.CANCELED -> "update has been cancelled"
+                InstallStatus.PENDING -> "update pending"
+                InstallStatus.FAILED -> "update failed"
+                InstallStatus.UNKNOWN -> "update unknown status"
+                else -> "install status $status"
             }
+            Log.d(TAG, "checkForUpdate: $statusMessage")
         }
     }
 
