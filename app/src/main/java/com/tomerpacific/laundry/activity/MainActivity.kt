@@ -60,45 +60,48 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        appUpdateManager?.apply {
-            appUpdateInfo.addOnSuccessListener { result: AppUpdateInfo? ->
-                    if (result?.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                        startUpdateFlowForResult(
-                            result,
-                            updateResultLauncher,
-                            AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
-                        )
-                    }
+        appUpdateManager?.appUpdateInfo?.addOnSuccessListener { result: AppUpdateInfo? ->
+            if (result?.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                try {
+                    appUpdateManager?.startUpdateFlowForResult(
+                        result,
+                        updateResultLauncher,
+                        AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                    )
+                } catch (e: Exception) {
+                    Log.e(TAG, "onResume: failed to start update flow", e)
+                }
             }
         }
     }
 
     private fun checkForUpdate() {
-        appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
-        appUpdateManager?.registerListener(installStateUpdatedListener)
+        val manager = AppUpdateManagerFactory.create(applicationContext)
+        appUpdateManager = manager
+        manager.registerListener(installStateUpdatedListener)
 
-        appUpdateManager?.apply {
-            appUpdateInfo.addOnSuccessListener {
-                if (it.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
-                        it.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                    try {
-                        startUpdateFlowForResult(
-                            it,
-                            updateResultLauncher,
-                            AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
-                        )
-                    } catch(e : Exception) {
-                        e.printStackTrace()
-                    }
+        manager.appUpdateInfo.addOnSuccessListener { info ->
+            if (info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE &&
+                info.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                try {
+                    manager.startUpdateFlowForResult(
+                        info,
+                        updateResultLauncher,
+                        AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                    )
+                } catch (e: Exception) {
+                    Log.e(TAG, "checkForUpdate: failed to start update flow", e)
                 }
-                when(it.installStatus()) {
-                    InstallStatus.INSTALLED -> Log.d(TAG, "checkForUpdate update already installed")
-                    InstallStatus.INSTALLING -> Log.d(TAG, "checkForUpdate update is being installed")
-                    InstallStatus.DOWNLOADED -> Log.d(TAG, "checkForUpdate update downloaded")
-                    InstallStatus.DOWNLOADING -> Log.d(TAG, "checkForUpdate checkForUpdate is still downloading")
-                    InstallStatus.CANCELED -> Log.d(TAG, "checkForUpdate checkForUpdate has been cancelled")
-                    else -> Log.e(TAG, "checkForUpdate checkForUpdate updateAvailability FAILED")
-                }
+            }
+            
+            val status = info.installStatus()
+            when (status) {
+                InstallStatus.INSTALLED -> Log.d(TAG, "checkForUpdate: update already installed")
+                InstallStatus.INSTALLING -> Log.d(TAG, "checkForUpdate: update is being installed")
+                InstallStatus.DOWNLOADED -> Log.d(TAG, "checkForUpdate: update downloaded")
+                InstallStatus.DOWNLOADING -> Log.d(TAG, "checkForUpdate: update is still downloading")
+                InstallStatus.CANCELED -> Log.d(TAG, "checkForUpdate: update has been cancelled")
+                else -> Log.d(TAG, "checkForUpdate: install status $status")
             }
         }
     }
