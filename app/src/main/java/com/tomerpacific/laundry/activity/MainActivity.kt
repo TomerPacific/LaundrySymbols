@@ -1,6 +1,7 @@
 package com.tomerpacific.laundry.activity
 
 import android.app.Activity
+import android.content.IntentSender
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.compose.setContent
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                         updateResultLauncher,
                         AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
                     )
-                } catch (e: Exception) {
+                } catch (e: IntentSender.SendIntentException) {
                     Log.e(TAG, "onResume: failed to start update flow", e)
                 }
             }
@@ -86,11 +87,11 @@ class MainActivity : AppCompatActivity() {
                         updateResultLauncher,
                         AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
                     )
-                } catch (e: Exception) {
+                } catch (e: IntentSender.SendIntentException) {
                     Log.e(TAG, "checkForUpdate: failed to start update flow", e)
                 }
             }
-            
+
             Log.d(TAG, "checkForUpdate: ${getInstallStatusMessage(info.installStatus())}")
         }?.addOnFailureListener(this) { e ->
             Log.e(TAG, "checkForUpdate: failed to get app update info", e)
