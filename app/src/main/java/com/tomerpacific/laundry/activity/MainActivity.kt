@@ -30,18 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     private val installStateUpdatedListener = InstallStateUpdatedListener { state ->
         val status = state.installStatus()
-        val statusMessage = when (status) {
-            InstallStatus.DOWNLOADED -> "update downloaded"
-            InstallStatus.INSTALLED -> "update installed"
-            InstallStatus.INSTALLING -> "update installing"
-            InstallStatus.DOWNLOADING -> "update downloading"
-            InstallStatus.CANCELED -> "update cancelled"
-            InstallStatus.PENDING -> "update pending"
-            InstallStatus.FAILED -> "update failed"
-            InstallStatus.UNKNOWN -> "update unknown status"
-            else -> "unknown status $status"
-        }
-        Log.d(TAG, "installStateUpdatedListener: $statusMessage")
+        Log.d(TAG, "installStateUpdatedListener: ${getInstallStatusMessage(status)}")
     }
 
     private val updateResultLauncher: ActivityResultLauncher<IntentSenderRequest> =
@@ -66,11 +55,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        appUpdateManager?.appUpdateInfo?.addOnSuccessListener(this) { result: AppUpdateInfo? ->
-            if (result?.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+        appUpdateManager?.appUpdateInfo?.addOnSuccessListener(this) { info ->
+            if (info.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
                 try {
                     appUpdateManager?.startUpdateFlowForResult(
-                        result,
+                        info,
                         updateResultLauncher,
                         AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
                     )
@@ -78,6 +67,8 @@ class MainActivity : AppCompatActivity() {
                     Log.e(TAG, "onResume: failed to start update flow", e)
                 }
             }
+        }?.addOnFailureListener { e ->
+            Log.e(TAG, "onResume: failed to get app update info", e)
         }
     }
 
@@ -100,19 +91,23 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             
-            val status = info.installStatus()
-            val statusMessage = when (status) {
-                InstallStatus.INSTALLED -> "update already installed"
-                InstallStatus.INSTALLING -> "update is being installed"
-                InstallStatus.DOWNLOADED -> "update downloaded"
-                InstallStatus.DOWNLOADING -> "update is still downloading"
-                InstallStatus.CANCELED -> "update has been cancelled"
-                InstallStatus.PENDING -> "update pending"
-                InstallStatus.FAILED -> "update failed"
-                InstallStatus.UNKNOWN -> "update unknown status"
-                else -> "install status $status"
-            }
-            Log.d(TAG, "checkForUpdate: $statusMessage")
+            Log.d(TAG, "checkForUpdate: ${getInstallStatusMessage(info.installStatus())}")
+        }.addOnFailureListener { e ->
+            Log.e(TAG, "checkForUpdate: failed to get app update info", e)
+        }
+    }
+
+    private fun getInstallStatusMessage(@InstallStatus status: Int): String {
+        return when (status) {
+            InstallStatus.DOWNLOADED -> "update downloaded"
+            InstallStatus.INSTALLED -> "update installed"
+            InstallStatus.INSTALLING -> "update installing"
+            InstallStatus.DOWNLOADING -> "update downloading"
+            InstallStatus.CANCELED -> "update cancelled"
+            InstallStatus.PENDING -> "update pending"
+            InstallStatus.FAILED -> "update failed"
+            InstallStatus.UNKNOWN -> "update unknown status"
+            else -> "unknown status $status"
         }
     }
 
