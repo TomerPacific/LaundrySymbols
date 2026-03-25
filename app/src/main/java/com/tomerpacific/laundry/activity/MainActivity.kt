@@ -1,6 +1,5 @@
 package com.tomerpacific.laundry.activity
 
-import android.app.Activity
 import android.content.IntentSender
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +11,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material3.MaterialTheme
 import androidx.navigation.compose.rememberNavController
-import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.appupdate.AppUpdateOptions
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     private val updateResultLauncher: ActivityResultLauncher<IntentSenderRequest> =
         registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
-            if (result.resultCode != Activity.RESULT_OK) {
+            if (result.resultCode != RESULT_OK) {
                 Log.e(TAG, "Update flow failed! Result code: ${result.resultCode}")
             }
         }
@@ -93,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             Log.d(TAG, "checkForUpdate: ${getInstallStatusMessage(info.installStatus())}")
-        }?.addOnFailureListener(this) { e ->
+        }.addOnFailureListener(this) { e ->
             Log.e(TAG, "checkForUpdate: failed to get app update info", e)
         }
     }
