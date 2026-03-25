@@ -22,7 +22,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.R
-import com.tomerpacific.laundry.model.TemperatureUnit
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
 @Composable
@@ -35,15 +34,8 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?) {
 
         val name = laundrySymbol.name
 
-        val description = when (temperatureUnit) {
-            TemperatureUnit.CELSIUS -> laundrySymbol.description
-            TemperatureUnit.FAHRENHEIT -> laundrySymbol.descriptionFahrenheit ?: laundrySymbol.description
-        }
-
-        val drawableId = when (temperatureUnit) {
-            TemperatureUnit.CELSIUS -> laundrySymbol.drawableId
-            TemperatureUnit.FAHRENHEIT -> laundrySymbol.drawableIdFahrenheit ?: laundrySymbol.drawableId
-        }
+        val description = laundrySymbol.descriptionFor(temperatureUnit)
+        val drawableId = laundrySymbol.drawableIdFor(temperatureUnit)
 
         Scaffold(
             contentWindowInsets = WindowInsets.safeContent
