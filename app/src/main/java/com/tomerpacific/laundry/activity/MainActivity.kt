@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e(TAG, "onResume: failed to start update flow", e)
                 }
             }
-        }?.addOnFailureListener { e ->
+        }?.addOnFailureListener(this) { e ->
             Log.e(TAG, "onResume: failed to get app update info", e)
         }
     }
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             }
             
             Log.d(TAG, "checkForUpdate: ${getInstallStatusMessage(info.installStatus())}")
-        }.addOnFailureListener { e ->
+        }?.addOnFailureListener(this) { e ->
             Log.e(TAG, "checkForUpdate: failed to get app update info", e)
         }
     }
