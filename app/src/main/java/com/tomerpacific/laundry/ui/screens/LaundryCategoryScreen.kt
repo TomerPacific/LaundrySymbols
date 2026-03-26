@@ -44,6 +44,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -73,7 +74,8 @@ fun LaundryCategoryScreen(
                   Text(
                       stringResource(id = laundryCategory),
                       fontFamily = Bangers,
-                      fontSize = 30.sp
+                      fontSize = 30.sp,
+                      modifier = Modifier.semantics { heading() }
                   )
               },
               navigationIcon = {
@@ -98,7 +100,7 @@ fun LaundryCategoryScreen(
                     val thermometerLabel = stringResource(R.string.thermometer_label)
                     Text(
                         text = "🌡️",
-                        modifier = Modifier.semantics { 
+                        modifier = Modifier.clearAndSetSemantics { 
                             this.contentDescription = thermometerLabel
                         }
                     )

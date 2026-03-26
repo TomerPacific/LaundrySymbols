@@ -28,6 +28,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -54,7 +56,10 @@ fun HowToDoLaundryScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(stringResource(id = R.string.how_to_do_laundry_title))
+                    Text(
+                        text = stringResource(id = R.string.how_to_do_laundry_title),
+                        modifier = Modifier.semantics { heading() }
+                    )
                 },
                 navigationIcon = {
                     IconButton(onClick = {

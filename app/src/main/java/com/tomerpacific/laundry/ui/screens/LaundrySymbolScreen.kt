@@ -47,7 +47,8 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?, onBackClick
                     Text(
                         text = laundrySymbol?.name ?: stringResource(id = R.string.symbol_not_found),
                         fontFamily = Bangers,
-                        fontSize = 30.sp
+                        fontSize = 30.sp,
+                        modifier = Modifier.semantics { heading() }
                     )
                 },
                 navigationIcon = {
