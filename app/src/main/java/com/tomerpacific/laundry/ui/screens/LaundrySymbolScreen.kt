@@ -26,7 +26,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -65,9 +64,6 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?, onBackClick
     ) { innerPadding ->
         laundrySymbol?.let {
             val temperatureUnit by viewModel.temperatureUnit
-
-            val name = laundrySymbol.name
-
             val description = laundrySymbol.descriptionFor(temperatureUnit)
             val drawableId = laundrySymbol.drawableIdFor(temperatureUnit)
 
@@ -75,19 +71,12 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?, onBackClick
                 modifier = Modifier
                     .padding(innerPadding)
                     .fillMaxSize(),
-                verticalArrangement = Arrangement.SpaceEvenly,
+                verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    name,
-                    fontSize = 30.sp,
-                    textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.semantics { heading() }
-                )
                 Image(
                     painter = painterResource(id = drawableId),
-                    contentDescription = name,
+                    contentDescription = laundrySymbol.name,
                     modifier = Modifier
                         .width(200.dp)
                         .height(200.dp)
@@ -97,6 +86,7 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?, onBackClick
                     fontSize = 20.sp,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
+                        .padding(top = 20.dp)
                         .padding(horizontal = 20.dp)
                         .testTag("symbol_description_text")
                 )
@@ -109,11 +99,12 @@ fun LaundrySymbolScreen(viewModel: MainViewModel, symbolId: String?, onBackClick
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                // Not showing title again here, as it's already in the TopAppBar
                 Text(
-                    text = stringResource(id = R.string.symbol_not_found),
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.semantics { heading() }
+                    text = "The requested laundry symbol could not be found.",
+                    fontSize = 18.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(20.dp)
                 )
             }
         }
