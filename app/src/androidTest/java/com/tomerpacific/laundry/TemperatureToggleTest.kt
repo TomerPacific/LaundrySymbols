@@ -26,7 +26,12 @@ class TemperatureToggleTest {
         val laundryCategory = R.string.washing
 
         composeTestRule.setContent {
-            LaundryCategoryScreen(laundryCategory = laundryCategory, viewModel = viewModel, onSymbolClick = {})
+            LaundryCategoryScreen(
+                laundryCategory = laundryCategory,
+                viewModel = viewModel,
+                onSymbolClick = {},
+                onBackClick = {}
+            )
         }
 
         composeTestRule.onNodeWithTag("temperature_unit_toggle").assertIsDisplayed()
@@ -39,7 +44,12 @@ class TemperatureToggleTest {
         val laundryCategory = R.string.bleaching
 
         composeTestRule.setContent {
-            LaundryCategoryScreen(laundryCategory = laundryCategory, viewModel = viewModel, onSymbolClick = {})
+            LaundryCategoryScreen(
+                laundryCategory = laundryCategory,
+                viewModel = viewModel,
+                onSymbolClick = {},
+                onBackClick = {}
+            )
         }
 
         composeTestRule.onNodeWithTag("temperature_unit_toggle").assertDoesNotExist()
@@ -53,7 +63,12 @@ class TemperatureToggleTest {
         val washingSymbol = viewModel.getItemsForLaundryCategory(laundryCategory).first { it.temperature != null }
 
         composeTestRule.setContent {
-            LaundryCategoryScreen(laundryCategory = laundryCategory, viewModel = viewModel, onSymbolClick = {})
+            LaundryCategoryScreen(
+                laundryCategory = laundryCategory,
+                viewModel = viewModel,
+                onSymbolClick = {},
+                onBackClick = {}
+            )
         }
 
         composeTestRule.onNodeWithTag("temperature_unit_toggle").performClick()
@@ -71,7 +86,11 @@ class TemperatureToggleTest {
         val symbol = viewModel.getItemsForLaundryCategory(laundryCategory).first { it.temperature != null }
 
         composeTestRule.setContent {
-            LaundrySymbolScreen(viewModel = viewModel, symbolId = symbol.id.value)
+            LaundrySymbolScreen(
+                viewModel = viewModel,
+                symbolId = symbol.id.value,
+                onBackClick = {}
+            )
         }
 
         viewModel.onTemperatureUnitChanged(true)
@@ -87,7 +106,12 @@ class TemperatureToggleTest {
         val laundryCategory = R.string.washing
 
         composeTestRule.setContent {
-            LaundryCategoryScreen(laundryCategory = laundryCategory, viewModel = viewModel, onSymbolClick = {})
+            LaundryCategoryScreen(
+                laundryCategory = laundryCategory,
+                viewModel = viewModel,
+                onSymbolClick = {},
+                onBackClick = {}
+            )
         }
 
         composeTestRule.onNodeWithTag("temperature_unit_toggle")
