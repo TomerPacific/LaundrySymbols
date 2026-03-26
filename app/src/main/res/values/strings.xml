@@ -157,4 +157,7 @@
     <string name="unit_fahrenheit">Fahrenheit</string>
     <string name="unit_symbol_c">°C</string>
     <string name="unit_symbol_f">°F</string>
+    <string name="back_button_content_description">Back</string>
+    <string name="thermometer_label">Thermometer</string>
+    <string name="open_category">Open category</string>
 </resources>
