@@ -40,4 +40,29 @@ class LaundryCategoriesTest {
         composeTestRule.onNodeWithTag("do-not-iron").assertDoesNotExist()
     }
 
+    @Test
+    fun testBackNavigationFromCategoryScreen() {
+        val washingCategoryText = composeTestRule.activity.getString(R.string.washing)
+        composeTestRule.onNodeWithTag("washing category").performClick()
+        composeTestRule.onNodeWithTag("do-not-wash").assertIsDisplayed()
+
+        val backButtonContentDescription = composeTestRule.activity.getString(R.string.back_button_content_description)
+        composeTestRule.onNodeWithContentDescription(backButtonContentDescription).performClick()
+
+        composeTestRule.onNodeWithText(washingCategoryText).assertIsDisplayed()
+        composeTestRule.onNodeWithTag("do-not-wash").assertDoesNotExist()
+    }
+
+    @Test
+    fun testBackNavigationFromSymbolScreen() {
+        composeTestRule.onNodeWithTag("washing category").performClick()
+        composeTestRule.onNodeWithTag("do-not-wash").performClick()
+        
+        val backButtonContentDescription = composeTestRule.activity.getString(R.string.back_button_content_description)
+        composeTestRule.onNodeWithContentDescription(backButtonContentDescription).performClick()
+
+        composeTestRule.onNodeWithTag("do-not-wash").assertIsDisplayed()
+        composeTestRule.onNodeWithTag("symbol_description_text").assertDoesNotExist()
+    }
+
 }
