@@ -139,7 +139,7 @@
         lavatrice laverà e risciacquerà con cicli veloci. Se hai capi molto sporchi, dovrai usare l\'impostazione heavy duty.
         L\'impostazione permanent press è usata per i vestiti che potrebbero stropicciarsi, a causa dei tessuti di cui sono fatti,
         come nylon e rayon. Questo farà sì che la lavatrice abbia un ciclo più lento alla fine del lavaggio.
-        Per i capi delicati, come la biancheria intima, usa il ciclo delicato.
+        For i capi delicati, come la biancheria intima, usa il ciclo delicato.
     </string>
     <string name="wash_temperature_description">
         Per la maggior parte dei cicli di lavaggio, si consiglia di usare acqua fredda.
@@ -155,4 +155,7 @@
     <string name="unit_fahrenheit">Fahrenheit</string>
     <string name="unit_symbol_c">°C</string>
     <string name="unit_symbol_f">°F</string>
+    <string name="back_button_content_description">Indietro</string>
+    <string name="thermometer_label">Termometro</string>
+    <string name="open_category">Apri categoria</string>
 </resources>

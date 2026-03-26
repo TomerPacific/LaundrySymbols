@@ -136,7 +136,7 @@
         Certifique-se de procurar o local correto para adicioná-lo com base no tipo de sua máquina de lavar.
     </string>
     <string name="wash_cycle_description">
-        Certifique-se de ler as etiquetas de cuidado nas suas roupas. Se você não as entender, use <b>Símbolos de Lavagem</b> para descobrir
+        Certifique-se de ler as etiquetas de cuidado nas suas roupas. Si você não as entender, use <b>Símbolos de Lavagem</b> para descobrir
         o que cada uma significa. Para roupas resistentes, use a configuração normal da máquina de lavar. Isso geralmente fará
         a máquina de lavar lavar e enxaguar em ciclos rápidos. Se você tiver roupas muito sujas, precisará usar a configuração de serviço pesado.
         A configuração de prensa permanente é utilizada para roupas que podem enrugar, causadas pelos tecidos de que são feitas,
@@ -157,4 +157,7 @@
     <string name="unit_fahrenheit">Fahrenheit</string>
     <string name="unit_symbol_c">°C</string>
     <string name="unit_symbol_f">°F</string>
+    <string name="back_button_content_description">Voltar</string>
+    <string name="thermometer_label">Termômetro</string>
+    <string name="open_category">Abrir categoria</string>
 </resources>
