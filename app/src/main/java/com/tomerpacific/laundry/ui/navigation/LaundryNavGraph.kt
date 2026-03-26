@@ -50,6 +50,9 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
                     viewModel = viewModel,
                     onSymbolClick = {
                         navController.navigate("laundrySymbol/${it.id.value}")
+                    },
+                    onBackClick = {
+                        navController.popBackStack()
                     }
                 )
             } else {
@@ -65,7 +68,10 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
             val laundrySymbolId = it.arguments?.getString(LAUNDRY_SYMBOL_KEY)
             LaundrySymbolScreen(
                 viewModel = viewModel,
-                symbolId = laundrySymbolId
+                symbolId = laundrySymbolId,
+                onBackClick = {
+                    navController.popBackStack()
+                }
             )
         }
 

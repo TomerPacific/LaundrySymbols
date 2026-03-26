@@ -31,7 +31,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -58,12 +58,11 @@ fun LaundryCategoriesScreen(
         ) {
             Row(Modifier.align(Alignment.CenterHorizontally).padding(top = 20.dp)) {
                 Text(
-                    stringResource(
-                        id = R.string.main_screen_title
-                    ),
+                    text = stringResource(id = R.string.main_screen_title),
                     fontFamily = Bangers,
                     fontSize = 30.sp,
                     textAlign = TextAlign.Center,
+                    modifier = Modifier.semantics { heading() }
                 )
             }
             
@@ -119,7 +118,18 @@ fun LaundryCategoriesScreen(
 
 @Composable
 fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
+    val openCategoryLabel = stringResource(id = R.string.open_category)
     Column(
+        modifier = Modifier
+            .padding(8.dp)
+            .testTag(category.testTag)
+            .clickable(
+                role = Role.Button,
+                onClickLabel = openCategoryLabel,
+                onClick = {
+                    onCategoryClick(category.labelResId)
+                }
+            ),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -127,12 +137,7 @@ fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
             stringResource(id = category.contentDescriptionResId),
             modifier = Modifier
                 .size(100.dp)
-                .border(BorderStroke(2.dp, Color.Black))
-                .semantics { role = Role.Button }
-                .clickable(enabled = true, onClick = {
-                    onCategoryClick(category.labelResId)
-                })
-                .testTag(category.testTag),
+                .border(BorderStroke(2.dp, Color.Black)),
             alignment = Alignment.Center
         )
         Text(

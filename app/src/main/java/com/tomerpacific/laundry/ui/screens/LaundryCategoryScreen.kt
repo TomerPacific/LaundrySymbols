@@ -20,13 +20,18 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -53,7 +58,8 @@ import com.tomerpacific.laundry.viewmodel.MainViewModel
 fun LaundryCategoryScreen(
     @StringRes laundryCategory: Int,
     viewModel: MainViewModel,
-    onSymbolClick: (LaundrySymbol) -> Unit
+    onSymbolClick: (LaundrySymbol) -> Unit,
+    onBackClick: () -> Unit
 ) {
 
     val laundrySymbols = viewModel.getItemsForLaundryCategory(laundryCategory)
@@ -61,25 +67,40 @@ fun LaundryCategoryScreen(
     val containsSymbolWithTemperature = laundrySymbols.any { it.temperature != null }
 
     Scaffold(
+        topBar = {
+          TopAppBar(
+              title = {
+                  Text(
+                      stringResource(id = laundryCategory),
+                      fontFamily = Bangers,
+                      fontSize = 30.sp
+                  )
+              },
+              navigationIcon = {
+                  IconButton(onClick = onBackClick) {
+                      Icon(
+                          imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                          contentDescription = stringResource(id = R.string.back_button_content_description)
+                      )
+                  }
+              }
+          )
+        },
         contentWindowInsets = WindowInsets.safeContent
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
-            Text(
-                stringResource(id = laundryCategory),
-                Modifier.fillMaxWidth().padding(top = 30.dp),
-                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                fontFamily = Bangers,
-                fontSize = 30.sp
-            )
             if (containsSymbolWithTemperature) {
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(end = 30.dp),
                     horizontalArrangement = Arrangement.End,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
+                    val thermometerLabel = stringResource(R.string.thermometer_label)
                     Text(
                         text = "🌡️",
-                        modifier = Modifier.clearAndSetSemantics { }
+                        modifier = Modifier.semantics { 
+                            this.contentDescription = thermometerLabel
+                        }
                     )
                     val currentUnit = stringResource(
                         if (temperatureUnit == TemperatureUnit.FAHRENHEIT) R.string.unit_fahrenheit
