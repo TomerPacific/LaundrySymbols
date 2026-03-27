@@ -9,13 +9,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContent
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -27,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -68,7 +70,7 @@ fun LaundryCategoriesScreen(
             }
             
             LazyVerticalGrid(
-                columns = GridCells.Adaptive(minSize = 120.dp),
+                columns = GridCells.Adaptive(minSize = 128.dp),
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth()
@@ -120,20 +122,24 @@ fun LaundryCategoriesScreen(
 @Composable
 fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
     ) {
         Image(
             painterResource(id = category.drawableId),
             stringResource(id = category.contentDescriptionResId),
             modifier = Modifier
-                .size(100.dp)
+                .fillMaxWidth()
+                .widthIn(max = 110.dp)
+                .aspectRatio(1f)
                 .border(BorderStroke(2.dp, Color.Black))
                 .semantics { role = Role.Button }
                 .clickable(enabled = true, onClick = {
                     onCategoryClick(category.labelResId)
                 })
                 .testTag(category.testTag),
-            alignment = Alignment.Center
+            alignment = Alignment.Center,
+            contentScale = ContentScale.Fit
         )
         Text(
             text = stringResource(id = category.labelResId),
