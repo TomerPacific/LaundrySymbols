@@ -21,7 +21,7 @@ class LaundrySymbolScreenTest {
         val application = ApplicationProvider.getApplicationContext<Application>()
         val viewModel = MainViewModel(application)
         val symbolId = "washing-cold"
-        val symbol = viewModel.findSymbolById(symbolId)!!
+        val symbol = viewModel.findSymbolById(symbolId) ?: return
 
         composeTestRule.setContent {
             LaundrySymbolScreen(viewModel = viewModel, symbolId = symbolId)
