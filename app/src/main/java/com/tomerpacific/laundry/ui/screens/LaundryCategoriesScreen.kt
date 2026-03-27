@@ -70,7 +70,7 @@ fun LaundryCategoriesScreen(
             }
             
             LazyVerticalGrid(
-                columns = GridCells.Adaptive(minSize = 128.dp),
+                columns = GridCells.Adaptive(minSize = 110.dp),
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth()
@@ -129,8 +129,8 @@ fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
             painterResource(id = category.drawableId),
             stringResource(id = category.contentDescriptionResId),
             modifier = Modifier
+                .widthIn(max = 100.dp)
                 .fillMaxWidth()
-                .widthIn(max = 110.dp)
                 .aspectRatio(1f)
                 .border(BorderStroke(2.dp, Color.Black))
                 .semantics { role = Role.Button }
