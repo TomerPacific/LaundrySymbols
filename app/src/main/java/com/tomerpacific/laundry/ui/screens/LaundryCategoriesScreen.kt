@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContent
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -129,12 +130,13 @@ fun CategoryTile(category: LaundryCategory, onCategoryClick: (Int) -> Unit) {
             painterResource(id = category.drawableId),
             stringResource(id = category.contentDescriptionResId),
             modifier = Modifier
-                .widthIn(max = 100.dp)
                 .fillMaxWidth()
+                .wrapContentWidth(Alignment.CenterHorizontally)
+                .widthIn(min = 48.dp, max = 100.dp)
                 .aspectRatio(1f)
                 .border(BorderStroke(2.dp, Color.Black))
                 .semantics { role = Role.Button }
-                .clickable(enabled = true, onClick = {
+                .clickable(onClick = {
                     onCategoryClick(category.labelResId)
                 })
                 .testTag(category.testTag),

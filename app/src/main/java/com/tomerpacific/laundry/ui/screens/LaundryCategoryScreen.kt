@@ -147,11 +147,10 @@ fun LaundryCategoryScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .wrapContentWidth(Alignment.CenterHorizontally)
-                                .widthIn(max = 100.dp)
+                                .widthIn(min = 48.dp, max = 100.dp)
                                 .aspectRatio(1f)
                                 .border(BorderStroke(2.dp, Color.Black))
                                 .clickable(
-                                    enabled = true,
                                     onClick = { onSymbolClick(laundrySymbol) },
                                     role = Role.Button
                                 )
