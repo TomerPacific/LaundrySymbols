@@ -35,7 +35,6 @@ import androidx.compose.ui.unit.sp
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.StyledText
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
-import com.tomerpacific.laundry.textResource
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -140,7 +139,7 @@ fun HowToDoLaundryCategoryLayout(howToDoLaundryCategory: HowToDoLaundryCategory)
         item {
             Row(modifier = Modifier.fillMaxWidth().padding(5.dp),
                 horizontalArrangement = Arrangement.Center) {
-                StyledText(textResource(howToDoLaundryCategory.descriptionResId))
+                StyledText(howToDoLaundryCategory.descriptionResId)
             }
         }
     }
