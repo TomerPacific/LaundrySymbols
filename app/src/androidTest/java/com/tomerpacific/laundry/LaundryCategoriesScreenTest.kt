@@ -6,6 +6,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.ui.screens.LaundryCategoriesScreen
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 
@@ -39,7 +40,9 @@ class LaundryCategoriesScreenTest {
 
         testTags.zip(labelResIds).forEach { (tag, resId) ->
             composeTestRule.onNodeWithTag(tag).assertIsDisplayed().performClick()
-            assert(clickedCategoryResId == resId)
+            composeTestRule.runOnIdle {
+                assertEquals(resId, clickedCategoryResId)
+            }
         }
     }
 }
