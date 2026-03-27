@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
@@ -22,7 +23,8 @@ import androidx.compose.ui.text.style.TextDecoration
 @Composable
 fun StyledText(@StringRes textResId: Int, modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    val annotatedString = remember(textResId) {
+    val configuration = LocalConfiguration.current
+    val annotatedString = remember(textResId, configuration) {
         val charSequence = context.resources.getText(textResId)
         parseHtmlToAnnotatedString(charSequence)
     }
@@ -43,19 +45,21 @@ private fun parseHtmlToAnnotatedString(text: CharSequence): AnnotatedString {
         text.getSpans(0, text.length, Any::class.java).forEach { span ->
             val start = text.getSpanStart(span)
             val end = text.getSpanEnd(span)
-            when (span) {
-                is StyleSpan -> {
-                    when (span.style) {
-                        Typeface.BOLD -> addStyle(SpanStyle(fontWeight = FontWeight.Bold), start, end)
-                        Typeface.ITALIC -> addStyle(SpanStyle(fontStyle = FontStyle.Italic), start, end)
-                        Typeface.BOLD_ITALIC -> addStyle(
-                            SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic),
-                            start,
-                            end
-                        )
+            if (start != -1 && end != -1) {
+                when (span) {
+                    is StyleSpan -> {
+                        when (span.style) {
+                            Typeface.BOLD -> addStyle(SpanStyle(fontWeight = FontWeight.Bold), start, end)
+                            Typeface.ITALIC -> addStyle(SpanStyle(fontStyle = FontStyle.Italic), start, end)
+                            Typeface.BOLD_ITALIC -> addStyle(
+                                SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic),
+                                start,
+                                end
+                            )
+                        }
                     }
+                    is UnderlineSpan -> addStyle(SpanStyle(textDecoration = TextDecoration.Underline), start, end)
                 }
-                is UnderlineSpan -> addStyle(SpanStyle(textDecoration = TextDecoration.Underline), start, end)
             }
         }
     }
