@@ -7,6 +7,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.UriHandler
 import androidx.lifecycle.AndroidViewModel
+import com.tomerpacific.laundry.ILaundrySymbolsRepository
 import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
@@ -14,7 +15,7 @@ import com.tomerpacific.laundry.model.TemperatureUnit
 
 class MainViewModel @JvmOverloads constructor(
     application: Application,
-    private val laundrySymbolsRepository: LaundrySymbolsRepository = LaundrySymbolsRepository()
+    private val laundrySymbolsRepository: ILaundrySymbolsRepository = LaundrySymbolsRepository()
 ): AndroidViewModel(application ) {
 
     private val _temperatureUnit = mutableStateOf(TemperatureUnit.CELSIUS)
