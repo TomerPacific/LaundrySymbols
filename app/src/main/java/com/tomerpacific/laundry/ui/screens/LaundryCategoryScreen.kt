@@ -22,6 +22,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
@@ -43,8 +44,6 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.tomerpacific.laundry.Bangers
 import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
@@ -70,8 +69,7 @@ fun LaundryCategoryScreen(
                 stringResource(id = laundryCategory),
                 Modifier.fillMaxWidth().padding(top = 30.dp),
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                fontFamily = Bangers,
-                fontSize = 30.sp
+                style = MaterialTheme.typography.displayLarge
             )
             if (containsSymbolWithTemperature) {
                 Row(
