@@ -26,7 +26,7 @@ fun StyledText(@StringRes textResId: Int, modifier: Modifier = Modifier) {
     val configuration = LocalConfiguration.current
     val annotatedString = remember(textResId, configuration) {
         val charSequence = context.resources.getText(textResId)
-        parseHtmlToAnnotatedString(charSequence)
+        spannedToAnnotatedString(charSequence)
     }
 
     Text(
@@ -37,7 +37,7 @@ fun StyledText(@StringRes textResId: Int, modifier: Modifier = Modifier) {
     )
 }
 
-private fun parseHtmlToAnnotatedString(text: CharSequence): AnnotatedString {
+private fun spannedToAnnotatedString(text: CharSequence): AnnotatedString {
     if (text !is Spanned) return AnnotatedString(text.toString())
 
     return buildAnnotatedString {
