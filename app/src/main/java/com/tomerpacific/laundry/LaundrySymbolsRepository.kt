@@ -6,9 +6,9 @@ import com.tomerpacific.laundry.model.LaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.SymbolId
 
-class LaundrySymbolsRepository {
+class LaundrySymbolsRepository : ILaundrySymbolsRepository {
 
-    fun createWashingSymbols(context: Context) : List<LaundrySymbol> {
+    override fun createWashingSymbols(context: Context) : List<LaundrySymbol> {
         return listOf(
             LaundrySymbol(
                 id = SymbolId("do-not-wash"),
@@ -66,7 +66,7 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createBleachingSymbols(context: Context) : List<LaundrySymbol> {
+    override fun createBleachingSymbols(context: Context) : List<LaundrySymbol> {
         return listOf(
             LaundrySymbol(
                 id = SymbolId("do-not-bleach"),
@@ -89,7 +89,7 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createDryingSymbols(context: Context): List<LaundrySymbol> {
+    override fun createDryingSymbols(context: Context): List<LaundrySymbol> {
         return listOf(
             LaundrySymbol(
                 id = SymbolId("do-not-dry-clean"),
@@ -166,7 +166,7 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createIroningSymbols(context: Context): List<LaundrySymbol> {
+    override fun createIroningSymbols(context: Context): List<LaundrySymbol> {
         return listOf(
             LaundrySymbol(
                 id = SymbolId("do-not-iron"),
@@ -214,7 +214,7 @@ class LaundrySymbolsRepository {
     }
 
 
-    fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
+    override fun createHowToDoLaundryCategories(): List<HowToDoLaundryCategory> {
         return listOf(
             HowToDoLaundryCategory(
                 labelResId = R.string.separating_laundry,
@@ -261,7 +261,7 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createLaundryCategories(): List<LaundryCategory> {
+    override fun createLaundryCategories(): List<LaundryCategory> {
         return listOf(
             LaundryCategory(
                 labelResId = R.string.washing,
@@ -290,7 +290,7 @@ class LaundrySymbolsRepository {
         )
     }
 
-    fun createLaundryCategoryItems(context: Context): Map<Int, List<LaundrySymbol>> {
+    override fun createLaundryCategoryItems(context: Context): Map<Int, List<LaundrySymbol>> {
         return mapOf(
             R.string.washing to createWashingSymbols(context),
             R.string.bleaching to createBleachingSymbols(context),
