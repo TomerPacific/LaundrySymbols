@@ -18,6 +18,7 @@ import com.google.android.play.core.install.InstallStateUpdatedListener
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
+import com.tomerpacific.laundry.LaundryTypography
 import com.tomerpacific.laundry.ui.navigation.LaundryNavGraph
 import com.tomerpacific.laundry.viewmodel.MainViewModel
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         setContent {
             val navController = rememberNavController()
 
-            MaterialTheme {
+            MaterialTheme(typography = LaundryTypography) {
                 LaundryNavGraph(navController = navController, viewModel = viewModel)
             }
         }
