@@ -14,6 +14,7 @@ import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -48,7 +49,10 @@ class MainViewModel @JvmOverloads constructor(
     }
     val selectedDrawerItem: State<HowToDoLaundryCategory> get() = _selectedDrawerItem
 
-    private val _uiEvents = MutableSharedFlow<MainUiEvent>()
+    private val _uiEvents = MutableSharedFlow<MainUiEvent>(
+        extraBufferCapacity = 1,
+        onBufferOverflow = BufferOverflow.DROP_OLDEST
+    )
     val uiEvents: SharedFlow<MainUiEvent> = _uiEvents.asSharedFlow()
 
     private val websiteUrls = listOf(
@@ -77,10 +81,11 @@ class MainViewModel @JvmOverloads constructor(
     }
 
     fun handleClickOnVersion(uriHandler: UriHandler) {
+        val url = websiteUrls.random()
         try {
-            uriHandler.openUri(websiteUrls.random())
+            uriHandler.openUri(url)
         } catch (e: IllegalArgumentException) {
-            Log.e("MainViewModel", "Could not open URI: No activity found", e)
+            Log.e("MainViewModel", "Failed to open URI: $url. Error: ${e.message}", e)
             sendUiEvent(MainUiEvent.ShowNoBrowserError)
         }
     }

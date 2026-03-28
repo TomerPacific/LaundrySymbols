@@ -29,7 +29,7 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
         viewModel.laundryCategories.map { it.labelResId }.toSet()
     }
 
-    LaunchedEffect(key1 = Unit) {
+    LaunchedEffect(key1 = viewModel.uiEvents) {
         viewModel.uiEvents.collectLatest { event ->
             when (event) {
                 is MainUiEvent.ShowNoBrowserError -> {
