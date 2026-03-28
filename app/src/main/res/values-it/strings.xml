@@ -138,7 +138,7 @@
         cosa significa ognuna. Per i capi resistenti, usa l\'impostazione normale della lavatrice. In genere la
         lavatrice laverà e risciacquerà con cicli veloci. Se hai capi molto sporchi, dovrai usare l\'impostazione heavy duty.
         L\'impostazione permanent press è usata per i vestiti che potrebbero stropicciarsi, a causa dei tessuti di cui sono fatti,
-        come nylon e rayon. Questo farà sì che la lavatrice abbia un ciclo più lento alla fine del lavaggio.
+        como nylon e rayon. Questo farà sì che la lavatrice abbia un ciclo più lento alla fine del lavaggio.
         Per i capi delicati, come la biancheria intima, usa il ciclo delicato.
     </string>
     <string name="wash_temperature_description">
@@ -155,4 +155,5 @@
     <string name="unit_fahrenheit">Fahrenheit</string>
     <string name="unit_symbol_c">°C</string>
     <string name="unit_symbol_f">°F</string>
+    <string name="no_browser_found">Nessun browser trovato. Installane uno per visualizzare questo link.</string>
 </resources>
