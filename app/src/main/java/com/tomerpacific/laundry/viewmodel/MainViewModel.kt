@@ -3,18 +3,21 @@ package com.tomerpacific.laundry.viewmodel
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.UriHandler
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import com.tomerpacific.laundry.ILaundrySymbolsRepository
 import com.tomerpacific.laundry.LaundrySymbolsRepository
-import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
 
 class MainViewModel @JvmOverloads constructor(
     application: Application,
@@ -45,6 +48,9 @@ class MainViewModel @JvmOverloads constructor(
     }
     val selectedDrawerItem: State<HowToDoLaundryCategory> get() = _selectedDrawerItem
 
+    private val _uiEvents = MutableSharedFlow<MainUiEvent>()
+    val uiEvents: SharedFlow<MainUiEvent> = _uiEvents.asSharedFlow()
+
     private val websiteUrls = listOf(
         "https://tomerpacific.github.io/Portfolio/",
         "https://github.com/TomerPacific",
@@ -73,9 +79,19 @@ class MainViewModel @JvmOverloads constructor(
     fun handleClickOnVersion(uriHandler: UriHandler) {
         try {
             uriHandler.openUri(websiteUrls.random())
-        } catch (e: Exception) {
-            Log.e("MainViewModel", "Could not open URI", e)
-            Toast.makeText(getApplication(), getApplication<Application>().getString(R.string.error_opening_link), Toast.LENGTH_LONG).show()
+        } catch (e: IllegalArgumentException) {
+            Log.e("MainViewModel", "Could not open URI: No activity found", e)
+            sendUiEvent(MainUiEvent.ShowNoBrowserError)
         }
     }
+
+    private fun sendUiEvent(event: MainUiEvent) {
+        viewModelScope.launch {
+            _uiEvents.emit(event)
+        }
+    }
+}
+
+sealed class MainUiEvent {
+    object ShowNoBrowserError : MainUiEvent()
 }
