@@ -122,7 +122,7 @@
         Je nach Art Ihrer Waschmaschine füllen Sie das Waschmittel in die Schublade (bei einer Frontlader-Waschmaschine).
         Bei einer Toplader-Waschmaschine geben Sie das Waschmittel direkt in die Trommel, nachdem Sie sie mit Wasser gefüllt haben.
         Achten Sie darauf, das richtige Waschmittel für Ihren Maschinentyp zu verwenden.
-        Kaufen Sie auch ein Waschmittel für empfindliche Haut oder bei Allergien.
+        Kaufen Sie auch ein Waschmittel für empfindliche Haut oder bei Hintergründen für Allergien.
     </string>
     <string name="using_bleach_description">
         Das Hinzufügen von Bleichmittel hilft, weiße Wäsche strahlend zu halten.
@@ -153,4 +153,5 @@
     <string name="unit_fahrenheit">Fahrenheit</string>
     <string name="unit_symbol_c">°C</string>
     <string name="unit_symbol_f">°F</string>
+    <string name="error_opening_link">Es wurde keine Anwendung gefunden, um diesen Link zu öffnen.</string>
 </resources>
