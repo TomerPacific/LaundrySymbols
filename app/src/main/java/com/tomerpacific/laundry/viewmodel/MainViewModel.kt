@@ -73,9 +73,9 @@ class MainViewModel @JvmOverloads constructor(
         return try {
             uriHandler.openUri(websiteUrls.random())
             true
-        } catch (e: ActivityNotFoundException) {
+        } catch (_: ActivityNotFoundException) {
             false
-        } catch (e: IllegalArgumentException) {
+        } catch (_: IllegalArgumentException) {
             false
         }
     }
