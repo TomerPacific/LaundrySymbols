@@ -2,6 +2,7 @@ package com.tomerpacific.laundry.viewmodel
 
 
 import android.app.Application
+import android.content.ActivityNotFoundException
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -12,6 +13,7 @@ import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
+import java.lang.IllegalArgumentException
 
 class MainViewModel @JvmOverloads constructor(
     application: Application,
@@ -67,7 +69,15 @@ class MainViewModel @JvmOverloads constructor(
         }
     }
 
-    fun handleClickOnVersion(uriHandler: UriHandler) {
-        uriHandler.openUri(websiteUrls.random())
+    fun handleClickOnVersion(uriHandler: UriHandler): Boolean {
+        return try {
+            uriHandler.openUri(websiteUrls.random())
+            true
+        } catch (e: ActivityNotFoundException) {
+            false
+        } catch (e: IllegalArgumentException) {
+            false
+        }
     }
+
 }
