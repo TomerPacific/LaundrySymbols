@@ -1,5 +1,6 @@
 package com.tomerpacific.laundry.ui.navigation
 
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -34,7 +35,10 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
                     navController.navigate("howToDoLaundry")
                 },
                 onVersionClick = {
-                    viewModel.handleClickOnVersion(uriHandler)
+                    val didHandleClick = viewModel.handleClickOnVersion(uriHandler)
+                    if (!didHandleClick) {
+                        Toast.makeText(navController.context, "No browser found. Install one to view this link.", Toast.LENGTH_LONG).show()
+                    }
                 }
             )
         }
