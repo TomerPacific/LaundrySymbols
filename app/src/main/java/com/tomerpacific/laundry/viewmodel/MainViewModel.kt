@@ -13,7 +13,6 @@ import com.tomerpacific.laundry.LaundrySymbolsRepository
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
-import java.lang.IllegalArgumentException
 
 class MainViewModel @JvmOverloads constructor(
     application: Application,
