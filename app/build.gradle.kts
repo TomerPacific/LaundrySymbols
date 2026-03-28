@@ -50,6 +50,10 @@ android {
             excludes += "META-INF/*"
         }
     }
+
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
 dependencies {

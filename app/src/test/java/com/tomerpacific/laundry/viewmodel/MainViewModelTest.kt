@@ -6,7 +6,7 @@ import com.tomerpacific.laundry.FakeLaundrySymbolsRepository
 import com.tomerpacific.laundry.model.TemperatureUnit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
@@ -100,9 +100,14 @@ class MainViewModelTest {
             }
         }
 
+        val events = mutableListOf<MainUiEvent>()
+        backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) {
+            viewModel.uiEvents.collect { events.add(it) }
+        }
+
         viewModel.handleClickOnVersion(throwingUriHandler)
 
-        val event = viewModel.uiEvents.first()
-        assertTrue(event is MainUiEvent.ShowNoBrowserError)
+        assertEquals(1, events.size)
+        assertTrue(events[0] is MainUiEvent.ShowNoBrowserError)
     }
 }
