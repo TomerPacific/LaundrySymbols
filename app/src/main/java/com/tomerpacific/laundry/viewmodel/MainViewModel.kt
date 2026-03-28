@@ -2,6 +2,8 @@ package com.tomerpacific.laundry.viewmodel
 
 
 import android.app.Application
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -9,6 +11,7 @@ import androidx.compose.ui.platform.UriHandler
 import androidx.lifecycle.AndroidViewModel
 import com.tomerpacific.laundry.ILaundrySymbolsRepository
 import com.tomerpacific.laundry.LaundrySymbolsRepository
+import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.model.HowToDoLaundryCategory
 import com.tomerpacific.laundry.model.LaundrySymbol
 import com.tomerpacific.laundry.model.TemperatureUnit
@@ -68,6 +71,11 @@ class MainViewModel @JvmOverloads constructor(
     }
 
     fun handleClickOnVersion(uriHandler: UriHandler) {
-        uriHandler.openUri(websiteUrls.random())
+        try {
+            uriHandler.openUri(websiteUrls.random())
+        } catch (e: Exception) {
+            Log.e("MainViewModel", "Could not open URI", e)
+            Toast.makeText(getApplication(), getApplication<Application>().getString(R.string.error_opening_link), Toast.LENGTH_LONG).show()
+        }
     }
 }
