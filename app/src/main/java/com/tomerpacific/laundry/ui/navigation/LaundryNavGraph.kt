@@ -1,5 +1,6 @@
 package com.tomerpacific.laundry.ui.navigation
 
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -10,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.tomerpacific.laundry.LAUNDRY_SYMBOL_KEY
+import com.tomerpacific.laundry.R
 import com.tomerpacific.laundry.ui.screens.HowToDoLaundryScreen
 import com.tomerpacific.laundry.ui.screens.LaundryCategoriesScreen
 import com.tomerpacific.laundry.ui.screens.LaundryCategoryScreen
@@ -34,7 +36,10 @@ fun LaundryNavGraph(navController: NavHostController, viewModel: MainViewModel) 
                     navController.navigate("howToDoLaundry")
                 },
                 onVersionClick = {
-                    viewModel.handleClickOnVersion(uriHandler)
+                    val didHandleClick = viewModel.handleClickOnVersion(uriHandler)
+                    if (!didHandleClick) {
+                        Toast.makeText(navController.context, R.string.no_browser_found, Toast.LENGTH_LONG).show()
+                    }
                 }
             )
         }

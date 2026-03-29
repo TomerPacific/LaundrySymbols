@@ -2,6 +2,7 @@ package com.tomerpacific.laundry.viewmodel
 
 
 import android.app.Application
+import android.content.ActivityNotFoundException
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -67,7 +68,15 @@ class MainViewModel @JvmOverloads constructor(
         }
     }
 
-    fun handleClickOnVersion(uriHandler: UriHandler) {
-        uriHandler.openUri(websiteUrls.random())
+    fun handleClickOnVersion(uriHandler: UriHandler): Boolean {
+        return try {
+            uriHandler.openUri(websiteUrls.random())
+            true
+        } catch (_: ActivityNotFoundException) {
+            false
+        } catch (_: IllegalArgumentException) {
+            false
+        }
     }
+
 }
