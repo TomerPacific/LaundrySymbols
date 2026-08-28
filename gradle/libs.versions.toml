@@ -14,8 +14,8 @@ espresso-core = "3.4.0"
 ui-test-junit4 = "1.1.0"
 ui-test-manifest = "1.6.2"
 
-androidGradlePlugin = "8.13.2"
-kotlin = "2.0.0"
+androidGradlePlugin = "9.2.1"
+kotlin = "2.2.10"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
